@@ -8482,7 +8482,7 @@ msgstr "जल्दी शुरू करने के लिए तैया�
 msgid "Ready-made folders and templates to get you started quickly. Select a pack to preview what gets created, then add it to your project."
 msgstr "जल्दी शुरू करने के लिए तैयार फ़ोल्डर और टेम्पलेट। क्या बनेगा इसका पूर्वावलोकन देखने के लिए कोई पैक चुनें, फिर उसे अपने प्रोजेक्ट में जोड़ें।"
 
-msgid "Ready. Workflow runs are sent to {0}."
+msgid "Ready. Workflow runs and agent chats are sent to {0}."
 msgstr ""
 
 msgid "Reason: {reason}"
@@ -9452,6 +9452,9 @@ msgstr "चुनी हुई टिप्पणियाँ चैट मे�
 
 msgid "Send comments to"
 msgstr "टिप्पणियाँ यहाँ भेजें"
+
+msgid "Send each turn of an in-app agent chat (the agent panel and Ask AI) to Langfuse, with the prompt, the reply and the tool calls."
+msgstr ""
 
 msgid "Send feedback"
 msgstr "प्रतिक्रिया भेजें"
@@ -11483,6 +11486,9 @@ msgstr "सबसे ज़्यादा लिंक किए गए पे�
 #. Sum of all three token tiers
 msgid "total"
 msgstr "कुल"
+
+msgid "Trace agent chats"
+msgstr ""
 
 msgid "Trace every workflow run — model calls, tool calls, token use and timings — in Langfuse."
 msgstr ""

@@ -339,7 +339,7 @@ describe('slides.enabled (Slides plugin toggle default)', () => {
 describe('langfuse and workflows plugin toggles', () => {
   test('both resolve to disabled when absent', () => {
     const parsed = ConfigSchema.parse({});
-    expect(parsed.langfuse).toEqual({ enabled: false });
+    expect(parsed.langfuse).toEqual({ enabled: false, traceAgentChats: true });
     expect(parsed.workflows).toEqual({ enabled: false });
   });
 
@@ -351,7 +351,15 @@ describe('langfuse and workflows plugin toggles', () => {
       enabled: true,
       baseUrl: 'https://cloud.langfuse.com',
       publicKey: 'pk-lf-1',
+      traceAgentChats: true,
     });
+  });
+
+  test('agent chat tracing can be turned off on its own', () => {
+    expect(
+      ConfigSchema.parse({ langfuse: { enabled: true, traceAgentChats: false } }).langfuse
+        .traceAgentChats,
+    ).toBe(false);
   });
 
   test('workflows accepts an explicit opt-in', () => {

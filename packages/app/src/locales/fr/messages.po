@@ -8486,7 +8486,7 @@ msgstr "Des dossiers et des modèles prêts à l'emploi pour démarrer rapidemen
 msgid "Ready-made folders and templates to get you started quickly. Select a pack to preview what gets created, then add it to your project."
 msgstr "Des dossiers et des modèles prêts à l'emploi pour démarrer rapidement. Sélectionnez un pack pour prévisualiser ce qui sera créé, puis ajoutez-le à votre projet."
 
-msgid "Ready. Workflow runs are sent to {0}."
+msgid "Ready. Workflow runs and agent chats are sent to {0}."
 msgstr ""
 
 msgid "Reason: {reason}"
@@ -9456,6 +9456,9 @@ msgstr "Envoyer les commentaires cochés dans la discussion"
 
 msgid "Send comments to"
 msgstr "Envoyer les commentaires à"
+
+msgid "Send each turn of an in-app agent chat (the agent panel and Ask AI) to Langfuse, with the prompt, the reply and the tool calls."
+msgstr ""
 
 msgid "Send feedback"
 msgstr "Envoyer un retour"
@@ -11487,6 +11490,9 @@ msgstr "Pages les plus liées"
 #. Sum of all three token tiers
 msgid "total"
 msgstr "total"
+
+msgid "Trace agent chats"
+msgstr ""
 
 msgid "Trace every workflow run — model calls, tool calls, token use and timings — in Langfuse."
 msgstr ""

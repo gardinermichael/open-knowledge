@@ -68,6 +68,11 @@ export const FIELDS_LANGFUSE_PLUGIN: FieldDef[] = [
     label: msg`Public key`,
     description: msg`Your project's public key (pk-lf-…). Leave empty to use LANGFUSE_PUBLIC_KEY.`,
   },
+  {
+    path: ['langfuse', 'traceAgentChats'],
+    label: msg`Trace agent chats`,
+    description: msg`Send each turn of an in-app agent chat (the agent panel and Ask AI) to Langfuse, with the prompt, the reply and the tool calls.`,
+  },
 ];
 
 export interface IndexedFieldGroup {

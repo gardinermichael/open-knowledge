@@ -8482,7 +8482,7 @@ msgstr "Folder dan templat siap pakai agar Anda cepat memulai."
 msgid "Ready-made folders and templates to get you started quickly. Select a pack to preview what gets created, then add it to your project."
 msgstr "Folder dan templat siap pakai agar Anda cepat memulai. Pilih sebuah paket untuk melihat apa yang akan dibuat, lalu tambahkan ke proyek Anda."
 
-msgid "Ready. Workflow runs are sent to {0}."
+msgid "Ready. Workflow runs and agent chats are sent to {0}."
 msgstr ""
 
 msgid "Reason: {reason}"
@@ -9452,6 +9452,9 @@ msgstr "Kirim komentar yang dicentang ke obrolan"
 
 msgid "Send comments to"
 msgstr "Kirim komentar ke"
+
+msgid "Send each turn of an in-app agent chat (the agent panel and Ask AI) to Langfuse, with the prompt, the reply and the tool calls."
+msgstr ""
 
 msgid "Send feedback"
 msgstr "Kirim masukan"
@@ -11483,6 +11486,9 @@ msgstr "Halaman paling banyak ditaut"
 #. Sum of all three token tiers
 msgid "total"
 msgstr "total"
+
+msgid "Trace agent chats"
+msgstr ""
 
 msgid "Trace every workflow run — model calls, tool calls, token use and timings — in Langfuse."
 msgstr ""

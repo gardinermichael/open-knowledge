@@ -800,7 +800,7 @@ export const ConfigSchema = z.looseObject({
           reload: 'live',
           defaultScope: 'user',
           description:
-            'Whether the Langfuse plugin appears in Settings → Plugins. When on, workflow runs on this device send LLM and tool traces to Langfuse. The secret key is read from the LANGFUSE_SECRET_KEY environment variable and is never stored in config. A personal preference (user scope). Default off.',
+            'Whether the Langfuse plugin appears in Settings → Plugins. When on, workflow runs and in-app agent chats on this device send LLM and tool traces to Langfuse. The secret key is read from the LANGFUSE_SECRET_KEY environment variable and is never stored in config. A personal preference (user scope). Default off.',
         })
         .default(false),
       baseUrl: z
@@ -825,8 +825,19 @@ export const ConfigSchema = z.looseObject({
             'Langfuse public key (pk-lf-…). Empty uses LANGFUSE_PUBLIC_KEY. The secret key always comes from LANGFUSE_SECRET_KEY.',
         })
         .optional(),
+      traceAgentChats: z
+        .boolean()
+        .register(fieldRegistry, {
+          scope: 'user',
+          agentSettable: false,
+          reload: 'live',
+          defaultScope: 'user',
+          description:
+            'Whether chats with in-app agents (the agent panel and Ask AI) are also traced: each turn becomes a Langfuse trace holding the prompt, the reply and the tool calls. Only applies while the Langfuse plugin is on. Default on.',
+        })
+        .default(true),
     })
-    .default({ enabled: false }),
+    .default({ enabled: false, traceAgentChats: true }),
   workflows: z
     .looseObject({
       enabled: z

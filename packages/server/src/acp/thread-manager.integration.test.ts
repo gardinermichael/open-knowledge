@@ -33,6 +33,7 @@ import type { AgentPresenceBroadcaster } from '../agent-presence.ts';
 import type { AgentSessionManager } from '../agent-sessions.ts';
 import { resolveBundledSkillDir } from '../build-skill-zip.ts';
 import type { LocalApiDispatch } from '../http/local-api-dispatch.ts';
+import { AgentChatTracer } from '../langfuse/agent-chat-tracer.ts';
 import { getLogger, type PinoLogger } from '../logger.ts';
 import { RUNTIME_VERSION } from '../version-constants.ts';
 import { withLocalAcquisitionRegistry } from './acquisition-contract.test-helper.ts';
@@ -121,6 +122,7 @@ function makeManager(
     agentBrowserTools?: AcpThreadManagerOptions['agentBrowserTools'];
     resolveBrowserNpx?: AcpThreadManagerOptions['resolveBrowserNpx'];
     globalDir?: string | null;
+    threadObserver?: AcpThreadManagerOptions['threadObserver'];
   },
 ): AcpThreadManager {
   const manager = new AcpThreadManager({
@@ -555,6 +557,108 @@ describe('AcpThreadManager (real subprocess)', () => {
     await manager.closeThread(info.threadId);
     expect(manager.listThreads().filter((t) => t.archived !== true)).toHaveLength(0);
     expect(manager.listThreads()[0]?.archived).toBe(true);
+  }, 45_000);
+
+  test('a thread observer sees every turn event in order, and a failing one cannot break the chat', async () => {
+    const contentDir = tmp();
+    const localDir = tmp();
+    writeFileSync(
+      join(localDir, 'acp-agents.json'),
+      JSON.stringify([
+        { id: 'example', name: 'Example Agent', command: 'node', args: [EXAMPLE_AGENT] },
+      ]),
+    );
+    const observed: string[] = [];
+    let requestId: string | undefined;
+    const manager = makeManager(contentDir, localDir, {
+      threadObserver: {
+        onEvent: (_info, event) => {
+          observed.push(event.kind);
+          if (event.kind === 'permission_request') requestId = event.requestId;
+          if (event.kind === 'session_update') throw new Error('observer exploded');
+        },
+      },
+    });
+    const info = await manager.createThread({ agent: { source: 'custom', id: 'example' } });
+    const delivered: string[] = [];
+    await manager.subscribe(info.threadId, 0, (frame: ThreadServerFrame) => {
+      if (frame.op === 'event') delivered.push(frame.event.kind);
+      if (frame.op === 'events') delivered.push(...frame.events.map((event) => event.kind));
+    });
+    const waitFor = async (pred: () => boolean, ms: number): Promise<void> => {
+      const deadline = Date.now() + ms;
+      while (!pred()) {
+        if (Date.now() > deadline) throw new Error(`timed out; observed ${observed.join(',')}`);
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    };
+    await waitFor(() => manager.listThreads()[0]?.status === 'ready', 15_000);
+    manager.sendPrompt(info.threadId, 'Improve my project please');
+    await waitFor(() => observed.includes('permission_request'), 20_000);
+    if (requestId === undefined) throw new Error('no pending permission');
+    manager.respondPermission(info.threadId, requestId, { kind: 'selected', optionId: 'allow' });
+    await waitFor(() => observed.includes('turn_ended'), 20_000);
+
+    const turn = observed.slice(observed.indexOf('user_message'));
+    expect(turn.slice(0, 2)).toEqual(['user_message', 'turn_started']);
+    expect(turn).toContain('session_update');
+    expect(turn.indexOf('permission_request')).toBeLessThan(turn.indexOf('permission_resolved'));
+    expect(turn.indexOf('permission_resolved')).toBeLessThan(turn.indexOf('turn_ended'));
+    expect(manager.listThreads()[0]?.status).toBe('ready');
+    await waitFor(() => delivered.includes('turn_ended'), 5_000);
+    expect(delivered).toContain('session_update');
+    await manager.closeThread(info.threadId);
+  }, 45_000);
+
+  test('closing a chat mid-turn tells the observer, so a traced turn is released', async () => {
+    const contentDir = tmp();
+    const localDir = tmp();
+    writeFileSync(
+      join(localDir, 'acp-agents.json'),
+      JSON.stringify([
+        { id: 'example', name: 'Example Agent', command: 'node', args: [EXAMPLE_AGENT] },
+      ]),
+    );
+    const traces = { begun: 0, finished: 0 };
+    const chat = new AgentChatTracer(
+      {
+        beginAgentChatTurn: () => {
+          traces.begun += 1;
+          return true;
+        },
+        finishRun: async () => {
+          traces.finished += 1;
+        },
+      },
+      log,
+    );
+    let permissionAsked = false;
+    const manager = makeManager(contentDir, localDir, {
+      threadObserver: {
+        onEvent: (info, event) => {
+          if (event.kind === 'permission_request') permissionAsked = true;
+          chat.onEvent(info, event);
+        },
+        onThreadClosed: (info) => chat.onThreadClosed(info),
+      },
+    });
+    const info = await manager.createThread({ agent: { source: 'custom', id: 'example' } });
+    const waitFor = async (pred: () => boolean, ms: number): Promise<void> => {
+      const deadline = Date.now() + ms;
+      while (!pred()) {
+        if (Date.now() > deadline) throw new Error('timed out');
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    };
+    await waitFor(() => manager.listThreads()[0]?.status === 'ready', 15_000);
+    manager.sendPrompt(info.threadId, 'Improve my project please');
+    await waitFor(() => permissionAsked, 20_000);
+    expect(chat.openTurnCount()).toBe(1);
+
+    await manager.closeThread(info.threadId);
+
+    expect(chat.openTurnCount()).toBe(0);
+    expect(traces.finished).toBe(traces.begun);
   }, 45_000);
 
   test('closeThread kills a SIGTERM-ignoring agent tree before resolving', async (ctx) => {

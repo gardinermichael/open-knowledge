@@ -240,7 +240,7 @@ Triggering:
 
 Files: `packages/server/src/workflows/*`, `packages/server/src/http/workflow-routes.ts`, `packages/server/src/mcp/tools/workflow.ts`, and in `packages/app/src`: `components/settings/{ExtensionPluginToggles,WorkflowsPluginSection}.tsx` and `lib/workflows-client.ts`.
 
-### 4.2 Langfuse (user plugin, traces workflow runs)
+### 4.2 Langfuse (user plugin, traces workflow runs and in-app agent chats)
 
 Turn it on under **Settings → Plugins → Langfuse**, then fill in the host and public key there. Leave them empty to use `LANGFUSE_BASE_URL` (default `https://cloud.langfuse.com`) and `LANGFUSE_PUBLIC_KEY`. The secret key is only ever read from `LANGFUSE_SECRET_KEY` in the server's environment, and changing it needs a server restart.
 
@@ -253,9 +253,20 @@ Two gotchas came up while building this:
 - **Start each run in its own trace.** The server has its own OpenTelemetry tracing. A run started from the API or MCP inherits the HTTP request's span, so the Langfuse root span ends up as a child of a span Langfuse never receives, and the trace has no name. `LangfuseTracing.runTraced` fixes this: it runs the graph under `ROOT_CONTEXT`, with `propagateAttributes({ traceName })` setting the trace name.
 - **Name the model run.** The CLI bundle minifies class names, so the default name for an LLM run comes out as gibberish such as `yl`. Pass a `runName` when invoking the model.
 
-Agents that run outside the app (Claude Code, Codex) are not traced by this plugin; set those up in each agent's own settings.
+**Agent chats.** Chats in the agent panel, and Ask AI when it opens a chat there, are traced too unless **Trace agent chats** (`langfuse.traceAgentChats`, default on) is turned off. Each turn is one trace named `agent-chat:<agent id>`, with the chat's thread id as the Langfuse session and the tags `openknowledge`, `agent-chat` and the agent id. A trace holds:
 
-Files: `packages/server/src/workflows/langfuse-tracing.ts` and `packages/app/src/components/settings/LangfusePluginSection.tsx`.
+- an agent span with the prompt and the reply;
+- a generation under it, named after the model chosen in the chat when the agent reports one, carrying token usage and cost when the agent sends them;
+- one tool observation per tool call;
+- an event for each permission answer.
+
+Long text is cut at 20,000 characters.
+
+This works through a hook that any server-side plugin can use. `AcpThreadManager` takes an optional `threadObserver` (`acp/thread-observer.ts`) and calls it with every thread event before chunks are merged, and with the prompt's token usage before `turn_ended`. It also calls `onThreadClosed` first thing in `closeThread`, because closing the connection rejects the pending prompt and no `turn_ended` follows. The calls are wrapped so that an observer which throws can't drop an event from the chat. `AgentChatTracer` (`langfuse/agent-chat-tracer.ts`) is the Langfuse observer. One `LangfuseTracing` is created in `server-factory.ts` and shared between workflows and chats. Each `beginRun` must be matched by exactly one `finishRun`, because exporters are shut down only when no run is open.
+
+Agents running in a terminal (Claude Code or Codex launched from Ask AI's terminal option, or on their own) are outside OpenKnowledge and are not traced; set those up in each agent's own settings.
+
+Files: `packages/server/src/workflows/langfuse-tracing.ts`, `packages/server/src/langfuse/agent-chat-tracer.ts` and `packages/app/src/components/settings/LangfusePluginSection.tsx`.
 
 ---
 
@@ -312,4 +323,4 @@ git push fork <branch> --force-with-lease
 | Plugin | Kind | Branch | Status |
 |---|---|---|---|
 | Workflows | user + server service + `/api/workflows*` + `workflow` agent tool | `plugin-guide` | built 2026-11-09; unit, DOM and live end-to-end tests pass |
-| Langfuse | user + server tracing | `plugin-guide` | built 2026-11-09; 2026-11-09 fix: traces now named `workflow:<id>` and detached from the server's request span, checked in Langfuse Cloud |
+| Langfuse | user + server tracing (workflows and agent chats) | `plugin-guide` | built 2026-11-09; 2026-11-09 fix: traces now named `workflow:<id>` and detached from the server's request span, checked in Langfuse Cloud; agent-chat tracing added 2026-11-09, checked in Langfuse Cloud with the example ACP agent |

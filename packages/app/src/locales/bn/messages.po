@@ -8482,7 +8482,7 @@ msgstr "দ্রুত শুরু করার জন্য তৈরি ফ�
 msgid "Ready-made folders and templates to get you started quickly. Select a pack to preview what gets created, then add it to your project."
 msgstr "দ্রুত শুরু করার জন্য তৈরি ফোল্ডার ও টেমপ্লেট। কী তৈরি হবে তার প্রাকদর্শন দেখতে একটি প্যাক নির্বাচন করুন, তারপর সেটি আপনার প্রকল্পে যোগ করুন।"
 
-msgid "Ready. Workflow runs are sent to {0}."
+msgid "Ready. Workflow runs and agent chats are sent to {0}."
 msgstr ""
 
 msgid "Reason: {reason}"
@@ -9452,6 +9452,9 @@ msgstr "চেক করা মন্তব্য আলাপে পাঠা�
 
 msgid "Send comments to"
 msgstr "মন্তব্য পাঠান"
+
+msgid "Send each turn of an in-app agent chat (the agent panel and Ask AI) to Langfuse, with the prompt, the reply and the tool calls."
+msgstr ""
 
 msgid "Send feedback"
 msgstr "মতামত পাঠান"
@@ -11483,6 +11486,9 @@ msgstr "সবচেয়ে বেশি লিংক করা পাতা"
 #. Sum of all three token tiers
 msgid "total"
 msgstr "মোট"
+
+msgid "Trace agent chats"
+msgstr ""
 
 msgid "Trace every workflow run — model calls, tool calls, token use and timings — in Langfuse."
 msgstr ""

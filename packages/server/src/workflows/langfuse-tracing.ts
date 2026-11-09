@@ -12,6 +12,7 @@ export interface LangfuseUserSettings {
   enabled?: boolean;
   baseUrl?: string;
   publicKey?: string;
+  traceAgentChats?: boolean;
 }
 
 export interface LangfuseCredentials {
@@ -87,21 +88,7 @@ export class LangfuseTracing {
   }
 
   async handlerFor(trace: LangfuseRunTrace): Promise<BaseCallbackHandler | null> {
-    this.activeRuns += 1;
-    const settings = this.readSettings();
-    if (settings?.enabled !== true) {
-      this.retireActive();
-      return null;
-    }
-    const credentials = resolveLangfuseCredentials(settings, this.env);
-    if ('missing' in credentials) {
-      this.log.warn(
-        { missing: credentials.missing, workflowId: trace.workflowId },
-        '[workflows] Langfuse is on but not configured; this run is not traced',
-      );
-      return null;
-    }
-    this.ensureProvider(credentials);
+    if (!this.beginRun({ workflowId: trace.workflowId })) return null;
     return new CallbackHandler({
       sessionId: trace.workflowId,
       tags: ['openknowledge', 'workflow', `trigger:${trace.trigger}`],
@@ -112,6 +99,10 @@ export class LangfuseTracing {
         model: trace.model,
       },
     });
+  }
+
+  beginAgentChatTurn(threadId: string): boolean {
+    return this.beginRun({ threadId }, (settings) => settings.traceAgentChats !== false);
   }
 
   runTraced<T>(trace: LangfuseRunTrace, run: () => Promise<T>): Promise<T> {
@@ -134,6 +125,29 @@ export class LangfuseTracing {
     await this.shutdownRetired();
   }
 
+  private beginRun(
+    subject: Record<string, string>,
+    allowed: (settings: LangfuseUserSettings) => boolean = () => true,
+  ): boolean {
+    this.activeRuns += 1;
+    const settings = this.readSettings();
+    if (settings?.enabled !== true) {
+      this.retireActive();
+      return false;
+    }
+    if (!allowed(settings)) return false;
+    const credentials = resolveLangfuseCredentials(settings, this.env);
+    if ('missing' in credentials) {
+      this.log.warn(
+        { missing: credentials.missing, ...subject },
+        '[langfuse] Langfuse is on but not configured; this run is not traced',
+      );
+      return false;
+    }
+    this.ensureProvider(credentials);
+    return true;
+  }
+
   private ensureProvider(credentials: LangfuseCredentials): void {
     const key = `${credentials.baseUrl}\n${credentials.publicKey}\n${credentials.secretKey}`;
     if (this.active?.key === key) return;
@@ -149,7 +163,7 @@ export class LangfuseTracing {
     });
     setLangfuseTracerProvider(provider);
     this.active = { key, provider };
-    this.log.info({ baseUrl: credentials.baseUrl }, '[workflows] Langfuse tracing enabled');
+    this.log.info({ baseUrl: credentials.baseUrl }, '[langfuse] Langfuse tracing enabled');
   }
 
   private retireActive(): void {
@@ -167,7 +181,7 @@ export class LangfuseTracing {
       try {
         await provider.shutdown();
       } catch (err) {
-        this.log.warn({ err }, '[workflows] Langfuse exporter shutdown failed');
+        this.log.warn({ err }, '[langfuse] Langfuse exporter shutdown failed');
       }
     }
   }

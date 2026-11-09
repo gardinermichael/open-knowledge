@@ -20,7 +20,7 @@ function TracingStatus() {
   if (tracing.state === 'ready') {
     return (
       <p className="text-1sm text-muted-foreground" data-testid="langfuse-status">
-        <Trans>Ready. Workflow runs are sent to {tracing.baseUrl}.</Trans>
+        <Trans>Ready. Workflow runs and agent chats are sent to {tracing.baseUrl}.</Trans>
       </p>
     );
   }

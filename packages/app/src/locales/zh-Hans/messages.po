@@ -8486,7 +8486,7 @@ msgstr "现成的文件夹和模板，帮你快速上手。"
 msgid "Ready-made folders and templates to get you started quickly. Select a pack to preview what gets created, then add it to your project."
 msgstr "现成的文件夹和模板，帮你快速上手。选择一个包可以预览会创建哪些内容，然后再添加到你的项目中。"
 
-msgid "Ready. Workflow runs are sent to {0}."
+msgid "Ready. Workflow runs and agent chats are sent to {0}."
 msgstr ""
 
 msgid "Reason: {reason}"
@@ -9456,6 +9456,9 @@ msgstr "把勾选的评论发送到对话"
 
 msgid "Send comments to"
 msgstr "把评论发送到"
+
+msgid "Send each turn of an in-app agent chat (the agent panel and Ask AI) to Langfuse, with the prompt, the reply and the tool calls."
+msgstr ""
 
 msgid "Send feedback"
 msgstr "发送反馈"
@@ -11487,6 +11490,9 @@ msgstr "被链接最多的页面"
 #. Sum of all three token tiers
 msgid "total"
 msgstr "总计"
+
+msgid "Trace agent chats"
+msgstr ""
 
 msgid "Trace every workflow run — model calls, tool calls, token use and timings — in Langfuse."
 msgstr ""

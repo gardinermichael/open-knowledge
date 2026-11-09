@@ -175,6 +175,7 @@ import {
   threadAuthMethods,
 } from './terminal-auth.ts';
 import { AcpTerminalSet } from './terminals.ts';
+import type { AcpThreadObserver } from './thread-observer.ts';
 import {
   acpThreadStoreRoots,
   type PersistedThreadMeta,
@@ -444,6 +445,7 @@ function isPiBridgeAgent(agentRef: { source: 'registry' | 'custom'; id: string }
 
 export interface AcpThreadManagerOptions {
   contentDir: string;
+  threadObserver?: AcpThreadObserver | null;
   localDir: string;
   globalDir: string | null;
   registry: AcpRegistry;
@@ -3198,6 +3200,10 @@ export class AcpThreadManager {
       .then((response) => {
         t.turnActive = false;
         this.clearStall(t);
+        const usage = response.usage;
+        if (usage !== null && usage !== undefined) {
+          this.notifyObserver(t, (observer) => observer.onTurnUsage?.(t.info, usage));
+        }
         this.logTurnEnded(t, response.stopReason);
         if (isThreadClosed(t)) return;
         this.appendEvent(t, {
@@ -3549,6 +3555,7 @@ export class AcpThreadManager {
     const t = this.threads.get(threadId);
     if (t === undefined || t.info.archived === true || t.closed) return;
     t.closed = true;
+    this.notifyObserver(t, (observer) => observer.onThreadClosed?.(t.info));
     t.launchTicket = null;
     this.clearSteer(t);
     this.failPendingPermissions(t);
@@ -3831,6 +3838,7 @@ export class AcpThreadManager {
   }
 
   private appendEvent(t: ThreadRecord, event: ThreadEvent): void {
+    this.notifyObserver(t, (observer) => observer.onEvent(t.info, event));
     const pending = t.pendingBroadcast;
     if (pending.length > 0 && coalesceChunkInto(pending[pending.length - 1], event, t.info.agent)) {
       return;
@@ -3848,6 +3856,19 @@ export class AcpThreadManager {
     if (t.flushTimer === null) {
       t.flushTimer = setTimeout(() => this.flushBroadcast(t), EVENT_FLUSH_MS);
       t.flushTimer.unref?.();
+    }
+  }
+
+  private notifyObserver(t: ThreadRecord, notify: (observer: AcpThreadObserver) => void): void {
+    const observer = this.opts.threadObserver;
+    if (observer === null || observer === undefined) return;
+    try {
+      notify(observer);
+    } catch (err) {
+      this.opts.log.warn(
+        { err, threadId: t.info.threadId },
+        '[acp-threads] thread observer failed',
+      );
     }
   }
 

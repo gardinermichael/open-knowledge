@@ -187,6 +187,7 @@ describe('ConfigSchema coverage (NR3 — every leaf has fieldRegistry metadata)'
       'langfuse.baseUrl',
       'langfuse.enabled',
       'langfuse.publicKey',
+      'langfuse.traceAgentChats',
       'skills.trustedPrivateOrigins',
       'slides.enabled',
       'telemetry.skillInstallReports.enabled',

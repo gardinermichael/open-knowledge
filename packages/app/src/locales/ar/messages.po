@@ -8486,7 +8486,7 @@ msgstr "مجلدات وقوالب جاهزة لتبدأ بسرعة."
 msgid "Ready-made folders and templates to get you started quickly. Select a pack to preview what gets created, then add it to your project."
 msgstr "مجلدات وقوالب جاهزة لتبدأ بسرعة. اختر حزمة لمعاينة ما سيُنشأ، ثم أضفها إلى مشروعك."
 
-msgid "Ready. Workflow runs are sent to {0}."
+msgid "Ready. Workflow runs and agent chats are sent to {0}."
 msgstr ""
 
 msgid "Reason: {reason}"
@@ -9456,6 +9456,9 @@ msgstr "إرسال التعليقات المحددة إلى المحادثة"
 
 msgid "Send comments to"
 msgstr "إرسال التعليقات إلى"
+
+msgid "Send each turn of an in-app agent chat (the agent panel and Ask AI) to Langfuse, with the prompt, the reply and the tool calls."
+msgstr ""
 
 msgid "Send feedback"
 msgstr "إرسال ملاحظات"
@@ -11487,6 +11490,9 @@ msgstr "أكثر الصفحات ارتباطًا"
 #. Sum of all three token tiers
 msgid "total"
 msgstr "الإجمالي"
+
+msgid "Trace agent chats"
+msgstr ""
 
 msgid "Trace every workflow run — model calls, tool calls, token use and timings — in Langfuse."
 msgstr ""

@@ -382,7 +382,12 @@ import {
 } from './vanished-documents.ts';
 import { type WatcherClock, type WatcherTimer, watcherClock } from './watcher-clock.ts';
 import { FRESHNESS_BASE_INTERVAL_MS } from './watcher-freshness.ts';
-import { createWorkflowService, type WorkflowService } from './workflows/index.ts';
+import {
+  createLangfuseTracing,
+  createWorkflowService,
+  type LangfuseTracing,
+  type WorkflowService,
+} from './workflows/index.ts';
 
 export interface ServerOptions {
   acpRegistryFetchImpl?: typeof fetch;
@@ -483,6 +488,7 @@ export interface ServerInstance {
   readonly acpRegistry: AcpRegistry;
   readonly acpPermissions: AcpPermissionStore;
   readonly workflowService: WorkflowService | null;
+  readonly langfuseTracing: LangfuseTracing | null;
   readonly recheckDisk: () => Promise<RecheckResult>;
 }
 
@@ -1172,14 +1178,19 @@ export function createServer(options: ServerOptions): ServerInstance {
     fetchImpl: options.acpRegistryFetchImpl,
   });
   const acpPermissions = new AcpPermissionStore(lockDir, getLogger('acp-permissions'));
-  const workflowService = options.ephemeral
+  const langfuseTracing = options.ephemeral
     ? null
-    : createWorkflowService({
-        projectDir,
-        localDir: lockDir,
-        configHomedirOverride,
-        log: getLogger('workflows'),
-      });
+    : createLangfuseTracing({ projectDir, configHomedirOverride, log: getLogger('langfuse') });
+  const workflowService =
+    langfuseTracing === null
+      ? null
+      : createWorkflowService({
+          projectDir,
+          localDir: lockDir,
+          configHomedirOverride,
+          log: getLogger('workflows'),
+          tracer: langfuseTracing,
+        });
 
   let authority: ReturnType<typeof acquireServerAuthority>;
   try {
@@ -6285,6 +6296,7 @@ export function createServer(options: ServerOptions): ServerInstance {
     acpRegistry,
     acpPermissions,
     workflowService,
+    langfuseTracing,
     recheckDisk: () => {
       if (!watcher) {
         return Promise.reject(

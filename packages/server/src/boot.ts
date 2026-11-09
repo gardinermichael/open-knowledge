@@ -54,6 +54,7 @@ import {
 } from './idle-shutdown.ts';
 import { scanGlobalInPlaceSkillsAsync, scanInPlaceSkills } from './in-place-skills.ts';
 import { buildIngressPolicy, ExposureConsentError } from './ingress-policy.ts';
+import { AgentChatTracer } from './langfuse/agent-chat-tracer.ts';
 import { resolveLocalSinkConfig } from './local-sink-resolver.ts';
 import { getLogger, loggerFactory, type PinoLogger } from './logger.ts';
 import { createMcpHttpHandler } from './mcp-http.ts';
@@ -502,6 +503,10 @@ async function bootServerInner(
     ? null
     : new AcpThreadManager({
         contentDir: opts.contentDir,
+        threadObserver:
+          serverInstance.langfuseTracing === null
+            ? null
+            : new AgentChatTracer(serverInstance.langfuseTracing, getLogger('langfuse')),
         localDir: lockDir,
         globalDir: okUserHomeDir(),
         registry: serverInstance.acpRegistry,

@@ -8,6 +8,7 @@ import { WorkflowRunStore } from './workflow-run-store.ts';
 import { WorkflowService } from './workflow-service.ts';
 import { connectWorkflowTools } from './workflow-tools.ts';
 
+export { LangfuseTracing } from './langfuse-tracing.ts';
 export {
   WORKFLOW_RUN_STATUSES,
   WORKFLOW_TRIGGERS,
@@ -30,6 +31,13 @@ export interface CreateWorkflowServiceOptions {
   localDir: string | null;
   configHomedirOverride?: string;
   log: PinoLogger;
+  tracer?: LangfuseTracing;
+}
+
+export interface CreateLangfuseTracingOptions {
+  projectDir: string;
+  configHomedirOverride?: string;
+  log: PinoLogger;
 }
 
 function readUserConfig(
@@ -48,6 +56,13 @@ export function readWorkflowsPluginEnabled(projectDir: string, homedirOverride?:
   return readUserConfig(projectDir, homedirOverride).workflows?.enabled === true;
 }
 
+export function createLangfuseTracing(opts: CreateLangfuseTracingOptions): LangfuseTracing {
+  return new LangfuseTracing(
+    () => readUserConfig(opts.projectDir, opts.configHomedirOverride).langfuse,
+    opts.log,
+  );
+}
+
 export function createWorkflowService(opts: CreateWorkflowServiceOptions): WorkflowService {
   const reported = new Set<string>();
   const readSettings = () =>
@@ -61,7 +76,7 @@ export function createWorkflowService(opts: CreateWorkflowServiceOptions): Workf
     isEnabled: () => readSettings().workflows?.enabled === true,
     createModel: createDefaultModelFactory(),
     connectTools: connectWorkflowTools,
-    tracer: new LangfuseTracing(() => readSettings().langfuse, opts.log),
+    tracer: opts.tracer ?? new LangfuseTracing(() => readSettings().langfuse, opts.log),
     runStore: new WorkflowRunStore(
       opts.localDir === null ? null : join(opts.localDir, WORKFLOW_RUNS_FILENAME),
     ),
