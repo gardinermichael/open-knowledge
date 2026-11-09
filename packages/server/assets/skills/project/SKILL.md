@@ -138,6 +138,8 @@ Don't chain silently: let the user drive ingest → research → consolidate, an
 
 Onboarding a repo that already has content: `references/onboard-existing-repo.md`. Layer model + packs: `references/starter-packs.md`.
 
+Scheduled or on-demand unattended runs (`.ok/workflows/*.yml`, the `workflow` tool): `references/workflows.md` — you write and test them; only the user approves them.
+
 ## Capabilities beyond this skill
 
 OK does more than this skill describes, and it changes between releases. Not covered here? Read rather than guess:

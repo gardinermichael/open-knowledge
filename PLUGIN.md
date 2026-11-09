@@ -232,6 +232,8 @@ prompt: |
   - Closing the tool connection and flushing Langfuse each get 10 seconds, so cleanup can't hang a finished run. It connects to the server's own `/mcp` endpoint through `@langchain/mcp-adapters`, so writes are attributed to the agent `workflow-<id>`. A run times out after 10 minutes, and the timeout also covers connecting to the model and to the tools. Only one run per workflow happens at a time, and server shutdown waits up to 5 seconds for runs to finish.
 - **Run history** is kept in `<project>/.ok/local/workflow-runs.jsonl`, up to the last 200 runs. Each record says which runner ran it, and for an ACP run which agent and version.
 
+**Agent guidance.** The `open-knowledge` project skill, installed by `ok init`, routes workflow requests to `references/workflows.md` (`packages/server/assets/skills/project/references/workflows.md`). It covers the fields, how to choose tools and a runner, how to write an unattended prompt, and the check-then-test loop through the `workflow` tool. It is clear that only the user approves. Update it whenever the workflow format changes.
+
 **Runners.** `runner` picks how the prompt runs. Leaving it out means `{ type: langgraph }`, everything above, which needs a model API key. An ACP runner runs the prompt with an agent you are already signed in to:
 
 ```yaml
