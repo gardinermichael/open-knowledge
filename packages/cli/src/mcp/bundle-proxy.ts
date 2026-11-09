@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process';
 import { join } from 'node:path';
-import { DESKTOP_PRODUCTS } from '@inkeep/open-knowledge-core';
+import { DESKTOP_PRODUCTS, MCP_TOOL_ALLOWLIST_ENV } from '@inkeep/open-knowledge-core';
 
 type BundleProxySuppression = 'env' | 'flag' | 'platform' | 'self' | null;
 
@@ -46,6 +46,7 @@ export function shouldProxyToBundle(
   if (platform !== 'darwin') return { proxy: false, suppressedBy: 'platform' };
   const envValue = env.OK_BUNDLE_PROXY?.toLowerCase();
   if (envValue === '0' || envValue === 'false') return { proxy: false, suppressedBy: 'env' };
+  if (env[MCP_TOOL_ALLOWLIST_ENV] !== undefined) return { proxy: false, suppressedBy: 'env' };
   if (argv.includes('--no-bundle-proxy')) return { proxy: false, suppressedBy: 'flag' };
   if (typeof argv[1] === 'string' && BUNDLE_CLI_RE.test(argv[1])) {
     return { proxy: false, suppressedBy: 'self' };

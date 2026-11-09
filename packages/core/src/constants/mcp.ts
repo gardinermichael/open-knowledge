@@ -32,6 +32,8 @@ export const OPEN_KNOWLEDGE_MCP_TOOLS = [
   'restore_version',
 ] as const;
 
+export const MCP_TOOL_ALLOWLIST_ENV = 'OK_MCP_TOOL_ALLOWLIST';
+
 export const OPEN_KNOWLEDGE_MCP_PLUGIN_TOOLS = ['workflow'] as const;
 
 export type OpenKnowledgeMcpTool =

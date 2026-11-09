@@ -4,7 +4,11 @@ import { realpathSync, statSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
-import { OK_PROJECT_MARKER, resolveIsHostedAgent } from '@inkeep/open-knowledge-core';
+import {
+  MCP_TOOL_ALLOWLIST_ENV,
+  OK_PROJECT_MARKER,
+  resolveIsHostedAgent,
+} from '@inkeep/open-knowledge-core';
 import { type KeepaliveHandle, startKeepalive } from '@inkeep/open-knowledge-core/keepalive';
 import { filesystemIdentity } from '@inkeep/open-knowledge-core/server';
 import {
@@ -15,6 +19,7 @@ import {
   installPrettyZodErrors,
   isProjectRoot,
   MCP_SERVER_NAME,
+  parseToolAllowlist,
   RUNTIME_VERSION,
   readWorkflowsPluginEnabled,
   registerAllTools,
@@ -40,6 +45,11 @@ import { createMcpStderrMirror } from './stderr-mirror.ts';
 
 const execFileAsync = promisify(execFile);
 
+
+function onlyToolsFromEnv(env: NodeJS.ProcessEnv): { onlyTools?: ReadonlySet<string> } {
+  const onlyTools = parseToolAllowlist(env[MCP_TOOL_ALLOWLIST_ENV]);
+  return onlyTools === undefined ? {} : { onlyTools };
+}
 export async function countWorktrees(dir: string): Promise<number> {
   try {
     const { stdout } = await execFileAsync(
@@ -269,6 +279,7 @@ export async function startGlobalMcpServer(
     identityRef,
     isHostedAgent: resolveIsHostedAgent(process.env),
     workflowsEnabled: readWorkflowsPluginEnabled(process.cwd()),
+    ...onlyToolsFromEnv(process.env),
   });
 
   installJsonSchemaDialect(server);

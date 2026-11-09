@@ -247,7 +247,7 @@ A top-level `model:` on an ACP workflow is rejected; use `runner.model`. There i
 How an ACP run works (`workflows/acp-runner.ts`):
 
 - **Starting the agent.** It spawns the agent itself; it doesn't use a hidden panel chat. The panel cancels a turn nobody is watching, and the panel's permission store auto-allows reads and saved grants. Registry agents must already be installed, which happens the first time you open them in the agent panel. A workflow never downloads one.
-- **What the agent gets.** It is started without OpenKnowledge's filesystem or terminal access. It gets one HTTP MCP server, `<server>/mcp`, sent with `x-ok-tool-allowlist: <tools>`. The server then disables every other tool for that session. The header can only narrow the tool list, never widen it, and the LangGraph runner sends it too. An agent that can't use HTTP MCP fails a workflow that needs tools.
+- **What the agent gets.** It is started without OpenKnowledge's filesystem or terminal access. It gets one HTTP MCP server, `<server>/mcp`, sent with `x-ok-tool-allowlist: <tools>`. The server then disables every other tool for that session. The header can only narrow the tool list, never widen it, and the LangGraph runner sends it too. An agent that can't use HTTP MCP gets a local `ok mcp` process instead, with the tool list in `OK_MCP_TOOL_ALLOWLIST` and `OK_BUNDLE_PROXY=0`. `ok mcp` never hands off to the installed app while an allowlist is set, because the app would ignore it.
 - **Permissions refuse by default.** A request is allowed once only when it is an exactly identified OpenKnowledge tool from `tools:`. Many agents send a permission request carrying only the tool-call id, so the runner merges in what earlier `session/update` reports said about that call, waiting up to 1 second for one. Everything else is cancelled straight away, and "always allow" is never chosen.
 - **Not a sandbox.** An agent's own built-in tools, such as reading files, may never ask permission. Confining an agent completely needs an OS sandbox or a restricted user account.
 - **Limits.** `maxToolCalls` counts the agent's `tool_call` updates and cancels the turn when exceeded. On timeout the runner sends `session/cancel`, waits 3 seconds, then fails the run. On every path it closes the connection and terminates the agent process tree it started.
@@ -269,7 +269,11 @@ Use absolute paths, because a server started from the desktop app may not have y
 Gotchas found while connecting these agents:
 
 - **Devin** titles its MCP calls "Calling search from open-knowledge". `identifyOpenKnowledgeToolCall` in core now recognises that wording, for known OpenKnowledge server names only.
-- **dcode** needs the `deepagents-acp` extra for `--acp`; without it, `initialize` never answers. Its one-shot mode, `-n`, also needs `-M <provider:model>` and `< /dev/null`, or it waits for input.
+- **dcode** needs the `deepagents-acp` extra for `--acp`; without it, `initialize` never answers. A fresh install pulls `agent-client-protocol` 1.0, which removed `audio_block`. Pin it, and since dcode 0.2.5 needs Python 3.14:
+  ```
+  uv tool install --reinstall --python 3.14 'deepagents-code==0.2.5' --with 'deepagents-acp==0.0.13' --with 'agent-client-protocol==0.12.1'
+  ```
+  Even then, **don't use dcode as a workflow runner.** In ACP mode (0.2.5) it ignores the MCP servers a client sends, so it never gets OpenKnowledge's tools. It also never reports its own `read_file`, `write_file`, `execute` and similar calls over ACP, so `tools:`, `maxToolCalls` and the permission rule can't apply to it. It is fine in the side panel, where you're watching. Its one-shot mode, `-n`, also needs `-M <provider:model>` and `< /dev/null`, or it waits for input.
 - **Tests** run with a temporary `HOME`, so a live agent started from a test can't find its saved sign-in. It reports "not signed in", or hits an account limit that has nothing to do with OpenKnowledge.
 
 Triggering:

@@ -65,6 +65,7 @@ import simpleGit from 'simple-git';
 import type { Doc } from 'yjs';
 import { AcpPermissionStore } from './acp/permissions.ts';
 import { AcpRegistry, loadAllCustomAgents } from './acp/registry.ts';
+import { buildOkMcpStdioCommand } from './acp/thread-manager.ts';
 import { AgentFocusBroadcaster } from './agent-focus.ts';
 import { AgentPresenceBroadcaster } from './agent-presence.ts';
 import type { AgentRegistryHostSeam } from './agent-registry-apply.ts';
@@ -1196,6 +1197,10 @@ export function createServer(options: ServerOptions): ServerInstance {
             registry: acpRegistry,
             localDir: lockDir,
             globalDir: okUserHomeDir(configHomedirOverride ?? homedir()),
+            getMcpStdioCommand: (serverUrl) =>
+              buildOkMcpStdioCommand(localOpCliArgs, Number(new URL(serverUrl).port), {
+                log: getLogger('workflows'),
+              }),
             projectDir,
             tracing: langfuseTracing,
             log: getLogger('workflows'),

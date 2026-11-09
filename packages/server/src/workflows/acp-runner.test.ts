@@ -8,6 +8,7 @@ import {
   type AcpWorkflowTracing,
   createAcpWorkflowRunner,
   decideWorkflowPermission,
+  workflowMcpServers,
 } from './acp-runner.ts';
 import type { WorkflowDefinition } from './workflow-definition.ts';
 import type { AcpWorkflowRequest } from './workflow-service.ts';
@@ -73,7 +74,12 @@ function definition(overrides: Partial<WorkflowDefinition> = {}): WorkflowDefini
   };
 }
 
-function setup(mode = 'normal', tracing: AcpWorkflowTracing | null = null, cancelGraceMs?: number) {
+function setup(
+  mode = 'normal',
+  tracing: AcpWorkflowTracing | null = null,
+  cancelGraceMs?: number,
+  stdio?: { command: string; args: string[] },
+) {
   const dir = mkdtempSync(join(tmpdir(), 'ok-acp-runner-'));
   const recordFile = join(dir, 'record.jsonl');
   writeFileSync(
@@ -96,6 +102,7 @@ function setup(mode = 'normal', tracing: AcpWorkflowTracing | null = null, cance
     tracing,
     log: createTestLogger('acp-runner-test'),
     ...(cancelGraceMs !== undefined ? { cancelGraceMs } : {}),
+    ...(stdio !== undefined ? { getMcpStdioCommand: () => stdio } : {}),
   });
   const records = () =>
     readFileSync(recordFile, 'utf8')
@@ -120,6 +127,48 @@ function request(
     now: new Date(0),
   };
 }
+
+describe('workflowMcpServers', () => {
+  const base = {
+    allowedTools: new Set(['search', 'exec']),
+    serverUrl: 'http://127.0.0.1:4000',
+    workflowId: 'digest',
+    agentName: 'Agent',
+  };
+
+  test('gives an HTTP agent the server with the allowlist header', () => {
+    expect(workflowMcpServers({ ...base, httpCapable: true, stdio: null })).toMatchObject([
+      {
+        type: 'http',
+        url: 'http://127.0.0.1:4000/mcp',
+        headers: expect.arrayContaining([{ name: 'x-ok-tool-allowlist', value: 'search,exec' }]),
+      },
+    ]);
+  });
+
+  test('gives other agents a local ok mcp restricted by environment and kept off the app bundle', () => {
+    const [server] = workflowMcpServers({
+      ...base,
+      httpCapable: false,
+      stdio: { command: '/bin/ok', args: ['mcp', '--port', '4000'], env: { OK_X: '1' } },
+    });
+    expect(server).toMatchObject({ command: '/bin/ok', args: ['mcp', '--port', '4000'] });
+    expect((server as { env: Array<{ name: string; value: string }> }).env).toEqual([
+      { name: 'OK_X', value: '1' },
+      { name: 'OK_MCP_TOOL_ALLOWLIST', value: 'search,exec' },
+      { name: 'OK_BUNDLE_PROXY', value: '0' },
+    ]);
+  });
+
+  test('needs no server without tools, and fails clearly with no way to connect', () => {
+    expect(
+      workflowMcpServers({ ...base, allowedTools: new Set(), httpCapable: false, stdio: null }),
+    ).toEqual([]);
+    expect(() => workflowMcpServers({ ...base, httpCapable: false, stdio: null })).toThrow(
+      'cannot connect to MCP servers over HTTP',
+    );
+  });
+});
 
 describe('createAcpWorkflowRunner', () => {
   test('runs a prompt through the agent with only the allowed tools, refusing everything else', async () => {
@@ -205,6 +254,18 @@ describe('createAcpWorkflowRunner', () => {
     await expect(runner(request(definition()))).rejects.toThrow(
       'cannot connect to MCP servers over HTTP',
     );
+  });
+
+  test('runs an agent without HTTP MCP through the local ok mcp fallback', async () => {
+    const { runner, records } = setup('no-http', null, undefined, {
+      command: '/bin/ok',
+      args: ['mcp', '--port', '47999'],
+    });
+    const result = await runner(request(definition()));
+    expect(result.summary).toBe('search=yes-once; shell=cancelled');
+    expect(records().find((entry) => entry.method === 'session/new')?.params).toMatchObject({
+      mcpServers: [{ command: '/bin/ok', args: ['mcp', '--port', '47999'] }],
+    });
   });
 
   test('stops the run when the agent goes over the tool-call budget', async () => {

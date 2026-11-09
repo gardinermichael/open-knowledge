@@ -54,6 +54,12 @@ describe('findBundledOkPath', () => {
 });
 
 describe('shouldProxyToBundle', () => {
+  test('never proxies a tool-restricted server, since the bundle would ignore the allowlist', () => {
+    expect(
+      shouldProxyToBundle({ OK_MCP_TOOL_ALLOWLIST: 'search' }, ['node', 'cli.mjs', 'mcp'], 'darwin'),
+    ).toEqual({ proxy: false, suppressedBy: 'env' });
+  });
+
   test('suppresses via env, flag, platform, and bundled self detection', () => {
     expect(
       shouldProxyToBundle({ OK_BUNDLE_PROXY: '0' }, ['node', 'cli.mjs', 'mcp'], 'darwin'),

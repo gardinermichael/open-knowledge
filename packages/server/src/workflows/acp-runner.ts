@@ -5,6 +5,7 @@ import {
   methods as acpMethods,
   type ClientConnection,
   type InitializeResponse,
+  type McpServer,
   type NewSessionResponse,
   ndJsonStream,
   type PermissionOption,
@@ -16,7 +17,7 @@ import {
   type SetSessionConfigOptionResponse,
   type ToolCallUpdate,
 } from '@agentclientprotocol/sdk';
-import { currentMcpServerName } from '@inkeep/open-knowledge-core';
+import { currentMcpServerName, MCP_TOOL_ALLOWLIST_ENV } from '@inkeep/open-knowledge-core';
 import type { ThreadInfo } from '@inkeep/open-knowledge-core/acp/thread-protocol';
 import { identifyOpenKnowledgeToolCall } from '@inkeep/open-knowledge-core/acp/tool-call-input';
 import {
@@ -26,6 +27,7 @@ import {
   spawnAcpAgent,
   terminateAgentTree,
 } from '../acp/launch.ts';
+import type { OkMcpStdioCommand } from '../acp/thread-manager.ts';
 import {
   type AcpRegistry,
   type CustomAgentEntry,
@@ -97,6 +99,7 @@ export interface AcpWorkflowRunnerDeps {
   ) => Promise<CustomAgentEntry[]>;
   cancelGraceMs?: number;
   toolCallReportWaitMs?: number;
+  getMcpStdioCommand?: (serverUrl: string) => OkMcpStdioCommand | null;
 }
 
 export type PermissionDecision =
@@ -163,6 +166,48 @@ function workflowTraceSink(
     identityFor: (agent) => tracing.identityFor(agent),
     finishRun: () => tracing.finishRun(),
   };
+}
+
+export function workflowMcpServers(input: {
+  allowedTools: ReadonlySet<string>;
+  httpCapable: boolean;
+  serverUrl: string;
+  workflowId: string;
+  stdio: OkMcpStdioCommand | null;
+  agentName: string;
+}): McpServer[] {
+  if (input.allowedTools.size === 0) return [];
+  const allowlist = [...input.allowedTools].join(',');
+  if (input.httpCapable) {
+    return [
+      {
+        type: 'http',
+        name: currentMcpServerName(),
+        url: new URL('/mcp', input.serverUrl).toString(),
+        headers: [
+          { name: MCP_CONNECTION_ID_HEADER, value: workflowConnectionId(input.workflowId) },
+          { name: MCP_TOOL_ALLOWLIST_HEADER, value: allowlist },
+        ],
+      },
+    ];
+  }
+  if (input.stdio === null) {
+    throw new WorkflowFatalError(
+      `${input.agentName} cannot connect to MCP servers over HTTP and no local ok mcp command is available, so it cannot use this workflow's tools`,
+    );
+  }
+  return [
+    {
+      name: currentMcpServerName(),
+      command: input.stdio.command,
+      args: [...input.stdio.args],
+      env: [
+        ...Object.entries(input.stdio.env ?? {}).map(([name, value]) => ({ name, value })),
+        { name: MCP_TOOL_ALLOWLIST_ENV, value: allowlist },
+        { name: 'OK_BUNDLE_PROXY', value: '0' },
+      ],
+    },
+  ];
 }
 
 interface ResolvedAgent {
@@ -404,25 +449,14 @@ export function createAcpWorkflowRunner(deps: AcpWorkflowRunnerDeps): AcpWorkflo
         ...info,
         agent: { ...info.agent, ...(agentVersion ? { version: agentVersion } : {}) },
       };
-      if (allowedTools.size > 0 && init.agentCapabilities?.mcpCapabilities?.http !== true) {
-        throw new WorkflowFatalError(
-          `${resolved.name} cannot connect to MCP servers over HTTP, so it cannot use this workflow's tools`,
-        );
-      }
-      const mcpServers =
-        allowedTools.size > 0
-          ? [
-              {
-                type: 'http' as const,
-                name: currentMcpServerName(),
-                url: new URL('/mcp', request.serverUrl).toString(),
-                headers: [
-                  { name: MCP_CONNECTION_ID_HEADER, value: workflowConnectionId(definition.id) },
-                  { name: MCP_TOOL_ALLOWLIST_HEADER, value: [...allowedTools].join(',') },
-                ],
-              },
-            ]
-          : [];
+      const mcpServers = workflowMcpServers({
+        allowedTools,
+        httpCapable: init.agentCapabilities?.mcpCapabilities?.http === true,
+        serverUrl: request.serverUrl,
+        workflowId: definition.id,
+        stdio: deps.getMcpStdioCommand?.(request.serverUrl) ?? null,
+        agentName: resolved.name,
+      });
       const session = await race<NewSessionResponse>(
         live.agent.request(acpMethods.agent.session.new, { cwd: deps.projectDir, mcpServers }),
       ).catch((err: unknown) => {
