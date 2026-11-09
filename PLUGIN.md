@@ -268,6 +268,8 @@ How an ACP run works (`workflows/acp-runner.ts`):
 
 Use absolute paths, because a server started from the desktop app may not have your shell's `PATH`.
 
+Check the built-in registry before adding one (`<project>/.ok/local/acp-registry-cache.json`). It already ships `devin`, which downloads its own Devin binary, and `deepagents`, which runs `npx deepagents-acp`, the JavaScript Deep Agents. A custom entry for the same agent shows up as a second menu item next to the built-in one, even when the ids match. So the example above adds a duplicate Devin, and `dcode` sits next to DeepAgents. Add a custom entry only for an agent that isn't in the registry, such as `cmd`, or when you need your own binary or arguments.
+
 Gotchas found while connecting these agents:
 
 - **Devin** titles its MCP calls "Calling search from open-knowledge". `identifyOpenKnowledgeToolCall` in core now recognises that wording, for known OpenKnowledge server names only.
