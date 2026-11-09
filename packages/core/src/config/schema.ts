@@ -790,6 +790,58 @@ export const ConfigSchema = z.looseObject({
         .default(false),
     })
     .default({ enabled: false }),
+  langfuse: z
+    .looseObject({
+      enabled: z
+        .boolean()
+        .register(fieldRegistry, {
+          scope: 'user',
+          agentSettable: false,
+          reload: 'live',
+          defaultScope: 'user',
+          description:
+            'Whether the Langfuse plugin appears in Settings → Plugins. When on, workflow runs on this device send LLM and tool traces to Langfuse. The secret key is read from the LANGFUSE_SECRET_KEY environment variable and is never stored in config. A personal preference (user scope). Default off.',
+        })
+        .default(false),
+      baseUrl: z
+        .string()
+        .register(fieldRegistry, {
+          scope: 'user',
+          agentSettable: false,
+          reload: 'live',
+          defaultScope: 'user',
+          description:
+            'Langfuse host, e.g. https://cloud.langfuse.com or a self-hosted URL. Empty uses LANGFUSE_BASE_URL, then https://cloud.langfuse.com.',
+        })
+        .optional(),
+      publicKey: z
+        .string()
+        .register(fieldRegistry, {
+          scope: 'user',
+          agentSettable: false,
+          reload: 'live',
+          defaultScope: 'user',
+          description:
+            'Langfuse public key (pk-lf-…). Empty uses LANGFUSE_PUBLIC_KEY. The secret key always comes from LANGFUSE_SECRET_KEY.',
+        })
+        .optional(),
+    })
+    .default({ enabled: false }),
+  workflows: z
+    .looseObject({
+      enabled: z
+        .boolean()
+        .register(fieldRegistry, {
+          scope: 'user',
+          agentSettable: false,
+          reload: 'live',
+          defaultScope: 'user',
+          description:
+            'Whether the Workflows plugin appears in Settings → Plugins and whether this device runs the scheduled workflows defined in .ok/workflows. Per device so a shared project does not run each schedule once per collaborator. Manual runs through the API or the workflow tool also require it. A personal preference (user scope). Default off.',
+        })
+        .default(false),
+    })
+    .default({ enabled: false }),
   telemetry: z
     .looseObject({
       localSink: z

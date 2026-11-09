@@ -51,7 +51,7 @@ const RETIRED_TOOL_NAMES = [
   'get_preview_url',
 ] as const;
 
-function captureRegistered(): string[] {
+function captureRegistered(options: { workflowsEnabled?: boolean } = {}): string[] {
   const names: string[] = [];
   const cwd = makeTempDir('ok-registry-assertion-');
   const server = {
@@ -66,6 +66,7 @@ function captureRegistered(): string[] {
     config: BASE_CONFIG,
     resolveCwd: async () => cwd,
     serverUrl: undefined,
+    ...options,
   });
   return names;
 }
@@ -121,7 +122,7 @@ const OK_AUTO_APPROVED_TOOLS = [
 describe('docked-terminal auto-approve classification', () => {
   test('every registered tool is classified as gated or auto-approved', () => {
     expect(new Set([...OK_AUTO_APPROVED_TOOLS, ...OK_GATED_TOOL_NAMES])).toEqual(
-      new Set(captureRegistered()),
+      new Set(captureRegistered({ workflowsEnabled: true })),
     );
   });
 
@@ -131,9 +132,14 @@ describe('docked-terminal auto-approve classification', () => {
   });
 
   test('the ask-list only names tools that actually exist', () => {
-    const registered = new Set(captureRegistered());
+    const registered = new Set(captureRegistered({ workflowsEnabled: true }));
     for (const gated of OK_GATED_TOOL_NAMES) {
       expect(registered).toContain(gated);
     }
+  });
+
+  test('plugin tools register only when their plugin is on', () => {
+    expect(captureRegistered()).not.toContain('workflow');
+    expect(captureRegistered({ workflowsEnabled: true })).toContain('workflow');
   });
 });

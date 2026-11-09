@@ -32,7 +32,11 @@ export const OPEN_KNOWLEDGE_MCP_TOOLS = [
   'restore_version',
 ] as const;
 
-export type OpenKnowledgeMcpTool = (typeof OPEN_KNOWLEDGE_MCP_TOOLS)[number];
+export const OPEN_KNOWLEDGE_MCP_PLUGIN_TOOLS = ['workflow'] as const;
+
+export type OpenKnowledgeMcpTool =
+  | (typeof OPEN_KNOWLEDGE_MCP_TOOLS)[number]
+  | (typeof OPEN_KNOWLEDGE_MCP_PLUGIN_TOOLS)[number];
 
 export const OPEN_KNOWLEDGE_MCP_WRITE_TOOLS = [
   'write',

@@ -640,6 +640,16 @@ prosemirror-recreate-steps
 Copyright 2018 Atypon Systems, LLC.
 ```
 
+### `@modelcontextprotocol/client@2.4.0`
+Homepage: https://modelcontextprotocol.io
+
+Copyright (c) 2024-2025 Model Context Protocol a Series of LF Projects, LLC.
+
+### `@modelcontextprotocol/core@2.4.0`
+Homepage: https://modelcontextprotocol.io
+
+Copyright (c) 2024-2025 Model Context Protocol a Series of LF Projects, LLC.
+
 ### `@mongodb-js/zstd@7.0.0`
 Homepage: https://github.com/mongodb-js/zstd
 
@@ -973,6 +983,11 @@ Homepage: https://github.com/dcodeIO/long.js
 
 _(LICENSE template present but no copyright line filled in; refer to the package source for canonical attribution.)_
 
+### `openai@7.53.0`
+Homepage: https://github.com/openai/openai-node
+
+Copyright 2026 OpenAI
+
 ### `pdfjs-dist@6.2.108`
 Homepage: https://mozilla.github.io/pdf.js/
 
@@ -1095,6 +1110,11 @@ SOFTWARE.
 Homepage: https://github.com/antfu/install-pkg#readme
 
 Copyright (c) 2021 Anthony Fu <https://github.com/antfu>
+
+### `@anthropic-ai/sdk@0.129.0`
+Homepage: https://github.com/anthropics/anthropic-sdk-typescript
+
+Copyright 2023 Anthropic, PBC.
 
 ### `@babel/code-frame@7.29.7`
 Homepage: https://babel.dev/docs/en/next/babel-code-frame
@@ -1265,6 +1285,11 @@ Copyright (c) 2017 Braintree
 Homepage: https://github.com/braintree/sanitize-url#readme
 
 Copyright (c) 2017 Braintree
+
+### `@cfworker/json-schema@4.1.6`
+Homepage: https://github.com/cfworker/cfworker/tree/master/packages/json-schema/README.md
+
+_(No LICENSE file in package; SPDX identifier in `package.json` is the sole declared grant.)_
 
 ### `@codemirror/autocomplete@6.20.3`
 Homepage: https://code.haverbeke.berlin/codemirror/autocomplete
@@ -1578,6 +1603,65 @@ Copyright (c) 2015 Steve King
 Homepage: https://github.com/kwsites/promise-deferred
 
 Copyright (c) 2018 kwsites
+
+### `@langchain/anthropic@1.6.0`
+Homepage: https://github.com/langchain-ai/langchainjs/tree/main/libs/providers/langchain-anthropic/
+
+Copyright (c) LangChain, Inc.
+
+### `@langchain/core@1.3.5`
+Homepage: https://github.com/langchain-ai/langchainjs/tree/main/langchain-core/
+
+Copyright (c) LangChain, Inc.
+
+### `@langchain/langgraph@1.7.1`
+Homepage: https://github.com/langchain-ai/langgraphjs
+
+Copyright (c) 2024 LangChain
+
+### `@langchain/langgraph-checkpoint@1.2.2`
+Homepage: https://github.com/langchain-ai/langgraphjs
+
+Copyright (c) 2024 LangChain
+
+### `@langchain/langgraph-sdk@1.14.0`
+Homepage: https://github.com/langchain-ai/langgraphjs
+
+Copyright (c) 2024 LangChain, Inc.
+
+### `@langchain/mcp-adapters@2.0.2`
+Homepage: https://github.com/langchain-ai/langchainjs/tree/main/libs/langchain-mcp-adapters/
+
+Copyright (c) LangChain, Inc.
+
+### `@langchain/openai@1.8.0`
+Homepage: https://github.com/langchain-ai/langchainjs/tree/main/libs/providers/langchain-openai/
+
+Copyright (c) LangChain, Inc.
+
+### `@langchain/protocol@0.0.21`
+
+Copyright (c) 2026 LangChain, Inc.
+
+### `@langfuse/core@6.1.1`
+Homepage: https://github.com/langfuse/langfuse-js
+
+Copyright (c) 2023-2026 ClickHouse, Inc. Copyright (c) 2022 PostHog (part of Hiberly Inc)
+
+### `@langfuse/langchain@6.1.1`
+Homepage: https://github.com/langfuse/langfuse-js
+
+Copyright (c) 2023-2026 ClickHouse, Inc. Copyright (c) 2022 PostHog (part of Hiberly Inc)
+
+### `@langfuse/otel@6.1.1`
+Homepage: https://github.com/langfuse/langfuse-js
+
+Copyright (c) 2023-2026 ClickHouse, Inc. Copyright (c) 2022 PostHog (part of Hiberly Inc)
+
+### `@langfuse/tracing@6.1.1`
+Homepage: https://github.com/langfuse/langfuse-js
+
+Copyright (c) 2023-2026 ClickHouse, Inc. Copyright (c) 2022 PostHog (part of Hiberly Inc)
 
 ### `@lezer/common@1.5.2`
 Homepage: https://github.com/lezer-parser/common
@@ -2189,6 +2273,16 @@ Homepage: https://github.com/sindresorhus/merge-streams
 
 Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
 
+### `@stablelib/base64@1.0.1`
+Homepage: https://github.com/StableLib/stablelib/tree/master/packages/base64
+
+Copyright (C) 2016 Dmitry Chestnykh
+
+### `@standard-schema/spec@1.1.0`
+Homepage: https://standardschema.dev
+
+Copyright (c) 2024 Colin McDonnell
+
 ### `@standard-schema/utils@0.3.0`
 Homepage: https://github.com/standard-schema/standard-schema
 
@@ -2615,6 +2709,11 @@ Copyright (c) Microsoft Corporation.
 
 ### `@types/istanbul-reports@3.0.4`
 Homepage: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/istanbul-reports
+
+Copyright (c) Microsoft Corporation.
+
+### `@types/json-schema@7.0.15`
+Homepage: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/json-schema
 
 Copyright (c) Microsoft Corporation.
 
@@ -3158,6 +3257,11 @@ Homepage: https://code.haverbeke.berlin/marijn/crelt
 
 Copyright (C) 2020 by Marijn Haverbeke <marijn@haverbeke.berlin>
 
+### `croner@11.0.0`
+Homepage: https://croner.56k.guru
+
+Copyright (c) 2015-2021 Hexagon <github.com/Hexagon>
+
 ### `cross-env@7.0.3`
 Homepage: https://github.com/kentcdodds/cross-env#readme
 
@@ -3418,6 +3522,16 @@ Copyright (c) 2021 Titus Wormer <tituswormer@gmail.com>
 Homepage: https://github.com/jshttp/etag
 
 Copyright (c) 2014-2016 Douglas Christopher Wilson
+
+### `eventemitter3@4.0.7`
+Homepage: https://github.com/primus/eventemitter3
+
+Copyright (c) 2014 Arnout Kazemier
+
+### `eventemitter3@5.0.4`
+Homepage: https://github.com/primus/eventemitter3
+
+Copyright (c) 2014 Arnout Kazemier
 
 ### `eventsource@3.0.7`
 Homepage: https://github.com/EventSource/eventsource#readme
@@ -3937,6 +4051,11 @@ Homepage: https://github.com/sindresorhus/is-interactive
 
 Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
 
+### `is-network-error@1.3.2`
+Homepage: https://github.com/sindresorhus/is-network-error
+
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
+
 ### `is-number@7.0.0`
 Homepage: https://github.com/jonschlinkert/is-number
 
@@ -4052,6 +4171,11 @@ Homepage: https://github.com/emn178/js-sha256
 
 Copyright (c) 2014-2023 Chen, Yi-Cyuan
 
+### `js-tiktoken@1.0.21`
+Homepage: https://github.com/dqbd/tiktoken
+
+_(No LICENSE file in package; SPDX identifier in `package.json` is the sole declared grant.)_
+
 ### `js-tokens@4.0.0`
 Homepage: https://github.com/lydell/js-tokens
 
@@ -4071,6 +4195,11 @@ _(No LICENSE file in package; SPDX identifier in `package.json` is the sole decl
 Homepage: https://github.com/npm/json-parse-even-better-errors
 
 Copyright 2017 Kat Marchán Copyright npm, Inc.
+
+### `json-schema-to-ts@3.1.1`
+Homepage: https://github.com/ThomasAribart/json-schema-to-ts#readme
+
+Copyright (c) 2020 Thomas Aribart
 
 ### `json-schema-traverse@1.0.0`
 Homepage: https://github.com/epoberezkin/json-schema-traverse#readme
@@ -4126,6 +4255,11 @@ Copyright (c) Luke Edwards <luke.edwards05@gmail.com> (lukeed.com)
 Homepage: https://langium.org
 
 Copyright 2021 TypeFox GmbH
+
+### `langsmith@0.11.8`
+Homepage: https://github.com/langchain-ai/langsmith-javascript
+
+Copyright 2026 langChain
 
 ### `layout-base@1.0.2`
 Homepage: https://github.com/iVis-at-Bilkent/layout-base#readme
@@ -4617,6 +4751,11 @@ Homepage: https://github.com/nodeca/multimath
 
 Copyright (C) 2017 by Vitaly Puzrin
 
+### `mustache@4.2.0`
+Homepage: https://github.com/janl/mustache.js
+
+Copyright (c) 2009 Chris Wanstrath (Ruby) Copyright (c) 2010-2014 Jan Lehnardt (JavaScript) Copyright (c) 2010-2015 The mustache.js community
+
 ### `nanoid@3.3.18`
 Homepage: https://github.com/ai/nanoid
 
@@ -4769,6 +4908,11 @@ Homepage: https://github.com/marijnh/orderedmap#readme
 
 Copyright (C) 2016 by Marijn Haverbeke <marijn@haverbeke.berlin> and others
 
+### `p-finally@1.0.0`
+Homepage: https://github.com/sindresorhus/p-finally
+
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+
 ### `p-limit@2.3.0`
 Homepage: https://github.com/sindresorhus/p-limit
 
@@ -4778,6 +4922,31 @@ Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
 Homepage: https://github.com/sindresorhus/p-locate
 
 Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+
+### `p-queue@6.6.2`
+Homepage: https://github.com/sindresorhus/p-queue
+
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
+
+### `p-queue@9.3.5`
+Homepage: https://github.com/sindresorhus/p-queue
+
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
+
+### `p-retry@7.1.1`
+Homepage: https://github.com/sindresorhus/p-retry
+
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
+
+### `p-timeout@3.2.0`
+Homepage: https://github.com/sindresorhus/p-timeout
+
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+
+### `p-timeout@7.0.2`
+Homepage: https://github.com/sindresorhus/p-timeout
+
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
 
 ### `p-try@2.2.0`
 Homepage: https://github.com/sindresorhus/p-try
@@ -5544,6 +5713,11 @@ Homepage: http://github.com/sql-js/sql.js
 Copyright (c) 2017 sql.js authors (see AUTHORS)
 Copyright 2017 Ryusei Yamaguchi
 
+### `standardwebhooks@1.1.1`
+Homepage: https://github.com/standard-webhooks/standard-webhooks/tree/main/libraries/javascript
+
+_(No LICENSE file in package; SPDX identifier in `package.json` is the sole declared grant.)_
+
 ### `statuses@2.0.2`
 Homepage: https://github.com/jshttp/statuses
 
@@ -5739,6 +5913,11 @@ Copyright (c) 2015 Titus Wormer <mailto:tituswormer@gmail.com>
 Homepage: https://github.com/wooorm/trough
 
 Copyright (c) 2016 Titus Wormer <tituswormer@gmail.com>
+
+### `ts-algebra@2.0.0`
+Homepage: https://github.com/ThomasAribart/ts-algebra#readme
+
+Copyright (c) 2020 Thomas Aribart
 
 ### `ts-dedent@2.3.0`
 Homepage: https://github.com/tamino-martinius/node-ts-dedent
@@ -6675,6 +6854,7 @@ Copyright (c) 2015, Yeoman team
 The following packages are under licenses that do not require attribution (BlueOak-1.0.0, 0BSD, WTFPL, Unlicense, CC0-1.0). Listed for completeness and traceability.
 
 - `@excalidraw/fractional-indexing@0.18.0-abeeaeb` — CC0-1.0
+- `fast-sha256@1.3.0` — Unlicense
 - `isexe@3.1.5` — BlueOak-1.0.0
 - `minimatch@10.2.5` — BlueOak-1.0.0
 - `robust-predicates@3.0.3` — Unlicense

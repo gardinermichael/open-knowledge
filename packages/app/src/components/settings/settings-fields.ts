@@ -57,6 +57,19 @@ export const FIELDS_THEME_PLUGIN: FieldDef[] = [
   },
 ];
 
+export const FIELDS_LANGFUSE_PLUGIN: FieldDef[] = [
+  {
+    path: ['langfuse', 'baseUrl'],
+    label: msg`Langfuse host`,
+    description: msg`For example https://cloud.langfuse.com, https://us.cloud.langfuse.com, or your self-hosted URL. Leave empty to use LANGFUSE_BASE_URL, then Langfuse Cloud (EU).`,
+  },
+  {
+    path: ['langfuse', 'publicKey'],
+    label: msg`Public key`,
+    description: msg`Your project's public key (pk-lf-…). Leave empty to use LANGFUSE_PUBLIC_KEY.`,
+  },
+];
+
 export interface IndexedFieldGroup {
   sectionId: string;
   fields: FieldDef[];

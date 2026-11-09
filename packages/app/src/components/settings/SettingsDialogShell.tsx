@@ -255,6 +255,10 @@ function SettingsDialogFrame({
 
   const slidesEnabled = merged?.slides?.enabled === true;
 
+  const workflowsEnabled = merged?.workflows?.enabled === true;
+
+  const langfuseEnabled = merged?.langfuse?.enabled === true;
+
   const isFileProtocolRenderer = isFileProtocolPage();
 
   const declaredGroups: SidebarGroup[] = [
@@ -408,6 +412,8 @@ function SettingsDialogFrame({
         ...(hasProject ? enabledPluginItems : []),
         ...(themeEnabled ? [{ id: 'plugin:theme', label: t`Themes` }] : []),
         ...(slidesEnabled ? [{ id: 'plugin:slides', label: t`Slidev` }] : []),
+        ...(workflowsEnabled ? [{ id: 'plugin:workflows', label: t`Workflows` }] : []),
+        ...(langfuseEnabled ? [{ id: 'plugin:langfuse', label: t`Langfuse` }] : []),
       ],
     },
     {

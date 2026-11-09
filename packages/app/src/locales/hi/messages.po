@@ -1591,6 +1591,9 @@ msgstr "स्वीकृत"
 msgid "Approved — {optionName}"
 msgstr "स्वीकृत — {optionName}"
 
+msgid "Approved {0}"
+msgstr ""
+
 msgid "Approved and ready to merge"
 msgstr "स्वीकृत और मर्ज के लिए तैयार"
 
@@ -2820,6 +2823,9 @@ msgstr "सहेजी गई API कुंजी तक पहुँच नह
 msgid "Could not access the saved API key. Unlock your system credential store or check the local credential files, then try again."
 msgstr "सहेजी गई API कुंजी तक पहुँच नहीं हो सकी। सिस्टम के क्रेडेंशियल स्टोर को अनलॉक करें या स्थानीय क्रेडेंशियल फ़ाइलें जाँचें, फिर दोबारा कोशिश करें।"
 
+msgid "Could not approve {0}"
+msgstr ""
+
 msgid "Could not check the symlinks in {shareBranch}, so it was not switched. Try again; if it keeps failing, check that Git is installed and the project folder is readable."
 msgstr "{shareBranch} के सिमलिंक की जाँच नहीं हो सकी, इसलिए उस पर स्विच नहीं किया गया। फिर से कोशिश करें; अगर यह बार-बार विफल हो, तो देखें कि Git इंस्टॉल है और प्रोजेक्ट फ़ोल्डर पढ़ा जा सकता है।"
 
@@ -2874,6 +2880,9 @@ msgstr "टेम्पलेट लोड नहीं हो सके: {templ
 msgid "Could not load templates. Try again later."
 msgstr "टेम्पलेट लोड नहीं हो सके। बाद में फिर कोशिश करें।"
 
+msgid "Could not load workflows: {error}"
+msgstr ""
+
 msgid "Could not move \"{targetName}\" to the {trashNoun}. Do you want to permanently delete instead?"
 msgstr "\\\"{targetName}\\\" को {trashNoun} में नहीं ले जाया जा सका। क्या आप इसके बजाय स्थायी रूप से हटाना चाहते हैं?"
 
@@ -2898,8 +2907,14 @@ msgstr "सर्वर तक नहीं पहुँचा जा सका"
 msgid "Could not read branch state for this project. Close this dialog and open the share link again."
 msgstr "इस प्रोजेक्ट की ब्रांच स्थिति नहीं पढ़ी जा सकी। यह संवाद बंद करें और साझा लिंक फिर से खोलें।"
 
+msgid "Could not read the tracing status from the server."
+msgstr ""
+
 msgid "Could not save sync preference: {detail}"
 msgstr "सिंक वरीयता नहीं सहेजी जा सकी: {detail}"
+
+msgid "Could not start {0}"
+msgstr ""
 
 msgid "Could not start creating a new item"
 msgstr "नया आइटम बनाना शुरू नहीं किया जा सका"
@@ -3722,6 +3737,9 @@ msgstr "{file} अक्षम करें"
 msgid "Disable {id}"
 msgstr "{id} को अक्षम करें"
 
+msgid "Disable Langfuse"
+msgstr ""
+
 msgid "Disable semantic search"
 msgstr "अर्थ-आधारित खोज अक्षम करें"
 
@@ -3733,6 +3751,9 @@ msgstr "वर्तनी जाँच बंद करें"
 
 msgid "Disable Themes"
 msgstr "थीम अक्षम करें"
+
+msgid "Disable Workflows"
+msgstr ""
 
 msgid "Disambiguates similarly-named templates in the menu."
 msgstr "मेन्यू में एक जैसे नाम वाले टेम्पलेट में फ़र्क़ स्पष्ट करता है।"
@@ -3930,6 +3951,9 @@ msgstr "हर {open} के लिए मेल खाता {close} चाह�
 #. Says what symlinking two skill folders together buys the user, before any button names it
 msgid "Each AI tool reads skills from its own folder. Point one folder at another and both tools see the same skills — add a skill once instead of copying it into every tool."
 msgstr "हर AI टूल स्किल अपने ही फ़ोल्डर से पढ़ता है। एक फ़ोल्डर को दूसरे की ओर इंगित करें, तब दोनों टूल एक ही स्किल देखेंगे — हर टूल में कॉपी करने के बजाय स्किल एक ही बार जोड़ें।"
+
+msgid "Each file in <0>.ok/workflows/</0> is a LangGraph agent that works on this knowledge base with OpenKnowledge tools. Schedules run only on devices where this plugin is on. Agents can also run them with the workflow tool, and scripts with POST /api/workflows/run."
+msgstr ""
 
 msgid "Each pack scaffolds your project with ready-made folders and templates."
 msgstr "हर पैक आपके प्रोजेक्ट को तैयार फ़ोल्डर और टेम्पलेट के साथ ढाँचा देता है।"
@@ -4154,6 +4178,9 @@ msgstr "स्वचालित (केवल खींचें) चालू 
 msgid "Enable indexes"
 msgstr "अनुक्रमणिका सक्षम करें"
 
+msgid "Enable Langfuse"
+msgstr ""
+
 msgid "Enable Open Knowledge tools for {0}?"
 msgstr "{0} के लिए Open Knowledge टूल सक्षम करें?"
 
@@ -4177,6 +4204,9 @@ msgstr "इस प्रोजेक्ट के लिए टर्मिन�
 
 msgid "Enable Themes"
 msgstr "थीम सक्षम करें"
+
+msgid "Enable Workflows"
+msgstr ""
 
 msgid "Enabling index generation"
 msgstr "सूचकांक निर्माण सक्षम करना"
@@ -4395,6 +4425,9 @@ msgstr "विफल"
 msgid "Failed"
 msgstr "विफल"
 
+msgid "Failed {when}: {0}"
+msgstr ""
+
 msgid "Failed to add item"
 msgstr "आइटम जोड़ने में विफल"
 
@@ -4575,6 +4608,9 @@ msgstr "क्रम बदलने में विफल"
 msgid "Failed to save content rules — {0}"
 msgstr "सामग्री नियम सहेजने में विफल — {0}"
 
+msgid "Failed to save Langfuse setting"
+msgstr ""
+
 msgid "Failed to save Slidev setting"
 msgstr "Slidev सेटिंग सहेजी नहीं जा सकी"
 
@@ -4583,6 +4619,9 @@ msgstr "स्कीमा फ़ील्ड सहेजने में व�
 
 msgid "Failed to save theme setting"
 msgstr "थीम सेटिंग सहेजने में विफल"
+
+msgid "Failed to save Workflows setting"
+msgstr ""
 
 msgid "Failed to start sign-in — try again"
 msgstr "साइन-इन शुरू करने में विफल — फिर कोशिश करें"
@@ -4842,6 +4881,9 @@ msgstr "एजेंट के संपादन का अनुसरण क�
 
 msgid "Footnote"
 msgstr "फ़ुटनोट"
+
+msgid "For example https://cloud.langfuse.com, https://us.cloud.langfuse.com, or your self-hosted URL. Leave empty to use LANGFUSE_BASE_URL, then Langfuse Cloud (EU)."
+msgstr ""
 
 msgid "Force Reload"
 msgstr "बलपूर्वक फिर से लोड करें"
@@ -5853,6 +5895,12 @@ msgstr "लेबल <0>(वैकल्पिक प्रदर्शित �
 msgid "Label <0>(visible link text)</0>"
 msgstr "लेबल <0>(दिखाई देने वाला लिंक पाठ)</0>"
 
+msgid "Langfuse"
+msgstr ""
+
+msgid "Langfuse host"
+msgstr ""
+
 msgid "Language"
 msgstr "भाषा"
 
@@ -6207,6 +6255,9 @@ msgstr "इस बिल्ड में एजेंट कनेक्शन �
 
 msgid "Manual"
 msgstr "मैन्युअल"
+
+msgid "Manual only"
+msgstr ""
 
 msgid "Map the architecture"
 msgstr "संरचना का नक्शा बनाएँ"
@@ -6613,6 +6664,9 @@ msgstr "सफ़ाई के दौरान नेटवर्क त्र�
 
 msgid "Network settings not yet loaded. Try again in a moment."
 msgstr "नेटवर्क सेटिंग्स अभी लोड नहीं हुई हैं। कुछ ही देर में फिर से प्रयास करें।"
+
+msgid "Never run"
+msgstr ""
 
 msgid "New"
 msgstr "नया"
@@ -7037,6 +7091,9 @@ msgstr "कोई टेम्पलेट नहीं मिला।"
 msgid "No templates yet. Add one to give new docs in this folder a ready-made starting point."
 msgstr "अभी कोई टेम्पलेट नहीं। इस फ़ोल्डर के नए दस्तावेज़ों को एक तैयार शुरुआती बिंदु देने के लिए एक जोड़ें।"
 
+msgid "No workflows yet. Create <0>.ok/workflows/weekly-digest.yml</0>, for example:"
+msgstr ""
+
 msgid "No workspace"
 msgstr "कोई कार्यक्षेत्र नहीं"
 
@@ -7063,6 +7120,9 @@ msgstr "अभी तक किसी AI टूल में नहीं जो
 
 msgid "Not answered"
 msgstr "उत्तर नहीं दिया गया"
+
+msgid "Not approved on this device. Read the file first: once approved it runs with your model key and can use these tools: {tools}. Editing the file needs approval again."
+msgstr ""
 
 msgid "Not attached to desktop bridge"
 msgstr "डेस्कटॉप ब्रिज से नहीं जुड़ा है"
@@ -7116,6 +7176,9 @@ msgstr "<0>{endpointHost}</0> जैसे लूपबैक एंडपॉइ
 
 msgid "Not running"
 msgstr "नहीं चल रहा"
+
+msgid "Not sending traces yet. Missing: {missing}."
+msgstr ""
 
 msgid "Not sent"
 msgstr "भेजा नहीं गया"
@@ -8233,6 +8296,9 @@ msgstr "अस्थायी"
 msgid "Public"
 msgstr "सार्वजनिक"
 
+msgid "Public key"
+msgstr ""
+
 msgid "Public repository"
 msgstr "सार्वजनिक रिपॉज़िटरी"
 
@@ -8415,6 +8481,9 @@ msgstr "जल्दी शुरू करने के लिए तैया�
 
 msgid "Ready-made folders and templates to get you started quickly. Select a pack to preview what gets created, then add it to your project."
 msgstr "जल्दी शुरू करने के लिए तैयार फ़ोल्डर और टेम्पलेट। क्या बनेगा इसका पूर्वावलोकन देखने के लिए कोई पैक चुनें, फिर उसे अपने प्रोजेक्ट में जोड़ें।"
+
+msgid "Ready. Workflow runs are sent to {0}."
+msgstr ""
 
 msgid "Reason: {reason}"
 msgstr "कारण: {reason}"
@@ -9045,11 +9114,20 @@ msgstr "OpenKnowledge के भीतर जुड़ा एक असली �
 msgid "Run in terminal"
 msgstr "टर्मिनल में चलाएँ"
 
+msgid "Run LangGraph agents from .ok/workflows on a schedule or on demand, on this device only. Needs a model API key in the server's environment. When on, it appears under Plugins in the sidebar."
+msgstr ""
+
+msgid "Run now"
+msgstr ""
+
 msgid "Run this in your terminal"
 msgstr "इसे अपने टर्मिनल में चलाएँ"
 
 msgid "running"
 msgstr "चल रहा है"
+
+msgid "Running"
+msgstr ""
 
 msgid "Running project audit"
 msgstr "प्रोजेक्ट ऑडिट चलाया जा रहा है"
@@ -9119,6 +9197,9 @@ msgstr "बदलाव सहेजे जा रहे हैं…"
 
 msgid "Saving your edits before reloading…"
 msgstr "फिर से लोड करने से पहले आपके संपादन सहेजे जा रहे हैं…"
+
+msgid "Schedule {schedule} · next {0}"
+msgstr ""
 
 msgid "schema {deleteTarget}"
 msgstr "स्कीमा {deleteTarget}"
@@ -9401,6 +9482,9 @@ msgstr "चैट में भेजें ({0})"
 
 msgid "Send when the agent is free"
 msgstr "एजेंट के खाली होने पर भेजें"
+
+msgid "Send workflow traces — model calls, tool calls, timings and token use — to Langfuse. When on, it appears under Plugins in the sidebar."
+msgstr ""
 
 msgid "Send your report by email"
 msgstr "अपनी रिपोर्ट ईमेल से भेजें"
@@ -10054,6 +10138,9 @@ msgstr "स्रोत पूर्णता शुरू करें"
 msgid "Start writing to create this page"
 msgstr "यह पेज बनाने के लिए लिखना शुरू करें"
 
+msgid "Started {0}"
+msgstr ""
+
 msgid "Starter content"
 msgstr "शुरुआती सामग्री"
 
@@ -10164,6 +10251,9 @@ msgstr "सदस्यता ली जा रही है…"
 
 msgid "Subscriptions aren't available right now."
 msgstr "सदस्यता अभी उपलब्ध नहीं है।"
+
+msgid "Succeeded {when}"
+msgstr ""
 
 msgid "Suggestion menu navigation"
 msgstr "सुझाव मेन्यू नेविगेशन"
@@ -10715,6 +10805,9 @@ msgstr "Open Knowledge टूल सक्षम करने के अनु�
 
 msgid "The schema file does not exist or failed to load — adding a field creates it."
 msgstr "स्कीमा फ़ाइल मौजूद नहीं है या लोड नहीं हो सकी — कोई फ़ील्ड जोड़ने पर वह बन जाती है।"
+
+msgid "The secret key is never stored in settings. Set <0>LANGFUSE_SECRET_KEY</0> in the environment that starts the OpenKnowledge server, then restart it."
+msgstr ""
 
 msgid "The server couldn't read this project's sync status, so sync options are hidden. They appear here as soon as the sync status loads; closing and reopening Settings also retries."
 msgstr "सर्वर इस प्रोजेक्ट की सिंक स्थिति नहीं पढ़ सका, इसलिए सिंक विकल्प छिपा दिए गए हैं। सिंक स्थिति लोड होते ही वे यहाँ दिखेंगे; सेटिंग बंद करके दोबारा खोलने से भी फिर से कोशिश होती है।"
@@ -11391,6 +11484,9 @@ msgstr "सबसे ज़्यादा लिंक किए गए पे�
 msgid "total"
 msgstr "कुल"
 
+msgid "Trace every workflow run — model calls, tool calls, token use and timings — in Langfuse."
+msgstr ""
+
 msgid "Tracked in git — updates flow through your repo (pull or CI), not auto-update"
 msgstr "git में ट्रैक किया गया — अपडेट आपकी रिपॉज़िटरी के ज़रिए आते हैं (pull या CI), स्वत: अपडेट से नहीं"
 
@@ -12021,6 +12117,9 @@ msgstr "कहाँ"
 msgid "Where should it live?"
 msgstr "यह कहाँ रहना चाहिए?"
 
+msgid "Where to find your Langfuse keys"
+msgstr ""
+
 msgid "Which skill"
 msgstr "कौन सी स्किल"
 
@@ -12074,6 +12173,9 @@ msgstr "सीधे काम करें, कोई योजना चरण
 
 msgid "Work through these comments"
 msgstr "इन टिप्पणियों पर काम करें"
+
+msgid "Workflows"
+msgstr ""
 
 msgid "Working"
 msgstr "काम चल रहा है"
@@ -12253,6 +12355,9 @@ msgstr "ब्रांच <0>{branch}</0> की आपकी स्थान�
 
 msgid "Your message didn't reach {agentName}."
 msgstr "आपका संदेश {agentName} तक नहीं पहुँचा।"
+
+msgid "Your project's public key (pk-lf-…). Leave empty to use LANGFUSE_PUBLIC_KEY."
+msgstr ""
 
 msgid "Your remote URL names {declaredLogin}, but that account's credentials couldn't be used."
 msgstr "आपके रिमोट URL में {declaredLogin} नाम दिया गया है, लेकिन उस खाते के क्रेडेंशियल इस्तेमाल नहीं किए जा सके।"

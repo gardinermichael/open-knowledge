@@ -16,6 +16,7 @@ import {
   isProjectRoot,
   MCP_SERVER_NAME,
   RUNTIME_VERSION,
+  readWorkflowsPluginEnabled,
   registerAllTools,
   resolveContentDir,
   sanitizeClientName,
@@ -267,6 +268,7 @@ export async function startGlobalMcpServer(
     config: resolveConfigForCwd,
     identityRef,
     isHostedAgent: resolveIsHostedAgent(process.env),
+    workflowsEnabled: readWorkflowsPluginEnabled(process.cwd()),
   });
 
   installJsonSchemaDialect(server);

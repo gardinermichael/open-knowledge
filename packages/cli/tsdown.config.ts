@@ -25,6 +25,7 @@ const nativeAddonNeverBundle = [
 // packages/cli/package.json `dependencies` (tsdown-bundle-coverage.test.ts
 // enforces).
 const alwaysBundlePureJsDeps = [
+  /^@cfworker\/json-schema(\/|$)/,
   /^@inquirer\/checkbox(\/|$)/,
   /^@inquirer\/password(\/|$)/,
   /^@inquirer\/select(\/|$)/,

@@ -83,6 +83,7 @@ import { installPackSkill } from '@/lib/skills-api';
 import { countMatchingDocs } from './applies-to-folder-globs';
 import { AppliesToFolderPicker } from './applies-to-folder-picker';
 import { indexGlobProblemsByFile, parseAppliesToGlobProblem } from './applies-to-glob-problems';
+import { ExtensionPluginToggles } from './ExtensionPluginToggles';
 import { LINT_PLUGIN_META } from './lint-plugin-meta';
 import { MarkdownlintRuleBrowser } from './markdownlint-rule-browser';
 import { PluginBetaBadge } from './PluginBetaBadge';
@@ -292,6 +293,7 @@ export function UserPluginsManageSection({ userBinding }: { userBinding: ConfigB
             data-testid="settings-plugin-toggle-slides"
           />
         </div>
+        <ExtensionPluginToggles userBinding={userBinding} />
       </div>
     </section>
   );

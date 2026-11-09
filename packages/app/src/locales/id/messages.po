@@ -1591,6 +1591,9 @@ msgstr "Disetujui"
 msgid "Approved — {optionName}"
 msgstr "Disetujui — {optionName}"
 
+msgid "Approved {0}"
+msgstr ""
+
 msgid "Approved and ready to merge"
 msgstr "Disetujui dan siap di-merge"
 
@@ -2820,6 +2823,9 @@ msgstr "Tidak dapat mengakses kunci API yang disimpan. Periksa file kredensial l
 msgid "Could not access the saved API key. Unlock your system credential store or check the local credential files, then try again."
 msgstr "Tidak dapat mengakses kunci API yang disimpan. Buka kunci penyimpanan kredensial sistem atau periksa file kredensial lokal, lalu coba lagi."
 
+msgid "Could not approve {0}"
+msgstr ""
+
 msgid "Could not check the symlinks in {shareBranch}, so it was not switched. Try again; if it keeps failing, check that Git is installed and the project folder is readable."
 msgstr "Tidak dapat memeriksa symlink di {shareBranch}, jadi tidak beralih. Coba lagi; jika terus gagal, pastikan Git terpasang dan folder proyek dapat dibaca."
 
@@ -2874,6 +2880,9 @@ msgstr "Templat tidak dapat dimuat: {templatesError}. Anda tetap bisa membuat ca
 msgid "Could not load templates. Try again later."
 msgstr "Templat tidak dapat dimuat. Coba lagi nanti."
 
+msgid "Could not load workflows: {error}"
+msgstr ""
+
 msgid "Could not move \"{targetName}\" to the {trashNoun}. Do you want to permanently delete instead?"
 msgstr "Tidak dapat memindahkan \\\"{targetName}\\\" ke {trashNoun}. Apakah Anda ingin menghapus permanen saja?"
 
@@ -2898,8 +2907,14 @@ msgstr "Server tidak dapat dihubungi"
 msgid "Could not read branch state for this project. Close this dialog and open the share link again."
 msgstr "Keadaan cabang untuk proyek ini tidak dapat dibaca. Tutup dialog ini dan buka lagi tautan berbaginya."
 
+msgid "Could not read the tracing status from the server."
+msgstr ""
+
 msgid "Could not save sync preference: {detail}"
 msgstr "Preferensi sinkronisasi tidak dapat disimpan: {detail}"
+
+msgid "Could not start {0}"
+msgstr ""
 
 msgid "Could not start creating a new item"
 msgstr "Pembuatan item baru tidak dapat dimulai"
@@ -3722,6 +3737,9 @@ msgstr "Nonaktifkan {file}"
 msgid "Disable {id}"
 msgstr "Nonaktifkan {id}"
 
+msgid "Disable Langfuse"
+msgstr ""
+
 msgid "Disable semantic search"
 msgstr "Nonaktifkan pencarian semantik"
 
@@ -3733,6 +3751,9 @@ msgstr "Nonaktifkan pemeriksa ejaan"
 
 msgid "Disable Themes"
 msgstr "Nonaktifkan Tema"
+
+msgid "Disable Workflows"
+msgstr ""
 
 msgid "Disambiguates similarly-named templates in the menu."
 msgstr "Membedakan templat yang namanya mirip di menu."
@@ -3930,6 +3951,9 @@ msgstr "Setiap {open} perlu {close} pasangannya."
 #. Says what symlinking two skill folders together buys the user, before any button names it
 msgid "Each AI tool reads skills from its own folder. Point one folder at another and both tools see the same skills — add a skill once instead of copying it into every tool."
 msgstr "Setiap alat AI membaca keterampilan dari foldernya sendiri. Arahkan satu folder ke folder lain dan kedua alat akan melihat keterampilan yang sama — tambahkan keterampilan sekali saja alih-alih menyalinnya ke setiap alat."
+
+msgid "Each file in <0>.ok/workflows/</0> is a LangGraph agent that works on this knowledge base with OpenKnowledge tools. Schedules run only on devices where this plugin is on. Agents can also run them with the workflow tool, and scripts with POST /api/workflows/run."
+msgstr ""
 
 msgid "Each pack scaffolds your project with ready-made folders and templates."
 msgstr "Setiap paket menyusun proyek Anda dengan folder dan templat siap pakai."
@@ -4154,6 +4178,9 @@ msgstr "Aktifkan Otomatis (hanya Pull)?"
 msgid "Enable indexes"
 msgstr "Aktifkan indeks"
 
+msgid "Enable Langfuse"
+msgstr ""
+
 msgid "Enable Open Knowledge tools for {0}?"
 msgstr "Aktifkan alat Open Knowledge untuk {0}?"
 
@@ -4177,6 +4204,9 @@ msgstr "Aktifkan terminal untuk proyek ini"
 
 msgid "Enable Themes"
 msgstr "Aktifkan Tema"
+
+msgid "Enable Workflows"
+msgstr ""
 
 msgid "Enabling index generation"
 msgstr "Mengaktifkan pembuatan indeks"
@@ -4395,6 +4425,9 @@ msgstr "gagal"
 msgid "Failed"
 msgstr "Gagal"
 
+msgid "Failed {when}: {0}"
+msgstr ""
+
 msgid "Failed to add item"
 msgstr "Gagal menambahkan item"
 
@@ -4575,6 +4608,9 @@ msgstr "Gagal menata ulang"
 msgid "Failed to save content rules — {0}"
 msgstr "Gagal menyimpan aturan konten — {0}"
 
+msgid "Failed to save Langfuse setting"
+msgstr ""
+
 msgid "Failed to save Slidev setting"
 msgstr "Gagal menyimpan pengaturan Slidev"
 
@@ -4583,6 +4619,9 @@ msgstr "Gagal menyimpan bidang skema"
 
 msgid "Failed to save theme setting"
 msgstr "Gagal menyimpan pengaturan tema"
+
+msgid "Failed to save Workflows setting"
+msgstr ""
 
 msgid "Failed to start sign-in — try again"
 msgstr "Gagal memulai proses masuk — coba lagi"
@@ -4842,6 +4881,9 @@ msgstr "Mengikuti suntingan agen"
 
 msgid "Footnote"
 msgstr "Catatan kaki"
+
+msgid "For example https://cloud.langfuse.com, https://us.cloud.langfuse.com, or your self-hosted URL. Leave empty to use LANGFUSE_BASE_URL, then Langfuse Cloud (EU)."
+msgstr ""
 
 msgid "Force Reload"
 msgstr "Muat Ulang Paksa"
@@ -5853,6 +5895,12 @@ msgstr "Label <0>(teks tampilan opsional)</0>"
 msgid "Label <0>(visible link text)</0>"
 msgstr "Label <0>(teks tautan yang terlihat)</0>"
 
+msgid "Langfuse"
+msgstr ""
+
+msgid "Langfuse host"
+msgstr ""
+
 msgid "Language"
 msgstr "Bahasa"
 
@@ -6207,6 +6255,9 @@ msgstr "Pengelolaan koneksi agen tidak tersedia di build ini."
 
 msgid "Manual"
 msgstr "Manual"
+
+msgid "Manual only"
+msgstr ""
 
 msgid "Map the architecture"
 msgstr "Petakan arsitekturnya"
@@ -6613,6 +6664,9 @@ msgstr "Galat jaringan saat pembersihan"
 
 msgid "Network settings not yet loaded. Try again in a moment."
 msgstr "Pengaturan jaringan belum dimuat. Coba lagi sebentar."
+
+msgid "Never run"
+msgstr ""
 
 msgid "New"
 msgstr "Baru"
@@ -7037,6 +7091,9 @@ msgstr "Tidak ada templat yang ditemukan."
 msgid "No templates yet. Add one to give new docs in this folder a ready-made starting point."
 msgstr "Belum ada templat. Tambahkan satu agar dokumen baru di folder ini punya titik awal yang siap pakai."
 
+msgid "No workflows yet. Create <0>.ok/workflows/weekly-digest.yml</0>, for example:"
+msgstr ""
+
 msgid "No workspace"
 msgstr "Tanpa ruang kerja"
 
@@ -7063,6 +7120,9 @@ msgstr "Belum ditambahkan ke alat AI mana pun."
 
 msgid "Not answered"
 msgstr "Belum dijawab"
+
+msgid "Not approved on this device. Read the file first: once approved it runs with your model key and can use these tools: {tools}. Editing the file needs approval again."
+msgstr ""
 
 msgid "Not attached to desktop bridge"
 msgstr "Tidak terhubung ke bridge desktop"
@@ -7116,6 +7176,9 @@ msgstr "Tidak diperlukan untuk endpoint loopback seperti <0>{endpointHost}</0> �
 
 msgid "Not running"
 msgstr "Tidak berjalan"
+
+msgid "Not sending traces yet. Missing: {missing}."
+msgstr ""
 
 msgid "Not sent"
 msgstr "Belum terkirim"
@@ -8233,6 +8296,9 @@ msgstr "sementara"
 msgid "Public"
 msgstr "Publik"
 
+msgid "Public key"
+msgstr ""
+
 msgid "Public repository"
 msgstr "Repositori publik"
 
@@ -8415,6 +8481,9 @@ msgstr "Folder dan templat siap pakai agar Anda cepat memulai."
 
 msgid "Ready-made folders and templates to get you started quickly. Select a pack to preview what gets created, then add it to your project."
 msgstr "Folder dan templat siap pakai agar Anda cepat memulai. Pilih sebuah paket untuk melihat apa yang akan dibuat, lalu tambahkan ke proyek Anda."
+
+msgid "Ready. Workflow runs are sent to {0}."
+msgstr ""
 
 msgid "Reason: {reason}"
 msgstr "Alasan: {reason}"
@@ -9045,11 +9114,20 @@ msgstr "Jalankan terminal sungguhan yang tertambat di dalam OpenKnowledge, dimul
 msgid "Run in terminal"
 msgstr "Jalankan di terminal"
 
+msgid "Run LangGraph agents from .ok/workflows on a schedule or on demand, on this device only. Needs a model API key in the server's environment. When on, it appears under Plugins in the sidebar."
+msgstr ""
+
+msgid "Run now"
+msgstr ""
+
 msgid "Run this in your terminal"
 msgstr "Jalankan ini di terminal Anda"
 
 msgid "running"
 msgstr "berjalan"
+
+msgid "Running"
+msgstr ""
 
 msgid "Running project audit"
 msgstr "Menjalankan audit proyek"
@@ -9119,6 +9197,9 @@ msgstr "Menyimpan perubahan…"
 
 msgid "Saving your edits before reloading…"
 msgstr "Menyimpan suntingan Anda sebelum memuat ulang…"
+
+msgid "Schedule {schedule} · next {0}"
+msgstr ""
 
 msgid "schema {deleteTarget}"
 msgstr "skema {deleteTarget}"
@@ -9401,6 +9482,9 @@ msgstr "Kirim ke obrolan ({0})"
 
 msgid "Send when the agent is free"
 msgstr "Kirim saat agen sedang senggang"
+
+msgid "Send workflow traces — model calls, tool calls, timings and token use — to Langfuse. When on, it appears under Plugins in the sidebar."
+msgstr ""
 
 msgid "Send your report by email"
 msgstr "Kirim laporan Anda lewat surel"
@@ -10054,6 +10138,9 @@ msgstr "Mulai pelengkapan sumber"
 msgid "Start writing to create this page"
 msgstr "Mulai menulis untuk membuat halaman ini"
 
+msgid "Started {0}"
+msgstr ""
+
 msgid "Starter content"
 msgstr "Isi awal"
 
@@ -10164,6 +10251,9 @@ msgstr "Berlangganan..."
 
 msgid "Subscriptions aren't available right now."
 msgstr "Langganan tidak tersedia saat ini."
+
+msgid "Succeeded {when}"
+msgstr ""
 
 msgid "Suggestion menu navigation"
 msgstr "Navigasi menu saran"
@@ -10715,6 +10805,9 @@ msgstr "Permintaan untuk mengaktifkan alat Open Knowledge kedaluwarsa. Utas ini 
 
 msgid "The schema file does not exist or failed to load — adding a field creates it."
 msgstr "Berkas skemanya tidak ada atau gagal dimuat — menambahkan sebuah bidang akan membuatnya."
+
+msgid "The secret key is never stored in settings. Set <0>LANGFUSE_SECRET_KEY</0> in the environment that starts the OpenKnowledge server, then restart it."
+msgstr ""
 
 msgid "The server couldn't read this project's sync status, so sync options are hidden. They appear here as soon as the sync status loads; closing and reopening Settings also retries."
 msgstr "Server tidak dapat membaca status sinkronisasi proyek ini, jadi opsi sinkronisasi disembunyikan. Opsi akan muncul di sini begitu status sinkronisasi dimuat; menutup lalu membuka kembali Pengaturan juga akan mencoba lagi."
@@ -11391,6 +11484,9 @@ msgstr "Halaman paling banyak ditaut"
 msgid "total"
 msgstr "total"
 
+msgid "Trace every workflow run — model calls, tool calls, token use and timings — in Langfuse."
+msgstr ""
+
 msgid "Tracked in git — updates flow through your repo (pull or CI), not auto-update"
 msgstr "Dilacak di git — pembaruan mengalir lewat repo Anda (pull atau CI), bukan pembaruan otomatis"
 
@@ -12021,6 +12117,9 @@ msgstr "Di mana"
 msgid "Where should it live?"
 msgstr "Di mana ia sebaiknya berada?"
 
+msgid "Where to find your Langfuse keys"
+msgstr ""
+
 msgid "Which skill"
 msgstr "Keterampilan yang mana"
 
@@ -12074,6 +12173,9 @@ msgstr "Bekerja langsung, tanpa tahap perencanaan"
 
 msgid "Work through these comments"
 msgstr "Kerjakan komentar-komentar ini"
+
+msgid "Workflows"
+msgstr ""
 
 msgid "Working"
 msgstr "Bekerja"
@@ -12253,6 +12355,9 @@ msgstr "Salinan lokal cabang <0>{branch}</0> milik Anda tertinggal. Tarik peruba
 
 msgid "Your message didn't reach {agentName}."
 msgstr "Pesanmu tidak sampai ke {agentName}."
+
+msgid "Your project's public key (pk-lf-…). Leave empty to use LANGFUSE_PUBLIC_KEY."
+msgstr ""
 
 msgid "Your remote URL names {declaredLogin}, but that account's credentials couldn't be used."
 msgstr "URL remote Anda menyebut {declaredLogin}, tetapi kredensial akun itu tidak dapat digunakan."

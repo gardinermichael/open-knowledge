@@ -62,6 +62,14 @@ const SyncSection = lazySection(async () => (await import('./SyncSection')).Sync
 const TerminalSection = lazySection(
   async () => (await import('./TerminalSection')).TerminalSection,
 );
+const WorkflowsPluginSection = lazySection(
+  async () => (await import('./WorkflowsPluginSection')).WorkflowsPluginSection,
+);
+
+const LangfusePluginSection = lazySection(
+  async () => (await import('./LangfusePluginSection')).LangfusePluginSection,
+);
+
 const ThemePluginSection = lazySection(
   async () => (await import('./ThemePluginSection')).ThemePluginSection,
 );
@@ -234,6 +242,16 @@ export function SettingsDialogBody({
   }
   if (activeId === 'plugin:slides') {
     return <SlidesPluginSection />;
+  }
+  if (activeId === 'plugin:workflows') {
+    return <WorkflowsPluginSection />;
+  }
+  if (activeId === 'plugin:langfuse') {
+    return userBinding ? (
+      <LangfusePluginSection userBinding={userBinding} />
+    ) : (
+      <UserConfigPending loadFailed={userLoadFailed} />
+    );
   }
   if (activeId === 'plugin:markdownlint') {
     return <MarkdownlintPluginSection initialRuleQuery={markdownlintRuleQuery ?? null} />;

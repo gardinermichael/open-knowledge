@@ -40,7 +40,7 @@ import {
 } from './terminal-launch.ts';
 
 const OK_ALLOW = `["mcp__${MCP_SERVER_NAME}","Bash(ok open:*)"]`;
-const OK_ASK = `["mcp__${MCP_SERVER_NAME}__delete","mcp__${MCP_SERVER_NAME}__move","mcp__${MCP_SERVER_NAME}__share_link","mcp__${MCP_SERVER_NAME}__install","mcp__${MCP_SERVER_NAME}__import"]`;
+const OK_ASK = `["mcp__${MCP_SERVER_NAME}__delete","mcp__${MCP_SERVER_NAME}__move","mcp__${MCP_SERVER_NAME}__share_link","mcp__${MCP_SERVER_NAME}__install","mcp__${MCP_SERVER_NAME}__import","mcp__${MCP_SERVER_NAME}__workflow"]`;
 const CLAUDE_PREAPPROVE_JSON = `{"enabledMcpjsonServers":["${MCP_SERVER_NAME}"]}`;
 const CLAUDE_AUTO_APPROVE_JSON = `{"permissions":{"allow":${OK_ALLOW},"ask":${OK_ASK}}}`;
 const CLAUDE_BOTH_JSON = `{"enabledMcpjsonServers":["${MCP_SERVER_NAME}"],"permissions":{"allow":${OK_ALLOW},"ask":${OK_ASK}}}`;
@@ -1217,7 +1217,14 @@ describe('OK auto-approve (autoApproveOkTools)', () => {
 
   it('keeps every gated tool in the ask list (never silently auto-approved)', () => {
     const settings = buildPosixCliLaunch('claude', 'hi', AUTO).args[1];
-    expect(OK_GATED_TOOL_NAMES).toEqual(['delete', 'move', 'share_link', 'install', 'import']);
+    expect(OK_GATED_TOOL_NAMES).toEqual([
+      'delete',
+      'move',
+      'share_link',
+      'install',
+      'import',
+      'workflow',
+    ]);
     for (const gated of OK_GATED_TOOL_NAMES) {
       expect(settings).toContain(`"mcp__${MCP_SERVER_NAME}__${gated}"`);
     }
@@ -1266,7 +1273,7 @@ describe('launch approval names the server the main process checked', () => {
     try {
       const out = artifacts({ ...ALL_ON, mcpServerName: BETA, cliCommandName: 'ok-beta' });
       expect(out[0]).toBe(
-        `--settings {"enabledMcpjsonServers":["${BETA}"],"permissions":{"allow":["mcp__${BETA}","Bash(ok-beta open:*)"],"ask":["mcp__${BETA}__delete","mcp__${BETA}__move","mcp__${BETA}__share_link","mcp__${BETA}__install","mcp__${BETA}__import"]}} hi`,
+        `--settings {"enabledMcpjsonServers":["${BETA}"],"permissions":{"allow":["mcp__${BETA}","Bash(ok-beta open:*)"],"ask":["mcp__${BETA}__delete","mcp__${BETA}__move","mcp__${BETA}__share_link","mcp__${BETA}__install","mcp__${BETA}__import","mcp__${BETA}__workflow"]}} hi`,
       );
       expect(out[1]).toBe(`-c mcp_servers.${BETA}.default_tools_approval_mode="approve" hi`);
       expect(out[2]).toContain(`["${BETA}"]`);
@@ -1307,7 +1314,7 @@ describe('launch approval names the server the main process checked', () => {
   it('keeps the Stable artifacts byte-identical when main supplies the Stable names', () => {
     const out = artifacts({ ...ALL_ON, mcpServerName: 'open-knowledge', cliCommandName: 'ok' });
     expect(out[0]).toBe(
-      `--settings {"enabledMcpjsonServers":["open-knowledge"],"permissions":{"allow":["mcp__open-knowledge","Bash(ok open:*)"],"ask":["mcp__open-knowledge__delete","mcp__open-knowledge__move","mcp__open-knowledge__share_link","mcp__open-knowledge__install","mcp__open-knowledge__import"]}} hi`,
+      `--settings {"enabledMcpjsonServers":["open-knowledge"],"permissions":{"allow":["mcp__open-knowledge","Bash(ok open:*)"],"ask":["mcp__open-knowledge__delete","mcp__open-knowledge__move","mcp__open-knowledge__share_link","mcp__open-knowledge__install","mcp__open-knowledge__import","mcp__open-knowledge__workflow"]}} hi`,
     );
     expect(out[1]).toBe(`-c mcp_servers.open-knowledge.default_tools_approval_mode="approve" hi`);
     expect(out[3]).toBe('-c mcp_servers.open-knowledge.default_tools_approval_mode=approve');

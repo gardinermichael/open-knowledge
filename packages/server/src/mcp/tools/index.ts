@@ -22,6 +22,7 @@ import { register as registerSearch } from './search.ts';
 import { register as registerShareLink } from './share-link.ts';
 import type { ConfigOrResolver, ServerInstance, ServerUrlOrResolver } from './shared.ts';
 import { register as registerSkills } from './skills.ts';
+import { register as registerWorkflow } from './workflow.ts';
 import { register as registerWrite } from './write.ts';
 
 type ResolveCwd = (explicit?: string) => Promise<string>;
@@ -34,6 +35,7 @@ interface RegisterAllToolsOptions {
   identityRef?: { current: AgentIdentity };
   logger?: McpLogger;
   isHostedAgent?: boolean;
+  workflowsEnabled?: boolean;
 }
 
 export function registerAllTools(server: ServerInstance, opts: RegisterAllToolsOptions): void {
@@ -176,4 +178,12 @@ export function registerAllTools(server: ServerInstance, opts: RegisterAllToolsO
     config: opts.config,
     resolveCwd: named('share_link'),
   });
+
+  if (opts.workflowsEnabled === true) {
+    registerWorkflow(registrationServer, {
+      serverUrl: opts.serverUrl,
+      config: opts.config,
+      resolveCwd: named('workflow'),
+    });
+  }
 }

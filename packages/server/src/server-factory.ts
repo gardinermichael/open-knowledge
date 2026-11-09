@@ -382,6 +382,7 @@ import {
 } from './vanished-documents.ts';
 import { type WatcherClock, type WatcherTimer, watcherClock } from './watcher-clock.ts';
 import { FRESHNESS_BASE_INTERVAL_MS } from './watcher-freshness.ts';
+import { createWorkflowService, type WorkflowService } from './workflows/index.ts';
 
 export interface ServerOptions {
   acpRegistryFetchImpl?: typeof fetch;
@@ -481,6 +482,7 @@ export interface ServerInstance {
   readonly resolveTrackedFile: (relativePath: string) => string | undefined;
   readonly acpRegistry: AcpRegistry;
   readonly acpPermissions: AcpPermissionStore;
+  readonly workflowService: WorkflowService | null;
   readonly recheckDisk: () => Promise<RecheckResult>;
 }
 
@@ -1170,6 +1172,14 @@ export function createServer(options: ServerOptions): ServerInstance {
     fetchImpl: options.acpRegistryFetchImpl,
   });
   const acpPermissions = new AcpPermissionStore(lockDir, getLogger('acp-permissions'));
+  const workflowService = options.ephemeral
+    ? null
+    : createWorkflowService({
+        projectDir,
+        localDir: lockDir,
+        configHomedirOverride,
+        log: getLogger('workflows'),
+      });
 
   let authority: ReturnType<typeof acquireServerAuthority>;
   try {
@@ -2772,6 +2782,7 @@ export function createServer(options: ServerOptions): ServerInstance {
       conflicts,
       setBatchInProgress: batchFlagFor('conflict-resolve'),
       refreshDocumentsFromDisk,
+      getWorkflowService: () => workflowService,
       localOpCliArgs,
       authStreamHeartbeatMs,
       projectDir,
@@ -6273,6 +6284,7 @@ export function createServer(options: ServerOptions): ServerInstance {
     resolveTrackedFile,
     acpRegistry,
     acpPermissions,
+    workflowService,
     recheckDisk: () => {
       if (!watcher) {
         return Promise.reject(

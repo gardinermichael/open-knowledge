@@ -276,6 +276,7 @@ export const OK_GATED_TOOL_NAMES = [
   'share_link',
   'install',
   'import',
+  'workflow',
 ] as const satisfies ReadonlyArray<OpenKnowledgeMcpTool>;
 
 function approvedServerName(opts: BuildCliLaunchOptions): string | null {

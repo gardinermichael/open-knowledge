@@ -1595,6 +1595,9 @@ msgstr "Aprobado"
 msgid "Approved — {optionName}"
 msgstr "Aprobado — {optionName}"
 
+msgid "Approved {0}"
+msgstr ""
+
 msgid "Approved and ready to merge"
 msgstr "Aprobada y lista para fusionar"
 
@@ -2824,6 +2827,9 @@ msgstr "No se pudo acceder a la clave API guardada. Revisa los archivos de crede
 msgid "Could not access the saved API key. Unlock your system credential store or check the local credential files, then try again."
 msgstr "No se pudo acceder a la clave API guardada. Desbloquea el almacén de credenciales del sistema o revisa los archivos de credenciales locales y vuelve a intentarlo."
 
+msgid "Could not approve {0}"
+msgstr ""
+
 msgid "Could not check the symlinks in {shareBranch}, so it was not switched. Try again; if it keeps failing, check that Git is installed and the project folder is readable."
 msgstr "No se pudieron comprobar los enlaces simbólicos de {shareBranch}, así que no se cambió. Vuelve a intentarlo; si sigue fallando, comprueba que Git esté instalado y que la carpeta del proyecto se pueda leer."
 
@@ -2878,6 +2884,9 @@ msgstr "No se pudieron cargar las plantillas: {templatesError}. Aun así puedes 
 msgid "Could not load templates. Try again later."
 msgstr "No se pudieron cargar las plantillas. Inténtalo más tarde."
 
+msgid "Could not load workflows: {error}"
+msgstr ""
+
 msgid "Could not move \"{targetName}\" to the {trashNoun}. Do you want to permanently delete instead?"
 msgstr "No se pudo mover \\\"{targetName}\\\" a la {trashNoun}. ¿Quieres eliminarlo permanentemente?"
 
@@ -2902,8 +2911,14 @@ msgstr "No se pudo contactar con el servidor"
 msgid "Could not read branch state for this project. Close this dialog and open the share link again."
 msgstr "No se pudo leer el estado de las ramas de este proyecto. Cierra este diálogo y vuelve a abrir el enlace compartido."
 
+msgid "Could not read the tracing status from the server."
+msgstr ""
+
 msgid "Could not save sync preference: {detail}"
 msgstr "No se pudo guardar la preferencia de sincronización: {detail}"
+
+msgid "Could not start {0}"
+msgstr ""
 
 msgid "Could not start creating a new item"
 msgstr "No se pudo empezar a crear un elemento nuevo"
@@ -3726,6 +3741,9 @@ msgstr "Desactivar {file}"
 msgid "Disable {id}"
 msgstr "Deshabilitar {id}"
 
+msgid "Disable Langfuse"
+msgstr ""
+
 msgid "Disable semantic search"
 msgstr "Desactivar la búsqueda semántica"
 
@@ -3737,6 +3755,9 @@ msgstr "Desactivar la corrección ortográfica"
 
 msgid "Disable Themes"
 msgstr "Desactivar los temas"
+
+msgid "Disable Workflows"
+msgstr ""
 
 msgid "Disambiguates similarly-named templates in the menu."
 msgstr "Distingue entre plantillas de nombre parecido en el menú."
@@ -3934,6 +3955,9 @@ msgstr "Cada {open} necesita su {close} correspondiente."
 #. Says what symlinking two skill folders together buys the user, before any button names it
 msgid "Each AI tool reads skills from its own folder. Point one folder at another and both tools see the same skills — add a skill once instead of copying it into every tool."
 msgstr "Cada herramienta de IA lee las habilidades desde su propia carpeta. Apunta una carpeta a otra y ambas herramientas verán las mismas habilidades: añade una habilidad una sola vez en lugar de copiarla en cada herramienta."
+
+msgid "Each file in <0>.ok/workflows/</0> is a LangGraph agent that works on this knowledge base with OpenKnowledge tools. Schedules run only on devices where this plugin is on. Agents can also run them with the workflow tool, and scripts with POST /api/workflows/run."
+msgstr ""
 
 msgid "Each pack scaffolds your project with ready-made folders and templates."
 msgstr "Cada paquete prepara tu proyecto con carpetas y plantillas ya hechas."
@@ -4158,6 +4182,9 @@ msgstr "¿Activar Automático (solo Pull)?"
 msgid "Enable indexes"
 msgstr "Habilitar índices"
 
+msgid "Enable Langfuse"
+msgstr ""
+
 msgid "Enable Open Knowledge tools for {0}?"
 msgstr "¿Habilitar las herramientas de Open Knowledge para {0}?"
 
@@ -4181,6 +4208,9 @@ msgstr "Activar la terminal en este proyecto"
 
 msgid "Enable Themes"
 msgstr "Activar los temas"
+
+msgid "Enable Workflows"
+msgstr ""
 
 msgid "Enabling index generation"
 msgstr "Activando la generación de índices"
@@ -4399,6 +4429,9 @@ msgstr "falló"
 msgid "Failed"
 msgstr "Falló"
 
+msgid "Failed {when}: {0}"
+msgstr ""
+
 msgid "Failed to add item"
 msgstr "No se pudo añadir el elemento"
 
@@ -4579,6 +4612,9 @@ msgstr "No se pudo reordenar"
 msgid "Failed to save content rules — {0}"
 msgstr "No se pudieron guardar las reglas de contenido — {0}"
 
+msgid "Failed to save Langfuse setting"
+msgstr ""
+
 msgid "Failed to save Slidev setting"
 msgstr "No se pudo guardar la configuración de Slidev"
 
@@ -4587,6 +4623,9 @@ msgstr "No se pudo guardar el campo del esquema"
 
 msgid "Failed to save theme setting"
 msgstr "No se pudo guardar el ajuste de tema"
+
+msgid "Failed to save Workflows setting"
+msgstr ""
 
 msgid "Failed to start sign-in — try again"
 msgstr "No se pudo iniciar la sesión: inténtalo de nuevo"
@@ -4846,6 +4885,9 @@ msgstr "Siguiendo las ediciones del agente"
 
 msgid "Footnote"
 msgstr "Nota al pie"
+
+msgid "For example https://cloud.langfuse.com, https://us.cloud.langfuse.com, or your self-hosted URL. Leave empty to use LANGFUSE_BASE_URL, then Langfuse Cloud (EU)."
+msgstr ""
 
 msgid "Force Reload"
 msgstr "Recargar a la fuerza"
@@ -5857,6 +5899,12 @@ msgstr "Etiqueta <0>(texto mostrado, opcional)</0>"
 msgid "Label <0>(visible link text)</0>"
 msgstr "Etiqueta <0>(texto visible del enlace)</0>"
 
+msgid "Langfuse"
+msgstr ""
+
+msgid "Langfuse host"
+msgstr ""
+
 msgid "Language"
 msgstr "Idioma"
 
@@ -6211,6 +6259,9 @@ msgstr "La gestión de conexiones de agentes no está disponible en esta versió
 
 msgid "Manual"
 msgstr "Manual"
+
+msgid "Manual only"
+msgstr ""
 
 msgid "Map the architecture"
 msgstr "Trazar la arquitectura"
@@ -6617,6 +6668,9 @@ msgstr "Error de red durante la limpieza"
 
 msgid "Network settings not yet loaded. Try again in a moment."
 msgstr "La configuración de red aún no se ha cargado. Vuelve a intentarlo en un momento."
+
+msgid "Never run"
+msgstr ""
 
 msgid "New"
 msgstr "Nuevo"
@@ -7041,6 +7095,9 @@ msgstr "No se encontraron plantillas."
 msgid "No templates yet. Add one to give new docs in this folder a ready-made starting point."
 msgstr "Todavía no hay plantillas. Añade una para dar a los documentos nuevos de esta carpeta un punto de partida ya hecho."
 
+msgid "No workflows yet. Create <0>.ok/workflows/weekly-digest.yml</0>, for example:"
+msgstr ""
+
 msgid "No workspace"
 msgstr "Sin espacio de trabajo"
 
@@ -7067,6 +7124,9 @@ msgstr "Aún no se ha añadido a ninguna herramienta de IA."
 
 msgid "Not answered"
 msgstr "Sin responder"
+
+msgid "Not approved on this device. Read the file first: once approved it runs with your model key and can use these tools: {tools}. Editing the file needs approval again."
+msgstr ""
 
 msgid "Not attached to desktop bridge"
 msgstr "Sin conexión con el puente de escritorio"
@@ -7120,6 +7180,9 @@ msgstr "No hace falta para un endpoint de loopback como <0>{endpointHost}</0>: l
 
 msgid "Not running"
 msgstr "No se está ejecutando"
+
+msgid "Not sending traces yet. Missing: {missing}."
+msgstr ""
 
 msgid "Not sent"
 msgstr "No enviado"
@@ -8237,6 +8300,9 @@ msgstr "provisional"
 msgid "Public"
 msgstr "Público"
 
+msgid "Public key"
+msgstr ""
+
 msgid "Public repository"
 msgstr "Repositorio público"
 
@@ -8419,6 +8485,9 @@ msgstr "Carpetas y plantillas ya hechas para empezar rápido."
 
 msgid "Ready-made folders and templates to get you started quickly. Select a pack to preview what gets created, then add it to your project."
 msgstr "Carpetas y plantillas ya hechas para empezar rápido. Selecciona un paquete para ver qué se crea y añádelo después a tu proyecto."
+
+msgid "Ready. Workflow runs are sent to {0}."
+msgstr ""
 
 msgid "Reason: {reason}"
 msgstr "Motivo: {reason}"
@@ -9049,11 +9118,20 @@ msgstr "Ejecuta una terminal real acoplada dentro de OpenKnowledge, que arranca 
 msgid "Run in terminal"
 msgstr "Ejecutar en la terminal"
 
+msgid "Run LangGraph agents from .ok/workflows on a schedule or on demand, on this device only. Needs a model API key in the server's environment. When on, it appears under Plugins in the sidebar."
+msgstr ""
+
+msgid "Run now"
+msgstr ""
+
 msgid "Run this in your terminal"
 msgstr "Ejecuta esto en tu terminal"
 
 msgid "running"
 msgstr "en marcha"
+
+msgid "Running"
+msgstr ""
 
 msgid "Running project audit"
 msgstr "Ejecutando la auditoría del proyecto"
@@ -9123,6 +9201,9 @@ msgstr "Guardando cambios…"
 
 msgid "Saving your edits before reloading…"
 msgstr "Guardando tus ediciones antes de recargar…"
+
+msgid "Schedule {schedule} · next {0}"
+msgstr ""
 
 msgid "schema {deleteTarget}"
 msgstr "esquema {deleteTarget}"
@@ -9405,6 +9486,9 @@ msgstr "Enviar al chat ({0})"
 
 msgid "Send when the agent is free"
 msgstr "Enviar cuando el agente esté libre"
+
+msgid "Send workflow traces — model calls, tool calls, timings and token use — to Langfuse. When on, it appears under Plugins in the sidebar."
+msgstr ""
 
 msgid "Send your report by email"
 msgstr "Envía tu informe por correo"
@@ -10058,6 +10142,9 @@ msgstr "Iniciar el autocompletado del código"
 msgid "Start writing to create this page"
 msgstr "Empieza a escribir para crear esta página"
 
+msgid "Started {0}"
+msgstr ""
+
 msgid "Starter content"
 msgstr "Contenido inicial"
 
@@ -10168,6 +10255,9 @@ msgstr "Suscribiendo..."
 
 msgid "Subscriptions aren't available right now."
 msgstr "Ahora mismo no hay suscripciones disponibles."
+
+msgid "Succeeded {when}"
+msgstr ""
 
 msgid "Suggestion menu navigation"
 msgstr "Navegación por el menú de sugerencias"
@@ -10719,6 +10809,9 @@ msgstr "La solicitud para habilitar las herramientas de Open Knowledge caducó. 
 
 msgid "The schema file does not exist or failed to load — adding a field creates it."
 msgstr "El archivo de esquema no existe o no se pudo cargar; al añadir un campo se crea."
+
+msgid "The secret key is never stored in settings. Set <0>LANGFUSE_SECRET_KEY</0> in the environment that starts the OpenKnowledge server, then restart it."
+msgstr ""
 
 msgid "The server couldn't read this project's sync status, so sync options are hidden. They appear here as soon as the sync status loads; closing and reopening Settings also retries."
 msgstr "El servidor no pudo leer el estado de sincronización de este proyecto, así que las opciones de sincronización están ocultas. Aparecerán aquí en cuanto se cargue el estado de sincronización; cerrar y volver a abrir Ajustes también lo reintenta."
@@ -11395,6 +11488,9 @@ msgstr "Páginas más enlazadas"
 msgid "total"
 msgstr "total"
 
+msgid "Trace every workflow run — model calls, tool calls, token use and timings — in Langfuse."
+msgstr ""
+
 msgid "Tracked in git — updates flow through your repo (pull or CI), not auto-update"
 msgstr "Seguido en git: las actualizaciones llegan por tu repositorio (pull o CI), no por actualización automática"
 
@@ -12025,6 +12121,9 @@ msgstr "Dónde"
 msgid "Where should it live?"
 msgstr "¿Dónde debería vivir?"
 
+msgid "Where to find your Langfuse keys"
+msgstr ""
+
 msgid "Which skill"
 msgstr "Qué habilidad"
 
@@ -12078,6 +12177,9 @@ msgstr "Trabajar directamente, sin paso de planificación"
 
 msgid "Work through these comments"
 msgstr "Trabaja sobre estos comentarios"
+
+msgid "Workflows"
+msgstr ""
 
 msgid "Working"
 msgstr "Trabajando"
@@ -12257,6 +12359,9 @@ msgstr "Tu copia local de la rama <0>{branch}</0> está por detrás. Trae los ú
 
 msgid "Your message didn't reach {agentName}."
 msgstr "Tu mensaje no llegó a {agentName}."
+
+msgid "Your project's public key (pk-lf-…). Leave empty to use LANGFUSE_PUBLIC_KEY."
+msgstr ""
 
 msgid "Your remote URL names {declaredLogin}, but that account's credentials couldn't be used."
 msgstr "Tu URL remota indica {declaredLogin}, pero no se pudieron usar las credenciales de esa cuenta."

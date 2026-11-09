@@ -325,6 +325,7 @@ import { createSkillsShRoutes } from './http/skills-sh-routes.ts';
 import { successResponse } from './http/success-response.ts';
 import { createSyncRoutes } from './http/sync-routes.ts';
 import { createSystemActionsRoutes } from './http/system-actions-routes.ts';
+import { createWorkflowRoutes } from './http/workflow-routes.ts';
 import {
   createWorkspaceToolsRoutes,
   type GeneratedIndexSettingsStatus,
@@ -402,11 +403,10 @@ import {
   createSyncCredentialConfigResolver,
   readDeclaredGitHubHosts,
 } from './share/git-context.ts';
-
 import { readSkillInstallModeRaw } from './skill-placements.ts';
-
 import type { SyncEngine } from './sync-engine.ts';
 import { getMeter, withSpan, withSpanSync } from './telemetry.ts';
+import type { WorkflowService } from './workflows/index.ts';
 import { createWriteAdvisoryGate } from './write-advisory-gate.ts';
 import { computeWriteAdvisoryLinks, type WriteAdvisoryTargets } from './write-advisory-links.ts';
 
@@ -1357,6 +1357,7 @@ interface ApiExtensionBaseOptions {
   conflicts: ConflictAuthority;
   setBatchInProgress?: (value: boolean) => void;
   refreshDocumentsFromDisk: RefreshDocumentsFromDisk;
+  getWorkflowService?: () => WorkflowService | null;
   localOpCliArgs?: string[];
   authStreamHeartbeatMs?: number;
   projectDir?: string;
@@ -5749,6 +5750,9 @@ export function createApiExtension(options: ApiExtensionOptions): Extension & {
   const documentRefreshRoutes = createDocumentRefreshRoutes({
     refreshDocumentsFromDisk: options.refreshDocumentsFromDisk,
   });
+  const workflowRoutes = createWorkflowRoutes({
+    getWorkflowService: options.getWorkflowService ?? (() => null),
+  });
   const skillsInstallRoutes = createSkillsInstallRoutes({
     resolveSkillsRoot,
     validateSkillName,
@@ -5887,6 +5891,7 @@ export function createApiExtension(options: ApiExtensionOptions): Extension & {
     metricsRoutes,
     documentRoutes,
     documentRefreshRoutes,
+    workflowRoutes,
     configSystemRoutes,
     lintRoutes,
     lintWriteRoutes,

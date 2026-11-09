@@ -649,6 +649,7 @@ async function bootServerInner(
   boundPort = realPort;
   const boundBaseUrl = internalBaseUrl();
   updateServerLockPort(lockDir, realPort, boundBaseUrl);
+  serverInstance.workflowService?.start(boundBaseUrl);
   log.info(
     {
       event: 'server-listening',
@@ -757,6 +758,10 @@ async function bootServerInner(
 
     if (acpThreadManager !== null) {
       await runStep('acpThreads.destroy', () => acpThreadManager.destroy());
+    }
+    const workflowService = serverInstance.workflowService;
+    if (workflowService !== null) {
+      await runStep('workflows.stop', () => workflowService.stop());
     }
     await runStep('secondaryListeners.close', async () => {
       for (const secondary of secondaryServers) {

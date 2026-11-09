@@ -1595,6 +1595,9 @@ msgstr "موافق عليه"
 msgid "Approved — {optionName}"
 msgstr "موافق عليه — {optionName}"
 
+msgid "Approved {0}"
+msgstr ""
+
 msgid "Approved and ready to merge"
 msgstr "معتمد وجاهز للدمج"
 
@@ -2824,6 +2827,9 @@ msgstr "تعذّر الوصول إلى مفتاح API المحفوظ. تحقق �
 msgid "Could not access the saved API key. Unlock your system credential store or check the local credential files, then try again."
 msgstr "تعذّر الوصول إلى مفتاح API المحفوظ. افتح مخزن بيانات اعتماد النظام أو تحقق من ملفات بيانات الاعتماد المحلية، ثم حاول مرة أخرى."
 
+msgid "Could not approve {0}"
+msgstr ""
+
 msgid "Could not check the symlinks in {shareBranch}, so it was not switched. Try again; if it keeps failing, check that Git is installed and the project folder is readable."
 msgstr "تعذّر فحص الروابط الرمزية في {shareBranch}، لذا لم يتم التبديل إليه. حاول مرة أخرى؛ وإذا استمر الفشل، فتأكد من تثبيت Git ومن إمكانية قراءة مجلد المشروع."
 
@@ -2878,6 +2884,9 @@ msgstr "تعذّر تحميل القوالب: {templatesError}. لا يزال ب
 msgid "Could not load templates. Try again later."
 msgstr "تعذّر تحميل القوالب. أعد المحاولة لاحقًا."
 
+msgid "Could not load workflows: {error}"
+msgstr ""
+
 msgid "Could not move \"{targetName}\" to the {trashNoun}. Do you want to permanently delete instead?"
 msgstr "تعذّر نقل \\\"{targetName}\\\" إلى {trashNoun}. هل تريد الحذف نهائيًا بدلاً من ذلك؟"
 
@@ -2902,8 +2911,14 @@ msgstr "تعذّر الوصول إلى الخادم"
 msgid "Could not read branch state for this project. Close this dialog and open the share link again."
 msgstr "تعذّرت قراءة حالة الفرع لهذا المشروع. أغلق هذا الحوار وافتح رابط المشاركة مرة أخرى."
 
+msgid "Could not read the tracing status from the server."
+msgstr ""
+
 msgid "Could not save sync preference: {detail}"
 msgstr "تعذّر حفظ تفضيل المزامنة: {detail}"
+
+msgid "Could not start {0}"
+msgstr ""
 
 msgid "Could not start creating a new item"
 msgstr "تعذّر بدء إنشاء عنصر جديد"
@@ -3726,6 +3741,9 @@ msgstr "تعطيل {file}"
 msgid "Disable {id}"
 msgstr "تعطيل {id}"
 
+msgid "Disable Langfuse"
+msgstr ""
+
 msgid "Disable semantic search"
 msgstr "تعطيل البحث الدلالي"
 
@@ -3737,6 +3755,9 @@ msgstr "تعطيل التدقيق الإملائي"
 
 msgid "Disable Themes"
 msgstr "تعطيل السمات"
+
+msgid "Disable Workflows"
+msgstr ""
 
 msgid "Disambiguates similarly-named templates in the menu."
 msgstr "يميّز بين القوالب المتشابهة الأسماء في القائمة."
@@ -3934,6 +3955,9 @@ msgstr "كل {open} يحتاج إلى {close} مطابق."
 #. Says what symlinking two skill folders together buys the user, before any button names it
 msgid "Each AI tool reads skills from its own folder. Point one folder at another and both tools see the same skills — add a skill once instead of copying it into every tool."
 msgstr "تقرأ كل أداة ذكاء اصطناعي المهارات من مجلدها الخاص. وجّه مجلدًا إلى آخر لترى الأداتان المهارات نفسها — أضف المهارة مرة واحدة بدلًا من نسخها إلى كل أداة."
+
+msgid "Each file in <0>.ok/workflows/</0> is a LangGraph agent that works on this knowledge base with OpenKnowledge tools. Schedules run only on devices where this plugin is on. Agents can also run them with the workflow tool, and scripts with POST /api/workflows/run."
+msgstr ""
 
 msgid "Each pack scaffolds your project with ready-made folders and templates."
 msgstr "تبني كل حزمة هيكل مشروعك بمجلدات وقوالب جاهزة."
@@ -4158,6 +4182,9 @@ msgstr "تفعيل تلقائي (سحب فقط)؟"
 msgid "Enable indexes"
 msgstr "تمكين الفهارس"
 
+msgid "Enable Langfuse"
+msgstr ""
+
 msgid "Enable Open Knowledge tools for {0}?"
 msgstr "هل تريد تفعيل أدوات Open Knowledge لـ {0}؟"
 
@@ -4181,6 +4208,9 @@ msgstr "تفعيل الطرفية لهذا المشروع"
 
 msgid "Enable Themes"
 msgstr "تفعيل السمات"
+
+msgid "Enable Workflows"
+msgstr ""
 
 msgid "Enabling index generation"
 msgstr "تمكين إنشاء الفهرس"
@@ -4399,6 +4429,9 @@ msgstr "فشل"
 msgid "Failed"
 msgstr "فشل"
 
+msgid "Failed {when}: {0}"
+msgstr ""
+
 msgid "Failed to add item"
 msgstr "فشلت إضافة العنصر"
 
@@ -4579,6 +4612,9 @@ msgstr "فشلت إعادة الترتيب"
 msgid "Failed to save content rules — {0}"
 msgstr "فشل حفظ قواعد المحتوى — {0}"
 
+msgid "Failed to save Langfuse setting"
+msgstr ""
+
 msgid "Failed to save Slidev setting"
 msgstr "تعذّر حفظ إعداد Slidev"
 
@@ -4587,6 +4623,9 @@ msgstr "فشل حفظ حقل المخطط"
 
 msgid "Failed to save theme setting"
 msgstr "فشل حفظ إعداد السمة"
+
+msgid "Failed to save Workflows setting"
+msgstr ""
 
 msgid "Failed to start sign-in — try again"
 msgstr "فشل بدء تسجيل الدخول — أعد المحاولة"
@@ -4846,6 +4885,9 @@ msgstr "يجري متابعة تعديلات الوكيل"
 
 msgid "Footnote"
 msgstr "حاشية"
+
+msgid "For example https://cloud.langfuse.com, https://us.cloud.langfuse.com, or your self-hosted URL. Leave empty to use LANGFUSE_BASE_URL, then Langfuse Cloud (EU)."
+msgstr ""
 
 msgid "Force Reload"
 msgstr "إعادة تحميل قسرية"
@@ -5857,6 +5899,12 @@ msgstr "التسمية <0>(نص عرض اختياري)</0>"
 msgid "Label <0>(visible link text)</0>"
 msgstr "التسمية <0>(نص الرابط الظاهر)</0>"
 
+msgid "Langfuse"
+msgstr ""
+
+msgid "Langfuse host"
+msgstr ""
+
 msgid "Language"
 msgstr "اللغة"
 
@@ -6211,6 +6259,9 @@ msgstr "إدارة اتصالات الوكلاء غير متاحة في هذا �
 
 msgid "Manual"
 msgstr "يدوي"
+
+msgid "Manual only"
+msgstr ""
 
 msgid "Map the architecture"
 msgstr "ارسم خريطة البنية"
@@ -6617,6 +6668,9 @@ msgstr "خطأ في الشبكة أثناء التنظيف"
 
 msgid "Network settings not yet loaded. Try again in a moment."
 msgstr "لم يتم تحميل إعدادات الشبكة بعد. أعد المحاولة بعد لحظة."
+
+msgid "Never run"
+msgstr ""
 
 msgid "New"
 msgstr "جديد"
@@ -7041,6 +7095,9 @@ msgstr "لم يُعثر على قوالب."
 msgid "No templates yet. Add one to give new docs in this folder a ready-made starting point."
 msgstr "لا توجد قوالب بعد. أضف واحدًا لتمنح المستندات الجديدة في هذا المجلد نقطة انطلاق جاهزة."
 
+msgid "No workflows yet. Create <0>.ok/workflows/weekly-digest.yml</0>, for example:"
+msgstr ""
+
 msgid "No workspace"
 msgstr "لا مساحة عمل"
 
@@ -7067,6 +7124,9 @@ msgstr "لم تتم إضافته إلى أي أداة ذكاء اصطناعي ب
 
 msgid "Not answered"
 msgstr "بلا إجابة"
+
+msgid "Not approved on this device. Read the file first: once approved it runs with your model key and can use these tools: {tools}. Editing the file needs approval again."
+msgstr ""
 
 msgid "Not attached to desktop bridge"
 msgstr "غير متصل بجسر سطح المكتب"
@@ -7120,6 +7180,9 @@ msgstr "غير مطلوب لنقطة نهاية loopback مثل <0>{endpointHost
 
 msgid "Not running"
 msgstr "لا يعمل"
+
+msgid "Not sending traces yet. Missing: {missing}."
+msgstr ""
 
 msgid "Not sent"
 msgstr "غير مُرسل"
@@ -8237,6 +8300,9 @@ msgstr "مؤقت"
 msgid "Public"
 msgstr "عام"
 
+msgid "Public key"
+msgstr ""
+
 msgid "Public repository"
 msgstr "مستودع عام"
 
@@ -8419,6 +8485,9 @@ msgstr "مجلدات وقوالب جاهزة لتبدأ بسرعة."
 
 msgid "Ready-made folders and templates to get you started quickly. Select a pack to preview what gets created, then add it to your project."
 msgstr "مجلدات وقوالب جاهزة لتبدأ بسرعة. اختر حزمة لمعاينة ما سيُنشأ، ثم أضفها إلى مشروعك."
+
+msgid "Ready. Workflow runs are sent to {0}."
+msgstr ""
 
 msgid "Reason: {reason}"
 msgstr "السبب: {reason}"
@@ -9049,11 +9118,20 @@ msgstr "شغّل طرفية حقيقية مرسّاة داخل OpenKnowledge، �
 msgid "Run in terminal"
 msgstr "تشغيل في الطرفية"
 
+msgid "Run LangGraph agents from .ok/workflows on a schedule or on demand, on this device only. Needs a model API key in the server's environment. When on, it appears under Plugins in the sidebar."
+msgstr ""
+
+msgid "Run now"
+msgstr ""
+
 msgid "Run this in your terminal"
 msgstr "شغّل هذا في طرفيتك"
 
 msgid "running"
 msgstr "قيد التشغيل"
+
+msgid "Running"
+msgstr ""
 
 msgid "Running project audit"
 msgstr "تجري مراجعة المشروع"
@@ -9123,6 +9201,9 @@ msgstr "جارٍ حفظ التغييرات…"
 
 msgid "Saving your edits before reloading…"
 msgstr "جارٍ حفظ تعديلاتك قبل إعادة التحميل…"
+
+msgid "Schedule {schedule} · next {0}"
+msgstr ""
 
 msgid "schema {deleteTarget}"
 msgstr "المخطط {deleteTarget}"
@@ -9405,6 +9486,9 @@ msgstr "الإرسال إلى المحادثة ({0})"
 
 msgid "Send when the agent is free"
 msgstr "الإرسال عندما يكون الوكيل متفرغًا"
+
+msgid "Send workflow traces — model calls, tool calls, timings and token use — to Langfuse. When on, it appears under Plugins in the sidebar."
+msgstr ""
 
 msgid "Send your report by email"
 msgstr "أرسل تقريرك بالبريد الإلكتروني"
@@ -10058,6 +10142,9 @@ msgstr "بدء إكمال المصدر"
 msgid "Start writing to create this page"
 msgstr "ابدأ الكتابة لإنشاء هذه الصفحة"
 
+msgid "Started {0}"
+msgstr ""
+
 msgid "Starter content"
 msgstr "محتوى البداية"
 
@@ -10168,6 +10255,9 @@ msgstr "يجري الاشتراك..."
 
 msgid "Subscriptions aren't available right now."
 msgstr "الاشتراكات غير متاحة الآن."
+
+msgid "Succeeded {when}"
+msgstr ""
 
 msgid "Suggestion menu navigation"
 msgstr "التنقل في قائمة الاقتراحات"
@@ -10719,6 +10809,9 @@ msgstr "انتهت مهلة طلب تفعيل أدوات Open Knowledge. تعم�
 
 msgid "The schema file does not exist or failed to load — adding a field creates it."
 msgstr "ملف المخطط غير موجود أو فشل تحميله — إضافة حقل تنشئه."
+
+msgid "The secret key is never stored in settings. Set <0>LANGFUSE_SECRET_KEY</0> in the environment that starts the OpenKnowledge server, then restart it."
+msgstr ""
 
 msgid "The server couldn't read this project's sync status, so sync options are hidden. They appear here as soon as the sync status loads; closing and reopening Settings also retries."
 msgstr "تعذّر على الخادم قراءة حالة المزامنة لهذا المشروع، لذا أُخفيت خيارات المزامنة. ستظهر هنا فور تحميل حالة المزامنة؛ كما يؤدي إغلاق الإعدادات وفتحها مجددًا إلى إعادة المحاولة."
@@ -11395,6 +11488,9 @@ msgstr "أكثر الصفحات ارتباطًا"
 msgid "total"
 msgstr "الإجمالي"
 
+msgid "Trace every workflow run — model calls, tool calls, token use and timings — in Langfuse."
+msgstr ""
+
 msgid "Tracked in git — updates flow through your repo (pull or CI), not auto-update"
 msgstr "متتبَّع في git — تتدفق التحديثات عبر مستودعك (بالسحب أو التكامل المستمر)، لا بالتحديث التلقائي"
 
@@ -12025,6 +12121,9 @@ msgstr "أين"
 msgid "Where should it live?"
 msgstr "أين ينبغي أن يعيش؟"
 
+msgid "Where to find your Langfuse keys"
+msgstr ""
+
 msgid "Which skill"
 msgstr "أي مهارة"
 
@@ -12078,6 +12177,9 @@ msgstr "العمل مباشرة، دون خطوة تخطيط"
 
 msgid "Work through these comments"
 msgstr "اعمل على هذه التعليقات"
+
+msgid "Workflows"
+msgstr ""
 
 msgid "Working"
 msgstr "يعمل"
@@ -12257,6 +12359,9 @@ msgstr "نسختك المحلية من الفرع <0>{branch}</0> متأخرة. 
 
 msgid "Your message didn't reach {agentName}."
 msgstr "لم تصل رسالتك إلى {agentName}."
+
+msgid "Your project's public key (pk-lf-…). Leave empty to use LANGFUSE_PUBLIC_KEY."
+msgstr ""
 
 msgid "Your remote URL names {declaredLogin}, but that account's credentials couldn't be used."
 msgstr "عنوان URL البعيد لديك يشير إلى {declaredLogin}، لكن تعذّر استخدام بيانات اعتماد ذلك الحساب."

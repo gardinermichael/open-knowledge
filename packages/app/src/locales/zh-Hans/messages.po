@@ -1595,6 +1595,9 @@ msgstr "已批准"
 msgid "Approved — {optionName}"
 msgstr "已批准 — {optionName}"
 
+msgid "Approved {0}"
+msgstr ""
+
 msgid "Approved and ready to merge"
 msgstr "已批准，可以合并"
 
@@ -2824,6 +2827,9 @@ msgstr "无法访问已保存的 API 密钥。请检查本地凭据文件，然�
 msgid "Could not access the saved API key. Unlock your system credential store or check the local credential files, then try again."
 msgstr "无法访问已保存的 API 密钥。请解锁系统凭据存储或检查本地凭据文件，然后重试。"
 
+msgid "Could not approve {0}"
+msgstr ""
+
 msgid "Could not check the symlinks in {shareBranch}, so it was not switched. Try again; if it keeps failing, check that Git is installed and the project folder is readable."
 msgstr "无法检查 {shareBranch} 中的符号链接，因此未切换。请重试；如果仍然失败，请确认已安装 Git 且项目文件夹可读。"
 
@@ -2878,6 +2884,9 @@ msgstr "无法加载模板：{templatesError}。你仍然可以创建空白笔�
 msgid "Could not load templates. Try again later."
 msgstr "无法加载模板。请稍后再试。"
 
+msgid "Could not load workflows: {error}"
+msgstr ""
+
 msgid "Could not move \"{targetName}\" to the {trashNoun}. Do you want to permanently delete instead?"
 msgstr "无法将“{targetName}”移到{trashNoun}。是否要改为永久删除？"
 
@@ -2902,8 +2911,14 @@ msgstr "无法连接到服务器"
 msgid "Could not read branch state for this project. Close this dialog and open the share link again."
 msgstr "无法读取这个项目的分支状态。请关闭此对话框并重新打开共享链接。"
 
+msgid "Could not read the tracing status from the server."
+msgstr ""
+
 msgid "Could not save sync preference: {detail}"
 msgstr "无法保存同步偏好：{detail}"
+
+msgid "Could not start {0}"
+msgstr ""
 
 msgid "Could not start creating a new item"
 msgstr "无法开始创建新项目"
@@ -3726,6 +3741,9 @@ msgstr "禁用 {file}"
 msgid "Disable {id}"
 msgstr "禁用 {id}"
 
+msgid "Disable Langfuse"
+msgstr ""
+
 msgid "Disable semantic search"
 msgstr "关闭语义搜索"
 
@@ -3737,6 +3755,9 @@ msgstr "关闭拼写检查"
 
 msgid "Disable Themes"
 msgstr "禁用主题"
+
+msgid "Disable Workflows"
+msgstr ""
 
 msgid "Disambiguates similarly-named templates in the menu."
 msgstr "用于在菜单中区分名称相近的模板。"
@@ -3934,6 +3955,9 @@ msgstr "每个 {open} 都需要一个对应的 {close}。"
 #. Says what symlinking two skill folders together buys the user, before any button names it
 msgid "Each AI tool reads skills from its own folder. Point one folder at another and both tools see the same skills — add a skill once instead of copying it into every tool."
 msgstr "每个 AI 工具都从各自的文件夹读取技能。将一个文件夹指向另一个，两个工具就会看到相同的技能——只需添加一次技能，而不必复制到每个工具。"
+
+msgid "Each file in <0>.ok/workflows/</0> is a LangGraph agent that works on this knowledge base with OpenKnowledge tools. Schedules run only on devices where this plugin is on. Agents can also run them with the workflow tool, and scripts with POST /api/workflows/run."
+msgstr ""
 
 msgid "Each pack scaffolds your project with ready-made folders and templates."
 msgstr "每个包都会用现成的文件夹和模板为你的项目搭好骨架。"
@@ -4158,6 +4182,9 @@ msgstr "启用自动（仅拉取）？"
 msgid "Enable indexes"
 msgstr "启用索引"
 
+msgid "Enable Langfuse"
+msgstr ""
+
 msgid "Enable Open Knowledge tools for {0}?"
 msgstr "为 {0} 启用 Open Knowledge 工具？"
 
@@ -4181,6 +4208,9 @@ msgstr "为这个项目启用终端"
 
 msgid "Enable Themes"
 msgstr "启用主题"
+
+msgid "Enable Workflows"
+msgstr ""
 
 msgid "Enabling index generation"
 msgstr "启用索引生成"
@@ -4399,6 +4429,9 @@ msgstr "失败"
 msgid "Failed"
 msgstr "失败"
 
+msgid "Failed {when}: {0}"
+msgstr ""
+
 msgid "Failed to add item"
 msgstr "添加项目失败"
 
@@ -4579,6 +4612,9 @@ msgstr "重新排序失败"
 msgid "Failed to save content rules — {0}"
 msgstr "保存内容规则失败——{0}"
 
+msgid "Failed to save Langfuse setting"
+msgstr ""
+
 msgid "Failed to save Slidev setting"
 msgstr "保存 Slidev 设置失败"
 
@@ -4587,6 +4623,9 @@ msgstr "保存架构字段失败"
 
 msgid "Failed to save theme setting"
 msgstr "保存主题设置失败"
+
+msgid "Failed to save Workflows setting"
+msgstr ""
 
 msgid "Failed to start sign-in — try again"
 msgstr "启动登录失败——请重试"
@@ -4846,6 +4885,9 @@ msgstr "正在跟随智能体的编辑"
 
 msgid "Footnote"
 msgstr "脚注"
+
+msgid "For example https://cloud.langfuse.com, https://us.cloud.langfuse.com, or your self-hosted URL. Leave empty to use LANGFUSE_BASE_URL, then Langfuse Cloud (EU)."
+msgstr ""
 
 msgid "Force Reload"
 msgstr "强制重新加载"
@@ -5857,6 +5899,12 @@ msgstr "标签 <0>（可选的显示文本）</0>"
 msgid "Label <0>(visible link text)</0>"
 msgstr "标签 <0>（可见的链接文本）</0>"
 
+msgid "Langfuse"
+msgstr ""
+
+msgid "Langfuse host"
+msgstr ""
+
 msgid "Language"
 msgstr "语言"
 
@@ -6211,6 +6259,9 @@ msgstr "此版本无法管理智能体连接。"
 
 msgid "Manual"
 msgstr "手动"
+
+msgid "Manual only"
+msgstr ""
 
 msgid "Map the architecture"
 msgstr "梳理架构"
@@ -6617,6 +6668,9 @@ msgstr "清理过程中出现网络错误"
 
 msgid "Network settings not yet loaded. Try again in a moment."
 msgstr "网络设置尚未加载。请稍后重试。"
+
+msgid "Never run"
+msgstr ""
 
 msgid "New"
 msgstr "新建"
@@ -7041,6 +7095,9 @@ msgstr "没有找到模板。"
 msgid "No templates yet. Add one to give new docs in this folder a ready-made starting point."
 msgstr "还没有模板。添加一个，让这个文件夹中的新文档有个现成的起点。"
 
+msgid "No workflows yet. Create <0>.ok/workflows/weekly-digest.yml</0>, for example:"
+msgstr ""
+
 msgid "No workspace"
 msgstr "无工作区"
 
@@ -7067,6 +7124,9 @@ msgstr "尚未添加到任何 AI 工具。"
 
 msgid "Not answered"
 msgstr "未回答"
+
+msgid "Not approved on this device. Read the file first: once approved it runs with your model key and can use these tools: {tools}. Editing the file needs approval again."
+msgstr ""
 
 msgid "Not attached to desktop bridge"
 msgstr "未连接到桌面桥接"
@@ -7120,6 +7180,9 @@ msgstr "对于 <0>{endpointHost}</0> 这样的回环端点不是必需的——�
 
 msgid "Not running"
 msgstr "未运行"
+
+msgid "Not sending traces yet. Missing: {missing}."
+msgstr ""
 
 msgid "Not sent"
 msgstr "未发送"
@@ -8237,6 +8300,9 @@ msgstr "临时"
 msgid "Public"
 msgstr "公开"
 
+msgid "Public key"
+msgstr ""
+
 msgid "Public repository"
 msgstr "公开仓库"
 
@@ -8419,6 +8485,9 @@ msgstr "现成的文件夹和模板，帮你快速上手。"
 
 msgid "Ready-made folders and templates to get you started quickly. Select a pack to preview what gets created, then add it to your project."
 msgstr "现成的文件夹和模板，帮你快速上手。选择一个包可以预览会创建哪些内容，然后再添加到你的项目中。"
+
+msgid "Ready. Workflow runs are sent to {0}."
+msgstr ""
 
 msgid "Reason: {reason}"
 msgstr "原因：{reason}"
@@ -9049,11 +9118,20 @@ msgstr "在 OpenKnowledge 内部停靠运行一个真实终端，起始目录为
 msgid "Run in terminal"
 msgstr "在终端中运行"
 
+msgid "Run LangGraph agents from .ok/workflows on a schedule or on demand, on this device only. Needs a model API key in the server's environment. When on, it appears under Plugins in the sidebar."
+msgstr ""
+
+msgid "Run now"
+msgstr ""
+
 msgid "Run this in your terminal"
 msgstr "在你的终端中运行这个"
 
 msgid "running"
 msgstr "运行中"
+
+msgid "Running"
+msgstr ""
 
 msgid "Running project audit"
 msgstr "正在运行项目审查"
@@ -9123,6 +9201,9 @@ msgstr "正在保存更改…"
 
 msgid "Saving your edits before reloading…"
 msgstr "正在保存你的编辑，然后重新加载…"
+
+msgid "Schedule {schedule} · next {0}"
+msgstr ""
 
 msgid "schema {deleteTarget}"
 msgstr "架构 {deleteTarget}"
@@ -9405,6 +9486,9 @@ msgstr "发送到对话（{0}）"
 
 msgid "Send when the agent is free"
 msgstr "在智能体空闲时发送"
+
+msgid "Send workflow traces — model calls, tool calls, timings and token use — to Langfuse. When on, it appears under Plugins in the sidebar."
+msgstr ""
 
 msgid "Send your report by email"
 msgstr "通过邮件发送你的报告"
@@ -10058,6 +10142,9 @@ msgstr "启动源码补全"
 msgid "Start writing to create this page"
 msgstr "开始写点什么即可创建这个页面"
 
+msgid "Started {0}"
+msgstr ""
+
 msgid "Starter content"
 msgstr "初始内容"
 
@@ -10168,6 +10255,9 @@ msgstr "正在订阅…"
 
 msgid "Subscriptions aren't available right now."
 msgstr "订阅功能暂时不可用。"
+
+msgid "Succeeded {when}"
+msgstr ""
 
 msgid "Suggestion menu navigation"
 msgstr "建议菜单导航"
@@ -10719,6 +10809,9 @@ msgstr "启用 Open Knowledge 工具的请求已超时。此线程将在没有�
 
 msgid "The schema file does not exist or failed to load — adding a field creates it."
 msgstr "架构文件不存在或加载失败——添加字段会自动创建它。"
+
+msgid "The secret key is never stored in settings. Set <0>LANGFUSE_SECRET_KEY</0> in the environment that starts the OpenKnowledge server, then restart it."
+msgstr ""
 
 msgid "The server couldn't read this project's sync status, so sync options are hidden. They appear here as soon as the sync status loads; closing and reopening Settings also retries."
 msgstr "服务器无法读取此项目的同步状态，因此已隐藏同步选项。同步状态一加载完成，选项就会显示在这里；关闭并重新打开设置也会重试。"
@@ -11395,6 +11488,9 @@ msgstr "被链接最多的页面"
 msgid "total"
 msgstr "总计"
 
+msgid "Trace every workflow run — model calls, tool calls, token use and timings — in Langfuse."
+msgstr ""
+
 msgid "Tracked in git — updates flow through your repo (pull or CI), not auto-update"
 msgstr "受 git 跟踪——更新通过你的仓库（pull 或 CI）流入，而不是自动更新"
 
@@ -12025,6 +12121,9 @@ msgstr "位置"
 msgid "Where should it live?"
 msgstr "它应该保存在哪里？"
 
+msgid "Where to find your Langfuse keys"
+msgstr ""
+
 msgid "Which skill"
 msgstr "哪个技能"
 
@@ -12078,6 +12177,9 @@ msgstr "直接工作，不先制定计划"
 
 msgid "Work through these comments"
 msgstr "处理这些评论"
+
+msgid "Workflows"
+msgstr ""
 
 msgid "Working"
 msgstr "进行中"
@@ -12257,6 +12359,9 @@ msgstr "你本地的 <0>{branch}</0> 分支副本落后了。请拉取最新改�
 
 msgid "Your message didn't reach {agentName}."
 msgstr "你的消息未送达 {agentName}。"
+
+msgid "Your project's public key (pk-lf-…). Leave empty to use LANGFUSE_PUBLIC_KEY."
+msgstr ""
 
 msgid "Your remote URL names {declaredLogin}, but that account's credentials couldn't be used."
 msgstr "你的远程 URL 中指定了 {declaredLogin}，但无法使用该账户的凭据。"

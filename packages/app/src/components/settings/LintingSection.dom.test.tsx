@@ -448,6 +448,33 @@ describe('UserPluginsManageSection', () => {
     expect(window.location.hash).toBe('#settings/plugin:slides');
   });
 
+  test.each([
+    ['workflows', 'Workflows', { workflows: { enabled: true } }],
+    ['langfuse', 'Langfuse', { langfuse: { enabled: true } }],
+  ])('enabling %s writes its user-scope patch and offers its panel', async (id, label, patch) => {
+    const { binding: userBinding, calls: userCalls } = makeBinding();
+    render(<UserPluginsManageSection userBinding={userBinding} />);
+
+    expect(screen.getByText(label).closest('label')?.textContent).toContain('Beta');
+    await userEvent.click(screen.getByTestId(`settings-plugin-toggle-${id}`));
+
+    expect(userCalls).toContainEqual(patch);
+    expect(successToasts[0]?.message).toBe(`${label} enabled`);
+    successToasts[0]?.action?.onClick();
+    expect(window.location.hash).toBe(`#settings/plugin:${id}`);
+  });
+
+  test('disabling Workflows writes enabled:false', async () => {
+    const { binding: userBinding, calls: userCalls } = makeBinding();
+    mockUserConfig = { workflows: { enabled: true } } as unknown as Config;
+    render(<UserPluginsManageSection userBinding={userBinding} />);
+
+    await userEvent.click(screen.getByTestId('settings-plugin-toggle-workflows'));
+
+    expect(userCalls).toContainEqual({ workflows: { enabled: false } });
+    expect(successToasts).toHaveLength(0);
+  });
+
   test('disabling Slides writes enabled:false and does not offer its panel', async () => {
     const { binding: userBinding, calls: userCalls } = makeBinding();
     mockUserConfig = { slides: { enabled: true } } as unknown as Config;

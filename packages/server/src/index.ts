@@ -723,3 +723,4 @@ export {
 } from './tolerance-telemetry-writer.ts';
 export { trustSystemCertificates } from './trust-system-ca.ts';
 export { PROTOCOL_VERSION, RUNTIME_VERSION, STATE_SCHEMA_VERSION } from './version-constants.ts';
+export { readWorkflowsPluginEnabled } from './workflows/index.ts';

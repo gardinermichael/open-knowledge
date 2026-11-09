@@ -336,6 +336,29 @@ describe('slides.enabled (Slides plugin toggle default)', () => {
   });
 });
 
+describe('langfuse and workflows plugin toggles', () => {
+  test('both resolve to disabled when absent', () => {
+    const parsed = ConfigSchema.parse({});
+    expect(parsed.langfuse).toEqual({ enabled: false });
+    expect(parsed.workflows).toEqual({ enabled: false });
+  });
+
+  test('langfuse accepts a host and public key alongside the toggle', () => {
+    const parsed = ConfigSchema.parse({
+      langfuse: { enabled: true, baseUrl: 'https://cloud.langfuse.com', publicKey: 'pk-lf-1' },
+    });
+    expect(parsed.langfuse).toEqual({
+      enabled: true,
+      baseUrl: 'https://cloud.langfuse.com',
+      publicKey: 'pk-lf-1',
+    });
+  });
+
+  test('workflows accepts an explicit opt-in', () => {
+    expect(ConfigSchema.parse({ workflows: { enabled: true } }).workflows.enabled).toBe(true);
+  });
+});
+
 describe('legacy upload.* keys remain non-authoritative', () => {
   test('upload.* keys pass through looseObject without schema error', () => {
     const result = ConfigSchema.safeParse({

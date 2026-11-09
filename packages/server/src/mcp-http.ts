@@ -18,6 +18,7 @@ import { installPrettyZodErrors } from './mcp/pretty-zod-errors.ts';
 import { registerAllTools } from './mcp/tools/index.ts';
 import { resolveWithinRoot } from './mcp/tools/path-safety.ts';
 import { RUNTIME_VERSION } from './version-constants.ts';
+import { readWorkflowsPluginEnabled } from './workflows/index.ts';
 
 interface McpHttpSession {
   transport: StreamableHTTPServerTransport;
@@ -93,6 +94,7 @@ function createSessionServer(
   registerAllTools(server, {
     serverUrl: async () => opts.getServerUrl(),
     localApi: opts.localApi,
+    workflowsEnabled: readWorkflowsPluginEnabled(configuredRoot),
     resolveCwd: async (explicit?: string) => {
       if (explicit === undefined) return configuredRoot;
       const result = resolveWithinRoot(configuredRoot, explicit);

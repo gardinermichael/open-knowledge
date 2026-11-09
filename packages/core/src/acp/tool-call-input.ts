@@ -1,6 +1,7 @@
 import { piToolNamespace } from '../constants/editors.ts';
 import {
   MCP_SERVER_NAME,
+  OPEN_KNOWLEDGE_MCP_PLUGIN_TOOLS,
   OPEN_KNOWLEDGE_MCP_TOOLS,
   type OpenKnowledgeMcpTool,
 } from '../constants/mcp.ts';
@@ -52,7 +53,10 @@ export interface OpenKnowledgeToolCall {
 
 export type OpenKnowledgeServerMatch = 'any' | 'known';
 
-const OPEN_KNOWLEDGE_TOOLS: ReadonlySet<string> = new Set(OPEN_KNOWLEDGE_MCP_TOOLS);
+const OPEN_KNOWLEDGE_TOOLS: ReadonlySet<string> = new Set([
+  ...OPEN_KNOWLEDGE_MCP_TOOLS,
+  ...OPEN_KNOWLEDGE_MCP_PLUGIN_TOOLS,
+]);
 
 const ANY_OPEN_KNOWLEDGE_SERVER = /^(?:open[-_ ]?knowledge|ok)(?:[-_][a-z]+)*$/;
 

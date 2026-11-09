@@ -57,6 +57,7 @@
     "prepublishOnly": "bash ../../scripts/check-notices-clean.sh && pnpm run build && pnpm run check:dts && pnpm run verify:package"
   },
   "dependencies": {
+    "@cfworker/json-schema": "^4.1.6",
     "@inquirer/checkbox": "^5.0.11",
     "@inquirer/password": "^5.0.11",
     "@inquirer/select": "^5.2.0",
