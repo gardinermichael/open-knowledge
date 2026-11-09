@@ -45,6 +45,32 @@ describe('parseWorkflowDefinition', () => {
     });
   });
 
+  test('defaults to the LangGraph runner with a tool-call budget', () => {
+    expect(parseWorkflowDefinition('d', '/x/d.yml', 'name: D\nprompt: Hi\n')).toMatchObject({
+      runner: { type: 'langgraph' },
+      maxToolCalls: 50,
+    });
+  });
+
+  test('accepts an ACP runner with an agent and optional model', () => {
+    const source =
+      'name: D\nprompt: Hi\nrunner:\n  type: acp\n  agent: claude-acp\n  model: opus\n';
+    expect(parseWorkflowDefinition('d', '/x/d.yml', source)).toMatchObject({
+      runner: { type: 'acp', agent: 'claude-acp', model: 'opus' },
+    });
+  });
+
+  test('rejects a top-level model on an ACP workflow, and unknown runner types', () => {
+    const acpWithModel =
+      'name: D\nprompt: Hi\nmodel: anthropic:claude-sonnet-5-5\nrunner:\n  type: acp\n  agent: claude-acp\n';
+    expect(parseWorkflowDefinition('d', '/x/d.yml', acpWithModel)).toMatchObject({
+      message: expect.stringContaining('runner.model'),
+    });
+    expect(
+      parseWorkflowDefinition('d', '/x/d.yml', 'name: D\nprompt: Hi\nrunner:\n  type: auto\n'),
+    ).toMatchObject({ message: expect.stringContaining('runner') });
+  });
+
   test('trace: false opts one workflow out of Langfuse tracing', () => {
     expect(
       parseWorkflowDefinition('quiet', '/x/quiet.yml', 'name: Quiet\nprompt: Hi\ntrace: false\n'),

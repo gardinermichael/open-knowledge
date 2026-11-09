@@ -21,6 +21,14 @@ export const WorkflowRunSchema = z.object({
   toolCalls: z.number().optional(),
   missingTools: z.array(z.string()).optional(),
   traced: z.boolean(),
+  runner: z
+    .object({
+      type: z.enum(['langgraph', 'acp']),
+      agentId: z.string().optional(),
+      agentName: z.string().optional(),
+      agentVersion: z.string().optional(),
+    })
+    .optional(),
 });
 
 export type WorkflowRun = z.infer<typeof WorkflowRunSchema>;

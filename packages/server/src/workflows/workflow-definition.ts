@@ -18,6 +18,26 @@ const SCHEDULE_SAMPLE_RUNS = 12;
 
 export const DEFAULT_WORKFLOW_MODEL = 'anthropic:claude-sonnet-5-5';
 
+export const DEFAULT_MAX_TOOL_CALLS = 50;
+
+export const ACP_AGENT_ID_PATTERN = /^[a-zA-Z0-9_-]+$/;
+
+const RunnerSchema = z.discriminatedUnion('type', [
+  z.object({ type: z.literal('langgraph') }).strict(),
+  z
+    .object({
+      type: z.literal('acp'),
+      agent: z
+        .string()
+        .regex(ACP_AGENT_ID_PATTERN, 'agent must be an ACP agent id, e.g. claude-acp'),
+      source: z.enum(['registry', 'custom']).optional(),
+      model: z.string().trim().min(1).optional(),
+    })
+    .strict(),
+]);
+
+export type WorkflowRunner = z.infer<typeof RunnerSchema>;
+
 export const DEFAULT_WORKFLOW_TOOLS = ['search', 'exec', 'links', 'lint', 'audit', 'history'];
 
 export const FORBIDDEN_WORKFLOW_TOOLS: ReadonlySet<string> = new Set([
@@ -48,6 +68,8 @@ const WorkflowFileSchema = z
       })
       .optional(),
     maxSteps: z.number().int().min(1).max(100).default(25),
+    maxToolCalls: z.number().int().min(1).max(500).default(DEFAULT_MAX_TOOL_CALLS),
+    runner: RunnerSchema.default({ type: 'langgraph' }),
     enabled: z.boolean().default(true),
     trace: z.boolean().default(true),
   })
@@ -129,6 +151,13 @@ export function parseWorkflowDefinition(
     return { id, file, message };
   }
   const value = parsed.data;
+  if (value.runner.type === 'acp' && typeof raw === 'object' && raw !== null && 'model' in raw) {
+    return {
+      id,
+      file,
+      message: 'model only applies to the langgraph runner; set runner.model for an ACP agent',
+    };
+  }
   if (value.schedule !== undefined) {
     const scheduleError = validateSchedule(value.schedule, value.timezone);
     if (scheduleError !== null) {

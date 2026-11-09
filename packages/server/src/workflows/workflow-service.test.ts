@@ -8,7 +8,13 @@ import type { LangfuseStatus } from './langfuse-tracing.ts';
 import { WorkflowApprovalStore } from './workflow-approvals.ts';
 import type { WorkflowDefinition, WorkflowDefinitionSet } from './workflow-definition.ts';
 import { WorkflowRunStore } from './workflow-run-store.ts';
-import { WorkflowService, type WorkflowTracer } from './workflow-service.ts';
+import {
+  type AcpWorkflowRequest,
+  type AcpWorkflowRunner,
+  WorkflowService,
+  type WorkflowServiceDeps,
+  type WorkflowTracer,
+} from './workflow-service.ts';
 import { recordingSearchTool, ScriptedChatModel } from './workflow-test-model.test-helper.ts';
 import { selectWorkflowTools } from './workflow-tools.ts';
 
@@ -32,6 +38,8 @@ function definition(overrides: Partial<WorkflowDefinition> = {}): WorkflowDefini
     maxSteps: 5,
     enabled: true,
     trace: true,
+    maxToolCalls: 50,
+    runner: { type: 'langgraph' },
     ...overrides,
   };
 }
@@ -69,6 +77,7 @@ function harness(opts: {
   timeoutMs?: number;
   approveAll?: boolean;
   runStore?: WorkflowRunStore;
+  extra?: Partial<WorkflowServiceDeps>;
 }): Harness {
   const searchCalls: string[] = [];
   const model = new ScriptedChatModel(
@@ -103,6 +112,7 @@ function harness(opts: {
     log: createTestLogger('workflows-test'),
     refreshMs: 60_000,
     ...(opts.timeoutMs !== undefined ? { timeoutMs: opts.timeoutMs } : {}),
+    ...opts.extra,
   });
   services.push(service);
   return { service, model, searchCalls, closeTools, runStore };
@@ -260,6 +270,87 @@ describe('WorkflowService.trigger', () => {
     expect(run.status).toBe('succeeded');
     expect(run.traced).toBe(false);
     expect(calls).toEqual([]);
+  });
+});
+
+describe('WorkflowService runners and safety limits', () => {
+  test('a run whose agent ends without a summary is recorded as failed', async () => {
+    const { service } = harness({ script: [new AIMessage('   ')] });
+    service.start('http://127.0.0.1:1');
+    const result = service.trigger('digest', 'api');
+    if (!result.ok) throw new Error('expected a run');
+    expect(await result.completion).toMatchObject({
+      status: 'failed',
+      error: 'the agent finished without a final summary',
+    });
+  });
+
+  test('a tool session that never closes cannot hold the run open', async () => {
+    const { service, closeTools } = harness({ extra: { cleanupTimeoutMs: 30 } });
+    closeTools.mockImplementation(() => new Promise<undefined>(() => undefined));
+    service.start('http://127.0.0.1:1');
+    const result = service.trigger('digest', 'api');
+    if (!result.ok) throw new Error('expected a run');
+    expect((await result.completion).status).toBe('succeeded');
+  });
+
+  test('an ACP workflow fails clearly when this server has no ACP runner', async () => {
+    const { service } = harness({
+      definitions: {
+        definitions: [definition({ runner: { type: 'acp', agent: 'claude-acp' } })],
+        problems: [],
+      },
+    });
+    service.start('http://127.0.0.1:1');
+    const result = service.trigger('digest', 'api');
+    if (!result.ok) throw new Error('expected a run');
+    expect(await result.completion).toMatchObject({
+      status: 'failed',
+      error: 'the ACP workflow runner is not available in this server',
+    });
+  });
+
+  test('an ACP workflow runs through the ACP runner and records which agent ran it', async () => {
+    const requests: AcpWorkflowRequest[] = [];
+    const runAcp: AcpWorkflowRunner = async (request) => {
+      requests.push(request);
+      return {
+        summary: 'Wrote the digest.',
+        toolCalls: 3,
+        traced: true,
+        agent: { id: 'claude-acp', name: 'Claude Agent', version: '0.101.0' },
+      };
+    };
+    const { service, model } = harness({
+      definitions: {
+        definitions: [definition({ runner: { type: 'acp', agent: 'claude-acp', model: 'opus' } })],
+        problems: [],
+      },
+      extra: { runAcp },
+    });
+    service.start('http://127.0.0.1:1');
+    expect(service.list().workflows[0]?.model).toBe('acp:claude-acp/opus');
+    const result = service.trigger('digest', 'mcp');
+    if (!result.ok) throw new Error('expected a run');
+    expect(await result.completion).toMatchObject({
+      status: 'succeeded',
+      model: 'acp:claude-acp/opus',
+      summary: 'Wrote the digest.',
+      toolCalls: 3,
+      traced: true,
+      runner: {
+        type: 'acp',
+        agentId: 'claude-acp',
+        agentName: 'Claude Agent',
+        agentVersion: '0.101.0',
+      },
+    });
+    expect(requests[0]).toMatchObject({
+      runner: { type: 'acp', agent: 'claude-acp', model: 'opus' },
+      trigger: 'mcp',
+      serverUrl: 'http://127.0.0.1:1',
+    });
+    expect(model.seen).toHaveLength(0);
   });
 });
 

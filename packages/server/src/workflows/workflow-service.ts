@@ -9,11 +9,13 @@ import {
   type WorkflowDefinition,
   type WorkflowDefinitionProblem,
   type WorkflowDefinitionSet,
+  type WorkflowRunner,
 } from './workflow-definition.ts';
 import {
   buildWorkflowGraph,
   countToolCalls,
   finalAssistantText,
+  WorkflowFatalError,
   workflowInputMessages,
 } from './workflow-graph.ts';
 import type { WorkflowModelFactory } from './workflow-model.ts';
@@ -25,6 +27,35 @@ export const DEFAULT_WORKFLOW_TIMEOUT_MS = 10 * 60_000;
 export const DEFAULT_WORKFLOW_REFRESH_MS = 30_000;
 
 export const WORKFLOW_STOP_DRAIN_MS = 5_000;
+
+export const WORKFLOW_CLEANUP_TIMEOUT_MS = 10_000;
+
+type RunOutcome = Pick<WorkflowRun, 'toolCalls' | 'traced' | 'runner'> & { summary: string };
+
+export interface AcpWorkflowRequest {
+  definition: WorkflowDefinition;
+  runner: Extract<WorkflowRunner, { type: 'acp' }>;
+  runId: string;
+  trigger: WorkflowTrigger;
+  serverUrl: string;
+  signal: AbortSignal;
+  now: Date;
+}
+
+export interface AcpWorkflowResult {
+  summary: string;
+  toolCalls: number;
+  traced: boolean;
+  agent: { id: string; name: string; version?: string };
+}
+
+export type AcpWorkflowRunner = (request: AcpWorkflowRequest) => Promise<AcpWorkflowResult>;
+
+export function workflowModelLabel(definition: WorkflowDefinition): string {
+  if (definition.runner.type !== 'acp') return definition.model;
+  const model = definition.runner.model;
+  return `acp:${definition.runner.agent}${model !== undefined ? `/${model}` : ''}`;
+}
 
 export function untilAborted<T>(promise: Promise<T>, signal: AbortSignal): Promise<T> {
   if (signal.aborted) return Promise.reject(signal.reason);
@@ -65,6 +96,8 @@ export interface WorkflowServiceDeps {
   now?: () => Date;
   timeoutMs?: number;
   refreshMs?: number;
+  cleanupTimeoutMs?: number;
+  runAcp?: AcpWorkflowRunner;
 }
 
 export interface WorkflowSummary {
@@ -74,6 +107,7 @@ export interface WorkflowSummary {
   schedule?: string;
   timezone?: string;
   model: string;
+  runner: WorkflowRunner;
   tools: readonly string[];
   enabled: boolean;
   trace: boolean;
@@ -253,7 +287,7 @@ export class WorkflowService {
       trigger,
       status: 'running',
       startedAt: now.toISOString(),
-      model: definition.model,
+      model: workflowModelLabel(definition),
       traced: false,
     };
     const abort = new AbortController();
@@ -285,51 +319,21 @@ export class WorkflowService {
     );
     timer.unref?.();
     let run = started;
-    let closeTools: (() => Promise<void>) | undefined;
     try {
-      const trace: LangfuseRunTrace = {
-        workflowId: definition.id,
-        runId: started.runId,
-        trigger: started.trigger,
-        model: definition.model,
-      };
-      const handler = definition.trace
-        ? await untilAborted(this.deps.tracer.handlerFor(trace), abort.signal)
-        : null;
-      run = { ...run, traced: handler !== null };
-      const model = await untilAborted(this.deps.createModel(definition.model), abort.signal);
-      const pendingSession = this.deps.connectTools({
-        serverUrl,
-        workflowId: definition.id,
-        allowedTools: definition.tools,
-      });
-      pendingSession.then(
-        (late) => {
-          if (abort.signal.aborted && closeTools === undefined) void late.close().catch(() => {});
-        },
-        () => {},
-      );
-      const session = await untilAborted(pendingSession, abort.signal);
-      closeTools = session.close;
-      if (session.missing.length > 0) run = { ...run, missingTools: [...session.missing] };
-      const graph = buildWorkflowGraph(model, session.tools, definition.model);
-      const result = await this.deps.tracer.runTraced(trace, () =>
-        graph.invoke(
-          { messages: workflowInputMessages(definition.prompt, this.now()) },
-          {
-            recursionLimit: definition.maxSteps * 2 + 1,
-            signal: abort.signal,
-            runName: `workflow:${definition.id}`,
-            ...(handler !== null ? { callbacks: [handler] } : {}),
-            metadata: { workflowId: definition.id, runId: started.runId, trigger: started.trigger },
-          },
-        ),
-      );
+      const outcome =
+        definition.runner.type === 'acp'
+          ? await this.runAcp(definition, started, serverUrl, abort.signal)
+          : await this.runLangGraph(definition, started, serverUrl, abort.signal, (patch) => {
+              run = { ...run, ...patch };
+            });
+      if (outcome.summary.trim() === '') {
+        throw new WorkflowFatalError('the agent finished without a final summary');
+      }
       run = {
         ...run,
+        ...outcome,
         status: 'succeeded',
-        summary: finalAssistantText(result.messages).slice(0, 4000),
-        toolCalls: countToolCalls(result.messages),
+        summary: outcome.summary.slice(0, 4000),
       };
     } catch (err) {
       const reason = abort.signal.aborted ? abort.signal.reason : err;
@@ -344,19 +348,6 @@ export class WorkflowService {
       );
     } finally {
       clearTimeout(timer);
-      await closeTools?.().catch((err: unknown) =>
-        this.deps.log.warn(
-          { err, workflowId: definition.id },
-          '[workflows] tool session close failed',
-        ),
-      );
-      if (definition.trace) {
-        await this.deps.tracer
-          .finishRun()
-          .catch((err: unknown) =>
-            this.deps.log.warn({ err }, '[workflows] Langfuse flush failed'),
-          );
-      }
     }
     const finished = this.now();
     run = {
@@ -372,6 +363,138 @@ export class WorkflowService {
     return run;
   }
 
+  private async runAcp(
+    definition: WorkflowDefinition,
+    started: WorkflowRun,
+    serverUrl: string,
+    signal: AbortSignal,
+  ): Promise<RunOutcome> {
+    const runner = this.deps.runAcp;
+    if (runner === undefined || definition.runner.type !== 'acp') {
+      throw new WorkflowFatalError('the ACP workflow runner is not available in this server');
+    }
+    const result = await runner({
+      definition,
+      runner: definition.runner,
+      runId: started.runId,
+      trigger: started.trigger,
+      serverUrl,
+      signal,
+      now: this.now(),
+    });
+    return {
+      summary: result.summary,
+      toolCalls: result.toolCalls,
+      traced: result.traced,
+      runner: {
+        type: 'acp',
+        agentId: result.agent.id,
+        agentName: result.agent.name,
+        ...(result.agent.version !== undefined ? { agentVersion: result.agent.version } : {}),
+      },
+    };
+  }
+
+  private async runLangGraph(
+    definition: WorkflowDefinition,
+    started: WorkflowRun,
+    serverUrl: string,
+    signal: AbortSignal,
+    note: (patch: Partial<WorkflowRun>) => void,
+  ): Promise<RunOutcome> {
+    let closeTools: (() => Promise<void>) | undefined;
+    const trace: LangfuseRunTrace = {
+      workflowId: definition.id,
+      runId: started.runId,
+      trigger: started.trigger,
+      model: definition.model,
+    };
+    try {
+      const handler = definition.trace
+        ? await untilAborted(this.deps.tracer.handlerFor(trace), signal)
+        : null;
+      note({ traced: handler !== null });
+      const model = await untilAborted(this.deps.createModel(definition.model), signal);
+      const pendingSession = this.deps.connectTools({
+        serverUrl,
+        workflowId: definition.id,
+        allowedTools: definition.tools,
+      });
+      pendingSession.then(
+        (late) => {
+          if (signal.aborted && closeTools === undefined) void late.close().catch(() => {});
+        },
+        () => {},
+      );
+      const session = await untilAborted(pendingSession, signal);
+      closeTools = session.close;
+      if (session.missing.length > 0) note({ missingTools: [...session.missing] });
+      const graph = buildWorkflowGraph(model, session.tools, {
+        modelRunName: definition.model,
+        maxToolCalls: definition.maxToolCalls,
+      });
+      const result = await this.deps.tracer.runTraced(trace, () =>
+        graph.invoke(
+          { messages: workflowInputMessages(definition.prompt, this.now()) },
+          {
+            recursionLimit: definition.maxSteps * 2 + 1,
+            signal,
+            runName: `workflow:${definition.id}`,
+            ...(handler !== null ? { callbacks: [handler] } : {}),
+            metadata: { workflowId: definition.id, runId: started.runId, trigger: started.trigger },
+          },
+        ),
+      );
+      return {
+        summary: finalAssistantText(result.messages),
+        toolCalls: countToolCalls(result.messages),
+        traced: handler !== null,
+        runner: { type: 'langgraph' },
+      };
+    } finally {
+      const cleanupMs = this.deps.cleanupTimeoutMs ?? WORKFLOW_CLEANUP_TIMEOUT_MS;
+      if (closeTools !== undefined) {
+        await this.withinCleanupBudget(
+          closeTools(),
+          cleanupMs,
+          definition.id,
+          'tool session close',
+        );
+      }
+      if (definition.trace) {
+        await this.withinCleanupBudget(
+          this.deps.tracer.finishRun(),
+          cleanupMs,
+          definition.id,
+          'Langfuse flush',
+        );
+      }
+    }
+  }
+
+  private async withinCleanupBudget(
+    work: Promise<void>,
+    ms: number,
+    workflowId: string,
+    label: string,
+  ): Promise<void> {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const expired = new Promise<'expired'>((resolve) => {
+      timer = setTimeout(() => resolve('expired'), ms);
+      timer.unref?.();
+    });
+    try {
+      const outcome = await Promise.race([work.then(() => 'done' as const), expired]);
+      if (outcome === 'expired') {
+        this.deps.log.warn({ workflowId, ms }, `[workflows] ${label} did not finish in time`);
+      }
+    } catch (err) {
+      this.deps.log.warn({ err, workflowId }, `[workflows] ${label} failed`);
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
   private summarize(definition: WorkflowDefinition): WorkflowSummary {
     const next = this.jobs.get(definition.id)?.nextRun() ?? null;
     return {
@@ -380,7 +503,8 @@ export class WorkflowService {
       ...(definition.description !== undefined ? { description: definition.description } : {}),
       ...(definition.schedule !== undefined ? { schedule: definition.schedule } : {}),
       ...(definition.timezone !== undefined ? { timezone: definition.timezone } : {}),
-      model: definition.model,
+      model: workflowModelLabel(definition),
+      runner: definition.runner,
       tools: definition.tools,
       enabled: definition.enabled,
       trace: definition.trace,
