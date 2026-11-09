@@ -174,7 +174,11 @@ These steps come from building the Workflows and Langfuse plugins. Use them when
 - Add the tool name to `OPEN_KNOWLEDGE_MCP_PLUGIN_TOOLS` in `packages/core/src/constants/mcp.ts`, not to `OPEN_KNOWLEDGE_MCP_TOOLS`. The core list must equal what is served by default.
 - Never let an agent approve its own work. Approval endpoints stay off the MCP tool surface.
 - If the tool spends money or writes, add it to `OK_GATED_TOOL_NAMES` in `packages/core/src/handoff/terminal-launch.ts`, so Claude Code launched from the app asks before using it. Then update the expected `ask` lists in `terminal-launch.test.ts`.
-- ACP agents (the in-app agent chat) receive OpenKnowledge's MCP tools automatically, so an MCP tool is also an ACP tool.
+- ACP agents (the in-app agent chat) receive OpenKnowledge's MCP tools automatically, so an MCP tool is also an ACP tool, **but only if they actually reach the fork's code.** Two things send them to the installed OpenKnowledge.app instead, whose build doesn't have your tool:
+  - **The agent already has OpenKnowledge configured.** If `~/.claude.json` or `~/.codex/config.toml` already has OpenKnowledge's managed entry (a script starting `# ok-mcp`), the server doesn't add its own (`harnessAlreadyHasOkMcp` in `acp/thread-manager.ts`). That entry runs the installed app's `ok.sh mcp`.
+  - **`ok mcp` hands off to the installed app.** Even the fork's own `ok mcp` passes itself to the app's bundled CLI when it is installed (stderr shows `mcp-bundle-proxy` with mode `bundled`). Set `OK_BUNDLE_PROXY=0` or pass `--no-bundle-proxy` to stop that.
+
+  To check, list the tools from the fork's own MCP: run `OK_BUNDLE_PROXY=0 node packages/cli/dist/cli.mjs mcp` from inside the knowledge base and look for your tool. The server's HTTP endpoint, `<server>/mcp`, always serves the fork's tools.
 
 ### 3.4 Dependencies
 
