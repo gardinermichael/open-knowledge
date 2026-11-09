@@ -16,15 +16,18 @@ import {
 import { context, ROOT_CONTEXT } from '@opentelemetry/api';
 import type { AcpThreadObserver } from '../acp/thread-observer.ts';
 import type { PinoLogger } from '../logger.ts';
+import { type TraceIdentity, traceAgentSlug } from './trace-environment.ts';
 
 export const MAX_TRACED_TEXT_CHARS = 20_000;
 
 export interface AgentChatTraceSink {
   beginAgentChatTurn(threadId: string): boolean;
+  identityFor(agent: string): TraceIdentity;
   finishRun(): Promise<void>;
 }
 
 interface OpenTurn {
+  readonly inTrace: <T>(create: () => T) => T;
   readonly root: LangfuseAgent;
   readonly generation: LangfuseGeneration;
   readonly tools: Map<string, LangfuseTool>;
@@ -115,10 +118,12 @@ export class AgentChatTracer implements AcpThreadObserver {
         return;
       case 'permission_resolved': {
         const turn = this.turns.get(threadId);
-        turn?.root.startObservation(
-          'permission',
-          { output: { optionId: event.optionId, auto: event.auto } },
-          { asType: 'event' },
+        turn?.inTrace(() =>
+          turn.root.startObservation(
+            'permission',
+            { output: { optionId: event.optionId, auto: event.auto } },
+            { asType: 'event' },
+          ),
         );
         return;
       }
@@ -156,28 +161,31 @@ export class AgentChatTracer implements AcpThreadObserver {
       ...(info.agent.version !== undefined ? { agentVersion: info.agent.version } : {}),
       ...(model !== undefined ? { model } : {}),
     };
-    const root = context.with(ROOT_CONTEXT, () =>
-      propagateAttributes(
-        {
-          traceName: `agent-chat:${info.agent.id}`,
-          sessionId: threadId,
-          tags: ['openknowledge', 'agent-chat', info.agent.id],
-          metadata,
-        },
-        () =>
-          startObservation(
-            info.agent.name,
-            { input: clipForTrace(prompt), metadata },
-            { asType: 'agent' },
-          ),
+    const traceAttributes = {
+      traceName: `${info.agent.name} Turn`,
+      sessionId: threadId,
+      ...this.sink.identityFor(traceAgentSlug(info.agent.id)),
+      tags: ['openknowledge', 'agent-chat', info.agent.id],
+      metadata,
+    };
+    const inTrace = <T>(create: () => T): T =>
+      context.with(ROOT_CONTEXT, () => propagateAttributes(traceAttributes, create));
+    const root = inTrace(() =>
+      startObservation(
+        info.agent.name,
+        { input: clipForTrace(prompt), metadata },
+        { asType: 'agent' },
       ),
     );
-    const generation = root.startObservation(
-      model ?? info.agent.name,
-      { input: clipForTrace(prompt), ...(model !== undefined ? { model } : {}) },
-      { asType: 'generation' },
+    const generation = inTrace(() =>
+      root.startObservation(
+        model ?? info.agent.name,
+        { input: clipForTrace(prompt), ...(model !== undefined ? { model } : {}) },
+        { asType: 'generation' },
+      ),
     );
     this.turns.set(threadId, {
+      inTrace,
       root,
       generation,
       tools: new Map(),
@@ -215,13 +223,15 @@ export class AgentChatTracer implements AcpThreadObserver {
   private applyToolUpdate(turn: OpenTurn, update: ToolUpdate): void {
     let tool = turn.tools.get(update.toolCallId);
     if (tool === undefined) {
-      tool = turn.root.startObservation(
-        update.title ?? update.kind ?? 'tool',
-        {
-          input: clipForTrace(update.rawInput),
-          metadata: { toolCallId: update.toolCallId, kind: update.kind ?? 'other' },
-        },
-        { asType: 'tool' },
+      tool = turn.inTrace(() =>
+        turn.root.startObservation(
+          update.title ?? update.kind ?? 'tool',
+          {
+            input: clipForTrace(update.rawInput),
+            metadata: { toolCallId: update.toolCallId, kind: update.kind ?? 'other' },
+          },
+          { asType: 'tool' },
+        ),
       );
       turn.tools.set(update.toolCallId, tool);
     } else if (update.rawInput !== undefined) {

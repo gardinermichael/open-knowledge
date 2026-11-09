@@ -626,6 +626,7 @@ describe('AcpThreadManager (real subprocess)', () => {
           traces.begun += 1;
           return true;
         },
+        identityFor: () => ({}),
         finishRun: async () => {
           traces.finished += 1;
         },

@@ -4,9 +4,17 @@ import { LangfuseSpanProcessor } from '@langfuse/otel';
 import { propagateAttributes, setLangfuseTracerProvider } from '@langfuse/tracing';
 import { context, ROOT_CONTEXT } from '@opentelemetry/api';
 import { BasicTracerProvider } from '@opentelemetry/sdk-trace-base';
+import {
+  defaultTraceEnvironmentSources,
+  type TraceEnvironmentSources,
+  type TraceIdentity,
+  traceIdentity,
+} from '../langfuse/trace-environment.ts';
 import type { PinoLogger } from '../logger.ts';
 
 export const DEFAULT_LANGFUSE_BASE_URL = 'https://cloud.langfuse.com';
+
+export const WORKFLOW_TRACE_AGENT = 'workflow';
 
 export interface LangfuseUserSettings {
   enabled?: boolean;
@@ -66,15 +74,24 @@ export class LangfuseTracing {
   private readonly readSettings: () => LangfuseUserSettings | undefined;
   private readonly log: PinoLogger;
   private readonly env: NodeJS.ProcessEnv;
+  private readonly projectDir: string | undefined;
+  private readonly sources: TraceEnvironmentSources;
 
   constructor(
     readSettings: () => LangfuseUserSettings | undefined,
     log: PinoLogger,
     env: NodeJS.ProcessEnv = process.env,
+    identity: { projectDir?: string; sources?: TraceEnvironmentSources } = {},
   ) {
     this.readSettings = readSettings;
     this.log = log;
     this.env = env;
+    this.projectDir = identity.projectDir;
+    this.sources = identity.sources ?? defaultTraceEnvironmentSources(env);
+  }
+
+  identityFor(agent: string): TraceIdentity {
+    return traceIdentity(agent, this.projectDir, this.sources);
   }
 
   status(): LangfuseStatus {
@@ -89,8 +106,10 @@ export class LangfuseTracing {
 
   async handlerFor(trace: LangfuseRunTrace): Promise<BaseCallbackHandler | null> {
     if (!this.beginRun({ workflowId: trace.workflowId })) return null;
+    const { userId } = this.identityFor(WORKFLOW_TRACE_AGENT);
     return new CallbackHandler({
       sessionId: trace.workflowId,
+      ...(userId !== undefined ? { userId } : {}),
       tags: ['openknowledge', 'workflow', `trigger:${trace.trigger}`],
       traceMetadata: {
         workflowId: trace.workflowId,
@@ -107,7 +126,10 @@ export class LangfuseTracing {
 
   runTraced<T>(trace: LangfuseRunTrace, run: () => Promise<T>): Promise<T> {
     return context.with(ROOT_CONTEXT, () =>
-      propagateAttributes({ traceName: `workflow:${trace.workflowId}` }, run),
+      propagateAttributes(
+        { traceName: `workflow:${trace.workflowId}`, ...this.identityFor(WORKFLOW_TRACE_AGENT) },
+        run,
+      ),
     );
   }
 

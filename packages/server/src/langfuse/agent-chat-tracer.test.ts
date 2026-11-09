@@ -49,6 +49,9 @@ function sink(enabled: boolean): AgentChatTraceSink & { begun: string[]; finishe
       state.begun.push(threadId);
       return enabled;
     },
+    identityFor(agent: string) {
+      return { environment: `testhost-notes_${agent}`, userId: 'g' };
+    },
     async finishRun() {
       state.finished += 1;
     },
@@ -142,7 +145,12 @@ describe('AgentChatTracer', () => {
     expect(spans).toHaveLength(3);
     expect(root?.name).toBe('Claude Agent');
     expect(root?.parentSpanContext).toBeUndefined();
-    expect(attr(root, LangfuseOtelSpanAttributes.TRACE_NAME)).toBe('agent-chat:claude-acp');
+    expect(attr(root, LangfuseOtelSpanAttributes.TRACE_NAME)).toBe('Claude Agent Turn');
+    expect(attr(root, LangfuseOtelSpanAttributes.ENVIRONMENT)).toBe('testhost-notes_claude');
+    expect(attr(root, LangfuseOtelSpanAttributes.TRACE_USER_ID)).toBe('g');
+    for (const span of spans) {
+      expect(attr(span, LangfuseOtelSpanAttributes.ENVIRONMENT)).toBe('testhost-notes_claude');
+    }
     expect(attr(root, LangfuseOtelSpanAttributes.TRACE_SESSION_ID)).toBe('thread-1');
     expect(attr(root, LangfuseOtelSpanAttributes.TRACE_TAGS)).toEqual([
       'openknowledge',
@@ -245,6 +253,7 @@ describe('AgentChatTracer', () => {
     let enabled = false;
     const traces = {
       beginAgentChatTurn: () => enabled,
+      identityFor: () => ({}),
       finishRun: async () => undefined,
     };
     const tracer = new AgentChatTracer(traces, createTestLogger('agent-chat-test'));

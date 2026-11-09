@@ -253,7 +253,7 @@ Two gotchas came up while building this:
 - **Start each run in its own trace.** The server has its own OpenTelemetry tracing. A run started from the API or MCP inherits the HTTP request's span, so the Langfuse root span ends up as a child of a span Langfuse never receives, and the trace has no name. `LangfuseTracing.runTraced` fixes this: it runs the graph under `ROOT_CONTEXT`, with `propagateAttributes({ traceName })` setting the trace name.
 - **Name the model run.** The CLI bundle minifies class names, so the default name for an LLM run comes out as gibberish such as `yl`. Pass a `runName` when invoking the model.
 
-**Agent chats.** Chats in the agent panel, and Ask AI when it opens a chat there, are traced too unless **Trace agent chats** (`langfuse.traceAgentChats`, default on) is turned off. Each turn is one trace named `agent-chat:<agent id>`, with the chat's thread id as the Langfuse session and the tags `openknowledge`, `agent-chat` and the agent id. A trace holds:
+**Agent chats.** Chats in the agent panel, and Ask AI when it opens a chat there, are traced too unless **Trace agent chats** (`langfuse.traceAgentChats`, default on) is turned off. Each turn is one trace named `<agent name> Turn` (for example `Claude Agent Turn`), with the chat's thread id as the Langfuse session and the tags `openknowledge`, `agent-chat` and the agent id. A trace holds:
 
 - an agent span with the prompt and the reply;
 - a generation under it, named after the model chosen in the chat when the agent reports one, carrying token usage and cost when the agent sends them;
@@ -263,6 +263,18 @@ Two gotchas came up while building this:
 Long text is cut at 20,000 characters.
 
 This works through a hook that any server-side plugin can use. `AcpThreadManager` takes an optional `threadObserver` (`acp/thread-observer.ts`) and calls it with every thread event before chunks are merged, and with the prompt's token usage before `turn_ended`. It also calls `onThreadClosed` first thing in `closeThread`, because closing the connection rejects the pending prompt and no `turn_ended` follows. The calls are wrapped so that an observer which throws can't drop an event from the chat. `AgentChatTracer` (`langfuse/agent-chat-tracer.ts`) is the Langfuse observer. One `LangfuseTracing` is created in `server-factory.ts` and shared between workflows and chats. Each `beginRun` must be matched by exactly one `finishRun`, because exporters are shut down only when no run is open.
+
+**Naming follows the `langfuse-trace-init` convention** (the `.kills` skill that wires up tracing for agent CLIs), so OpenKnowledge traces sit next to `Claude Code Turn` and `Codex Turn` traces:
+
+- **Environment:** `<prefix>-<project dir>_<agent>`, for example `macbookpro-team-wiki_claude`. The agent suffix is the ACP id without `-acp`, so in-app Claude chats share `_claude` with Claude Code in the same project; workflows use `_workflow`.
+- **Prefix:** comes from `LANGFUSE_TRACE_PREFIX`, then `prefix` in `~/.config/langfuse-trace/agents.json`, then the short hostname.
+- **Project segment:** the knowledge base's folder name, lowercased, with other characters folded to `-` and cut so the whole id fits Langfuse's 40-character limit. Langfuse drops traces whose environment breaks that rule.
+- **Override:** an explicit `LANGFUSE_TRACING_ENVIRONMENT` wins.
+- **User:** `userId` comes from `LANGFUSE_USER_ID`.
+
+The deriver is `langfuse/trace-environment.ts`, and its tests mirror the `langfuse-trace-env` script. Every observation in a turn, not only the root, has to be created inside `propagateAttributes`. Otherwise the children are filed under `default`.
+
+In-app chats aren't traced by the Claude Code hook. The in-app Claude Agent runs as an Agent SDK session (`entrypoint: sdk-ts`), and the `langfuse-observability` hook doesn't fire for those. So this plugin doesn't double-count them.
 
 Agents running in a terminal (Claude Code or Codex launched from Ask AI's terminal option, or on their own) are outside OpenKnowledge and are not traced; set those up in each agent's own settings.
 

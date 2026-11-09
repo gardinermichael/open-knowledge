@@ -60,6 +60,8 @@ export function createLangfuseTracing(opts: CreateLangfuseTracingOptions): Langf
   return new LangfuseTracing(
     () => readUserConfig(opts.projectDir, opts.configHomedirOverride).langfuse,
     opts.log,
+    process.env,
+    { projectDir: opts.projectDir },
   );
 }
 
