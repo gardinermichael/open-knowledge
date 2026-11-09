@@ -5,9 +5,10 @@ import { LangfuseTracing } from './langfuse-tracing.ts';
 import { WorkflowApprovalStore } from './workflow-approvals.ts';
 import { createDefaultModelFactory } from './workflow-model.ts';
 import { WorkflowRunStore } from './workflow-run-store.ts';
-import { WorkflowService } from './workflow-service.ts';
+import { type AcpWorkflowRunner, WorkflowService } from './workflow-service.ts';
 import { connectWorkflowTools } from './workflow-tools.ts';
 
+export { createAcpWorkflowRunner } from './acp-runner.ts';
 export { LangfuseTracing } from './langfuse-tracing.ts';
 export {
   WORKFLOW_RUN_STATUSES,
@@ -32,6 +33,7 @@ export interface CreateWorkflowServiceOptions {
   configHomedirOverride?: string;
   log: PinoLogger;
   tracer?: LangfuseTracing;
+  runAcp?: AcpWorkflowRunner;
 }
 
 export interface CreateLangfuseTracingOptions {
@@ -86,5 +88,6 @@ export function createWorkflowService(opts: CreateWorkflowServiceOptions): Workf
       opts.localDir === null ? null : join(opts.localDir, WORKFLOW_APPROVALS_FILENAME),
     ),
     log: opts.log,
+    ...(opts.runAcp !== undefined ? { runAcp: opts.runAcp } : {}),
   });
 }

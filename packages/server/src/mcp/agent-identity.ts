@@ -17,6 +17,18 @@ export const MCP_CONNECTION_ID_HEADER = 'x-ok-connection-id';
 
 export const MCP_HOSTED_AGENT_HEADER = 'x-ok-hosted-agent';
 
+export const MCP_TOOL_ALLOWLIST_HEADER = 'x-ok-tool-allowlist';
+
+export function parseToolAllowlist(header: string | undefined): ReadonlySet<string> | undefined {
+  if (header === undefined) return undefined;
+  return new Set(
+    header
+      .split(',')
+      .map((name) => name.trim())
+      .filter((name) => /^[a-z_]+$/.test(name)),
+  );
+}
+
 export function sanitizeClientName(name: string | undefined, fallback: string): string {
   const clean = Array.from(name ?? '')
     .map((char) => {

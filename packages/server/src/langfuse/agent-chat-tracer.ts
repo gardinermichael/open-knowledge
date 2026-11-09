@@ -20,6 +20,22 @@ import { type TraceIdentity, traceAgentSlug } from './trace-environment.ts';
 
 export const MAX_TRACED_TEXT_CHARS = 20_000;
 
+export interface AgentTurnNaming {
+  traceName: string;
+  sessionId: string;
+  tags: string[];
+  identityAgent: string;
+}
+
+export function agentChatNaming(info: Readonly<ThreadInfo>): AgentTurnNaming {
+  return {
+    traceName: `${info.agent.name} Turn`,
+    sessionId: info.threadId,
+    tags: ['openknowledge', 'agent-chat', info.agent.id],
+    identityAgent: traceAgentSlug(info.agent.id),
+  };
+}
+
 export interface AgentChatTraceSink {
   beginAgentChatTurn(threadId: string): boolean;
   identityFor(agent: string): TraceIdentity;
@@ -75,10 +91,16 @@ export class AgentChatTracer implements AcpThreadObserver {
   private readonly log: PinoLogger;
   private readonly turns = new Map<string, OpenTurn>();
   private readonly prompts = new Map<string, string>();
+  private readonly naming: (info: Readonly<ThreadInfo>) => AgentTurnNaming;
 
-  constructor(sink: AgentChatTraceSink, log: PinoLogger) {
+  constructor(
+    sink: AgentChatTraceSink,
+    log: PinoLogger,
+    naming: (info: Readonly<ThreadInfo>) => AgentTurnNaming = agentChatNaming,
+  ) {
     this.sink = sink;
     this.log = log;
+    this.naming = naming;
   }
 
   onEvent(info: Readonly<ThreadInfo>, event: ThreadEvent): void {
@@ -161,11 +183,12 @@ export class AgentChatTracer implements AcpThreadObserver {
       ...(info.agent.version !== undefined ? { agentVersion: info.agent.version } : {}),
       ...(model !== undefined ? { model } : {}),
     };
+    const naming = this.naming(info);
     const traceAttributes = {
-      traceName: `${info.agent.name} Turn`,
-      sessionId: threadId,
-      ...this.sink.identityFor(traceAgentSlug(info.agent.id)),
-      tags: ['openknowledge', 'agent-chat', info.agent.id],
+      traceName: naming.traceName,
+      sessionId: naming.sessionId,
+      ...this.sink.identityFor(naming.identityAgent),
+      tags: naming.tags,
       metadata,
     };
     const inTrace = <T>(create: () => T): T =>

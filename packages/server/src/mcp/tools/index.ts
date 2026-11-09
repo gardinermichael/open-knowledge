@@ -36,10 +36,33 @@ interface RegisterAllToolsOptions {
   logger?: McpLogger;
   isHostedAgent?: boolean;
   workflowsEnabled?: boolean;
+  onlyTools?: ReadonlySet<string>;
+}
+
+interface DisableableTool {
+  disable(): void;
+}
+
+function restrictToTools(server: ServerInstance, allowed: ReadonlySet<string>): void {
+  const target = server as unknown as Record<
+    'registerTool' | 'tool',
+    (...args: unknown[]) => unknown
+  >;
+  for (const method of ['registerTool', 'tool'] as const) {
+    const original = target[method];
+    if (typeof original !== 'function') continue;
+    const bound = original.bind(server);
+    target[method] = (...args: unknown[]) => {
+      const registered = bound(...args);
+      if (!allowed.has(String(args[0]))) (registered as DisableableTool).disable();
+      return registered;
+    };
+  }
 }
 
 export function registerAllTools(server: ServerInstance, opts: RegisterAllToolsOptions): void {
   const log = opts.logger;
+  if (opts.onlyTools !== undefined) restrictToTools(server, opts.onlyTools);
   const registrationServer = createLoggedServer(server, {
     logger: opts.logger,
     identityRef: opts.identityRef,

@@ -165,7 +165,7 @@ import {
   ACP_AGENT_EDITOR_IDS,
   type AcpRegistry,
   type CustomAgentEntry,
-  loadCustomAgents,
+  loadAllCustomAgents,
   registryPlatformKey,
 } from './registry.ts';
 import {
@@ -798,9 +798,9 @@ export class AcpThreadManager {
     id: string;
   }): Promise<{ info: ThreadAgentInfo; custom: CustomAgentEntry | null }> {
     if (agent.source === 'custom') {
-      const custom = (await loadCustomAgents(this.opts.localDir, this.opts.log)).find(
-        (c) => c.id === agent.id,
-      );
+      const custom = (
+        await loadAllCustomAgents(this.opts.localDir, this.opts.log, this.opts.globalDir)
+      ).find((c) => c.id === agent.id);
       if (custom === undefined) {
         throw new ThreadOpError('unknown-agent', `no custom agent '${agent.id}'`);
       }

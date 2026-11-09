@@ -41,6 +41,18 @@ describe('identifyOpenKnowledgeToolCall', () => {
     });
   });
 
+  test("reads Devin's 'Calling <tool> from <server>' title, for known servers only", () => {
+    expect(
+      identifyOpenKnowledgeToolCall({ title: 'Calling search from open-knowledge' }, 'known'),
+    ).toEqual({ tool: 'search', args: {} });
+    expect(
+      identifyOpenKnowledgeToolCall({ title: 'Calling search from github' }, 'known'),
+    ).toBeNull();
+    expect(
+      identifyOpenKnowledgeToolCall({ title: 'Calling rm_rf from open-knowledge' }, 'known'),
+    ).toBeNull();
+  });
+
   test('a call to another server or another tool is not an OK call', () => {
     expect(
       identifyOpenKnowledgeToolCall({ title: 'mcp__github__search', rawInput: {} }),

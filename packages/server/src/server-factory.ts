@@ -49,6 +49,7 @@ import {
 import {
   atomicWriteFile,
   collectConfigDiagnostics,
+  okUserHomeDir,
   readConfigSafely,
   resolveConfigPath,
   writeConfigPatch,
@@ -63,7 +64,7 @@ import {
 import simpleGit from 'simple-git';
 import type { Doc } from 'yjs';
 import { AcpPermissionStore } from './acp/permissions.ts';
-import { AcpRegistry, loadCustomAgents } from './acp/registry.ts';
+import { AcpRegistry, loadAllCustomAgents } from './acp/registry.ts';
 import { AgentFocusBroadcaster } from './agent-focus.ts';
 import { AgentPresenceBroadcaster } from './agent-presence.ts';
 import type { AgentRegistryHostSeam } from './agent-registry-apply.ts';
@@ -383,6 +384,7 @@ import {
 import { type WatcherClock, type WatcherTimer, watcherClock } from './watcher-clock.ts';
 import { FRESHNESS_BASE_INTERVAL_MS } from './watcher-freshness.ts';
 import {
+  createAcpWorkflowRunner,
   createLangfuseTracing,
   createWorkflowService,
   type LangfuseTracing,
@@ -1190,6 +1192,14 @@ export function createServer(options: ServerOptions): ServerInstance {
           configHomedirOverride,
           log: getLogger('workflows'),
           tracer: langfuseTracing,
+          runAcp: createAcpWorkflowRunner({
+            registry: acpRegistry,
+            localDir: lockDir,
+            globalDir: okUserHomeDir(configHomedirOverride ?? homedir()),
+            projectDir,
+            tracing: langfuseTracing,
+            log: getLogger('workflows'),
+          }),
         });
 
   let authority: ReturnType<typeof acquireServerAuthority>;
@@ -2802,7 +2812,12 @@ export function createServer(options: ServerOptions): ServerInstance {
       getPrincipal: () => loadedPrincipal,
       agentIntegrations: options.agentIntegrations,
       acpRegistry,
-      loadAcpCustomAgents: () => loadCustomAgents(lockDir, getLogger('acp-registry')),
+      loadAcpCustomAgents: () =>
+        loadAllCustomAgents(
+          lockDir,
+          getLogger('acp-registry'),
+          okUserHomeDir(configHomedirOverride ?? homedir()),
+        ),
       homeDirOverride: configHomedirOverride,
       resetSettingsForTest:
         configHomedirOverride === undefined

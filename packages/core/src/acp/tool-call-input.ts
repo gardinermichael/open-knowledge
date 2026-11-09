@@ -75,6 +75,24 @@ const PI_BRIDGE_NAMESPACES: ReadonlySet<string> = new Set(
 const OPEN_KNOWLEDGE_TITLE =
   /^(mcp[^a-z0-9]+)?((?:open[-_ ]?knowledge|ok)(?:-[a-z]+)*)[^a-z0-9]+([a-z_]+)$/;
 
+const CALLING_FROM_TITLE = /^calling ([a-z_]+) from ((?:open[-_ ]?knowledge|ok)(?:-[a-z]+)*)$/;
+
+function parseTitle(title: string): { viaMcp: boolean; server: string; tool: string } | null {
+  const mcpStyle = OPEN_KNOWLEDGE_TITLE.exec(title);
+  if (mcpStyle !== null) {
+    return {
+      viaMcp: mcpStyle[1] !== undefined,
+      server: mcpStyle[2] ?? '',
+      tool: mcpStyle[3] ?? '',
+    };
+  }
+  const callingFrom = CALLING_FROM_TITLE.exec(title);
+  if (callingFrom !== null) {
+    return { viaMcp: true, server: callingFrom[2] ?? '', tool: callingFrom[1] ?? '' };
+  }
+  return null;
+}
+
 function isOpenKnowledgeTool(candidate: string | null): candidate is OpenKnowledgeMcpTool {
   return candidate !== null && OPEN_KNOWLEDGE_TOOLS.has(candidate);
 }
@@ -88,10 +106,10 @@ export function identifyOpenKnowledgeToolCall(
   const inputServer = stringField(asRecord(call.rawInput), 'server')?.toLowerCase() ?? null;
   if (inputServer !== null && !serverPattern.test(inputServer)) return null;
 
-  const titleMatch = OPEN_KNOWLEDGE_TITLE.exec((call.title ?? '').trim().toLowerCase());
-  const titleViaMcp = titleMatch?.[1] !== undefined;
-  const titleServer = titleMatch?.[2] ?? null;
-  const titleTool = titleMatch?.[3] ?? null;
+  const titleMatch = parseTitle((call.title ?? '').trim().toLowerCase());
+  const titleViaMcp = titleMatch?.viaMcp ?? false;
+  const titleServer = titleMatch?.server ?? null;
+  const titleTool = titleMatch?.tool ?? null;
   const unwrapped = unwrapMcpInput(call.rawInput);
   if (servers === 'known') {
     if (titleServer === null) return null;

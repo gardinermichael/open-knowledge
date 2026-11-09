@@ -244,6 +244,20 @@ export async function loadCustomAgents(
   return valid;
 }
 
+export async function loadAllCustomAgents(
+  localDir: string,
+  log: PinoLogger,
+  globalDir: string | null,
+): Promise<CustomAgentEntry[]> {
+  const project = await loadCustomAgents(localDir, log);
+  if (globalDir === null || globalDir === localDir) return project;
+  const projectIds = new Set(project.map((entry) => entry.id));
+  const global = (await loadCustomAgents(globalDir, log)).filter(
+    (entry) => !projectIds.has(entry.id),
+  );
+  return [...project, ...global];
+}
+
 function jsonErrorPosition(err: unknown): number | undefined {
   if (!(err instanceof Error)) return undefined;
   const match = /at position (\d+)/.exec(err.message);

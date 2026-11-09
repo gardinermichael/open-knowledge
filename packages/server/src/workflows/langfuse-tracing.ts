@@ -120,6 +120,10 @@ export class LangfuseTracing {
     });
   }
 
+  beginWorkflowRun(workflowId: string): boolean {
+    return this.beginRun({ workflowId });
+  }
+
   beginAgentChatTurn(threadId: string): boolean {
     return this.beginRun({ threadId }, (settings) => settings.traceAgentChats !== false);
   }

@@ -212,7 +212,8 @@ schedule: "0 9 * * 1"          # cron; omit for manual-only
 timezone: Europe/London         # optional
 model: anthropic:claude-sonnet-5-5   # or openai:<model>
 tools: [search, exec, write]    # OpenKnowledge tools the agent may use
-maxSteps: 25                    # agent/tool round trips before it stops
+maxSteps: 25                    # model turns before it stops
+maxToolCalls: 50                # tool calls before it stops (default 50, max 500)
 enabled: true
 trace: true                     # false keeps this workflow out of Langfuse
 prompt: |
@@ -224,8 +225,52 @@ prompt: |
 - **Schedules** use 5-field cron (no seconds), and a schedule that fires more often than every 5 minutes is rejected.
 - **Default tools** are read-only: `search, exec, links, lint, audit, history`. Writing needs `write`, `edit`, `move`, `delete` or `checkpoint` listed explicitly. `workflow`, `install`, `import`, `share_link`, `config` and `preview_url` are never allowed.
 - **Model keys** come from the server's environment: `ANTHROPIC_API_KEY` or `OPENAI_API_KEY`. `OPENAI_BASE_URL` points `openai:` models at any OpenAI-compatible endpoint (Ollama, LM Studio, OpenRouter, vLLM).
-- **Each run** builds a LangGraph `StateGraph` (agent node → `ToolNode` → agent until there are no tool calls). It connects to the server's own `/mcp` endpoint through `@langchain/mcp-adapters`, so writes are attributed to the agent `workflow-<id>`. A run times out after 10 minutes, and the timeout also covers connecting to the model and to the tools. Only one run per workflow happens at a time, and server shutdown waits up to 5 seconds for runs to finish.
-- **Run history** is kept in `<project>/.ok/local/workflow-runs.jsonl`, up to the last 200 runs.
+- **Each run** builds a LangGraph `StateGraph` that goes agent node → tools node → agent, until the model makes no more tool calls.
+  - The tools node runs one call at a time, because LangGraph's `ToolNode` runs a turn's calls in parallel and two writes could race. It also enforces `maxToolCalls`.
+  - Tool results, including MCP `isError` results, go back to the model, as do bad arguments (`ToolInputParsingException`) and unknown tool names. Any other thrown error (transport, auth) ends the run.
+  - A run that ends with an empty reply fails.
+  - Closing the tool connection and flushing Langfuse each get 10 seconds, so cleanup can't hang a finished run. It connects to the server's own `/mcp` endpoint through `@langchain/mcp-adapters`, so writes are attributed to the agent `workflow-<id>`. A run times out after 10 minutes, and the timeout also covers connecting to the model and to the tools. Only one run per workflow happens at a time, and server shutdown waits up to 5 seconds for runs to finish.
+- **Run history** is kept in `<project>/.ok/local/workflow-runs.jsonl`, up to the last 200 runs. Each record says which runner ran it, and for an ACP run which agent and version.
+
+**Runners.** `runner` picks how the prompt runs. Leaving it out means `{ type: langgraph }`, everything above, which needs a model API key. An ACP runner runs the prompt with an agent you are already signed in to:
+
+```yaml
+runner:
+  type: acp
+  agent: claude-acp        # or codex-acp, devin, cmd, dcode, …
+  source: custom           # optional: registry | custom (default: custom first, then registry)
+  model: opus              # optional: picks the agent's own model option (exact or unique partial match)
+```
+
+A top-level `model:` on an ACP workflow is rejected; use `runner.model`. There is no `auto` runner on purpose, because the same approved file would then behave differently depending on which keys a machine has.
+
+How an ACP run works (`workflows/acp-runner.ts`):
+
+- **Starting the agent.** It spawns the agent itself; it doesn't use a hidden panel chat. The panel cancels a turn nobody is watching, and the panel's permission store auto-allows reads and saved grants. Registry agents must already be installed, which happens the first time you open them in the agent panel. A workflow never downloads one.
+- **What the agent gets.** It is started without OpenKnowledge's filesystem or terminal access. It gets one HTTP MCP server, `<server>/mcp`, sent with `x-ok-tool-allowlist: <tools>`. The server then disables every other tool for that session. The header can only narrow the tool list, never widen it, and the LangGraph runner sends it too. An agent that can't use HTTP MCP fails a workflow that needs tools.
+- **Permissions refuse by default.** A request is allowed once only when it is an exactly identified OpenKnowledge tool from `tools:`. Many agents send a permission request carrying only the tool-call id, so the runner merges in what earlier `session/update` reports said about that call, waiting up to 1 second for one. Everything else is cancelled straight away, and "always allow" is never chosen.
+- **Not a sandbox.** An agent's own built-in tools, such as reading files, may never ask permission. Confining an agent completely needs an OS sandbox or a restricted user account.
+- **Limits.** `maxToolCalls` counts the agent's `tool_call` updates and cancels the turn when exceeded. On timeout the runner sends `session/cancel`, waits 3 seconds, then fails the run. On every path it closes the connection and terminates the agent process tree it started.
+- **Tracing.** With Langfuse on and `trace` not false, the run is traced through the agent-chat tracer with workflow naming: `workflow:<id>`, environment `…_workflow`, tags `runner:acp` and the agent id.
+
+**Custom ACP agents** are listed in `<project>/.ok/local/acp-agents.json` or, for every project, `~/.ok/acp-agents.json`. The project file wins when ids clash. They appear in the agent panel and can be used as workflow runners:
+
+```json
+[
+  { "id": "devin", "name": "Devin", "command": "/opt/homebrew/bin/devin", "args": ["acp"] },
+  { "id": "cmd", "name": "Command Code", "command": "/Users/me/.local/bin/cmd", "args": ["acp"] },
+  { "id": "dcode", "name": "Deep Agents Code", "command": "/Users/me/.local/bin/dcode",
+    "args": ["--acp", "-M", "openai_codex:<model>", "--no-tracing"] }
+]
+```
+
+Use absolute paths, because a server started from the desktop app may not have your shell's `PATH`.
+
+Gotchas found while connecting these agents:
+
+- **Devin** titles its MCP calls "Calling search from open-knowledge". `identifyOpenKnowledgeToolCall` in core now recognises that wording, for known OpenKnowledge server names only.
+- **dcode** needs the `deepagents-acp` extra for `--acp`; without it, `initialize` never answers. Its one-shot mode, `-n`, also needs `-M <provider:model>` and `< /dev/null`, or it waits for input.
+- **Tests** run with a temporary `HOME`, so a live agent started from a test can't find its saved sign-in. It reports "not signed in", or hits an account limit that has nothing to do with OpenKnowledge.
 
 Triggering:
 
@@ -336,5 +381,5 @@ git push fork <branch> --force-with-lease
 
 | Plugin | Kind | Branch | Status |
 |---|---|---|---|
-| Workflows | user + server service + `/api/workflows*` + `workflow` agent tool | `plugin-guide` | built 2026-11-09; unit, DOM and live end-to-end tests pass |
+| Workflows | user + server service + `/api/workflows*` + `workflow` agent tool | `plugin-guide` | built 2026-11-09; unit, DOM and live end-to-end tests pass. 2026-11-09: hardened LangGraph runner (serial tools, maxToolCalls, bounded cleanup); ACP runner added, live-tested with Devin |
 | Langfuse | user + server tracing (workflows and agent chats) | `plugin-guide` | built 2026-11-09; 2026-11-09 fix: traces now named `workflow:<id>` and detached from the server's request span, checked in Langfuse Cloud; agent-chat tracing added 2026-11-09, checked in Langfuse Cloud with the example ACP agent |

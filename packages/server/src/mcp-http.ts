@@ -11,6 +11,8 @@ import {
   type AgentIdentity,
   MCP_CONNECTION_ID_HEADER,
   MCP_HOSTED_AGENT_HEADER,
+  MCP_TOOL_ALLOWLIST_HEADER,
+  parseToolAllowlist,
   sanitizeClientName,
 } from './mcp/agent-identity.ts';
 import { installJsonSchemaDialect } from './mcp/json-schema-dialect.ts';
@@ -62,6 +64,7 @@ function createSessionServer(
   transport: StreamableHTTPServerTransport,
   forwardedConnectionId: string | undefined,
   isHostedAgent: boolean,
+  onlyTools: ReadonlySet<string> | undefined,
 ): McpHttpSession {
   const config = opts.config;
   const server = new McpServer({
@@ -108,6 +111,7 @@ function createSessionServer(
     config,
     identityRef,
     isHostedAgent,
+    ...(onlyTools !== undefined ? { onlyTools } : {}),
   });
 
   installJsonSchemaDialect(server);
@@ -184,6 +188,7 @@ export function createMcpHttpHandler(opts: McpHttpHandlerOptions): McpHttpHandle
       }
 
       const isHostedAgent = firstHeader(req.headers[MCP_HOSTED_AGENT_HEADER]) === '1';
+      const onlyTools = parseToolAllowlist(firstHeader(req.headers[MCP_TOOL_ALLOWLIST_HEADER]));
 
       const transport = new StreamableHTTPServerTransport({
         sessionIdGenerator: () => randomUUID(),
@@ -195,6 +200,7 @@ export function createMcpHttpHandler(opts: McpHttpHandlerOptions): McpHttpHandle
               transport,
               forwardedConnectionId,
               isHostedAgent,
+              onlyTools,
             );
             await session.server.connect(transport);
             sessions.set(newSessionId, session);

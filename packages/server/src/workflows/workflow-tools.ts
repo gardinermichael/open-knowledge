@@ -1,7 +1,7 @@
 import type { StructuredToolInterface } from '@langchain/core/tools';
 import { MCPAdapter } from '@langchain/mcp-adapters';
 import { MCP_SERVER_NAME } from '../constants.ts';
-import { MCP_CONNECTION_ID_HEADER } from '../mcp/agent-identity.ts';
+import { MCP_CONNECTION_ID_HEADER, MCP_TOOL_ALLOWLIST_HEADER } from '../mcp/agent-identity.ts';
 import { FORBIDDEN_WORKFLOW_TOOLS } from './workflow-definition.ts';
 
 export interface WorkflowToolSession {
@@ -47,7 +47,10 @@ export const connectWorkflowTools: WorkflowToolConnector = async ({
     servers: {
       [MCP_SERVER_NAME]: {
         url: new URL('/mcp', serverUrl).toString(),
-        headers: { [MCP_CONNECTION_ID_HEADER]: workflowConnectionId(workflowId) },
+        headers: {
+          [MCP_CONNECTION_ID_HEADER]: workflowConnectionId(workflowId),
+          [MCP_TOOL_ALLOWLIST_HEADER]: allowedTools.join(','),
+        },
       },
     },
   });
