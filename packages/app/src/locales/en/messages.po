@@ -7187,6 +7187,9 @@ msgstr "Not sending traces yet. Missing: {missing}."
 msgid "Not sent"
 msgstr "Not sent"
 
+msgid "Not traced"
+msgstr "Not traced"
+
 msgid "nothing ({0} cannot match a doc)"
 msgstr "nothing ({0} cannot match a doc)"
 

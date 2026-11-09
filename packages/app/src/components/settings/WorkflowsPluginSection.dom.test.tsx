@@ -80,6 +80,17 @@ describe('WorkflowsPluginSection', () => {
     expect(screen.getByTestId('workflows-problems').textContent).toContain('broken');
   });
 
+  test('marks a workflow that opts out of Langfuse tracing', async () => {
+    const untraced = { ...listing, workflows: [{ ...listing.workflows[0], trace: false }] };
+    vi.stubGlobal('fetch', async () => new Response(JSON.stringify(untraced), { status: 200 }));
+    const { WorkflowsPluginSection } = await import('./WorkflowsPluginSection');
+    render(<WorkflowsPluginSection />);
+
+    expect((await screen.findByTestId('workflow-untraced-digest')).textContent).toContain(
+      'Not traced',
+    );
+  });
+
   test('Run now posts the workflow id and confirms', async () => {
     installFetch();
     const { WorkflowsPluginSection } = await import('./WorkflowsPluginSection');

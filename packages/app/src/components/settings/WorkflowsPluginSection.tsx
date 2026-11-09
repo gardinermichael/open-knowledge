@@ -119,6 +119,12 @@ function WorkflowRow({
           )}
           {' · '}
           {workflow.model}
+          {workflow.trace ? null : (
+            <span data-testid={`workflow-untraced-${workflow.id}`}>
+              {' · '}
+              <Trans>Not traced</Trans>
+            </span>
+          )}
         </p>
         {workflow.approved ? (
           <p>

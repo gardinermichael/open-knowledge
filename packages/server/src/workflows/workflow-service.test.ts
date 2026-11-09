@@ -31,6 +31,7 @@ function definition(overrides: Partial<WorkflowDefinition> = {}): WorkflowDefini
     tools: ['search'],
     maxSteps: 5,
     enabled: true,
+    trace: true,
     ...overrides,
   };
 }
@@ -233,6 +234,32 @@ describe('WorkflowService.trigger', () => {
     if (!result.ok) throw new Error('expected a run');
     expect((await result.completion).traced).toBe(true);
     expect(handled).toEqual(['digest:mcp']);
+  });
+
+  test('trace: false keeps a workflow out of Langfuse without touching the tracer', async () => {
+    const calls: string[] = [];
+    const tracer: WorkflowTracer = {
+      ...nullTracer({ state: 'ready', baseUrl: 'https://langfuse.test' }),
+      handlerFor: async () => {
+        calls.push('handlerFor');
+        return null;
+      },
+      finishRun: async () => {
+        calls.push('finishRun');
+      },
+    };
+    const { service } = harness({
+      tracer,
+      definitions: { definitions: [definition({ trace: false })], problems: [] },
+    });
+    service.start('http://127.0.0.1:1');
+    expect(service.list().workflows[0]?.trace).toBe(false);
+    const result = service.trigger('digest', 'api');
+    if (!result.ok) throw new Error('expected a run');
+    const run = await result.completion;
+    expect(run.status).toBe('succeeded');
+    expect(run.traced).toBe(false);
+    expect(calls).toEqual([]);
   });
 });
 

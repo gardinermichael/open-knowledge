@@ -214,11 +214,13 @@ model: anthropic:claude-sonnet-5-5   # or openai:<model>
 tools: [search, exec, write]    # OpenKnowledge tools the agent may use
 maxSteps: 25                    # agent/tool round trips before it stops
 enabled: true
+trace: true                     # false keeps this workflow out of Langfuse
 prompt: |
   Find notes changed in the last week and write a digest to digests/this-week.md.
 ```
 
 - **Approval.** Workflow files live in the project, so a teammate or a cloned repo can add them. Nothing runs until you approve the file on this device under **Settings → Plugins → Workflows → Approve**, or with `POST /api/workflows/approve {"id": ...}`. The approval is tied to the file's SHA-256, so any edit needs approval again. Approvals are kept in `.ok/local/workflow-approvals.json`, which is per machine and never committed. Agents cannot approve: the `workflow` tool only lists and runs.
+- **Tracing.** While the Langfuse plugin is on, every workflow is traced; `trace: false` opts one workflow out, its runs are recorded with `traced: false`, and Settings shows "Not traced". Changing the field edits the file, so it needs approval again.
 - **Schedules** use 5-field cron (no seconds), and a schedule that fires more often than every 5 minutes is rejected.
 - **Default tools** are read-only: `search, exec, links, lint, audit, history`. Writing needs `write`, `edit`, `move`, `delete` or `checkpoint` listed explicitly. `workflow`, `install`, `import`, `share_link`, `config` and `preview_url` are never allowed.
 - **Model keys** come from the server's environment: `ANTHROPIC_API_KEY` or `OPENAI_API_KEY`. `OPENAI_BASE_URL` points `openai:` models at any OpenAI-compatible endpoint (Ollama, LM Studio, OpenRouter, vLLM).

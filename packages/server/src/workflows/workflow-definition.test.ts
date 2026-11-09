@@ -41,7 +41,14 @@ describe('parseWorkflowDefinition', () => {
       tools: DEFAULT_WORKFLOW_TOOLS,
       maxSteps: 25,
       enabled: true,
+      trace: true,
     });
+  });
+
+  test('trace: false opts one workflow out of Langfuse tracing', () => {
+    expect(
+      parseWorkflowDefinition('quiet', '/x/quiet.yml', 'name: Quiet\nprompt: Hi\ntrace: false\n'),
+    ).toMatchObject({ trace: false });
   });
 
   test('accepts a valid cron schedule with a timezone', () => {

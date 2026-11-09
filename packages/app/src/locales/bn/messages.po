@@ -7183,6 +7183,9 @@ msgstr ""
 msgid "Not sent"
 msgstr "পাঠানো হয়নি"
 
+msgid "Not traced"
+msgstr ""
+
 msgid "nothing ({0} cannot match a doc)"
 msgstr "কিছুই নয় ({0} কোনো নথির সঙ্গে মিলতে পারে না)"
 

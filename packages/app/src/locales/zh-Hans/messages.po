@@ -7187,6 +7187,9 @@ msgstr ""
 msgid "Not sent"
 msgstr "未发送"
 
+msgid "Not traced"
+msgstr ""
+
 msgid "nothing ({0} cannot match a doc)"
 msgstr "无（{0} 无法匹配任何文档）"
 

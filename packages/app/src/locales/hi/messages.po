@@ -7183,6 +7183,9 @@ msgstr ""
 msgid "Not sent"
 msgstr "भेजा नहीं गया"
 
+msgid "Not traced"
+msgstr ""
+
 msgid "nothing ({0} cannot match a doc)"
 msgstr "कुछ नहीं ({0} किसी दस्तावेज़ से मेल नहीं खा सकता)"
 

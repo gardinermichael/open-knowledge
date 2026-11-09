@@ -76,6 +76,7 @@ export interface WorkflowSummary {
   model: string;
   tools: readonly string[];
   enabled: boolean;
+  trace: boolean;
   approved: boolean;
   running: boolean;
   nextRunAt: string | null;
@@ -292,7 +293,9 @@ export class WorkflowService {
         trigger: started.trigger,
         model: definition.model,
       };
-      const handler = await untilAborted(this.deps.tracer.handlerFor(trace), abort.signal);
+      const handler = definition.trace
+        ? await untilAborted(this.deps.tracer.handlerFor(trace), abort.signal)
+        : null;
       run = { ...run, traced: handler !== null };
       const model = await untilAborted(this.deps.createModel(definition.model), abort.signal);
       const pendingSession = this.deps.connectTools({
@@ -347,9 +350,13 @@ export class WorkflowService {
           '[workflows] tool session close failed',
         ),
       );
-      await this.deps.tracer
-        .finishRun()
-        .catch((err: unknown) => this.deps.log.warn({ err }, '[workflows] Langfuse flush failed'));
+      if (definition.trace) {
+        await this.deps.tracer
+          .finishRun()
+          .catch((err: unknown) =>
+            this.deps.log.warn({ err }, '[workflows] Langfuse flush failed'),
+          );
+      }
     }
     const finished = this.now();
     run = {
@@ -376,6 +383,7 @@ export class WorkflowService {
       model: definition.model,
       tools: definition.tools,
       enabled: definition.enabled,
+      trace: definition.trace,
       approved: this.deps.approvals.isApproved(definition.id, definition.digest),
       running: this.inFlight.has(definition.id),
       nextRunAt: next === null ? null : next.toISOString(),

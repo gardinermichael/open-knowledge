@@ -7187,6 +7187,9 @@ msgstr ""
 msgid "Not sent"
 msgstr "Nie wysłano"
 
+msgid "Not traced"
+msgstr ""
+
 msgid "nothing ({0} cannot match a doc)"
 msgstr "nic ({0} nie może dopasować dokumentu)"
 

@@ -36,6 +36,7 @@ const ListingSchema = z.object({
       model: z.string(),
       tools: z.array(z.string()),
       enabled: z.boolean(),
+      trace: z.boolean().default(true),
       approved: z.boolean(),
       running: z.boolean(),
       nextRunAt: z.string().nullable(),
