@@ -371,6 +371,23 @@ node <repo>/packages/cli/dist/cli.mjs start -p 47913
 
 Then open `http://127.0.0.1:47913/`. Desktop-only plugin parts (such as the Slidev window) do nothing in the browser.
 
+### Building and installing the desktop app (macOS)
+
+```bash
+cd packages/desktop
+PATH="/opt/homebrew/opt/rustup/bin:$PATH" PKG_CONFIG_PATH="/opt/homebrew/opt/xz/lib/pkgconfig" bash -c '
+  pnpm run build:desktop &&
+  node scripts/stage-parcel-watcher.mjs &&
+  CSC_IDENTITY_AUTO_DISCOVERY=false node scripts/run-electron-builder.mjs --mac --arm64 --dir --publish never -c.mac.identity=null'
+# result: dist-desktop/mac-arm64/OpenKnowledge.app (ad-hoc sealed, not notarized)
+```
+
+- **`node-liblzma` needs Homebrew's `xz`, found through `pkg-config`.** If the `pkg-config` on your `PATH` isn't Homebrew's (ServBay ships its own), set `PKG_CONFIG_PATH` as above.
+- **Build for Apple Silicon only (`--arm64`).** Homebrew's `liblzma` is arm64-only, so a universal build fails on the Intel half.
+- **The version shows as `0.0.0-unknown`.** Release CI stamps the real version; only the About screen shows it.
+- **Turn updates off before first launch.** Otherwise the updater, fed from `openknowledge.ai/updates`, replaces the fork with the official release. Quit the app, back up the installed one, `ditto` the build into `/Applications`, then set `"updateMode": "off"` in `~/Library/Application Support/OpenKnowledge/state.json`. The desktop log (`~/.ok/logs/desktop.<date>.log`) should then say `skipping checkForUpdates — updates are turned off`.
+- **Expect a keychain prompt.** The build is unsigned, so macOS may ask once before it reads keychain items the signed app saved.
+
 ## 6. Keeping the fork current
 
 ```bash
