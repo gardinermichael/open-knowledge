@@ -159,6 +159,32 @@ pnpm run check
 pnpm --filter @inkeep/open-knowledge-app run dev
 ```
 
+### Building the web app
+
+`pnpm run build` builds everything except the desktop app. The web UI (`packages/app`, Vite) is copied into `packages/cli/dist/public`, and the CLI's `start` command serves it on localhost. The web app always needs that local server running behind it.
+
+```bash
+TURBO_CACHE_DIR="$PWD/.turbo-cache" pnpm run build
+```
+
+**Rust toolchain gotcha.** `packages/native-config` requires the exact Rust release in `rust-toolchain.toml`. If Homebrew's `rust` formula is installed, its `rustc` comes first on PATH, shadows rustup, and the build fails with `rustc X is not the declared Rust release Y`. Put rustup's proxies first for the build:
+
+```bash
+PATH="/opt/homebrew/opt/rustup/bin:$PATH" pnpm run build
+```
+
+### Running the built web app
+
+Use a scratch project so nothing touches your editor configs:
+
+```bash
+mkdir /path/to/scratch-kb && cd /path/to/scratch-kb
+node <repo>/packages/cli/dist/cli.mjs init --no-mcp --no-skills --local-only
+node <repo>/packages/cli/dist/cli.mjs start -p 47913
+```
+
+Then open `http://127.0.0.1:47913/`. Desktop-only plugin parts (such as the Slidev window) do nothing in the browser.
+
 ## 4. Keeping the fork current
 
 ```bash
