@@ -1,7 +1,8 @@
 import type { BaseCallbackHandler } from '@langchain/core/callbacks/base';
 import { CallbackHandler } from '@langfuse/langchain';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
-import { setLangfuseTracerProvider } from '@langfuse/tracing';
+import { propagateAttributes, setLangfuseTracerProvider } from '@langfuse/tracing';
+import { context, ROOT_CONTEXT } from '@opentelemetry/api';
 import { BasicTracerProvider } from '@opentelemetry/sdk-trace-base';
 import type { PinoLogger } from '../logger.ts';
 
@@ -111,6 +112,12 @@ export class LangfuseTracing {
         model: trace.model,
       },
     });
+  }
+
+  runTraced<T>(trace: LangfuseRunTrace, run: () => Promise<T>): Promise<T> {
+    return context.with(ROOT_CONTEXT, () =>
+      propagateAttributes({ traceName: `workflow:${trace.workflowId}` }, run),
+    );
   }
 
   async finishRun(): Promise<void> {

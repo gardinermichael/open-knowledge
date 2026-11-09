@@ -13,13 +13,14 @@ export const WORKFLOW_SYSTEM_PROMPT = [
 export function buildWorkflowGraph(
   model: BaseChatModel,
   tools: readonly StructuredToolInterface[],
+  modelRunName: string,
 ) {
   if (model.bindTools === undefined) {
     throw new Error('The configured chat model does not support tool calling.');
   }
   const boundModel = tools.length > 0 ? model.bindTools([...tools]) : model;
   const callModel = async (state: typeof MessagesAnnotation.State) => {
-    const response = await boundModel.invoke(state.messages);
+    const response = await boundModel.invoke(state.messages, { runName: modelRunName });
     return { messages: [response] };
   };
   const graph = new StateGraph(MessagesAnnotation).addNode('agent', callModel);

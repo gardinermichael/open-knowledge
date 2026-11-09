@@ -47,6 +47,7 @@ export function untilAborted<T>(promise: Promise<T>, signal: AbortSignal): Promi
 export interface WorkflowTracer {
   status(): LangfuseStatus;
   handlerFor(trace: LangfuseRunTrace): Promise<BaseCallbackHandler | null>;
+  runTraced<T>(trace: LangfuseRunTrace, run: () => Promise<T>): Promise<T>;
   finishRun(): Promise<void>;
   shutdown(): Promise<void>;
 }
@@ -285,15 +286,13 @@ export class WorkflowService {
     let run = started;
     let closeTools: (() => Promise<void>) | undefined;
     try {
-      const handler = await untilAborted(
-        this.deps.tracer.handlerFor({
-          workflowId: definition.id,
-          runId: started.runId,
-          trigger: started.trigger,
-          model: definition.model,
-        }),
-        abort.signal,
-      );
+      const trace: LangfuseRunTrace = {
+        workflowId: definition.id,
+        runId: started.runId,
+        trigger: started.trigger,
+        model: definition.model,
+      };
+      const handler = await untilAborted(this.deps.tracer.handlerFor(trace), abort.signal);
       run = { ...run, traced: handler !== null };
       const model = await untilAborted(this.deps.createModel(definition.model), abort.signal);
       const pendingSession = this.deps.connectTools({
@@ -310,16 +309,18 @@ export class WorkflowService {
       const session = await untilAborted(pendingSession, abort.signal);
       closeTools = session.close;
       if (session.missing.length > 0) run = { ...run, missingTools: [...session.missing] };
-      const graph = buildWorkflowGraph(model, session.tools);
-      const result = await graph.invoke(
-        { messages: workflowInputMessages(definition.prompt, this.now()) },
-        {
-          recursionLimit: definition.maxSteps * 2 + 1,
-          signal: abort.signal,
-          runName: `workflow:${definition.id}`,
-          ...(handler !== null ? { callbacks: [handler] } : {}),
-          metadata: { workflowId: definition.id, runId: started.runId, trigger: started.trigger },
-        },
+      const graph = buildWorkflowGraph(model, session.tools, definition.model);
+      const result = await this.deps.tracer.runTraced(trace, () =>
+        graph.invoke(
+          { messages: workflowInputMessages(definition.prompt, this.now()) },
+          {
+            recursionLimit: definition.maxSteps * 2 + 1,
+            signal: abort.signal,
+            runName: `workflow:${definition.id}`,
+            ...(handler !== null ? { callbacks: [handler] } : {}),
+            metadata: { workflowId: definition.id, runId: started.runId, trigger: started.trigger },
+          },
+        ),
       );
       run = {
         ...run,

@@ -242,6 +242,13 @@ Turn it on under **Settings → Plugins → Langfuse**, then fill in the host an
 
 Each run gets a `@langfuse/langchain` `CallbackHandler`, tagged `openknowledge`, `workflow` and `trigger:<schedule|api|mcp>`, with the workflow id as the Langfuse session. The handler is backed by its own OpenTelemetry `BasicTracerProvider` and `LangfuseSpanProcessor`, which are registered with `setLangfuseTracerProvider`. It never touches the app's own telemetry, and traces are flushed when each run ends. The plugin page shows whether tracing is ready or which credentials are missing.
 
+In Langfuse, each run is one trace named `workflow:<id>`. Each model call appears as a generation named after the workflow's `model` (for example `anthropic:claude-sonnet-5-5`), and each tool call as a tool observation.
+
+Two gotchas came up while building this:
+
+- **Start each run in its own trace.** The server has its own OpenTelemetry tracing. A run started from the API or MCP inherits the HTTP request's span, so the Langfuse root span ends up as a child of a span Langfuse never receives, and the trace has no name. `LangfuseTracing.runTraced` fixes this: it runs the graph under `ROOT_CONTEXT`, with `propagateAttributes({ traceName })` setting the trace name.
+- **Name the model run.** The CLI bundle minifies class names, so the default name for an LLM run comes out as gibberish such as `yl`. Pass a `runName` when invoking the model.
+
 Agents that run outside the app (Claude Code, Codex) are not traced by this plugin; set those up in each agent's own settings.
 
 Files: `packages/server/src/workflows/langfuse-tracing.ts` and `packages/app/src/components/settings/LangfusePluginSection.tsx`.
@@ -301,4 +308,4 @@ git push fork <branch> --force-with-lease
 | Plugin | Kind | Branch | Status |
 |---|---|---|---|
 | Workflows | user + server service + `/api/workflows*` + `workflow` agent tool | `plugin-guide` | built 2026-11-09; unit, DOM and live end-to-end tests pass |
-| Langfuse | user + server tracing | `plugin-guide` | built 2026-11-09; export checked against a local collector |
+| Langfuse | user + server tracing | `plugin-guide` | built 2026-11-09; 2026-11-09 fix: traces now named `workflow:<id>` and detached from the server's request span, checked in Langfuse Cloud |

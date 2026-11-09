@@ -39,6 +39,7 @@ function nullTracer(status: LangfuseStatus = { state: 'disabled' }): WorkflowTra
   return {
     status: () => status,
     handlerFor: async () => null,
+    runTraced: (_trace, run) => run(),
     finishRun: async () => undefined,
     shutdown: async () => undefined,
   };

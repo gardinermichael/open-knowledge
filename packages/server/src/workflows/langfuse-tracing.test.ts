@@ -1,3 +1,6 @@
+import { context, trace } from '@opentelemetry/api';
+import { AsyncLocalStorageContextManager } from '@opentelemetry/context-async-hooks';
+import { BasicTracerProvider } from '@opentelemetry/sdk-trace-base';
 import { describe, expect, test } from 'vitest';
 import { createTestLogger } from '../logger.ts';
 import {
@@ -77,6 +80,26 @@ describe('LangfuseTracing', () => {
       expect(handler?.name).toBe('LangfuseCallbackHandler');
     } finally {
       await tracing.shutdown();
+    }
+  });
+
+  test('runs a workflow outside any span the server already has open', async () => {
+    const manager = new AsyncLocalStorageContextManager().enable();
+    context.setGlobalContextManager(manager);
+    const tracing = new LangfuseTracing(() => ({ enabled: false }), log, {});
+    const serverSpan = new BasicTracerProvider()
+      .getTracer('server')
+      .startSpan('POST /api/workflows/run');
+    try {
+      const activeInside = await context.with(trace.setSpan(context.active(), serverSpan), () =>
+        tracing.runTraced({ workflowId: 'w', runId: 'r', trigger: 'api', model: 'm' }, async () =>
+          trace.getActiveSpan(),
+        ),
+      );
+      expect(activeInside).toBeUndefined();
+    } finally {
+      serverSpan.end();
+      context.disable();
     }
   });
 });
