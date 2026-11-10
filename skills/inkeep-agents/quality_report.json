@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-11-09T07:11:25.209889",
+  "skill_name": "inkeep-agents",
+  "overall_score": {
+    "total_score": 89.5,
+    "completeness": 80.0,
+    "accuracy": 90.0,
+    "coverage": 100.0,
+    "health": 90.0,
+    "grade": "A-"
+  },
+  "metrics": [
+    {
+      "name": "Completeness",
+      "value": 80.0,
+      "level": "info",
+      "description": "Documentation completeness: 80.0%",
+      "suggestions": [
+        "Expand documentation coverage"
+      ]
+    },
+    {
+      "name": "Accuracy",
+      "value": 90.0,
+      "level": "info",
+      "description": "Documentation accuracy: 90.0%",
+      "suggestions": [
+        "Found placeholder text: placeholder"
+      ]
+    },
+    {
+      "name": "Coverage",
+      "value": 100.0,
+      "level": "info",
+      "description": "Documentation coverage: 100.0%",
+      "suggestions": []
+    },
+    {
+      "name": "Health",
+      "value": 90.0,
+      "level": "info",
+      "description": "Skill health: 90.0%",
+      "suggestions": [
+        "Very large file: merged_api.md"
+      ]
+    }
+  ],
+  "statistics": {
+    "total_files": 1689,
+    "total_size_bytes": 3710984,
+    "markdown_files": 1689,
+    "reference_files": 1688,
+    "total_characters": 3684534,
+    "total_words": 464364
+  },
+  "recommendations": [],
+  "history": []
+}

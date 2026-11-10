@@ -1,0 +1,92 @@
+[
+  {
+    "file_path": "/private/tmp/visimer-skill/.skillseeker-cache/visimer/repos/0_inkeep_visimer/packages/core/src/editor.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/private/tmp/visimer-skill/.skillseeker-cache/visimer/repos/0_inkeep_visimer/packages/core/src/editor.ts",
+        "class_name": "MermaidWysiwygEditor",
+        "method_name": null,
+        "line_number": 115,
+        "evidence": [
+          "Has 3 configuration methods"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Builder": 1
+    }
+  },
+  {
+    "file_path": "/private/tmp/visimer-skill/.skillseeker-cache/visimer/repos/0_inkeep_visimer/packages/dom/src/view.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/private/tmp/visimer-skill/.skillseeker-cache/visimer/repos/0_inkeep_visimer/packages/dom/src/view.ts",
+        "class_name": "MermaidCanvasView",
+        "method_name": null,
+        "line_number": 329,
+        "evidence": [
+          "Has 7 configuration methods"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/private/tmp/visimer-skill/.skillseeker-cache/visimer/repos/0_inkeep_visimer/packages/dom/src/view.ts",
+        "class_name": "MermaidCanvasView",
+        "method_name": null,
+        "line_number": 329,
+        "evidence": [
+          "Attach method: addNode",
+          "Notify method: updatePopover"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 33,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Builder": 1,
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/private/tmp/visimer-skill/.skillseeker-cache/visimer/repos/0_inkeep_visimer/packages/dom/test/visibility-retry.test.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/private/tmp/visimer-skill/.skillseeker-cache/visimer/repos/0_inkeep_visimer/packages/dom/test/visibility-retry.test.ts",
+        "class_name": "StubObserver",
+        "method_name": null,
+        "line_number": 28,
+        "evidence": [
+          "Class name suggests Observer: StubObserver"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 1
+    }
+  }
+]

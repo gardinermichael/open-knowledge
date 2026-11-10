@@ -1,0 +1,188 @@
+[
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/examples/__common__.py",
+    "language": "Python",
+    "patterns": [
+      {
+        "pattern_type": "Decorator",
+        "category": "Structural",
+        "confidence": 0.3,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/examples/__common__.py",
+        "class_name": "FakeMessageChatModel",
+        "method_name": "_llm_type",
+        "line_number": 23,
+        "evidence": [
+          "Method uses decorators: ['property']"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/examples/__common__.py",
+        "class_name": "FakeMessageChatModel",
+        "method_name": null,
+        "line_number": 14,
+        "evidence": [
+          "Implements interface: BaseChatModel",
+          "Has 3 interface methods"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 5,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Decorator": 1,
+      "Adapter": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/langgraphics/formatter.py",
+    "language": "Python",
+    "patterns": [
+      {
+        "pattern_type": "Decorator",
+        "category": "Structural",
+        "confidence": 0.3,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/langgraphics/formatter.py",
+        "class_name": "Formatter",
+        "method_name": "costs",
+        "line_number": 14,
+        "evidence": [
+          "Method uses decorators: ['classmethod']"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Decorator": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/langgraphics/streamer.py",
+    "language": "Python",
+    "patterns": [
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/langgraphics/streamer.py",
+        "class_name": "BroadcastingTracer",
+        "method_name": null,
+        "line_number": 14,
+        "evidence": [
+          "Implements interface: AsyncBaseTracer",
+          "Has 13 interface methods"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.65,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/langgraphics/streamer.py",
+        "class_name": "BroadcastingTracer",
+        "method_name": "_emit_end",
+        "line_number": 46,
+        "evidence": [
+          "Observer method detected: _emit_end"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/langgraphics/streamer.py",
+        "class_name": "Viewport",
+        "method_name": null,
+        "line_number": 158,
+        "evidence": [
+          "Notify method: _emit_edge",
+          "Notify method: _emit_error"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 1,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Adapter": 1,
+      "Observer": 2
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/conftest.py",
+    "language": "Python",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/conftest.py",
+        "class_name": "SimpleState",
+        "method_name": null,
+        "line_number": 19,
+        "evidence": [
+          "Part of strategy family with: CounterState"
+        ],
+        "related_classes": [
+          "TypedDict"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/conftest.py",
+        "class_name": "CounterState",
+        "method_name": null,
+        "line_number": 23,
+        "evidence": [
+          "Part of strategy family with: SimpleState"
+        ],
+        "related_classes": [
+          "TypedDict"
+        ]
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 13,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 2
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+    "language": "Python",
+    "patterns": [
+      {
+        "pattern_type": "ChainOfResponsibility",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+        "class_name": "TestChainInputsOutputs",
+        "method_name": null,
+        "line_number": 223,
+        "evidence": [
+          "Class name suggests handler chain: TestChainInputsOutputs"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 10,
+    "total_functions": 5,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "ChainOfResponsibility": 1
+    }
+  }
+]

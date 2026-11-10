@@ -1,0 +1,432 @@
+---
+name: inkeep-agents
+description: Knowledge for building and working with inkeep/agents — the Inkeep agent framework — from the GitHub repository and the official docs site (docs.inkeep.com).
+---
+
+# Inkeep-Agents
+
+Knowledge for building and working with inkeep/agents — the Inkeep agent framework — from the GitHub repository and the official docs site (docs.inkeep.com).
+
+## 📚 Sources
+
+This skill synthesizes knowledge from multiple sources:
+
+- ✅ **Official Documentation**: https://docs.inkeep.com
+- ✅ **GitHub Repository**: inkeep/agents
+
+## 📦 About
+
+Create AI Agents in a No-Code Visual Builder or TypeScript SDK with full 2-way sync. For shipping AI assistants and multi-agent AI workflows.
+
+**Repository:** [inkeep/agents](https://github.com/inkeep/agents)
+**Language:** TypeScript
+**Stars:** 1,495
+**License:** Other
+
+## 💡 When to Use This Skill
+
+Use it when the user is:
+
+- **Scaffolding a project**, for example running `npx @inkeep/create-agents`, `pnpm setup-dev`, or editing `inkeep.config.ts`.
+- **Defining agents in code** with `agent()`, `subAgent()`, `project()`, `mcpTool()`, `dataComponent()`, `trigger()`, `headers()`, `contextConfig()` or `fetchDefinition()`.
+- **Designing multi-agent flows**: choosing between **transfer** (`canTransferTo`) and **delegate** (`canDelegateTo`), routing sub agents, or calling external A2A agents.
+- **Adding tools**: registering MCP servers (Zapier, Composio, Exa, Stripe, custom), writing function tools, setting `toolOverrides`, or requiring tool approval.
+- **Configuring models**: the project/agent/sub agent model hierarchy, `providerOptions`, Vercel AI Gateway `fallbackModels` and `allowedProviders`, Azure, or custom OpenAI-compatible providers.
+- **Talking to agents** through the React or JS chat widgets, the Vercel AI SDK provider (`@inkeep/ai-sdk-provider`), `/api/chat`, A2A JSON-RPC, the MCP server endpoint, Slack, or Zendesk.
+- **Passing context**, such as request headers, `{{headers.x}}` templating, context fetchers, and `{{$conversation.id}}`.
+- **Running in production**: Docker Compose on AWS EC2, GCP, Azure, or Hetzner, Vercel, SigNoz, Nango, Langfuse, Datadog, Sentry, S3 blob storage, email, or SSO.
+- **Debugging** stalled agents (`stopWhen` limits), port conflicts, provider key errors, or traces.
+- **Calling the Manage API**: webhooks, triggers, evaluations, credentials, skills, and project members.
+
+Do **not** use it for Inkeep's legacy hosted search/"Ask AI" product unless the question concerns the agent widgets in `talk-to-your-agents.md`.
+
+**From repository analysis:**
+
+Use this skill when you need to:
+- Understand how to use agents
+- Look up API documentation and implementation details
+- Find real-world usage examples from the codebase
+- Review design patterns and architecture
+- Check for known issues or recent changes
+- Explore release history and changelogs
+
+## 🎯 Quick Reference
+
+**From Documentation:**
+
+All examples come from the official docs. Fence labels have been corrected.
+
+### 1. Scaffold and run locally (Quick Start)
+
+```bash
+npx @inkeep/create-agents my-agents
+cd my-agents
+pnpm setup-dev   # Docker must be running
+pnpm dev         # Visual Builder auto-opens at http://localhost:3000
+```
+
+Log in with `INKEEP_AGENTS_MANAGE_UI_USERNAME` and `INKEEP_AGENTS_MANAGE_UI_PASSWORD` from the root `.env`.
+
+### 2. Define an agent with a router and specialists (TypeScript SDK)
+
+```typescript
+import { agent, subAgent } from '@inkeep/agents-sdk';
+
+const routerSubAgent = subAgent({
+  id: 'support-router',
+  name: 'Support Router',
+  prompt: 'Route customer inquiries to appropriate specialists',
+  canTransferTo: () => [billingSubAgent],
+});
+
+const billingSubAgent = subAgent({
+  id: 'billing-specialist',
+  name: 'Billing Specialist',
+  prompt: 'Handle billing and payment inquiries',
+});
+
+export const customerSupportAgent = agent({
+  defaultSubAgent: routerSubAgent,
+  subAgents: () => [routerSubAgent, billingSubAgent],
+});
+```
+
+### 3. Transfer vs. delegate (TypeScript SDK)
+
+```typescript
+// TRANSFER: user will likely have follow-up questions about their order
+const routerSubAgent = subAgent({
+  id: 'router',
+  prompt: 'For order inquiries, transfer to order specialist',
+  canTransferTo: () => [orderSubAgent],
+});
+
+// DELEGATION: just need a quick calculation, then continue
+const mathSupervisor = subAgent({
+  id: 'supervisor',
+  prompt: 'Delegate to number producers, then add results together',
+  canDelegateTo: () => [numberProducerA, numberProducerB],
+});
+```
+
+External A2A agents are delegated to the same way: `canDelegateTo: () => [myExternalAgent]`.
+
+### 4. Register an MCP server as a tool
+
+```typescript
+import { subAgent, mcpTool } from '@inkeep/agents-sdk';
+
+const knowledgeBaseTool = mcpTool({
+  id: 'knowledge-base-tool',
+  name: 'knowledge_base',
+  description: 'Search the company knowledge base for information',
+  serverUrl: 'https://kb.yourcompany.com/mcp',
+});
+
+const qaAgent = subAgent({
+  id: 'qa-agent',
+  name: 'QA Agent',
+  description: 'Answers questions about the company knowledge base.',
+  prompt: 'You answer questions using the knowledge base tool.',
+  canUse: () => [knowledgeBaseTool],
+});
+```
+
+To narrow the tool surface, use `canUse: () => [zendeskMcpTool.with({ selectedTools: ['create_zendesk_ticket'] })]`. To rename or reword a tool for the model, use `toolOverrides`.
+
+### 5. Environment-aware credentials
+
+```typescript
+import { mcpTool } from '@inkeep/agents-sdk';
+import { envSettings } from '../environments';
+
+export const stripeTool = mcpTool({
+  id: 'stripe-tool',
+  name: 'Stripe',
+  serverUrl: 'https://mcp.stripe.com/mcp',
+  credential: envSettings.getEnvironmentCredential('stripe_api_key'),
+});
+```
+
+```bash
+export INKEEP_ENV=production
+inkeep push                    # uses production
+inkeep push --env development  # flag overrides env var
+```
+
+### 6. Model configuration and inheritance
+
+```typescript
+// Project level (required): base model
+models: {
+  base: {
+    model: 'anthropic/claude-sonnet-4-5',
+    providerOptions: { temperature: 0.7, maxOutputTokens: 2048 },
+  },
+},
+
+// Override per agent / sub agent
+const myAgent = agent({ models: { base: { model: 'openai/gpt-5.2' } } });
+const mySubAgent = subAgent({
+  models: { structuredOutput: { model: 'openai/gpt-4.1-mini' } },
+});
+```
+
+Model slots are `base`, `structuredOutput` and `summarizer`. Each one inherits independently down project → agent → sub agent. A pinned model (`anthropic/claude-sonnet-4-20250514`) never changes. An unpinned model (`anthropic/claude-sonnet-4-5`) follows the provider's latest version. When `AI_GATEWAY_API_KEY` is set, `fallbackModels` and `allowedProviders` become available.
+
+### 7. Headers → context fetcher → prompt variables
+
+```typescript
+import { z } from 'zod';
+import { subAgent } from '@inkeep/agents-sdk';
+import { contextConfig, fetchDefinition, headers } from '@inkeep/agents-core';
+
+const h = headers({
+  schema: z.object({ user_id: z.string(), auth_token: z.string() }),
+});
+
+const userFetcher = fetchDefinition({
+  id: 'user-info',
+  name: 'User Information',
+  trigger: 'initialization',
+  fetchConfig: {
+    url: `https://api.example.com/users/${h.toTemplate('user_id')}`,
+    method: 'GET',
+    headers: { Authorization: `Bearer ${h.toTemplate('auth_token')}` },
+    transform: 'user',
+  },
+  responseSchema: z.object({ user: z.object({ name: z.string() }) }),
+  defaultValue: 'Guest User',
+});
+
+const ctx = contextConfig({ headers: h, contextVariables: { user: userFetcher } });
+
+const assistant = subAgent({
+  id: 'personal-assistant',
+  name: 'Personal Assistant',
+  prompt: `You help ${ctx.toTemplate('user.name')}.`,
+});
+```
+
+Use **lowercase** header keys. In Visual Builder JSON, the same headers can be templated as `"Authorization": "Bearer {{headers.auth-token}}"`.
+
+### 8. Call an agent from your app (Vercel AI SDK provider)
+
+```typescript
+import { streamText } from 'ai';
+import { createInkeep } from '@inkeep/ai-sdk-provider';
+
+const inkeep = createInkeep({
+  baseURL: process.env.INKEEP_AGENTS_API_URL,
+  apiKey: '<your-agent-api-key>', // agent ID is encoded in the key
+  headers: { 'x-emit-operations': 'true' }, // stream tool events
+});
+
+const result = await streamText({ model: inkeep(), prompt: 'Plan an event in NYC' });
+```
+
+Install it with `npm install @inkeep/ai-sdk-provider ai`.
+
+### 9. Raw chat call with headers (curl)
+
+```bash
+curl -N -X POST "http://localhost:3003/api/chat" \
+  -H "Authorization: Bearer $INKEEP_API_KEY" \
+  -H "user_id: u_123" \
+  -H "Content-Type: application/json" \
+  -d '{"messages":[{"role":"user","content":"What can you help me with?"}],"conversationId":"conv-123"}'
+```
+
+### 10. Webhook trigger
+
+```typescript
+import { agent, trigger, subAgent } from '@inkeep/agents-sdk';
+
+const slackTrigger = trigger({
+  name: 'Slack Messages',
+  description: 'Handle incoming Slack messages',
+  messageTemplate: 'New message from {{user.name}}: {{text}}',
+});
+
+export default agent({
+  id: 'support-agent',
+  name: 'Support Agent',
+  defaultSubAgent: subAgent({ id: 'support', name: 'Support Assistant', prompt: 'You help answer support questions.' }),
+  triggers: () => [slackTrigger],
+});
+```
+
+### 11. Structured output with a data component
+
+```typescript
+import { dataComponent } from '@inkeep/agents-sdk';
+import { z } from 'zod';
+
+export const taskList = dataComponent({
+  id: 'task-list',
+  name: 'TaskList',
+  description: 'Display user tasks with status',
+  props: z.object({
+    tasks: z.array(z.object({
+      id: z.string().describe('Unique task identifier'),
+      title: z.string().describe('Task title'),
+      completed: z.boolean().describe('Whether the task is completed'),
+    })).describe('Array of user tasks'),
+  }),
+});
+```
+
+### 12. CLI config and push/pull
+
+```typescript
+// inkeep.config.ts
+import { defineConfig } from '@inkeep/agents-cli/config';
+import 'dotenv/config';
+
+export default defineConfig({
+  tenantId: 'my-company',
+  agentsApi: { url: 'http://localhost:3002', apiKey: process.env.API_KEY },
+  outputDirectory: './output',
+});
+```
+
+```bash
+inkeep push                                   # code → Visual Builder (whole project)
+inkeep pull                                   # Visual Builder → code
+inkeep push --agents-api-url https://api.production.com
+```
+
+### 13. Skills attached to a Sub Agent
+
+```typescript
+import path from 'node:path';
+import { loadSkills, project, subAgent } from '@inkeep/agents-sdk';
+
+const activitiesPlanner = subAgent({
+  id: 'activities-planner',
+  name: 'Activities Planner',
+  prompt: 'Help users plan activities based on current weather.',
+  skills: () => [{ id: 'weather-safety-guardrails', index: 0 }],
+});
+
+export const myProject = project({
+  id: 'my-project',
+  name: 'My Project',
+  agents: () => [myAgent],
+  skills: () => loadSkills(path.join('my-project/skills')),
+  models: { base: { model: 'openai/gpt-4o' } },
+});
+```
+
+Skills live in `skills/<skill-id>/SKILL.md`, with optional `reference/` and `templates/` folders.
+
+### 14. Function tool (Visual Builder)
+
+```javascript
+function calculateBMI({ weight, height }) {
+  const bmi = weight / (height * height);
+  let category = 'Normal';
+  if (bmi < 18.5) category = 'Underweight';
+  else if (bmi >= 30) category = 'Obese';
+  return { bmi: Math.round(bmi * 10) / 10, category };
+}
+```
+
+You can pin npm dependencies with a version map such as `{ "axios": "1.6.0", "lodash": "4.17.21" }`.
+
+### 15. Self-host the external services (Docker, any Linux VM)
+
+```bash
+git clone https://github.com/inkeep/agents-optional-local-dev inkeep-external-services
+cd inkeep-external-services
+./scripts/generate-env-from-example.sh   # creates .env from .env.docker.example
+```
+
+This brings up SigNoz, Nango, the OTEL Collector and Jaeger, and can take about 5 minutes. Set `NANGO_ENCRYPTION_KEY` once; it **cannot be changed later**. For a custom image, run `docker compose build && docker compose up -d`.
+
+### 16. Prompt skeleton (Agent Engineering guide)
+
+```text
+You are [role identity] who [what excellence looks like in practice].
+
+You [concrete positive behavior].
+You [concrete positive behavior].
+You [concrete positive behavior].
+```
+
+For orchestrator prompts, the tutorials use `<workflow>` and `<rules>` blocks, for example "Always delegate in order: Meeting Finder → Company Research".
+
+### Repository Info
+- **Homepage:** https://docs.inkeep.com
+- **Topics:** agent, agent-builder, agent-framework, ai-agents, mulit-agent, no-code, workflows, agents-sdk, ai, ai-agent, aiagentframework, developer-sdk, inkeep, llms, low-code, mcp, mcp-server, self-hosted, typescript, workflow
+- **Open Issues:** 39
+- **Last Updated:** 2026-11-09
+
+### Languages
+- **TypeScript:** 94.1%
+- **MDX:** 5.0%
+- **JavaScript:** 0.6%
+- **Shell:** 0.2%
+- **CSS:** 0.1%
+- **PLpgSQL:** 0.1%
+- **Dockerfile:** 0.0%
+- **HTML:** 0.0%
+
+### Design Patterns Detected
+
+*From C3.1 codebase analysis (confidence > 0.7)*
+
+- **Strategy**: 44 instances
+- **Factory**: 13 instances
+- **Observer**: 4 instances
+- **Builder**: 3 instances
+- **Command**: 1 instances
+
+*Total: 56 high-confidence patterns*
+
+## 🧪 Code Examples
+
+## 🔧 API Reference
+
+*Extracted from codebase analysis (C2.5)*
+
+### sub-agent-identity
+
+# API Reference: sub-agent-identity.ts
+
+**Language**: TypeScript
+
+**Source**: `agents-manage-ui/src/features/agent/domain/sub-agent-identity.ts`
+
+---
+
+## ⚠️ Known Issues
+
+*Recent issues from GitHub*
+
+*Recent issues from GitHub*
+
+- **#3586**: Conversation compression: summarizer failure permanently replaces history with a placeholder (or empty) summary
+- **#3585**: Cannot bootstrap a fresh new project
+- **#3550**: Feature request: surface a first-class pay-per-call (HTTP 402 / x402) step when an agent tool answers 402
+- **#3557**: Cookbook proposal: read-only documentation tools from a Next.js MCP endpoint
+- **#3551**: Memcode MCP option for user-scoped context in Inkeep agents
+
+*See `references/issues.md` for complete list*
+
+### Recent Releases
+- **v0.68.4** (2026-04-15): 2026-04-15
+- **v0.68.3** (2026-04-15): 2026-04-15
+- **v0.68.2** (2026-04-15): 2026-04-15
+
+## 📖 Reference Documentation
+
+Organized by source:
+
+- [Documentation](references/documentation/)
+- [GitHub](references/github/)
+- [Codebase Analysis](references/codebase_analysis/index.md)
+
+---
+
+*Synthesized from official documentation and codebase analysis by Skill Seekers*

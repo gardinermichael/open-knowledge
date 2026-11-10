@@ -1,0 +1,23 @@
+# API Reference: usersSlackLinkStatus.ts
+
+**Language**: TypeScript
+
+**Source**: `packages/agents-mcp/src/funcs/usersSlackLinkStatus.ts`
+
+---
+
+## Functions
+
+### usersSlackLinkStatus(client$: InkeepAgentsCore, request: SlackLinkStatusRequest, options?: RequestOptions)
+
+**Parameters**:
+
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| client$ | InkeepAgentsCore | - | - |
+| request | SlackLinkStatusRequest | - | - |
+| options? | RequestOptions | - | - |
+
+**Returns**: (none)
+
+

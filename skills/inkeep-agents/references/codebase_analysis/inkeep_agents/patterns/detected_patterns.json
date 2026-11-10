@@ -1,0 +1,2614 @@
+[
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/functionToolApprovals.test.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/functionToolApprovals.test.ts",
+        "class_name": "SandboxExecutorFactory",
+        "method_name": null,
+        "line_number": 5,
+        "evidence": [
+          "Class name contains \"Factory\""
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/generateTaskHandler.test.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/generateTaskHandler.test.ts",
+        "class_name": "MockAgent",
+        "method_name": null,
+        "line_number": 126,
+        "evidence": [
+          "Has 4 configuration methods"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 1,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Builder": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/resolveGenerationResponse.test.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/resolveGenerationResponse.test.ts",
+        "class_name": "NoObjectGeneratedError",
+        "method_name": null,
+        "line_number": 309,
+        "evidence": [
+          "Part of strategy family with: TypeValidationError, NetworkTimeoutError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/resolveGenerationResponse.test.ts",
+        "class_name": "NoObjectGeneratedError",
+        "method_name": null,
+        "line_number": 331,
+        "evidence": [
+          "Part of strategy family with: TypeValidationError, NetworkTimeoutError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/resolveGenerationResponse.test.ts",
+        "class_name": "NoObjectGeneratedError",
+        "method_name": null,
+        "line_number": 352,
+        "evidence": [
+          "Part of strategy family with: TypeValidationError, NetworkTimeoutError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/resolveGenerationResponse.test.ts",
+        "class_name": "NoObjectGeneratedError",
+        "method_name": null,
+        "line_number": 388,
+        "evidence": [
+          "Part of strategy family with: TypeValidationError, NetworkTimeoutError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/resolveGenerationResponse.test.ts",
+        "class_name": "TypeValidationError",
+        "method_name": null,
+        "line_number": 416,
+        "evidence": [
+          "Part of strategy family with: NoObjectGeneratedError, NoObjectGeneratedError, NoObjectGeneratedError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/resolveGenerationResponse.test.ts",
+        "class_name": "NetworkTimeoutError",
+        "method_name": null,
+        "line_number": 443,
+        "evidence": [
+          "Part of strategy family with: NoObjectGeneratedError, NoObjectGeneratedError, NoObjectGeneratedError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/agents/resolveGenerationResponse.test.ts",
+        "class_name": "NoObjectGeneratedError",
+        "method_name": null,
+        "line_number": 471,
+        "evidence": [
+          "Part of strategy family with: TypeValidationError, NetworkTimeoutError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      }
+    ],
+    "total_classes": 13,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 7
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/middleware/app-credential-auth.test.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/middleware/app-credential-auth.test.ts",
+        "class_name": "JWTExpired",
+        "method_name": null,
+        "line_number": 67,
+        "evidence": [
+          "Part of strategy family with: JWSSignatureVerificationFailed"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/middleware/app-credential-auth.test.ts",
+        "class_name": "JWSSignatureVerificationFailed",
+        "method_name": null,
+        "line_number": 68,
+        "evidence": [
+          "Part of strategy family with: JWTExpired"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 2
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/middleware/runAuth-appPrompt.test.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/middleware/runAuth-appPrompt.test.ts",
+        "class_name": "JWTExpired",
+        "method_name": null,
+        "line_number": 61,
+        "evidence": [
+          "Part of strategy family with: JWSSignatureVerificationFailed"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/middleware/runAuth-appPrompt.test.ts",
+        "class_name": "JWSSignatureVerificationFailed",
+        "method_name": null,
+        "line_number": 62,
+        "evidence": [
+          "Part of strategy family with: JWTExpired"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 2
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/middleware/runAuth-oauthUserAuth.test.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/middleware/runAuth-oauthUserAuth.test.ts",
+        "class_name": "JWTExpired",
+        "method_name": null,
+        "line_number": 62,
+        "evidence": [
+          "Part of strategy family with: JWSSignatureVerificationFailed, JWTClaimValidationFailed"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/middleware/runAuth-oauthUserAuth.test.ts",
+        "class_name": "JWSSignatureVerificationFailed",
+        "method_name": null,
+        "line_number": 63,
+        "evidence": [
+          "Part of strategy family with: JWTExpired, JWTClaimValidationFailed"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/__tests__/run/middleware/runAuth-oauthUserAuth.test.ts",
+        "class_name": "JWTClaimValidationFailed",
+        "method_name": null,
+        "line_number": 64,
+        "evidence": [
+          "Part of strategy family with: JWTExpired, JWSSignatureVerificationFailed"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      }
+    ],
+    "total_classes": 3,
+    "total_functions": 1,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 3
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/evals/services/EvaluationService.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/evals/services/EvaluationService.ts",
+        "class_name": "EvaluationService",
+        "method_name": null,
+        "line_number": 36,
+        "evidence": [
+          "Parameterized factory method: buildEvalInputEvaluationPrompt"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/evals/services/EvaluationService.ts",
+        "class_name": "EvaluationService",
+        "method_name": null,
+        "line_number": 36,
+        "evidence": [
+          "Has terminal build/create method"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1,
+      "Builder": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/a2a/client.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/a2a/client.ts",
+        "class_name": "PermanentError",
+        "method_name": null,
+        "line_number": 98,
+        "evidence": [
+          "Part of strategy family with: TemporaryError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/a2a/client.ts",
+        "class_name": "TemporaryError",
+        "method_name": null,
+        "line_number": 116,
+        "evidence": [
+          "Part of strategy family with: PermanentError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.65,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/a2a/client.ts",
+        "class_name": "A2AClient",
+        "method_name": "resubscribeTask",
+        "line_number": null,
+        "evidence": [
+          "Observer method detected: resubscribeTask"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 3,
+    "total_functions": 3,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 2,
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/agents/Agent.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/agents/Agent.ts",
+        "class_name": "Agent",
+        "method_name": null,
+        "line_number": 34,
+        "evidence": [
+          "Has 5 configuration methods"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Builder": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/agents/services/AgentMcpManager.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.9500000000000001,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/agents/services/AgentMcpManager.ts",
+        "class_name": "AgentMcpManager",
+        "method_name": null,
+        "line_number": 41,
+        "evidence": [
+          "Parameterized factory method: createMcpConnection",
+          "Parameterized factory method: buildOverriddenTool",
+          "Multiple factory methods: createMcpConnection, buildOverriddenTool"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/agents/services/AgentMcpManager.ts",
+        "class_name": "AgentMcpManager",
+        "method_name": null,
+        "line_number": 41,
+        "evidence": [
+          "Has terminal build/create method"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1,
+      "Builder": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/agents/services/ToolSessionManager.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.9500000000000001,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/agents/services/ToolSessionManager.ts",
+        "class_name": "ToolSessionManager",
+        "method_name": null,
+        "line_number": 32,
+        "evidence": [
+          "Parameterized factory method: createSession",
+          "Parameterized factory method: createSessionWithId",
+          "Multiple factory methods: createSession, createSessionWithId"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/artifacts/ArtifactParser.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "ChainOfResponsibility",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/artifacts/ArtifactParser.ts",
+        "class_name": "ToolChainResolutionError",
+        "method_name": null,
+        "line_number": 21,
+        "evidence": [
+          "Class name suggests handler chain: ToolChainResolutionError"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "ChainOfResponsibility": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/artifacts/ArtifactService.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.55,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/artifacts/ArtifactService.ts",
+        "class_name": "ArtifactService",
+        "method_name": null,
+        "line_number": 84,
+        "evidence": [
+          "Parameterized factory method: createArtifact"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.65,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/artifacts/ArtifactService.ts",
+        "class_name": "ArtifactService",
+        "method_name": "updateArtifactComponents",
+        "line_number": null,
+        "evidence": [
+          "Observer method detected: updateArtifactComponents"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 1,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1,
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/compression/BaseCompressor.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.9500000000000001,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/compression/BaseCompressor.ts",
+        "class_name": "BaseCompressor",
+        "method_name": null,
+        "line_number": 90,
+        "evidence": [
+          "Parameterized factory method: buildArtifactData",
+          "Parameterized factory method: createNewArtifact",
+          "Parameterized factory method: createConversationSummary",
+          "Multiple factory methods: buildArtifactData, createNewArtifact, createConversationSummary"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/compression/BaseCompressor.ts",
+        "class_name": "BaseCompressor",
+        "method_name": null,
+        "line_number": 90,
+        "evidence": [
+          "Has terminal build/create method"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 3,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1,
+      "Builder": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/compression/ConversationCompressor.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.65,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/compression/ConversationCompressor.ts",
+        "class_name": "ConversationCompressor",
+        "method_name": null,
+        "line_number": 21,
+        "evidence": [
+          "Parameterized factory method: createConversationSummary",
+          "Inherits from: BaseCompressor"
+        ],
+        "related_classes": [
+          "BaseCompressor"
+        ]
+      },
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/compression/ConversationCompressor.ts",
+        "class_name": "ConversationCompressor",
+        "method_name": null,
+        "line_number": 21,
+        "evidence": [
+          "Implements interface: BaseCompressor",
+          "Has 5 interface methods"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1,
+      "Adapter": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/compression/MidGenerationCompressor.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/compression/MidGenerationCompressor.ts",
+        "class_name": "MidGenerationCompressor",
+        "method_name": null,
+        "line_number": 16,
+        "evidence": [
+          "Implements interface: BaseCompressor",
+          "Has 10 interface methods"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Adapter": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/compression/__tests__/BaseCompressor.test.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/compression/__tests__/BaseCompressor.test.ts",
+        "class_name": "TestCompressor",
+        "method_name": null,
+        "line_number": 27,
+        "evidence": [
+          "Implements interface: BaseCompressor",
+          "Has 3 interface methods"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 1,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Adapter": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/context/ContextResolver.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.55,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/context/ContextResolver.ts",
+        "class_name": "ContextResolver",
+        "method_name": null,
+        "line_number": 44,
+        "evidence": [
+          "Parameterized factory method: createRequestHash"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/handlers/executionHandler.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Command",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/handlers/executionHandler.ts",
+        "class_name": "ExecutionHandler",
+        "method_name": null,
+        "line_number": 80,
+        "evidence": [
+          "Has execute method: execute()"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "ChainOfResponsibility",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/handlers/executionHandler.ts",
+        "class_name": "ExecutionHandler",
+        "method_name": null,
+        "line_number": 80,
+        "evidence": [
+          "Class name suggests handler chain: ExecutionHandler"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Command": 1,
+      "ChainOfResponsibility": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/routes/mcp.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Singleton",
+        "category": "Creational",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/routes/mcp.ts",
+        "class_name": "MockResponseSingleton",
+        "method_name": null,
+        "line_number": 31,
+        "evidence": [
+          "Class name contains \"Singleton\""
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 5,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Singleton": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/session/AgentSession.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/session/AgentSession.ts",
+        "class_name": "AgentSession",
+        "method_name": null,
+        "line_number": 218,
+        "evidence": [
+          "Parameterized factory method: buildZodSchemaFromJson"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.9,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/session/AgentSession.ts",
+        "class_name": "AgentSession",
+        "method_name": null,
+        "line_number": 218,
+        "evidence": [
+          "Has terminal build/create method",
+          "Has 5 configuration methods"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.95,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/session/AgentSession.ts",
+        "class_name": "AgentSession",
+        "method_name": null,
+        "line_number": 218,
+        "evidence": [
+          "Notify method: enableEmitOperations",
+          "Notify method: initializeStatusUpdates",
+          "Notify method: checkStatusUpdates",
+          "Notify method: checkAndSendTimeBasedUpdate",
+          "Notify method: generateAndSendUpdate",
+          "Notify method: scheduleStatusUpdateCheck",
+          "Notify method: acquireUpdateLock",
+          "Notify method: releaseUpdateLock",
+          "Notify method: generateStructuredStatusUpdate",
+          "Notify method: updateArtifactComponents"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.55,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/session/AgentSession.ts",
+        "class_name": "AgentSessionManager",
+        "method_name": null,
+        "line_number": 1973,
+        "evidence": [
+          "Parameterized factory method: createSession"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/session/AgentSession.ts",
+        "class_name": "AgentSessionManager",
+        "method_name": null,
+        "line_number": 1973,
+        "evidence": [
+          "Has 5 configuration methods"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.8999999999999999,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/session/AgentSession.ts",
+        "class_name": "AgentSessionManager",
+        "method_name": null,
+        "line_number": 1973,
+        "evidence": [
+          "Notify method: initializeStatusUpdates",
+          "Notify method: enableEmitOperations",
+          "Notify method: updateArtifactComponents"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 1,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 2,
+      "Builder": 2,
+      "Observer": 2
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/session/ToolApprovalUiBus.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.65,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/session/ToolApprovalUiBus.ts",
+        "class_name": "ToolApprovalUiBus",
+        "method_name": "publish",
+        "line_number": null,
+        "evidence": [
+          "Observer method detected: publish"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/stream/IncrementalStreamParser.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.65,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/stream/IncrementalStreamParser.ts",
+        "class_name": "IncrementalStreamParser",
+        "method_name": "emitTextToClient",
+        "line_number": null,
+        "evidence": [
+          "Observer method detected: emitTextToClient"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "TemplateMethod",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/stream/IncrementalStreamParser.ts",
+        "class_name": "IncrementalStreamParser",
+        "method_name": null,
+        "line_number": 73,
+        "evidence": [
+          "Has hook methods: initializeArtifactMap, processTextChunk, processObjectDelta",
+          "Has abstract methods: _doProcessTextChunk, _doProcessObjectDelta"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 1,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 1,
+      "TemplateMethod": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/stream/stream-buffer-registry.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.55,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/stream/stream-buffer-registry.ts",
+        "class_name": "PgStreamBufferRegistry",
+        "method_name": null,
+        "line_number": 33,
+        "evidence": [
+          "Parameterized factory method: createReadable"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/tools/SandboxExecutorFactory.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/tools/SandboxExecutorFactory.ts",
+        "class_name": "SandboxExecutorFactory",
+        "method_name": null,
+        "line_number": 12,
+        "evidence": [
+          "Class name contains \"Factory\""
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/tools/VercelSandboxExecutor.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/tools/VercelSandboxExecutor.ts",
+        "class_name": "VercelSandboxExecutor",
+        "method_name": null,
+        "line_number": 36,
+        "evidence": [
+          "Attach method: addToPool",
+          "Detach method: removeSandbox"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/utils/SchemaProcessor.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "ChainOfResponsibility",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/utils/SchemaProcessor.ts",
+        "class_name": "SchemaProcessor",
+        "method_name": null,
+        "line_number": 24,
+        "evidence": [
+          "Class name suggests handler chain: SchemaProcessor"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "ChainOfResponsibility": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/workflow/steps/__tests__/webhookDeliverySteps.test.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/workflow/steps/__tests__/webhookDeliverySteps.test.ts",
+        "class_name": "WebhookUrlSecurityError",
+        "method_name": null,
+        "line_number": 6,
+        "evidence": [
+          "Part of strategy family with: FileSecurityError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-api/src/domains/run/workflow/steps/__tests__/webhookDeliverySteps.test.ts",
+        "class_name": "FileSecurityError",
+        "method_name": null,
+        "line_number": 15,
+        "evidence": [
+          "Part of strategy family with: WebhookUrlSecurityError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 2
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/api.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/api.ts",
+        "class_name": "BaseApiClient",
+        "method_name": null,
+        "line_number": 13,
+        "evidence": [
+          "Strategy base with implementations: ManagementApiClient, ExecutionApiClient"
+        ],
+        "related_classes": [
+          "ManagementApiClient",
+          "ExecutionApiClient"
+        ]
+      },
+      {
+        "pattern_type": "TemplateMethod",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/api.ts",
+        "class_name": "BaseApiClient",
+        "method_name": null,
+        "line_number": 13,
+        "evidence": [
+          "Abstract base with subclasses: ManagementApiClient, ExecutionApiClient"
+        ],
+        "related_classes": [
+          "ManagementApiClient",
+          "ExecutionApiClient"
+        ]
+      },
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.9500000000000001,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/api.ts",
+        "class_name": "ManagementApiClient",
+        "method_name": null,
+        "line_number": 81,
+        "evidence": [
+          "Parameterized factory method: create",
+          "Parameterized factory method: createBranch",
+          "Multiple factory methods: create, createBranch",
+          "Inherits from: BaseApiClient"
+        ],
+        "related_classes": [
+          "BaseApiClient"
+        ]
+      },
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/api.ts",
+        "class_name": "ManagementApiClient",
+        "method_name": null,
+        "line_number": 81,
+        "evidence": [
+          "Has terminal build/create method"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/api.ts",
+        "class_name": "ManagementApiClient",
+        "method_name": null,
+        "line_number": 81,
+        "evidence": [
+          "Implements interface: BaseApiClient",
+          "Has 18 interface methods"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/api.ts",
+        "class_name": "ManagementApiClient",
+        "method_name": null,
+        "line_number": 81,
+        "evidence": [
+          "Part of strategy family with: ExecutionApiClient"
+        ],
+        "related_classes": [
+          "BaseApiClient"
+        ]
+      },
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.65,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/api.ts",
+        "class_name": "ExecutionApiClient",
+        "method_name": null,
+        "line_number": 569,
+        "evidence": [
+          "Parameterized factory method: create",
+          "Inherits from: BaseApiClient"
+        ],
+        "related_classes": [
+          "BaseApiClient"
+        ]
+      },
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/api.ts",
+        "class_name": "ExecutionApiClient",
+        "method_name": null,
+        "line_number": 569,
+        "evidence": [
+          "Implements interface: BaseApiClient",
+          "Has 3 interface methods"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/api.ts",
+        "class_name": "ExecutionApiClient",
+        "method_name": null,
+        "line_number": 569,
+        "evidence": [
+          "Part of strategy family with: ManagementApiClient"
+        ],
+        "related_classes": [
+          "BaseApiClient"
+        ]
+      }
+    ],
+    "total_classes": 3,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 3,
+      "TemplateMethod": 1,
+      "Factory": 2,
+      "Builder": 1,
+      "Adapter": 2
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/commands/pull-v4/component-registry.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/commands/pull-v4/component-registry.ts",
+        "class_name": "ComponentRegistry",
+        "method_name": null,
+        "line_number": 41,
+        "evidence": [
+          "Attach method: register",
+          "Detach method: removeComponent"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 5,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/utils/profiles/profile-manager.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cli/src/utils/profiles/profile-manager.ts",
+        "class_name": "ProfileManager",
+        "method_name": null,
+        "line_number": 64,
+        "evidence": [
+          "Attach method: addProfile",
+          "Detach method: removeProfile"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 1,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cookbook/evals/langfuse-dataset-example/logger.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-cookbook/evals/langfuse-dataset-example/logger.ts",
+        "class_name": "LoggerFactory",
+        "method_name": null,
+        "line_number": 56,
+        "evidence": [
+          "Class name contains \"Factory\""
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-manage-ui/src/features/agent/commands/command-manager.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-manage-ui/src/features/agent/commands/command-manager.ts",
+        "class_name": "CommandManager",
+        "method_name": null,
+        "line_number": 7,
+        "evidence": [
+          "Has terminal build/create method"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Command",
+        "category": "Behavioral",
+        "confidence": 0.8,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-manage-ui/src/features/agent/commands/command-manager.ts",
+        "class_name": "CommandManager",
+        "method_name": null,
+        "line_number": 7,
+        "evidence": [
+          "Has execute method: execute()",
+          "Supports undo/redo operations"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Builder": 1,
+      "Command": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-manage-ui/src/lib/api/signoz-stats.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.9500000000000001,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-manage-ui/src/lib/api/signoz-stats.ts",
+        "class_name": "SigNozStatsAPI",
+        "method_name": null,
+        "line_number": 432,
+        "evidence": [
+          "Parameterized factory method: makePipelineRequest",
+          "Parameterized factory method: buildAgentModelBreakdownPayload",
+          "Parameterized factory method: buildModelBreakdownPayload",
+          "Parameterized factory method: buildConversationActivityPayload",
+          "Parameterized factory method: buildFilteredConversationIdsPayload",
+          "Parameterized factory method: buildOriginScopedAggregatePayload",
+          "Parameterized factory method: buildCombinedPayload",
+          "Parameterized factory method: buildUniqueAgentsPayload",
+          "Parameterized factory method: buildUniqueModelsPayload",
+          "Parameterized factory method: buildToolBreakdownPayload",
+          "Parameterized factory method: buildUniqueToolServersPayload",
+          "Parameterized factory method: buildUniqueToolNamesPayload",
+          "Parameterized factory method: buildProjectOverviewStatsPayload",
+          "Parameterized factory method: buildProjectConversationActivityPayload",
+          "Parameterized factory method: buildStatsByProjectPayload",
+          "Parameterized factory method: buildUsageCostMultiGroupPayload",
+          "Parameterized factory method: buildTokenUsagePayload",
+          "Multiple factory methods: makePipelineRequest, buildAgentModelBreakdownPayload, buildModelBreakdownPayload"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.7000000000000001,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/agents-manage-ui/src/lib/api/signoz-stats.ts",
+        "class_name": "SigNozStatsAPI",
+        "method_name": null,
+        "line_number": 432,
+        "evidence": [
+          "Has terminal build/create method"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 14,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1,
+      "Builder": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/api-client/base-client.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/api-client/base-client.ts",
+        "class_name": "BaseApiError",
+        "method_name": null,
+        "line_number": 51,
+        "evidence": [
+          "Implements interface: Error",
+          "Has 4 interface methods"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.9500000000000001,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/api-client/base-client.ts",
+        "class_name": "BaseApiClient",
+        "method_name": null,
+        "line_number": 95,
+        "evidence": [
+          "Parameterized factory method: buildUrl",
+          "Parameterized factory method: createError",
+          "Multiple factory methods: buildUrl, createError"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/api-client/base-client.ts",
+        "class_name": "BaseApiClient",
+        "method_name": null,
+        "line_number": 95,
+        "evidence": [
+          "Has terminal build/create method"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 1,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Adapter": 1,
+      "Factory": 1,
+      "Builder": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/api-client/eval-api-client.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.65,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/api-client/eval-api-client.ts",
+        "class_name": "EvalApiClient",
+        "method_name": null,
+        "line_number": 36,
+        "evidence": [
+          "Parameterized factory method: createError",
+          "Inherits from: BaseApiClient"
+        ],
+        "related_classes": [
+          "BaseApiClient"
+        ]
+      },
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/api-client/eval-api-client.ts",
+        "class_name": "EvalApiClient",
+        "method_name": null,
+        "line_number": 36,
+        "evidence": [
+          "Implements interface: BaseApiClient",
+          "Has 4 interface methods"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/api-client/eval-api-client.ts",
+        "class_name": "EvalApiClient",
+        "method_name": null,
+        "line_number": 36,
+        "evidence": [
+          "Notify method: triggerEvaluationJob",
+          "Notify method: triggerConversationEvaluation"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1,
+      "Adapter": 1,
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/api-client/manage-api-client.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.65,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/api-client/manage-api-client.ts",
+        "class_name": "ManagementApiClient",
+        "method_name": null,
+        "line_number": 26,
+        "evidence": [
+          "Parameterized factory method: createError",
+          "Inherits from: BaseApiClient"
+        ],
+        "related_classes": [
+          "BaseApiClient"
+        ]
+      },
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/api-client/manage-api-client.ts",
+        "class_name": "ManagementApiClient",
+        "method_name": null,
+        "line_number": 26,
+        "evidence": [
+          "Implements interface: BaseApiClient",
+          "Has 15 interface methods"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1,
+      "Adapter": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/credential-stores/CredentialStoreRegistry.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/credential-stores/CredentialStoreRegistry.ts",
+        "class_name": "CredentialStoreRegistry",
+        "method_name": null,
+        "line_number": 8,
+        "evidence": [
+          "Attach method: add",
+          "Detach method: remove"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/credential-stuffer/CredentialStuffer.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/credential-stuffer/CredentialStuffer.ts",
+        "class_name": "CredentialStuffer",
+        "method_name": null,
+        "line_number": 73,
+        "evidence": [
+          "Parameterized factory method: buildMcpServerConfig"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/credential-stuffer/CredentialStuffer.ts",
+        "class_name": "CredentialStuffer",
+        "method_name": null,
+        "line_number": 73,
+        "evidence": [
+          "Has terminal build/create method"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1,
+      "Builder": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.8,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "FileSecurityError",
+        "method_name": null,
+        "line_number": 1,
+        "evidence": [
+          "Strategy base with implementations: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error",
+          "InvalidExternalFileUrlError",
+          "BlockedUnsupportedSchemeError",
+          "BlockedDisallowedPortError",
+          "BlockedEmbeddedCredentialsError",
+          "NoIpResolvedError",
+          "BlockedUrlResolvingToPrivateIpError",
+          "UnableToResolveHostError",
+          "BlockedConnectionToPrivateIpError",
+          "RedirectMissingLocationError",
+          "TooManyRedirectsError",
+          "FailedToDownloadError",
+          "BlockedExternalFileLargerThanError",
+          "BlockedExternalFileExceedingError",
+          "ExternalFileResponseBodyEmptyError",
+          "UnexpectedRedirectStateError",
+          "TimedOutDownloadingError",
+          "BlockedInlineFileExceedingError",
+          "BlockedInlineUnsupportedFileBytesError",
+          "BlockedExternalUnsupportedBytesError",
+          "InvalidInlineFileMalformedBase64Error",
+          "TextDocumentAttachmentError",
+          "PdfUrlIngestionError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "InvalidExternalFileUrlError",
+        "method_name": null,
+        "line_number": 8,
+        "evidence": [
+          "Part of strategy family with: BlockedUnsupportedSchemeError, BlockedDisallowedPortError, BlockedEmbeddedCredentialsError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "BlockedUnsupportedSchemeError",
+        "method_name": null,
+        "line_number": 14,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedDisallowedPortError, BlockedEmbeddedCredentialsError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "BlockedDisallowedPortError",
+        "method_name": null,
+        "line_number": 20,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedEmbeddedCredentialsError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "BlockedEmbeddedCredentialsError",
+        "method_name": null,
+        "line_number": 26,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "NoIpResolvedError",
+        "method_name": null,
+        "line_number": 32,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "BlockedUrlResolvingToPrivateIpError",
+        "method_name": null,
+        "line_number": 38,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "UnableToResolveHostError",
+        "method_name": null,
+        "line_number": 44,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "BlockedConnectionToPrivateIpError",
+        "method_name": null,
+        "line_number": 50,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "RedirectMissingLocationError",
+        "method_name": null,
+        "line_number": 56,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "TooManyRedirectsError",
+        "method_name": null,
+        "line_number": 62,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "FailedToDownloadError",
+        "method_name": null,
+        "line_number": 68,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "BlockedExternalFileLargerThanError",
+        "method_name": null,
+        "line_number": 79,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "BlockedExternalFileExceedingError",
+        "method_name": null,
+        "line_number": 85,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "ExternalFileResponseBodyEmptyError",
+        "method_name": null,
+        "line_number": 91,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "UnexpectedRedirectStateError",
+        "method_name": null,
+        "line_number": 97,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "TimedOutDownloadingError",
+        "method_name": null,
+        "line_number": 103,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "BlockedInlineFileExceedingError",
+        "method_name": null,
+        "line_number": 109,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "BlockedInlineUnsupportedFileBytesError",
+        "method_name": null,
+        "line_number": 115,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "BlockedExternalUnsupportedBytesError",
+        "method_name": null,
+        "line_number": 123,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "InvalidInlineFileMalformedBase64Error",
+        "method_name": null,
+        "line_number": 129,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.9,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "TextDocumentAttachmentError",
+        "method_name": null,
+        "line_number": 135,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy base with implementations: InvalidUtf8TextDocumentError, TextDocumentControlCharacterError, UnsupportedTextAttachmentSourceError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError",
+          "InvalidUtf8TextDocumentError",
+          "TextDocumentControlCharacterError",
+          "UnsupportedTextAttachmentSourceError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "InvalidUtf8TextDocumentError",
+        "method_name": null,
+        "line_number": 142,
+        "evidence": [
+          "Part of strategy family with: TextDocumentControlCharacterError, UnsupportedTextAttachmentSourceError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "TextDocumentAttachmentError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "TextDocumentControlCharacterError",
+        "method_name": null,
+        "line_number": 148,
+        "evidence": [
+          "Part of strategy family with: InvalidUtf8TextDocumentError, UnsupportedTextAttachmentSourceError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "TextDocumentAttachmentError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "UnsupportedTextAttachmentSourceError",
+        "method_name": null,
+        "line_number": 154,
+        "evidence": [
+          "Part of strategy family with: InvalidUtf8TextDocumentError, TextDocumentControlCharacterError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "TextDocumentAttachmentError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/external-fetch/file-security-errors.ts",
+        "class_name": "PdfUrlIngestionError",
+        "method_name": null,
+        "line_number": 160,
+        "evidence": [
+          "Part of strategy family with: InvalidExternalFileUrlError, BlockedUnsupportedSchemeError, BlockedDisallowedPortError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "FileSecurityError"
+        ]
+      }
+    ],
+    "total_classes": 26,
+    "total_functions": 1,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 26
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/utils/logger.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.8999999999999999,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/utils/logger.ts",
+        "class_name": "PinoLogger",
+        "method_name": null,
+        "line_number": 59,
+        "evidence": [
+          "Attach method: addTransport",
+          "Detach method: removeTransport",
+          "Notify method: updateOptions"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/utils/logger.ts",
+        "class_name": "LoggerFactory",
+        "method_name": null,
+        "line_number": 285,
+        "evidence": [
+          "Class name contains \"Factory\""
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 3,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 1,
+      "Factory": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/utils/model-factory.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.9500000000000001,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-core/src/utils/model-factory.ts",
+        "class_name": "ModelFactory",
+        "method_name": null,
+        "line_number": 34,
+        "evidence": [
+          "Parameterized factory method: createProvider",
+          "Factory method: createModel",
+          "Multiple factory methods: createProvider, createModel"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/lib/http.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/lib/http.ts",
+        "class_name": "HTTPClient",
+        "method_name": null,
+        "line_number": 44,
+        "evidence": [
+          "Attach method: addHook",
+          "Detach method: removeHook"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 6,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/lib/retries.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/lib/retries.ts",
+        "class_name": "PermanentError",
+        "method_name": null,
+        "line_number": 34,
+        "evidence": [
+          "Part of strategy family with: TemporaryError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/lib/retries.ts",
+        "class_name": "TemporaryError",
+        "method_name": null,
+        "line_number": 61,
+        "evidence": [
+          "Part of strategy family with: PermanentError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error"
+        ]
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 6,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 2
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/lib/security.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/lib/security.ts",
+        "class_name": "SecurityError",
+        "method_name": null,
+        "line_number": 22,
+        "evidence": [
+          "Implements interface: Error",
+          "Has 3 interface methods"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 4,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Adapter": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/models/errors/httpclienterrors.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.8,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/models/errors/httpclienterrors.ts",
+        "class_name": "HTTPClientError",
+        "method_name": null,
+        "line_number": 9,
+        "evidence": [
+          "Strategy base with implementations: UnexpectedClientError, InvalidRequestError, RequestAbortedError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error",
+          "UnexpectedClientError",
+          "InvalidRequestError",
+          "RequestAbortedError",
+          "RequestTimeoutError",
+          "ConnectionError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/models/errors/httpclienterrors.ts",
+        "class_name": "UnexpectedClientError",
+        "method_name": null,
+        "line_number": 31,
+        "evidence": [
+          "Part of strategy family with: InvalidRequestError, RequestAbortedError, RequestTimeoutError"
+        ],
+        "related_classes": [
+          "HTTPClientError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/models/errors/httpclienterrors.ts",
+        "class_name": "InvalidRequestError",
+        "method_name": null,
+        "line_number": 38,
+        "evidence": [
+          "Part of strategy family with: UnexpectedClientError, RequestAbortedError, RequestTimeoutError"
+        ],
+        "related_classes": [
+          "HTTPClientError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/models/errors/httpclienterrors.ts",
+        "class_name": "RequestAbortedError",
+        "method_name": null,
+        "line_number": 45,
+        "evidence": [
+          "Part of strategy family with: UnexpectedClientError, InvalidRequestError, RequestTimeoutError"
+        ],
+        "related_classes": [
+          "HTTPClientError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/models/errors/httpclienterrors.ts",
+        "class_name": "RequestTimeoutError",
+        "method_name": null,
+        "line_number": 53,
+        "evidence": [
+          "Part of strategy family with: UnexpectedClientError, InvalidRequestError, RequestAbortedError"
+        ],
+        "related_classes": [
+          "HTTPClientError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-mcp/src/models/errors/httpclienterrors.ts",
+        "class_name": "ConnectionError",
+        "method_name": null,
+        "line_number": 61,
+        "evidence": [
+          "Part of strategy family with: UnexpectedClientError, InvalidRequestError, RequestAbortedError"
+        ],
+        "related_classes": [
+          "HTTPClientError"
+        ]
+      }
+    ],
+    "total_classes": 6,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 6
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/evaluationClient.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.9500000000000001,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/evaluationClient.ts",
+        "class_name": "EvaluationClient",
+        "method_name": null,
+        "line_number": 31,
+        "evidence": [
+          "Factory method: buildUrl",
+          "Factory method: buildHeaders",
+          "Parameterized factory method: createDataset",
+          "Parameterized factory method: createDatasetItem",
+          "Parameterized factory method: createDatasetItems",
+          "Parameterized factory method: createEvaluator",
+          "Parameterized factory method: createEvaluationSuiteConfig",
+          "Parameterized factory method: createEvaluationResult",
+          "Factory method: createDatasetRunConfig",
+          "Multiple factory methods: buildUrl, buildHeaders, createDataset"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.7000000000000001,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/evaluationClient.ts",
+        "class_name": "EvaluationClient",
+        "method_name": null,
+        "line_number": 31,
+        "evidence": [
+          "Has terminal build/create method"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.95,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/evaluationClient.ts",
+        "class_name": "EvaluationClient",
+        "method_name": null,
+        "line_number": 31,
+        "evidence": [
+          "Notify method: updateDataset",
+          "Notify method: updateDatasetItem",
+          "Notify method: updateEvaluator",
+          "Notify method: updateEvaluationSuiteConfig",
+          "Attach method: addEvaluatorToSuiteConfig",
+          "Detach method: removeEvaluatorFromSuiteConfig",
+          "Notify method: updateEvaluationResult",
+          "Notify method: triggerBatchEvaluation",
+          "Notify method: triggerDatasetRun"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1,
+      "Builder": 1,
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/module-hosted-tool-manager.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.9500000000000001,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/module-hosted-tool-manager.ts",
+        "class_name": "ModuleHostedToolManager",
+        "method_name": null,
+        "line_number": 25,
+        "evidence": [
+          "Factory method: createToolModule",
+          "Parameterized factory method: createMCPServerCode",
+          "Multiple factory methods: createToolModule, createMCPServerCode"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Builder",
+        "category": "Creational",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/module-hosted-tool-manager.ts",
+        "class_name": "ModuleHostedToolManager",
+        "method_name": null,
+        "line_number": 25,
+        "evidence": [
+          "Has terminal build/create method"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Command",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/module-hosted-tool-manager.ts",
+        "class_name": "ModuleHostedToolManager",
+        "method_name": null,
+        "line_number": 25,
+        "evidence": [
+          "Has execute method: execute()"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 3,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1,
+      "Builder": 1,
+      "Command": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/runner.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Command",
+        "category": "Behavioral",
+        "confidence": 0.5,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/runner.ts",
+        "class_name": "Runner",
+        "method_name": null,
+        "line_number": 16,
+        "evidence": [
+          "Has execute method: run()"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Command": 1
+    }
+  },
+  {
+    "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/types.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.8,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/types.ts",
+        "class_name": "AgentError",
+        "method_name": null,
+        "line_number": 268,
+        "evidence": [
+          "Strategy base with implementations: MaxTurnsExceededError, ToolExecutionError, TransferError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "Error",
+          "MaxTurnsExceededError",
+          "ToolExecutionError",
+          "TransferError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/types.ts",
+        "class_name": "MaxTurnsExceededError",
+        "method_name": null,
+        "line_number": 279,
+        "evidence": [
+          "Part of strategy family with: ToolExecutionError, TransferError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "AgentError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/types.ts",
+        "class_name": "ToolExecutionError",
+        "method_name": null,
+        "line_number": 286,
+        "evidence": [
+          "Part of strategy family with: MaxTurnsExceededError, TransferError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "AgentError"
+        ]
+      },
+      {
+        "pattern_type": "Strategy",
+        "category": "Behavioral",
+        "confidence": 0.7,
+        "location": "/Users/m/Repos/open-knowledge/.skillseeker-cache/inkeep-agents/repos/0_inkeep_agents/packages/agents-sdk/src/types.ts",
+        "class_name": "TransferError",
+        "method_name": null,
+        "line_number": 294,
+        "evidence": [
+          "Part of strategy family with: MaxTurnsExceededError, ToolExecutionError",
+          "Strategy interface method: constructor"
+        ],
+        "related_classes": [
+          "AgentError"
+        ]
+      }
+    ],
+    "total_classes": 4,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Strategy": 4
+    }
+  }
+]

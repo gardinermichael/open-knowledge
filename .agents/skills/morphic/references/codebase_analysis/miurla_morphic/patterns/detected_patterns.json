@@ -1,0 +1,207 @@
+[
+  {
+    "file_path": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/components/sidebar/__tests__/chat-history-client.test.tsx",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/components/sidebar/__tests__/chat-history-client.test.tsx",
+        "class_name": "IntersectionObserverStub",
+        "method_name": null,
+        "line_number": 23,
+        "evidence": [
+          "Class name suggests Observer: IntersectionObserverStub"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/components/sidebar/__tests__/chat-history-client.test.tsx",
+        "class_name": "ResizeObserverStub",
+        "method_name": null,
+        "line_number": 42,
+        "evidence": [
+          "Class name suggests Observer: ResizeObserverStub"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 2,
+    "total_functions": 6,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 2
+    }
+  },
+  {
+    "file_path": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/components/sidebar/__tests__/chat-history-search.test.tsx",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.6,
+        "location": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/components/sidebar/__tests__/chat-history-search.test.tsx",
+        "class_name": "ResizeObserverStub",
+        "method_name": null,
+        "line_number": 12,
+        "evidence": [
+          "Class name suggests Observer: ResizeObserverStub"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 4,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/lib/chat-store/index.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Observer",
+        "category": "Behavioral",
+        "confidence": 0.8999999999999999,
+        "location": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/lib/chat-store/index.ts",
+        "class_name": "ChatStore",
+        "method_name": null,
+        "line_number": 28,
+        "evidence": [
+          "Notify method: emit",
+          "Attach method: attachHandlers",
+          "Detach method: remove"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Observer": 1
+    }
+  },
+  {
+    "file_path": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/lib/storage/__tests__/r2-client.test.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Command",
+        "category": "Behavioral",
+        "confidence": 0.65,
+        "location": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/lib/storage/__tests__/r2-client.test.ts",
+        "class_name": "ListObjectsV2Command",
+        "method_name": null,
+        "line_number": 9,
+        "evidence": [
+          "Class name suggests Command: ListObjectsV2Command"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Command",
+        "category": "Behavioral",
+        "confidence": 0.65,
+        "location": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/lib/storage/__tests__/r2-client.test.ts",
+        "class_name": "DeleteObjectsCommand",
+        "method_name": null,
+        "line_number": 17,
+        "evidence": [
+          "Class name suggests Command: DeleteObjectsCommand"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Command",
+        "category": "Behavioral",
+        "confidence": 0.65,
+        "location": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/lib/storage/__tests__/r2-client.test.ts",
+        "class_name": "GetObjectCommand",
+        "method_name": null,
+        "line_number": 25,
+        "evidence": [
+          "Class name suggests Command: GetObjectCommand"
+        ],
+        "related_classes": []
+      },
+      {
+        "pattern_type": "Command",
+        "category": "Behavioral",
+        "confidence": 0.65,
+        "location": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/lib/storage/__tests__/r2-client.test.ts",
+        "class_name": "HeadObjectCommand",
+        "method_name": null,
+        "line_number": 33,
+        "evidence": [
+          "Class name suggests Command: HeadObjectCommand"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 4,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Command": 4
+    }
+  },
+  {
+    "file_path": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/lib/tools/search/providers/brave.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Adapter",
+        "category": "Structural",
+        "confidence": 0.5,
+        "location": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/lib/tools/search/providers/brave.ts",
+        "class_name": "BraveSearchProvider",
+        "method_name": null,
+        "line_number": 46,
+        "evidence": [
+          "Implements interface: BaseSearchProvider",
+          "Has 6 interface methods"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 0,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Adapter": 1
+    }
+  },
+  {
+    "file_path": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/scripts/chat-cli.ts",
+    "language": "TypeScript",
+    "patterns": [
+      {
+        "pattern_type": "Factory",
+        "category": "Creational",
+        "confidence": 0.55,
+        "location": "/private/tmp/morphic-skill/.skillseeker-cache/morphic/repos/0_miurla_morphic/scripts/chat-cli.ts",
+        "class_name": "ChatApiTester",
+        "method_name": null,
+        "line_number": 42,
+        "evidence": [
+          "Parameterized factory method: createUserMessage"
+        ],
+        "related_classes": []
+      }
+    ],
+    "total_classes": 1,
+    "total_functions": 2,
+    "analysis_depth": "deep",
+    "pattern_summary": {
+      "Factory": 1
+    }
+  }
+]

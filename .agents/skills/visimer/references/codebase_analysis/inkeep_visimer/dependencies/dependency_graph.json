@@ -1,0 +1,690 @@
+{
+  "nodes": [
+    {
+      "file": "apps/js-playground/src/main.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/js-playground/src/samples.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/js-playground/vite.config.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/playground/src/App.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/playground/src/MonacoPane.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/playground/src/main.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/playground/vite.config.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/site/scripts/record-hero.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/site/src/App.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/site/src/HeroLoopPage.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/site/src/PlaygroundPage.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/site/src/analytics.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/site/src/hero-diagram.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/site/src/main.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/site/src/playground-shared.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "apps/site/vite.config.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/codemirror/src/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/codemirror/src/language.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/codemirror/test/binding.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/class/graph.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/class/ops.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/class/parse.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/editor.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/er/graph.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/er/ops.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/er/parse.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/flowchart/graph.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/flowchart/ops.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/flowchart/parse.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/gantt/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/lineitems/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/pie/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/registry.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/sequence/graph.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/sequence/ops.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/sequence/parse.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/state/graph.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/state/ops.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/state/parse.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/text.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/textpane.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/src/types.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/test/class.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/test/core.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/test/er.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/test/lineitems.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/test/sequence.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/test/state.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/core/test/textpane.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/dom/src/correlate.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/dom/src/icons.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/dom/src/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/dom/src/popover.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/dom/src/view.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/dom/test/correlate-hidden-mount.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/dom/test/fonts.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/dom/test/inplace.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/dom/test/visibility-retry.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/monaco/src/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/monaco/src/language.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/monaco/test/binding.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "packages/react/src/index.tsx",
+      "language": "TypeScript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "apps/js-playground/src/main.ts",
+      "target": "apps/js-playground/src/samples.ts",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "apps/playground/src/App.tsx",
+      "target": "apps/playground/src/MonacoPane.tsx",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "apps/playground/src/App.tsx",
+      "target": "apps/js-playground/src/samples.ts",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "apps/playground/src/main.tsx",
+      "target": "apps/playground/src/App.tsx",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "apps/site/src/App.tsx",
+      "target": "apps/site/src/analytics.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "apps/site/src/App.tsx",
+      "target": "apps/site/src/hero-diagram.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "apps/site/src/App.tsx",
+      "target": "apps/site/src/playground-shared.tsx",
+      "import_type": "import",
+      "line_number": 17
+    },
+    {
+      "source": "apps/site/src/PlaygroundPage.tsx",
+      "target": "apps/site/src/analytics.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "apps/site/src/PlaygroundPage.tsx",
+      "target": "apps/site/src/playground-shared.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "apps/site/src/main.tsx",
+      "target": "apps/playground/src/App.tsx",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "apps/site/src/main.tsx",
+      "target": "apps/site/src/HeroLoopPage.tsx",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "apps/site/src/main.tsx",
+      "target": "apps/site/src/PlaygroundPage.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "apps/site/src/main.tsx",
+      "target": "apps/site/src/analytics.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "apps/site/src/playground-shared.tsx",
+      "target": "apps/site/src/analytics.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "apps/site/vite.config.ts",
+      "target": "apps/site/src/hero-diagram.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "packages/codemirror/src/index.ts",
+      "target": "packages/codemirror/src/language.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "packages/core/src/class/graph.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/class/graph.ts",
+      "target": "packages/core/src/class/parse.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "packages/core/src/class/ops.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/class/ops.ts",
+      "target": "packages/core/src/class/graph.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "packages/core/src/class/ops.ts",
+      "target": "packages/core/src/class/parse.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "packages/core/src/class/parse.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/text.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/registry.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/flowchart/graph.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/flowchart/ops.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/sequence/graph.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/sequence/ops.ts",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/state/graph.ts",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/state/ops.ts",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/class/graph.ts",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/class/ops.ts",
+      "import_type": "import",
+      "line_number": 16
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/er/graph.ts",
+      "import_type": "import",
+      "line_number": 17
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/er/ops.ts",
+      "import_type": "import",
+      "line_number": 18
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/pie/index.ts",
+      "import_type": "import",
+      "line_number": 19
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/gantt/index.ts",
+      "import_type": "import",
+      "line_number": 20
+    },
+    {
+      "source": "packages/core/src/editor.ts",
+      "target": "packages/core/src/lineitems/index.ts",
+      "import_type": "import",
+      "line_number": 21
+    },
+    {
+      "source": "packages/core/src/er/graph.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/er/graph.ts",
+      "target": "packages/core/src/class/parse.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "packages/core/src/er/ops.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/er/ops.ts",
+      "target": "packages/core/src/class/graph.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "packages/core/src/er/parse.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/flowchart/graph.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/flowchart/graph.ts",
+      "target": "packages/core/src/class/parse.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "packages/core/src/flowchart/ops.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/flowchart/ops.ts",
+      "target": "packages/core/src/class/graph.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "packages/core/src/flowchart/ops.ts",
+      "target": "packages/core/src/class/parse.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "packages/core/src/flowchart/parse.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/gantt/index.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/lineitems/index.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/pie/index.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/registry.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/sequence/graph.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/sequence/graph.ts",
+      "target": "packages/core/src/class/parse.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "packages/core/src/sequence/ops.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/sequence/ops.ts",
+      "target": "packages/core/src/class/graph.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "packages/core/src/sequence/ops.ts",
+      "target": "packages/core/src/class/parse.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "packages/core/src/sequence/parse.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/state/graph.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/state/graph.ts",
+      "target": "packages/core/src/class/parse.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "packages/core/src/state/ops.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/state/ops.ts",
+      "target": "packages/core/src/class/graph.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "packages/core/src/state/parse.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/text.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "packages/core/src/textpane.ts",
+      "target": "packages/core/src/editor.ts",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "packages/core/src/textpane.ts",
+      "target": "packages/core/src/types.ts",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "packages/dom/src/popover.ts",
+      "target": "packages/dom/src/icons.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "packages/dom/src/view.ts",
+      "target": "packages/dom/src/correlate.ts",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "packages/dom/src/view.ts",
+      "target": "packages/dom/src/popover.ts",
+      "import_type": "import",
+      "line_number": 27
+    },
+    {
+      "source": "packages/dom/src/view.ts",
+      "target": "packages/dom/src/icons.ts",
+      "import_type": "import",
+      "line_number": 34
+    },
+    {
+      "source": "packages/dom/test/correlate-hidden-mount.test.ts",
+      "target": "packages/dom/src/correlate.ts",
+      "import_type": "import",
+      "line_number": 4
+    }
+  ]
+}

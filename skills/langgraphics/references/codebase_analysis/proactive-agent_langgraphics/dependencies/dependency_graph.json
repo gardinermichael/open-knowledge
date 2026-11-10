@@ -1,0 +1,422 @@
+{
+  "nodes": [
+    {
+      "file": "examples/__common__.py",
+      "language": "Python"
+    },
+    {
+      "file": "examples/__init__.py",
+      "language": "Python"
+    },
+    {
+      "file": "examples/basic_agent.py",
+      "language": "Python"
+    },
+    {
+      "file": "examples/deep_agent.py",
+      "language": "Python"
+    },
+    {
+      "file": "examples/error_agent.py",
+      "language": "Python"
+    },
+    {
+      "file": "examples/react_agent.py",
+      "language": "Python"
+    },
+    {
+      "file": "examples/sub1_agent.py",
+      "language": "Python"
+    },
+    {
+      "file": "examples/sub2_agent.py",
+      "language": "Python"
+    },
+    {
+      "file": "examples/sync_agent.py",
+      "language": "Python"
+    },
+    {
+      "file": "langgraphics/__init__.py",
+      "language": "Python"
+    },
+    {
+      "file": "langgraphics/broadcaster.py",
+      "language": "Python"
+    },
+    {
+      "file": "langgraphics/formatter.py",
+      "language": "Python"
+    },
+    {
+      "file": "langgraphics/metadata/__init__.py",
+      "language": "Python"
+    },
+    {
+      "file": "langgraphics/streamer.py",
+      "language": "Python"
+    },
+    {
+      "file": "langgraphics/topology.py",
+      "language": "Python"
+    },
+    {
+      "file": "langgraphics/upstream.py",
+      "language": "Python"
+    },
+    {
+      "file": "langgraphics/watch.py",
+      "language": "Python"
+    },
+    {
+      "file": "langgraphics-web/src/components/Controls.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "langgraphics-web/src/components/CustomNode.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "langgraphics-web/src/components/GraphCanvas.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "langgraphics-web/src/components/InspectPanel.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "langgraphics-web/src/components/Metrics.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "langgraphics-web/src/hooks/useFocus.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "langgraphics-web/src/hooks/useGraphState.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "langgraphics-web/src/hooks/useWebSocket.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "langgraphics-web/src/layout.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "langgraphics-web/src/main.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "langgraphics-web/src/types.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "langgraphics-web/vite.config.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "scripts/models.py",
+      "language": "Python"
+    },
+    {
+      "file": "tests/lib/__init__.py",
+      "language": "Python"
+    },
+    {
+      "file": "tests/lib/conftest.py",
+      "language": "Python"
+    },
+    {
+      "file": "tests/lib/test_formatter.py",
+      "language": "Python"
+    },
+    {
+      "file": "tests/lib/test_topology.py",
+      "language": "Python"
+    },
+    {
+      "file": "tests/lib/test_upstream.py",
+      "language": "Python"
+    },
+    {
+      "file": "tests/lib/test_watching.py",
+      "language": "Python"
+    },
+    {
+      "file": "tests/web/global.d.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "tests/web/statuses.test.ts",
+      "language": "TypeScript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "examples/basic_agent.py",
+      "target": "examples/__common__.py",
+      "import_type": "from",
+      "line_number": 9
+    },
+    {
+      "source": "examples/deep_agent.py",
+      "target": "examples/__common__.py",
+      "import_type": "from",
+      "line_number": 6
+    },
+    {
+      "source": "examples/error_agent.py",
+      "target": "examples/__common__.py",
+      "import_type": "from",
+      "line_number": 8
+    },
+    {
+      "source": "examples/react_agent.py",
+      "target": "examples/__common__.py",
+      "import_type": "from",
+      "line_number": 8
+    },
+    {
+      "source": "examples/sub1_agent.py",
+      "target": "examples/__common__.py",
+      "import_type": "from",
+      "line_number": 6
+    },
+    {
+      "source": "examples/sub1_agent.py",
+      "target": "examples/deep_agent.py",
+      "import_type": "from",
+      "line_number": 7
+    },
+    {
+      "source": "examples/sub1_agent.py",
+      "target": "examples/error_agent.py",
+      "import_type": "from",
+      "line_number": 8
+    },
+    {
+      "source": "examples/sub2_agent.py",
+      "target": "examples/__common__.py",
+      "import_type": "from",
+      "line_number": 9
+    },
+    {
+      "source": "examples/sync_agent.py",
+      "target": "examples/__common__.py",
+      "import_type": "from",
+      "line_number": 6
+    },
+    {
+      "source": "langgraphics/__init__.py",
+      "target": "langgraphics/watch.py",
+      "import_type": "from",
+      "line_number": 3
+    },
+    {
+      "source": "langgraphics/streamer.py",
+      "target": "langgraphics/formatter.py",
+      "import_type": "from",
+      "line_number": 11
+    },
+    {
+      "source": "langgraphics/watch.py",
+      "target": "langgraphics/broadcaster.py",
+      "import_type": "from",
+      "line_number": 11
+    },
+    {
+      "source": "langgraphics/watch.py",
+      "target": "langgraphics/streamer.py",
+      "import_type": "from",
+      "line_number": 12
+    },
+    {
+      "source": "langgraphics/watch.py",
+      "target": "langgraphics/topology.py",
+      "import_type": "from",
+      "line_number": 13
+    },
+    {
+      "source": "langgraphics/watch.py",
+      "target": "langgraphics/upstream.py",
+      "import_type": "from",
+      "line_number": 14
+    },
+    {
+      "source": "langgraphics-web/src/components/Controls.tsx",
+      "target": "langgraphics-web/src/layout.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "langgraphics-web/src/components/Controls.tsx",
+      "target": "langgraphics-web/src/types.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "langgraphics-web/src/components/CustomNode.tsx",
+      "target": "langgraphics-web/src/types.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "langgraphics-web/src/components/GraphCanvas.tsx",
+      "target": "langgraphics-web/src/components/Controls.tsx",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "langgraphics-web/src/components/GraphCanvas.tsx",
+      "target": "langgraphics-web/src/components/CustomNode.tsx",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "langgraphics-web/src/components/GraphCanvas.tsx",
+      "target": "langgraphics-web/src/hooks/useFocus.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "langgraphics-web/src/components/GraphCanvas.tsx",
+      "target": "langgraphics-web/src/components/InspectPanel.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "langgraphics-web/src/components/GraphCanvas.tsx",
+      "target": "langgraphics-web/src/types.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "langgraphics-web/src/components/GraphCanvas.tsx",
+      "target": "langgraphics-web/src/layout.ts",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "langgraphics-web/src/components/InspectPanel.tsx",
+      "target": "langgraphics-web/src/types.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "langgraphics-web/src/components/InspectPanel.tsx",
+      "target": "langgraphics-web/src/components/Metrics.tsx",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "langgraphics-web/src/components/Metrics.tsx",
+      "target": "langgraphics-web/src/types.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "langgraphics-web/src/hooks/useFocus.ts",
+      "target": "langgraphics-web/src/types.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "langgraphics-web/src/hooks/useFocus.ts",
+      "target": "langgraphics-web/src/layout.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "langgraphics-web/src/hooks/useGraphState.ts",
+      "target": "langgraphics-web/src/types.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "langgraphics-web/src/hooks/useGraphState.ts",
+      "target": "langgraphics-web/src/layout.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "langgraphics-web/src/hooks/useWebSocket.ts",
+      "target": "langgraphics-web/src/types.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "langgraphics-web/src/layout.ts",
+      "target": "langgraphics-web/src/types.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "langgraphics-web/src/main.tsx",
+      "target": "langgraphics-web/src/hooks/useWebSocket.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "langgraphics-web/src/main.tsx",
+      "target": "langgraphics-web/src/hooks/useGraphState.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "langgraphics-web/src/main.tsx",
+      "target": "langgraphics-web/src/components/GraphCanvas.tsx",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "langgraphics-web/src/main.tsx",
+      "target": "langgraphics-web/src/layout.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "tests/lib/test_formatter.py",
+      "target": "langgraphics/formatter.py",
+      "import_type": "from",
+      "line_number": 12
+    },
+    {
+      "source": "tests/lib/test_topology.py",
+      "target": "langgraphics/topology.py",
+      "import_type": "from",
+      "line_number": 12
+    },
+    {
+      "source": "tests/lib/test_upstream.py",
+      "target": "langgraphics/upstream.py",
+      "import_type": "from",
+      "line_number": 8
+    },
+    {
+      "source": "tests/lib/test_watching.py",
+      "target": "langgraphics/topology.py",
+      "import_type": "from",
+      "line_number": 6
+    },
+    {
+      "source": "tests/lib/test_watching.py",
+      "target": "tests/lib/conftest.py",
+      "import_type": "from",
+      "line_number": 7
+    },
+    {
+      "source": "tests/web/statuses.test.ts",
+      "target": "langgraphics-web/src/hooks/useGraphState.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "tests/web/statuses.test.ts",
+      "target": "langgraphics-web/src/types.ts",
+      "import_type": "import",
+      "line_number": 3
+    }
+  ]
+}

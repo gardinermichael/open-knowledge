@@ -1,0 +1,19 @@
+{
+  "name": "inkeep-agents",
+  "description": "Knowledge for building and working with inkeep/agents — the Inkeep agent framework — from the GitHub repository and the official docs site (docs.inkeep.com).",
+  "merge_mode": "rule-based",
+  "sources": [
+    {
+      "type": "github",
+      "repo": "inkeep/agents",
+      "enable_codebase_analysis": true,
+      "code_analysis_depth": "deep"
+    },
+    {
+      "type": "documentation",
+      "base_url": "https://docs.inkeep.com",
+      "max_pages": 150,
+      "start_urls": ["https://docs.inkeep.com/overview"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "langgraphics",
+  "description": "Knowledge for building and working with LangGraphics (proactive-agent/langgraphics) — visual tracing and debugging for LangGraph/LangChain agents — from the GitHub repository and the project site (proactive-agent.org/langgraphics).",
+  "merge_mode": "rule-based",
+  "sources": [
+    {
+      "type": "github",
+      "repo": "proactive-agent/langgraphics",
+      "enable_codebase_analysis": true,
+      "code_analysis_depth": "deep"
+    },
+    {
+      "type": "documentation",
+      "base_url": "https://proactive-agent.org/langgraphics/",
+      "max_pages": 20,
+      "start_urls": ["https://proactive-agent.org/langgraphics/"]
+    }
+  ]
+}

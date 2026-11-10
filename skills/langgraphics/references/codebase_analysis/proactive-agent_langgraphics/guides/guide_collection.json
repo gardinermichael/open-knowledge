@@ -1,0 +1,1399 @@
+{
+  "total_guides": 7,
+  "guides_by_complexity": {
+    "intermediate": 1,
+    "beginner": 6
+  },
+  "guides_by_use_case": {
+    "Conditional Edges Flagged": [
+      {
+        "guide_id": "f0606f72370f",
+        "title": "Conditional Edges Flagged",
+        "overview": "Workflow: test conditional edges flagged",
+        "complexity_level": "intermediate",
+        "prerequisites": [
+          "Setup code must be executed first"
+        ],
+        "required_imports": [
+          "sys",
+          "pytest",
+          "examples",
+          "langgraphics.topology",
+          "examples"
+        ],
+        "required_fixtures": [],
+        "workflows": [
+          {
+            "example_id": "65fbaeb8",
+            "test_name": "test_conditional_edges_flagged",
+            "category": "workflow",
+            "code": "topology = extract(branching_graph)\nedges_by_source = {}\nfor e in topology['edges']:\n    edges_by_source.setdefault(e['source'], []).append(e)\nstart_edges = edges_by_source.get('__start__', [])\nassert len(start_edges) == 1\nassert start_edges[0]['conditional'] is False\nprocess_edges = edges_by_source.get('process', [])\nassert len(process_edges) >= 1\nfor e in process_edges:\n    assert e['conditional'] is True",
+            "language": "Python",
+            "description": "Workflow: test conditional edges flagged",
+            "expected_behavior": "assert len(process_edges) >= 1",
+            "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_topology.py",
+            "line_start": 50,
+            "line_end": 64,
+            "complexity_score": 0.9,
+            "confidence": 0.9,
+            "setup_code": "# Fixtures: branching_graph",
+            "tags": [
+              "workflow",
+              "integration"
+            ],
+            "dependencies": [
+              "sys",
+              "pytest",
+              "examples",
+              "langgraphics.topology",
+              "examples"
+            ],
+            "ai_analysis": null
+          }
+        ],
+        "steps": [
+          {
+            "step_number": 1,
+            "code": "topology = extract(branching_graph)",
+            "description": "Assign topology = extract(...)",
+            "expected_result": null,
+            "verification": null,
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          },
+          {
+            "step_number": 2,
+            "code": "edges_by_source = {}",
+            "description": "Assign edges_by_source = value",
+            "expected_result": null,
+            "verification": null,
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          },
+          {
+            "step_number": 3,
+            "code": "edges_by_source.setdefault(e['source'], []).append(e)",
+            "description": "Call edges_by_source.setdefault.append()",
+            "expected_result": null,
+            "verification": null,
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          },
+          {
+            "step_number": 4,
+            "code": "start_edges = edges_by_source.get('__start__', [])",
+            "description": "Assign start_edges = edges_by_source.get(...)",
+            "expected_result": null,
+            "verification": "assert len(start_edges) == 1",
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          },
+          {
+            "step_number": 5,
+            "code": "process_edges = edges_by_source.get('process', [])",
+            "description": "Assign process_edges = edges_by_source.get(...)",
+            "expected_result": null,
+            "verification": "assert len(process_edges) >= 1",
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          }
+        ],
+        "use_case": "Conditional Edges Flagged",
+        "tags": [
+          "workflow",
+          "integration"
+        ],
+        "estimated_time": "10 minutes",
+        "source_files": [
+          "test_topology.py:50"
+        ],
+        "language": "Python",
+        "common_pitfalls": [],
+        "troubleshooting": {},
+        "variations": [],
+        "related_guides": [],
+        "prerequisites_detailed": [],
+        "troubleshooting_detailed": [],
+        "next_steps_detailed": [],
+        "use_cases": []
+      }
+    ],
+    "React Agent Unconditional Chain": [
+      {
+        "guide_id": "762ec7356b6b",
+        "title": "React Agent Unconditional Chain",
+        "overview": "Workflow: test react agent unconditional chain",
+        "complexity_level": "beginner",
+        "prerequisites": [],
+        "required_imports": [
+          "sys",
+          "pytest",
+          "examples",
+          "langgraphics.topology",
+          "examples"
+        ],
+        "required_fixtures": [],
+        "workflows": [
+          {
+            "example_id": "de39da3e",
+            "test_name": "test_react_agent_unconditional_chain",
+            "category": "workflow",
+            "code": "topo = extract(react_agent.graph)\nedges = {(e['source'], e['target']): e['conditional'] for e in topo['edges']}\nfor pair in [('__start__', 'plan'), ('plan', 'observe'), ('observe', 'update_scratchpad'), ('update_scratchpad', 'check_progress'), ('reflect', 'revise_plan'), ('revise_plan', 'check_progress'), ('ask_clarify', 'plan'), ('integrate', 'final_answer'), ('final_answer', '__end__')]:\n    assert edges[pair] is False",
+            "language": "Python",
+            "description": "Workflow: test react agent unconditional chain",
+            "expected_behavior": "",
+            "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_topology.py",
+            "line_start": 178,
+            "line_end": 187,
+            "complexity_score": 0.3,
+            "confidence": 0.9,
+            "setup_code": null,
+            "tags": [
+              "workflow",
+              "integration"
+            ],
+            "dependencies": [
+              "sys",
+              "pytest",
+              "examples",
+              "langgraphics.topology",
+              "examples"
+            ],
+            "ai_analysis": null
+          }
+        ],
+        "steps": [
+          {
+            "step_number": 1,
+            "code": "topo = extract(react_agent.graph)",
+            "description": "Assign topo = extract(...)",
+            "expected_result": null,
+            "verification": null,
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          },
+          {
+            "step_number": 2,
+            "code": "edges = {(e['source'], e['target']): e['conditional'] for e in topo['edges']}",
+            "description": "Assign edges = value",
+            "expected_result": null,
+            "verification": "assert edges[pair] is False",
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          }
+        ],
+        "use_case": "React Agent Unconditional Chain",
+        "tags": [
+          "workflow",
+          "integration"
+        ],
+        "estimated_time": "5 minutes",
+        "source_files": [
+          "test_topology.py:178"
+        ],
+        "language": "Python",
+        "common_pitfalls": [],
+        "troubleshooting": {},
+        "variations": [],
+        "related_guides": [],
+        "prerequisites_detailed": [],
+        "troubleshooting_detailed": [],
+        "next_steps_detailed": [],
+        "use_cases": []
+      }
+    ],
+    "Chain Input Messages": [
+      {
+        "guide_id": "6ae1f18c7f49",
+        "title": "Chain Input Messages",
+        "overview": "Workflow: test chain input messages",
+        "complexity_level": "beginner",
+        "prerequisites": [],
+        "required_imports": [
+          "json",
+          "uuid",
+          "datetime",
+          "typing",
+          "unittest.mock",
+          "pytest",
+          "langchain_core.documents",
+          "langchain_core.load",
+          "langchain_core.messages",
+          "langgraphics.formatter"
+        ],
+        "required_fixtures": [],
+        "workflows": [
+          {
+            "example_id": "e4a366fd",
+            "test_name": "test_chain_input_messages",
+            "category": "workflow",
+            "code": "run = make_run('chain', inputs={'messages': [HumanMessage(content='What is AI?')]})\nresult = parsed_inputs(run)\nassert result == [{'role': 'human', 'content': 'What is AI?'}]",
+            "language": "Python",
+            "description": "Workflow: test chain input messages",
+            "expected_behavior": "assert result == [{'role': 'human', 'content': 'What is AI?'}]",
+            "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+            "line_start": 224,
+            "line_end": 229,
+            "complexity_score": 0.3,
+            "confidence": 0.9,
+            "setup_code": null,
+            "tags": [
+              "workflow",
+              "integration"
+            ],
+            "dependencies": [
+              "json",
+              "uuid",
+              "datetime",
+              "typing",
+              "unittest.mock",
+              "pytest",
+              "langchain_core.documents",
+              "langchain_core.load",
+              "langchain_core.messages",
+              "langgraphics.formatter"
+            ],
+            "ai_analysis": null
+          }
+        ],
+        "steps": [
+          {
+            "step_number": 1,
+            "code": "run = make_run('chain', inputs={'messages': [HumanMessage(content='What is AI?')]})",
+            "description": "Assign run = make_run(...)",
+            "expected_result": null,
+            "verification": null,
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          },
+          {
+            "step_number": 2,
+            "code": "result = parsed_inputs(run)",
+            "description": "Assign result = parsed_inputs(...)",
+            "expected_result": null,
+            "verification": "assert result == [{'role': 'human', 'content': 'What is AI?'}]",
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          }
+        ],
+        "use_case": "Chain Input Messages",
+        "tags": [
+          "workflow",
+          "integration"
+        ],
+        "estimated_time": "5 minutes",
+        "source_files": [
+          "test_formatter.py:224"
+        ],
+        "language": "Python",
+        "common_pitfalls": [],
+        "troubleshooting": {},
+        "variations": [],
+        "related_guides": [],
+        "prerequisites_detailed": [],
+        "troubleshooting_detailed": [],
+        "next_steps_detailed": [],
+        "use_cases": []
+      }
+    ],
+    "Chain Output Messages": [
+      {
+        "guide_id": "0b8433d81169",
+        "title": "Chain Output Messages",
+        "overview": "Workflow: test chain output messages",
+        "complexity_level": "beginner",
+        "prerequisites": [],
+        "required_imports": [
+          "json",
+          "uuid",
+          "datetime",
+          "typing",
+          "unittest.mock",
+          "pytest",
+          "langchain_core.documents",
+          "langchain_core.load",
+          "langchain_core.messages",
+          "langgraphics.formatter"
+        ],
+        "required_fixtures": [],
+        "workflows": [
+          {
+            "example_id": "baf117c0",
+            "test_name": "test_chain_output_messages",
+            "category": "workflow",
+            "code": "run = make_run('chain', outputs={'messages': [AIMessage(content='AI stands for Artificial Intelligence.')]})\nresult = parsed_outputs(run)\nassert result == [{'role': 'ai', 'content': 'AI stands for Artificial Intelligence.'}]",
+            "language": "Python",
+            "description": "Workflow: test chain output messages",
+            "expected_behavior": "assert result == [{'role': 'ai', 'content': 'AI stands for Artificial Intelligence.'}]",
+            "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+            "line_start": 231,
+            "line_end": 243,
+            "complexity_score": 0.3,
+            "confidence": 0.9,
+            "setup_code": null,
+            "tags": [
+              "workflow",
+              "integration"
+            ],
+            "dependencies": [
+              "json",
+              "uuid",
+              "datetime",
+              "typing",
+              "unittest.mock",
+              "pytest",
+              "langchain_core.documents",
+              "langchain_core.load",
+              "langchain_core.messages",
+              "langgraphics.formatter"
+            ],
+            "ai_analysis": null
+          }
+        ],
+        "steps": [
+          {
+            "step_number": 1,
+            "code": "run = make_run('chain', outputs={'messages': [AIMessage(content='AI stands for Artificial Intelligence.')]})",
+            "description": "Assign run = make_run(...)",
+            "expected_result": null,
+            "verification": null,
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          },
+          {
+            "step_number": 2,
+            "code": "result = parsed_outputs(run)",
+            "description": "Assign result = parsed_outputs(...)",
+            "expected_result": null,
+            "verification": "assert result == [{'role': 'ai', 'content': 'AI stands for Artificial Intelligence.'}]",
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          }
+        ],
+        "use_case": "Chain Output Messages",
+        "tags": [
+          "workflow",
+          "integration"
+        ],
+        "estimated_time": "5 minutes",
+        "source_files": [
+          "test_formatter.py:231"
+        ],
+        "language": "Python",
+        "common_pitfalls": [],
+        "troubleshooting": {},
+        "variations": [],
+        "related_guides": [],
+        "prerequisites_detailed": [],
+        "troubleshooting_detailed": [],
+        "next_steps_detailed": [],
+        "use_cases": []
+      }
+    ],
+    "Chain No Messages": [
+      {
+        "guide_id": "f75af7547d70",
+        "title": "Chain No Messages",
+        "overview": "Workflow: test chain no messages",
+        "complexity_level": "beginner",
+        "prerequisites": [],
+        "required_imports": [
+          "json",
+          "uuid",
+          "datetime",
+          "typing",
+          "unittest.mock",
+          "pytest",
+          "langchain_core.documents",
+          "langchain_core.load",
+          "langchain_core.messages",
+          "langgraphics.formatter"
+        ],
+        "required_fixtures": [],
+        "workflows": [
+          {
+            "example_id": "e710d54e",
+            "test_name": "test_chain_no_messages",
+            "category": "workflow",
+            "code": "run = make_run('chain', inputs={})\nresult = parsed_inputs(run)\nassert result == []",
+            "language": "Python",
+            "description": "Workflow: test chain no messages",
+            "expected_behavior": "assert result == []",
+            "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+            "line_start": 245,
+            "line_end": 248,
+            "complexity_score": 0.3,
+            "confidence": 0.9,
+            "setup_code": null,
+            "tags": [
+              "workflow",
+              "integration"
+            ],
+            "dependencies": [
+              "json",
+              "uuid",
+              "datetime",
+              "typing",
+              "unittest.mock",
+              "pytest",
+              "langchain_core.documents",
+              "langchain_core.load",
+              "langchain_core.messages",
+              "langgraphics.formatter"
+            ],
+            "ai_analysis": null
+          }
+        ],
+        "steps": [
+          {
+            "step_number": 1,
+            "code": "run = make_run('chain', inputs={})",
+            "description": "Assign run = make_run(...)",
+            "expected_result": null,
+            "verification": null,
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          },
+          {
+            "step_number": 2,
+            "code": "result = parsed_inputs(run)",
+            "description": "Assign result = parsed_inputs(...)",
+            "expected_result": null,
+            "verification": "assert result == []",
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          }
+        ],
+        "use_case": "Chain No Messages",
+        "tags": [
+          "workflow",
+          "integration"
+        ],
+        "estimated_time": "5 minutes",
+        "source_files": [
+          "test_formatter.py:245"
+        ],
+        "language": "Python",
+        "common_pitfalls": [],
+        "troubleshooting": {},
+        "variations": [],
+        "related_guides": [],
+        "prerequisites_detailed": [],
+        "troubleshooting_detailed": [],
+        "next_steps_detailed": [],
+        "use_cases": []
+      }
+    ],
+    "Chain Tool Call No Messages": [
+      {
+        "guide_id": "262eb921bdca",
+        "title": "Chain Tool Call No Messages",
+        "overview": "Workflow: test chain tool call no messages",
+        "complexity_level": "beginner",
+        "prerequisites": [],
+        "required_imports": [
+          "json",
+          "uuid",
+          "datetime",
+          "typing",
+          "unittest.mock",
+          "pytest",
+          "langchain_core.documents",
+          "langchain_core.load",
+          "langchain_core.messages",
+          "langgraphics.formatter"
+        ],
+        "required_fixtures": [],
+        "workflows": [
+          {
+            "example_id": "9359b2be",
+            "test_name": "test_chain_tool_call_no_messages",
+            "category": "workflow",
+            "code": "run = make_run('chain', inputs={'tool_call': {'name': 'search', 'args': {'q': 'foo'}, 'id': 'c1', 'type': 'tool_call'}})\nresult = parsed_inputs(run)\nassert len(result) == 1\nassert 'search' in result[0]['content']",
+            "language": "Python",
+            "description": "Workflow: test chain tool call no messages",
+            "expected_behavior": "assert 'search' in result[0]['content']",
+            "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+            "line_start": 250,
+            "line_end": 264,
+            "complexity_score": 0.4,
+            "confidence": 0.9,
+            "setup_code": null,
+            "tags": [
+              "workflow",
+              "integration"
+            ],
+            "dependencies": [
+              "json",
+              "uuid",
+              "datetime",
+              "typing",
+              "unittest.mock",
+              "pytest",
+              "langchain_core.documents",
+              "langchain_core.load",
+              "langchain_core.messages",
+              "langgraphics.formatter"
+            ],
+            "ai_analysis": null
+          }
+        ],
+        "steps": [
+          {
+            "step_number": 1,
+            "code": "run = make_run('chain', inputs={'tool_call': {'name': 'search', 'args': {'q': 'foo'}, 'id': 'c1', 'type': 'tool_call'}})",
+            "description": "Assign run = make_run(...)",
+            "expected_result": null,
+            "verification": null,
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          },
+          {
+            "step_number": 2,
+            "code": "result = parsed_inputs(run)",
+            "description": "Assign result = parsed_inputs(...)",
+            "expected_result": null,
+            "verification": "assert len(result) == 1",
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          }
+        ],
+        "use_case": "Chain Tool Call No Messages",
+        "tags": [
+          "workflow",
+          "integration"
+        ],
+        "estimated_time": "5 minutes",
+        "source_files": [
+          "test_formatter.py:250"
+        ],
+        "language": "Python",
+        "common_pitfalls": [],
+        "troubleshooting": {},
+        "variations": [],
+        "related_guides": [],
+        "prerequisites_detailed": [],
+        "troubleshooting_detailed": [],
+        "next_steps_detailed": [],
+        "use_cases": []
+      }
+    ],
+    "Chain Error": [
+      {
+        "guide_id": "6c16b13d156b",
+        "title": "Chain Error",
+        "overview": "Workflow: test chain error",
+        "complexity_level": "beginner",
+        "prerequisites": [],
+        "required_imports": [
+          "json",
+          "uuid",
+          "datetime",
+          "typing",
+          "unittest.mock",
+          "pytest",
+          "langchain_core.documents",
+          "langchain_core.load",
+          "langchain_core.messages",
+          "langgraphics.formatter"
+        ],
+        "required_fixtures": [],
+        "workflows": [
+          {
+            "example_id": "2e46c571",
+            "test_name": "test_chain_error",
+            "category": "workflow",
+            "code": "run = make_run('chain', error='Graph error')\nresult = parsed_outputs(run)\nassert result == [{'role': 'error', 'content': 'Graph error'}]",
+            "language": "Python",
+            "description": "Workflow: test chain error",
+            "expected_behavior": "assert result == [{'role': 'error', 'content': 'Graph error'}]",
+            "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+            "line_start": 266,
+            "line_end": 269,
+            "complexity_score": 0.3,
+            "confidence": 0.9,
+            "setup_code": null,
+            "tags": [
+              "workflow",
+              "integration"
+            ],
+            "dependencies": [
+              "json",
+              "uuid",
+              "datetime",
+              "typing",
+              "unittest.mock",
+              "pytest",
+              "langchain_core.documents",
+              "langchain_core.load",
+              "langchain_core.messages",
+              "langgraphics.formatter"
+            ],
+            "ai_analysis": null
+          }
+        ],
+        "steps": [
+          {
+            "step_number": 1,
+            "code": "run = make_run('chain', error='Graph error')",
+            "description": "Assign run = make_run(...)",
+            "expected_result": null,
+            "verification": null,
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          },
+          {
+            "step_number": 2,
+            "code": "result = parsed_outputs(run)",
+            "description": "Assign result = parsed_outputs(...)",
+            "expected_result": null,
+            "verification": "assert result == [{'role': 'error', 'content': 'Graph error'}]",
+            "setup_required": null,
+            "explanation": null,
+            "common_pitfall": null,
+            "common_variations": []
+          }
+        ],
+        "use_case": "Chain Error",
+        "tags": [
+          "workflow",
+          "integration"
+        ],
+        "estimated_time": "5 minutes",
+        "source_files": [
+          "test_formatter.py:266"
+        ],
+        "language": "Python",
+        "common_pitfalls": [],
+        "troubleshooting": {},
+        "variations": [],
+        "related_guides": [],
+        "prerequisites_detailed": [],
+        "troubleshooting_detailed": [],
+        "next_steps_detailed": [],
+        "use_cases": []
+      }
+    ]
+  },
+  "guides": [
+    {
+      "guide_id": "f0606f72370f",
+      "title": "Conditional Edges Flagged",
+      "overview": "Workflow: test conditional edges flagged",
+      "complexity_level": "intermediate",
+      "prerequisites": [
+        "Setup code must be executed first"
+      ],
+      "required_imports": [
+        "sys",
+        "pytest",
+        "examples",
+        "langgraphics.topology",
+        "examples"
+      ],
+      "required_fixtures": [],
+      "workflows": [
+        {
+          "example_id": "65fbaeb8",
+          "test_name": "test_conditional_edges_flagged",
+          "category": "workflow",
+          "code": "topology = extract(branching_graph)\nedges_by_source = {}\nfor e in topology['edges']:\n    edges_by_source.setdefault(e['source'], []).append(e)\nstart_edges = edges_by_source.get('__start__', [])\nassert len(start_edges) == 1\nassert start_edges[0]['conditional'] is False\nprocess_edges = edges_by_source.get('process', [])\nassert len(process_edges) >= 1\nfor e in process_edges:\n    assert e['conditional'] is True",
+          "language": "Python",
+          "description": "Workflow: test conditional edges flagged",
+          "expected_behavior": "assert len(process_edges) >= 1",
+          "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_topology.py",
+          "line_start": 50,
+          "line_end": 64,
+          "complexity_score": 0.9,
+          "confidence": 0.9,
+          "setup_code": "# Fixtures: branching_graph",
+          "tags": [
+            "workflow",
+            "integration"
+          ],
+          "dependencies": [
+            "sys",
+            "pytest",
+            "examples",
+            "langgraphics.topology",
+            "examples"
+          ],
+          "ai_analysis": null
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "code": "topology = extract(branching_graph)",
+          "description": "Assign topology = extract(...)",
+          "expected_result": null,
+          "verification": null,
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        },
+        {
+          "step_number": 2,
+          "code": "edges_by_source = {}",
+          "description": "Assign edges_by_source = value",
+          "expected_result": null,
+          "verification": null,
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        },
+        {
+          "step_number": 3,
+          "code": "edges_by_source.setdefault(e['source'], []).append(e)",
+          "description": "Call edges_by_source.setdefault.append()",
+          "expected_result": null,
+          "verification": null,
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        },
+        {
+          "step_number": 4,
+          "code": "start_edges = edges_by_source.get('__start__', [])",
+          "description": "Assign start_edges = edges_by_source.get(...)",
+          "expected_result": null,
+          "verification": "assert len(start_edges) == 1",
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        },
+        {
+          "step_number": 5,
+          "code": "process_edges = edges_by_source.get('process', [])",
+          "description": "Assign process_edges = edges_by_source.get(...)",
+          "expected_result": null,
+          "verification": "assert len(process_edges) >= 1",
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        }
+      ],
+      "use_case": "Conditional Edges Flagged",
+      "tags": [
+        "workflow",
+        "integration"
+      ],
+      "estimated_time": "10 minutes",
+      "source_files": [
+        "test_topology.py:50"
+      ],
+      "language": "Python",
+      "common_pitfalls": [],
+      "troubleshooting": {},
+      "variations": [],
+      "related_guides": [],
+      "prerequisites_detailed": [],
+      "troubleshooting_detailed": [],
+      "next_steps_detailed": [],
+      "use_cases": []
+    },
+    {
+      "guide_id": "762ec7356b6b",
+      "title": "React Agent Unconditional Chain",
+      "overview": "Workflow: test react agent unconditional chain",
+      "complexity_level": "beginner",
+      "prerequisites": [],
+      "required_imports": [
+        "sys",
+        "pytest",
+        "examples",
+        "langgraphics.topology",
+        "examples"
+      ],
+      "required_fixtures": [],
+      "workflows": [
+        {
+          "example_id": "de39da3e",
+          "test_name": "test_react_agent_unconditional_chain",
+          "category": "workflow",
+          "code": "topo = extract(react_agent.graph)\nedges = {(e['source'], e['target']): e['conditional'] for e in topo['edges']}\nfor pair in [('__start__', 'plan'), ('plan', 'observe'), ('observe', 'update_scratchpad'), ('update_scratchpad', 'check_progress'), ('reflect', 'revise_plan'), ('revise_plan', 'check_progress'), ('ask_clarify', 'plan'), ('integrate', 'final_answer'), ('final_answer', '__end__')]:\n    assert edges[pair] is False",
+          "language": "Python",
+          "description": "Workflow: test react agent unconditional chain",
+          "expected_behavior": "",
+          "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_topology.py",
+          "line_start": 178,
+          "line_end": 187,
+          "complexity_score": 0.3,
+          "confidence": 0.9,
+          "setup_code": null,
+          "tags": [
+            "workflow",
+            "integration"
+          ],
+          "dependencies": [
+            "sys",
+            "pytest",
+            "examples",
+            "langgraphics.topology",
+            "examples"
+          ],
+          "ai_analysis": null
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "code": "topo = extract(react_agent.graph)",
+          "description": "Assign topo = extract(...)",
+          "expected_result": null,
+          "verification": null,
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        },
+        {
+          "step_number": 2,
+          "code": "edges = {(e['source'], e['target']): e['conditional'] for e in topo['edges']}",
+          "description": "Assign edges = value",
+          "expected_result": null,
+          "verification": "assert edges[pair] is False",
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        }
+      ],
+      "use_case": "React Agent Unconditional Chain",
+      "tags": [
+        "workflow",
+        "integration"
+      ],
+      "estimated_time": "5 minutes",
+      "source_files": [
+        "test_topology.py:178"
+      ],
+      "language": "Python",
+      "common_pitfalls": [],
+      "troubleshooting": {},
+      "variations": [],
+      "related_guides": [],
+      "prerequisites_detailed": [],
+      "troubleshooting_detailed": [],
+      "next_steps_detailed": [],
+      "use_cases": []
+    },
+    {
+      "guide_id": "6ae1f18c7f49",
+      "title": "Chain Input Messages",
+      "overview": "Workflow: test chain input messages",
+      "complexity_level": "beginner",
+      "prerequisites": [],
+      "required_imports": [
+        "json",
+        "uuid",
+        "datetime",
+        "typing",
+        "unittest.mock",
+        "pytest",
+        "langchain_core.documents",
+        "langchain_core.load",
+        "langchain_core.messages",
+        "langgraphics.formatter"
+      ],
+      "required_fixtures": [],
+      "workflows": [
+        {
+          "example_id": "e4a366fd",
+          "test_name": "test_chain_input_messages",
+          "category": "workflow",
+          "code": "run = make_run('chain', inputs={'messages': [HumanMessage(content='What is AI?')]})\nresult = parsed_inputs(run)\nassert result == [{'role': 'human', 'content': 'What is AI?'}]",
+          "language": "Python",
+          "description": "Workflow: test chain input messages",
+          "expected_behavior": "assert result == [{'role': 'human', 'content': 'What is AI?'}]",
+          "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+          "line_start": 224,
+          "line_end": 229,
+          "complexity_score": 0.3,
+          "confidence": 0.9,
+          "setup_code": null,
+          "tags": [
+            "workflow",
+            "integration"
+          ],
+          "dependencies": [
+            "json",
+            "uuid",
+            "datetime",
+            "typing",
+            "unittest.mock",
+            "pytest",
+            "langchain_core.documents",
+            "langchain_core.load",
+            "langchain_core.messages",
+            "langgraphics.formatter"
+          ],
+          "ai_analysis": null
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "code": "run = make_run('chain', inputs={'messages': [HumanMessage(content='What is AI?')]})",
+          "description": "Assign run = make_run(...)",
+          "expected_result": null,
+          "verification": null,
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        },
+        {
+          "step_number": 2,
+          "code": "result = parsed_inputs(run)",
+          "description": "Assign result = parsed_inputs(...)",
+          "expected_result": null,
+          "verification": "assert result == [{'role': 'human', 'content': 'What is AI?'}]",
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        }
+      ],
+      "use_case": "Chain Input Messages",
+      "tags": [
+        "workflow",
+        "integration"
+      ],
+      "estimated_time": "5 minutes",
+      "source_files": [
+        "test_formatter.py:224"
+      ],
+      "language": "Python",
+      "common_pitfalls": [],
+      "troubleshooting": {},
+      "variations": [],
+      "related_guides": [],
+      "prerequisites_detailed": [],
+      "troubleshooting_detailed": [],
+      "next_steps_detailed": [],
+      "use_cases": []
+    },
+    {
+      "guide_id": "0b8433d81169",
+      "title": "Chain Output Messages",
+      "overview": "Workflow: test chain output messages",
+      "complexity_level": "beginner",
+      "prerequisites": [],
+      "required_imports": [
+        "json",
+        "uuid",
+        "datetime",
+        "typing",
+        "unittest.mock",
+        "pytest",
+        "langchain_core.documents",
+        "langchain_core.load",
+        "langchain_core.messages",
+        "langgraphics.formatter"
+      ],
+      "required_fixtures": [],
+      "workflows": [
+        {
+          "example_id": "baf117c0",
+          "test_name": "test_chain_output_messages",
+          "category": "workflow",
+          "code": "run = make_run('chain', outputs={'messages': [AIMessage(content='AI stands for Artificial Intelligence.')]})\nresult = parsed_outputs(run)\nassert result == [{'role': 'ai', 'content': 'AI stands for Artificial Intelligence.'}]",
+          "language": "Python",
+          "description": "Workflow: test chain output messages",
+          "expected_behavior": "assert result == [{'role': 'ai', 'content': 'AI stands for Artificial Intelligence.'}]",
+          "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+          "line_start": 231,
+          "line_end": 243,
+          "complexity_score": 0.3,
+          "confidence": 0.9,
+          "setup_code": null,
+          "tags": [
+            "workflow",
+            "integration"
+          ],
+          "dependencies": [
+            "json",
+            "uuid",
+            "datetime",
+            "typing",
+            "unittest.mock",
+            "pytest",
+            "langchain_core.documents",
+            "langchain_core.load",
+            "langchain_core.messages",
+            "langgraphics.formatter"
+          ],
+          "ai_analysis": null
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "code": "run = make_run('chain', outputs={'messages': [AIMessage(content='AI stands for Artificial Intelligence.')]})",
+          "description": "Assign run = make_run(...)",
+          "expected_result": null,
+          "verification": null,
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        },
+        {
+          "step_number": 2,
+          "code": "result = parsed_outputs(run)",
+          "description": "Assign result = parsed_outputs(...)",
+          "expected_result": null,
+          "verification": "assert result == [{'role': 'ai', 'content': 'AI stands for Artificial Intelligence.'}]",
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        }
+      ],
+      "use_case": "Chain Output Messages",
+      "tags": [
+        "workflow",
+        "integration"
+      ],
+      "estimated_time": "5 minutes",
+      "source_files": [
+        "test_formatter.py:231"
+      ],
+      "language": "Python",
+      "common_pitfalls": [],
+      "troubleshooting": {},
+      "variations": [],
+      "related_guides": [],
+      "prerequisites_detailed": [],
+      "troubleshooting_detailed": [],
+      "next_steps_detailed": [],
+      "use_cases": []
+    },
+    {
+      "guide_id": "f75af7547d70",
+      "title": "Chain No Messages",
+      "overview": "Workflow: test chain no messages",
+      "complexity_level": "beginner",
+      "prerequisites": [],
+      "required_imports": [
+        "json",
+        "uuid",
+        "datetime",
+        "typing",
+        "unittest.mock",
+        "pytest",
+        "langchain_core.documents",
+        "langchain_core.load",
+        "langchain_core.messages",
+        "langgraphics.formatter"
+      ],
+      "required_fixtures": [],
+      "workflows": [
+        {
+          "example_id": "e710d54e",
+          "test_name": "test_chain_no_messages",
+          "category": "workflow",
+          "code": "run = make_run('chain', inputs={})\nresult = parsed_inputs(run)\nassert result == []",
+          "language": "Python",
+          "description": "Workflow: test chain no messages",
+          "expected_behavior": "assert result == []",
+          "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+          "line_start": 245,
+          "line_end": 248,
+          "complexity_score": 0.3,
+          "confidence": 0.9,
+          "setup_code": null,
+          "tags": [
+            "workflow",
+            "integration"
+          ],
+          "dependencies": [
+            "json",
+            "uuid",
+            "datetime",
+            "typing",
+            "unittest.mock",
+            "pytest",
+            "langchain_core.documents",
+            "langchain_core.load",
+            "langchain_core.messages",
+            "langgraphics.formatter"
+          ],
+          "ai_analysis": null
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "code": "run = make_run('chain', inputs={})",
+          "description": "Assign run = make_run(...)",
+          "expected_result": null,
+          "verification": null,
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        },
+        {
+          "step_number": 2,
+          "code": "result = parsed_inputs(run)",
+          "description": "Assign result = parsed_inputs(...)",
+          "expected_result": null,
+          "verification": "assert result == []",
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        }
+      ],
+      "use_case": "Chain No Messages",
+      "tags": [
+        "workflow",
+        "integration"
+      ],
+      "estimated_time": "5 minutes",
+      "source_files": [
+        "test_formatter.py:245"
+      ],
+      "language": "Python",
+      "common_pitfalls": [],
+      "troubleshooting": {},
+      "variations": [],
+      "related_guides": [],
+      "prerequisites_detailed": [],
+      "troubleshooting_detailed": [],
+      "next_steps_detailed": [],
+      "use_cases": []
+    },
+    {
+      "guide_id": "262eb921bdca",
+      "title": "Chain Tool Call No Messages",
+      "overview": "Workflow: test chain tool call no messages",
+      "complexity_level": "beginner",
+      "prerequisites": [],
+      "required_imports": [
+        "json",
+        "uuid",
+        "datetime",
+        "typing",
+        "unittest.mock",
+        "pytest",
+        "langchain_core.documents",
+        "langchain_core.load",
+        "langchain_core.messages",
+        "langgraphics.formatter"
+      ],
+      "required_fixtures": [],
+      "workflows": [
+        {
+          "example_id": "9359b2be",
+          "test_name": "test_chain_tool_call_no_messages",
+          "category": "workflow",
+          "code": "run = make_run('chain', inputs={'tool_call': {'name': 'search', 'args': {'q': 'foo'}, 'id': 'c1', 'type': 'tool_call'}})\nresult = parsed_inputs(run)\nassert len(result) == 1\nassert 'search' in result[0]['content']",
+          "language": "Python",
+          "description": "Workflow: test chain tool call no messages",
+          "expected_behavior": "assert 'search' in result[0]['content']",
+          "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+          "line_start": 250,
+          "line_end": 264,
+          "complexity_score": 0.4,
+          "confidence": 0.9,
+          "setup_code": null,
+          "tags": [
+            "workflow",
+            "integration"
+          ],
+          "dependencies": [
+            "json",
+            "uuid",
+            "datetime",
+            "typing",
+            "unittest.mock",
+            "pytest",
+            "langchain_core.documents",
+            "langchain_core.load",
+            "langchain_core.messages",
+            "langgraphics.formatter"
+          ],
+          "ai_analysis": null
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "code": "run = make_run('chain', inputs={'tool_call': {'name': 'search', 'args': {'q': 'foo'}, 'id': 'c1', 'type': 'tool_call'}})",
+          "description": "Assign run = make_run(...)",
+          "expected_result": null,
+          "verification": null,
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        },
+        {
+          "step_number": 2,
+          "code": "result = parsed_inputs(run)",
+          "description": "Assign result = parsed_inputs(...)",
+          "expected_result": null,
+          "verification": "assert len(result) == 1",
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        }
+      ],
+      "use_case": "Chain Tool Call No Messages",
+      "tags": [
+        "workflow",
+        "integration"
+      ],
+      "estimated_time": "5 minutes",
+      "source_files": [
+        "test_formatter.py:250"
+      ],
+      "language": "Python",
+      "common_pitfalls": [],
+      "troubleshooting": {},
+      "variations": [],
+      "related_guides": [],
+      "prerequisites_detailed": [],
+      "troubleshooting_detailed": [],
+      "next_steps_detailed": [],
+      "use_cases": []
+    },
+    {
+      "guide_id": "6c16b13d156b",
+      "title": "Chain Error",
+      "overview": "Workflow: test chain error",
+      "complexity_level": "beginner",
+      "prerequisites": [],
+      "required_imports": [
+        "json",
+        "uuid",
+        "datetime",
+        "typing",
+        "unittest.mock",
+        "pytest",
+        "langchain_core.documents",
+        "langchain_core.load",
+        "langchain_core.messages",
+        "langgraphics.formatter"
+      ],
+      "required_fixtures": [],
+      "workflows": [
+        {
+          "example_id": "2e46c571",
+          "test_name": "test_chain_error",
+          "category": "workflow",
+          "code": "run = make_run('chain', error='Graph error')\nresult = parsed_outputs(run)\nassert result == [{'role': 'error', 'content': 'Graph error'}]",
+          "language": "Python",
+          "description": "Workflow: test chain error",
+          "expected_behavior": "assert result == [{'role': 'error', 'content': 'Graph error'}]",
+          "file_path": "/Users/m/Repos/open-knowledge/.skillseeker-cache/langgraphics/repos/0_proactive-agent_langgraphics/tests/lib/test_formatter.py",
+          "line_start": 266,
+          "line_end": 269,
+          "complexity_score": 0.3,
+          "confidence": 0.9,
+          "setup_code": null,
+          "tags": [
+            "workflow",
+            "integration"
+          ],
+          "dependencies": [
+            "json",
+            "uuid",
+            "datetime",
+            "typing",
+            "unittest.mock",
+            "pytest",
+            "langchain_core.documents",
+            "langchain_core.load",
+            "langchain_core.messages",
+            "langgraphics.formatter"
+          ],
+          "ai_analysis": null
+        }
+      ],
+      "steps": [
+        {
+          "step_number": 1,
+          "code": "run = make_run('chain', error='Graph error')",
+          "description": "Assign run = make_run(...)",
+          "expected_result": null,
+          "verification": null,
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        },
+        {
+          "step_number": 2,
+          "code": "result = parsed_outputs(run)",
+          "description": "Assign result = parsed_outputs(...)",
+          "expected_result": null,
+          "verification": "assert result == [{'role': 'error', 'content': 'Graph error'}]",
+          "setup_required": null,
+          "explanation": null,
+          "common_pitfall": null,
+          "common_variations": []
+        }
+      ],
+      "use_case": "Chain Error",
+      "tags": [
+        "workflow",
+        "integration"
+      ],
+      "estimated_time": "5 minutes",
+      "source_files": [
+        "test_formatter.py:266"
+      ],
+      "language": "Python",
+      "common_pitfalls": [],
+      "troubleshooting": {},
+      "variations": [],
+      "related_guides": [],
+      "prerequisites_detailed": [],
+      "troubleshooting_detailed": [],
+      "next_steps_detailed": [],
+      "use_cases": []
+    }
+  ]
+}

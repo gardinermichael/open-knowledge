@@ -1,0 +1,207 @@
+---
+name: langgraphics
+description: Knowledge for building and working with LangGraphics (proactive-agent/langgraphics) — visual tracing and debugging for LangGraph/LangChain agents — from the GitHub repository and the project site (proactive-agent.org/langgraphics).
+---
+
+# Langgraphics
+
+Visualize live LangGraph execution and see how your agent thinks as it runs. This skill synthesizes the official project documentation (proactive-agent.org/langgraphics), the GitHub repository (proactive-agent/langgraphics), and an automated codebase analysis of the repo — Python package `langgraphics/` plus a React/TypeScript web frontend `langgraphics-web/`.
+
+## 📚 Sources
+
+This skill combines two source types, with the codebase treated as ground truth where they differ:
+
+- ✅ **Official Documentation** — https://proactive-agent.org/langgraphics/ (high confidence)
+- ✅ **GitHub Repository** — [proactive-agent/langgraphics](https://github.com/proactive-agent/langgraphics) (MIT, ~155 stars, 1 open issue, last updated 2026-11-09)
+- ✅ **Codebase Analysis** — automated C3.x pipeline output over `langgraphics/` (Python) and `langgraphics-web/` (TypeScript/React), plus `examples/` and `tests/` (architecture: high confidence; per-file API refs: medium)
+
+**Source priority when sources differ:** code patterns from the repo > official docs > GitHub issues.
+
+## 📦 About
+
+- **Repository:** [proactive-agent/langgraphics](https://github.com/proactive-agent/langgraphics)
+- **Homepage:** https://proactive-agent.org/langgraphics
+- **Language:** Python package (`langgraphics/`, ~38% of repo) + TypeScript/React frontend (`langgraphics-web/`, ~56%)
+- **License:** MIT
+- **Topics:** langgraph, langchain, tracing, visualization, real-time, workflow, langsmith, langfuse, studio, deepagents
+
+LangGraphics is a **local-only** visual debugger for LangGraph/LangChain agents: it serves an HTTP + WebSocket pair that streams live execution events to a browser UI. No account, no API key, nothing leaves the process.
+
+### Repository layout (from codebase analysis)
+
+| Path | What it is |
+|------|-----------|
+| `langgraphics/` | Python package: `watch(...)` wrapper, `Viewport`, `Broadcaster`, `BroadcastingTracer`, `Formatter` |
+| `langgraphics-web/` | React/TypeScript frontend: `GraphCanvas`, `InspectPanel`, `Controls`, `Metrics`, `CustomNode`, `layout.ts` |
+| `examples/` | Runnable example agents: `basic_agent.py`, `react_agent.py`, `deep_agent.py`, `error_agent.py`, `sync_agent.py`, `sub1_agent.py`, `sub2_agent.py`, `__common__.py` (fake chat model + simulated tool/retriever for offline runs) |
+| `tests/` | Python tests (`tests/lib/`) + web tests (`tests/web/`), including `conftest.py` graph fixtures and `ws_collect` WebSocket test helper |
+
+## 🧠 Key Concepts
+
+- **`watch(compiled_graph)`** — the entire public integration surface. Wraps a compiled LangGraph; returns a graph that behaves identically (same return values, same invoke/stream methods) while streaming execution events to the visualizer.
+- **`Viewport`** — internal orchestration object (`langgraphics/streamer.py`): binds the compiled graph, a WebSocket connection, an edge lookup, and an HTTP server; owns the run lifecycle.
+- **`Broadcaster`** (`langgraphics/broadcaster.py`) — fans messages out to connected WebSocket clients; `record`, `broadcast`, `handler(websocket)`, `shutdown`.
+- **`BroadcastingTracer`** (`langgraphics/streamer.py`) — a LangChain `AsyncBaseTracer` subclass that converts chain/LLM/tool/retriever run events (`_on_chain_start`, `_on_llm_end`, `_on_tool_error`, `_on_retriever_end`, …) into broadcast messages and persists runs via `_persist_run` / `_emit_end`.
+- **`Formatter`** (`langgraphics/formatter.py`) — serializes run data for the UI: `extract`, `inputs`, `outputs`, `metrics`, `costs(model, cached, total)`, `latency(seconds)`, `serialize`.
+- **Topology extraction** — node/edge/subgraph topology is extracted from the compiled graph and sent to the frontend, which lays it out with `computeLayout(topology, rankDir)` (`langgraphics-web/src/layout.ts`, supports `TB`/`LR` directions and nested subgraph layouts via `_computeSubgraphLayout`).
+- **Web UI components** — `GraphCanvas` (live graph rendering), `InspectPanel` (node input/output/state slice), `Controls` (playback/step-through), `Metrics` (per-node latency/token/cost), `CustomNode` (node rendering).
+
+## 🎯 When to Use This Skill
+
+Use this skill when you need to:
+
+- **Instrument a LangGraph/LangChain agent for visual debugging** — wrap a compiled graph in `watch(...)` so runs appear live in a browser.
+- **Understand LangGraphics features** — live execution graph, replay/step-through, inspect panel (node input/output/state slice), subgraph-in-place rendering, per-node latency/token/cost metrics, error surfacing.
+- **Decide whether LangGraphics fits a project** — it is a local-only HTTP + WebSocket visualizer; no account, no API key, nothing leaves the process.
+- **Find the minimal integration pattern** — one wrapper call on the compiled graph; no decorators, no refactoring, agent return values unchanged.
+- **Debug LangGraph agent behavior** — find which branches were taken, where the agent looped, where it stopped, and what state each node produced.
+- **Explore the implementation** — read `streamer.py`, `broadcaster.py`, `formatter.py` for how tracing/broadcasting/serialization actually works, or the `langgraphics-web/` components for UI behavior.
+- **Find real-world usage patterns** — `examples/` shows basic, React-style, Deep Agents, error-path, sync, and subgraph agents.
+
+Do NOT use this skill for:
+
+- LangGraph graph-building fundamentals (StateGraph, nodes, edges, state schemas) — use the `langgraph-fundamentals` skill.
+- Deep Agents harness architecture — use the `deep-agents-*` skills.
+- General LangChain agent construction — use `langchain-fundamentals`.
+- Hosted/managed tracing platforms — LangGraphics is a local visualizer, not a LangSmith/Langfuse replacement (though its topics tag them as adjacent tools).
+
+## ⚡ Quick Reference
+
+### Install (from official docs)
+
+```bash
+pip install langgraphics
+```
+
+### Wrap a compiled LangGraph (canonical pattern, from official docs)
+
+```python
+from langgraph.graph import StateGraph, MessagesState
+from langgraphics import watch
+
+workflow = StateGraph(MessagesState)
+workflow.add_node(...)
+workflow.add_edge(...)
+
+graph = watch(workflow.compile())
+
+await graph.ainvoke({"messages": [...]})
+```
+
+This is the entire integration surface described by the docs: build the graph as usual, compile it, pass the compiled graph through `watch(...)`, then invoke normally. The wrapper returns a graph that behaves identically to the unwrapped one — same return values, no agent code changes.
+
+### Synchronous invoke variant
+
+```python
+from langgraph.graph import StateGraph, MessagesState
+from langgraphics import watch
+
+graph = watch(workflow.compile())
+result = graph.invoke({"messages": [...]})
+```
+
+The docs show `ainvoke` only, but `watch` wraps the compiled graph object, so any method the compiled graph supports (`invoke`, `stream`, `ainvoke`, `astream`) should work unchanged. Verify against the repo version you have installed.
+
+### Test-graph fixture pattern (from codebase — `tests/lib/conftest.py`)
+
+The repo's own tests show the shape of graphs `watch` is exercised against — a simple linear graph, a branching graph with conditional edges, and an error graph:
+
+```python
+# tests/lib/conftest.py — fixtures used across the test suite
+simple_graph()      # -> StateGraph with step_a -> step_b
+branching_graph()   # -> StateGraph with conditional edges from 'process'
+error_graph()       # -> StateGraph that raises inside a node
+
+# Conditional-edge assertion pattern (from test suite)
+topology = extract(branching_graph)
+edges_by_source = {}
+for e in topology['edges']:
+    edges_by_source.setdefault(e['source'], []).append(e)
+start_edges = edges_by_source.get('__start__', [])
+assert len(start_edges) == 1
+assert start_edges[0]['conditional'] is False
+process_edges = edges_by_source.get('process', [])
+assert len(process_edges) >= 1
+for e in process_edges:
+    assert e['conditional'] is True
+```
+
+### WebSocket test helper (from codebase — `tests/lib/conftest.py`)
+
+```python
+async def ws_collect(ws_port: int, timeout: float = 15.0):
+    """Connect to the broadcaster's WebSocket and collect messages."""
+    # returns AsyncIterator[tuple[list[dict], asyncio.Event]]
+```
+
+Useful if you want to assert on the events LangGraphics emits rather than only watching the UI.
+
+### Formatter metrics (from codebase — `langgraphics/formatter.py`)
+
+```python
+class Formatter:
+    @classmethod
+    def costs(cls, model: str, cached: int, total: int): ...
+    @staticmethod
+    def latency(seconds: float) -> str: ...
+    @staticmethod
+    def serialize(func): ...
+    @staticmethod
+    def extract(data: dict, key: str): ...
+    @classmethod
+    def metrics(cls, run: Run) -> dict: ...
+```
+
+`Formatter` turns LangChain `Run` objects into the payloads the web UI renders — inputs/outputs extraction for chat models, LLMs, tools, and retrievers, plus latency and cost computation.
+
+### Broadcaster API (from codebase — `langgraphics/broadcaster.py`)
+
+```python
+class Broadcaster:
+    def __init__(self, topology: dict) -> None: ...
+    def handler(self, websocket) -> None: ...   # per-client WS handler
+    def record(self, message: str) -> None: ... # persist to run log
+    def broadcast(self, message: str) -> None: ... # fan out to clients
+    def shutdown(self) -> None: ...
+```
+
+## 📖 Reference Documentation
+
+Organized by source:
+
+- [Documentation](references/documentation/) — official project site content
+- [GitHub](references/github/) — repository metadata and issue data
+- [Codebase Analysis](references/codebase_analysis/index.md) — C3.x pipeline output
+
+### Codebase-analysis detail files
+
+`references/codebase_analysis/proactive-agent_langgraphics/` contains:
+
+- `ARCHITECTURE.md` — high-confidence overview (stack, patterns, workflows, entry points)
+- `api_reference/*.md` — medium-confidence per-file API references:
+  - **Python package:** `broadcaster.md`, `streamer.md` (Viewport + BroadcastingTracer), `formatter.md`
+  - **Frontend:** `GraphCanvas.md`, `InspectPanel.md`, `Controls.md`, `Metrics.md`, `CustomNode.md`, `layout.md`, `main.md`, `statuses.test.md`, `global.d.md`
+  - **Examples:** `basic_agent.md`, `react_agent.md`, `deep_agent.md`, `error_agent.md`, `sync_agent.md`, `sub1_agent.md`, `sub2_agent.md`, `__common__.md` (FakeMessageChatModel, SimulatedTool)
+  - **Tests:** `conftest.md`, `test_formatter.md` (TestChatModelInputs/Outputs, TestLlmInputsOutputs, TestToolInputsOutputs, TestRetrieverInputsOutputs)
+
+## 🧭 Working with This Skill
+
+**Beginners:** start with the Quick Reference — install, `watch(workflow.compile())`, invoke. The wrapper is deliberately minimal; you do not need to understand the tracer/broadcaster internals to use it.
+
+**Intermediate:** when debugging "why didn't my node appear" or "why is the graph empty," read `api_reference/streamer.md` and `api_reference/broadcaster.md` to see how runs are captured and pushed. `examples/error_agent.py` and `examples/sync_agent.py` show edge cases (node errors, mixed sync/async nodes).
+
+**Advanced:** the frontend layout engine (`layout.ts` → `computeLayout`, `_computeSubgraphLayout`) and the `Formatter` extraction logic are where behavior is defined for subgraphs and unusual state shapes. The `tests/lib/test_formatter.py` suite documents exactly which message/state shapes the formatter handles.
+
+**Resolving conflicts:** the merged API list flags many internal symbols (`Broadcaster`, `BroadcastingTracer`, `Formatter`, `Viewport`, UI components) as "exists in code but not documented." That is expected — the docs only cover the public `watch` surface. Treat the codebase analysis as authoritative for internals and the docs as authoritative for intended usage. If a future docs page documents an internal, prefer docs for intent and code for signature.
+
+## 📦 Repository Info
+
+- **Homepage:** https://proactive-agent.org/langgraphics
+- **Topics:** animation, graph, langgraph, real-time, visualization, live, realtime, workflow, langsmith, tracing, deepagents, langfuse, studio
+- **Open Issues:** 1
+- **Last Updated:** 2026-11-09
+- **Languages:** TypeScript 56.1% · Python 38.2% · CSS 5.5% · HTML 0.2%
+
+---
+
+*Synthesized from official documentation, the GitHub repository, and automated codebase analysis by Skill Seekers*

@@ -1,0 +1,5524 @@
+{
+  "nodes": [
+    {
+      "file": "app/api/advanced-search/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/auth/[...all]/__tests__/route.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/auth/[...all]/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/chat/__tests__/route.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/chat/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/chats/[id]/__tests__/route.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/chats/[id]/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/chats/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/favicon/__tests__/route.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/favicon/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/feedback/__tests__/route.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/feedback/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/search/__tests__/route.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/search/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/upload/__tests__/route.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/upload/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/usage/interest/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/api/usage/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/auth/__tests__/sign-up-page.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/auth/admin/page.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/auth/confirm/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/auth/error/page.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/auth/forgot-password/page.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/auth/login/page.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/auth/oauth/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/auth/sign-up/page.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/auth/sign-up-success/page.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/auth/update-password/page.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/layout.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/page.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/relay/[...path]/route.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/relay/[...path]/route.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/search/[id]/__tests__/page.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/search/[id]/page.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/search/loading.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "app/search/page.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/account-settings-dialog.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/app-sidebar.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/chat-cache-invalidation.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/chat-cache.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/chat-messages.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/chat-panel.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/draft-panel.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/invitations-manager.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/login-form.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/member-role-manager.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/message-actions.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/render-message.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/research-process-section.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/reset-member-password-form.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/search-mode-selector.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/sign-up-form.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/update-password-form.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/usage-budget.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/__tests__/user-menu.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/account-settings-dialog.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/action-buttons.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/admin/invitations-manager.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/admin/member-role-manager.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/admin/reset-member-password-form.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/answer-section.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/app-sidebar.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/artifact/artifact-content.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/artifact/artifact-context.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/artifact/artifact-root.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/artifact/chat-artifact-container.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/artifact/reasoning-content.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/artifact/search-artifact-content.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/artifact/todo-invocation-content.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/artifact/tool-invocation-content.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/attachment-preview.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/auth-modal.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/chat-error.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/chat-footer-message.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/chat-messages.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/chat-panel.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/chat-share.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/chat.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/citation-context.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/citation-link.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/collapsible-message.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/current-user-avatar.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/custom-link.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/default-skeleton.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/draft/draft-card.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/draft/draft-panel.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/draft/draft-store.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/drag-overlay.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/dynamic-tool-display.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/error-modal.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/external-link-items.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/feedback-modal.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/fetch-section.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/file-upload-button.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/forgot-password-form.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/guest-menu.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/header.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/image-credit-overlay.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/inspector/inspector-drawer.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/inspector/inspector-panel.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/invite-required.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/keyboard-shortcut-dialog.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/keyboard-shortcut-handler.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/library/__tests__/library-context.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/library/library-context.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/library/library-panel.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/library/library-picker-dialog.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/library/save-note-auth-dialog.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/login-form.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/message-actions.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/message-navigation-dots.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/message.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/model-selector-client.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/pasted-parts.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/posthog-provider.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/process-header.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/process-rail.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/question-confirmation.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/reasoning-section.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/render-message.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/research-process-section.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/retry-button.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/search-mode-selector.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/search-results-image.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/search-results.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/search-section.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/section.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/__tests__/chat-history-client.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/__tests__/chat-history-search.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/__tests__/library-menu-item.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/__tests__/version-footer.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/chat-history-client.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/chat-history-search.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/chat-history-section.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/chat-history-skeleton.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/chat-menu-item.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/clear-history-action.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/home-link.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/home-link.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/library-menu-item.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/new-chat-menu-item.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/version-footer-skeleton.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sidebar/version-footer.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/sign-up-form.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/source-favicons.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/spec-block.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/spec-fence-block.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/theme-menu-items.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/theme-provider.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/todo-list-content.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/tool-badge.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/tool-section.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/tool-todo-display.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/__tests__/sidebar.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/alert-dialog.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/animated-logo.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/avatar.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/badge.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/button.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/card.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/carousel.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/checkbox.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/collapsible.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/command.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/dialog.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/drawer.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/dropdown-menu.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/hover-card.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/icons.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/input.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/label.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/password-input.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/popover.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/select.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/separator.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/sheet.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/sidebar.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/skeleton.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/slider.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/sonner.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/spinner.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/status-indicator.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/switch.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/textarea.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/toggle.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/tooltip-button.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/ui/tooltip.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/update-password-form.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/uploaded-file-list.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/usage-budget-provider.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/usage-dialog.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/usage-limit-dialog.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/user-file-section.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/user-menu.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/user-text-section.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/video-carousel-dialog.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/video-result-grid.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "components/video-search-results.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "drizzle/relations.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "drizzle/schema.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "drizzle.config.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/evaluators/__tests__/related-questions.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/evaluators/draft-edits.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/evaluators/related-questions.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/evaluators/source-cards.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/lib/__tests__/draft-edits.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/lib/__tests__/gate.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/lib/__tests__/related-questions.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/lib/__tests__/source-cards.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/lib/dataset.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/lib/draft-edits.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/lib/gate.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/lib/otel.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/lib/related-questions.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/lib/source-cards.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/run-draft-edits.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/run-related-questions.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/run-source-cards.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/tasks/adaptive-answer.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/tasks/draft-turn.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/tasks/fixture-tools.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/tasks/quick-answer.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "evals/tasks/run-answer-task.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "hooks/__tests__/user-hooks.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "hooks/use-auth-check.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "hooks/use-current-user-image.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "hooks/use-current-user-name.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "hooks/use-file-dropzone.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "hooks/use-keyboard-shortcut.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "hooks/use-mobile.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "hooks/use-typewriter-cycle.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "instrumentation-client.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "instrumentation.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "instrumentation.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/__tests__/bot-protection.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/__tests__/maintenance.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/__tests__/search-mode-availability.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/__tests__/account-better-auth.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/__tests__/account.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/__tests__/admin.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/__tests__/chat.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/__tests__/feedback.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/__tests__/files.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/__tests__/notes.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/account.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/admin-views.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/admin.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/auth.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/chat.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/feedback.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/files.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/notes.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/actions/site-feedback.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/agents/__tests__/researcher.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/agents/__tests__/title-generator.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/agents/__tests__/tool-loop-agent-on-error.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/agents/prompts/search-mode-prompts.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/agents/researcher.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/agents/title-generator.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/__tests__/dispatch.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/__tests__/genui-summary.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/__tests__/sanitize.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/__tests__/track-account-event.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/__tests__/utils.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/dispatch.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/genui-summary.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/posthog-client.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/providers/posthog-server.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/relay-target.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/sanitize.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/track-account-event.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/track-adaptive-limit-event.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/track-chat-event.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/track-chat-limit-event.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/types.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/analytics/utils.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/__tests__/better-auth-provider.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/__tests__/none-provider.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/__tests__/oauth-config.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/__tests__/oidc-implicit-sign-up.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/__tests__/provider.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/__tests__/rate-limit.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/__tests__/redirect-target.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/__tests__/supabase-provider.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/better-auth/__tests__/config.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/better-auth/__tests__/invitations.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/better-auth/config.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/better-auth/invitations.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/better-auth/mailer.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/better-auth/members.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/better-auth/schema.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/get-current-user.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/oauth-config.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/provider.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/providers/better-auth.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/providers/none.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/providers/supabase.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/rate-limit.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/redirect-target.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/request.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/auth/types.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/bot-protection.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/chat-store/index.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/chat-store/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/config/default-model.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/config/load-models-config.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/config/model-selection-cookie.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/config/model-types.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/config/ollama-validator.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/config/search-modes.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/constants/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/contexts/app-user-context.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/contexts/chat-context.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/contexts/user-context.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/__tests__/attachment-sizes.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/__tests__/chat-search.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/__tests__/index.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/__tests__/rls-policies.integration.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/__tests__/user-message-ids.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/__tests__/with-rls.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/actions.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/migrate.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/relations.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/schema.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/db/with-rls.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/draft/__tests__/draft.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/draft/draft.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/draft/prompt.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/errors/__tests__/public-error.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/errors/__tests__/tool-error.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/errors/deterministic-preparation-error.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/errors/public-error.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/errors/tool-error.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/firecrawl/client.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/firecrawl/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/firecrawl/types.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/footer-tips.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/hooks/use-copy-to-clipboard.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/hooks/use-media-query.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/keyboard-shortcuts.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/maintenance.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/model-selector/get-model-selector-data.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/models/__tests__/fetch-models.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/models/fetch-models.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/ollama/client.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/ollama/types.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/rate-limit/__tests__/adaptive-limit.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/rate-limit/__tests__/guest-limit.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/rate-limit/adaptive-limit.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/rate-limit/chat-limits.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/rate-limit/guest-limit.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/__tests__/image.test.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/__tests__/linked-cards-markdown.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/__tests__/llm-image-output.e2e.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/__tests__/llm-related-questions.e2e.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/__tests__/migrations.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/__tests__/parse-spec-block.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/__tests__/prompt.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/__tests__/spec-fence.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/__tests__/strip-source-context-blocks.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/__tests__/strip-spec-blocks.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/catalog.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/components/badge.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/components/button.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/components/card.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/components/grid.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/components/heading.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/components/image.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/components/shared.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/components/stack.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/components/text.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/highlight-markers.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/linked-cards-markdown.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/migrations.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/parse-spec-block.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/prompt.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/registry.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/schema.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/spec-fence.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/streamdown-spec.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/strip-source-context-blocks.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/render/strip-spec-blocks.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/schema/fetch.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/schema/question.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/schema/search.tsx",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/search-mode-availability.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/storage/__tests__/file-signature.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/storage/__tests__/r2-client.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/storage/file-signature.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/storage/r2-client.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/__tests__/compact-historical-messages.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/__tests__/create-chat-stream-response.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/__tests__/create-ephemeral-chat-stream-response.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/create-chat-stream-response.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/attachment-sizes.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/attachment-token-estimates.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/cap-historical-answer-text.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/cap-historical-attachments.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/cap-historical-pasted-content.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/compact-historical-messages.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/data-part-nonce.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/dedupe-attachments.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/describe-stream-error.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/describe-turn-input.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/draft-context.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/has-answer-after-tool-failure.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/has-response-content.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/is-empty-response.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/log-api-call-error.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/prepare-messages.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/stream-error-diagnostics.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/strip-spec-from-messages.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/summarize-carried-context.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/__tests__/trim-cold-start-history.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/attachment-parts.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/attachment-sizes.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/attachment-token-estimates.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/cap-historical-answer-text.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/cap-historical-attachments.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/cap-historical-pasted-content.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/compact-historical-messages.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/convert-data-part.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/data-part-nonce.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/dedupe-attachments.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/describe-stream-error.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/describe-turn-input.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/draft-context.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/has-answer-after-tool-failure.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/has-response-content.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/is-empty-response.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/log-api-call-error.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/persist-stream-results.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/prepare-messages.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/slice-without-splitting-surrogate-pair.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/stream-error-diagnostics.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/strip-spec-from-messages.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/summarize-carried-context.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/trim-cold-start-history.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/helpers/types.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/streaming/types.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/supabase/__tests__/middleware.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/supabase/__tests__/server.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/supabase/admin.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/supabase/client.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/supabase/keys.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/supabase/middleware.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/supabase/server.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/__tests__/fetch-error.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/__tests__/fetch-ssrf.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/__tests__/fetch.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/__tests__/search-fallback.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/__tests__/search-to-model-output.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/draft.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/dynamic.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/fetch.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/question.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/__tests__/brave.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/__tests__/http-error.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/__tests__/recoverable-error.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/__tests__/tavily-domains.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/__tests__/tavily-projection.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/base.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/brave.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/exa.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/firecrawl.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/recoverable-error.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/searxng.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search/providers/tavily.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/search.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/tools/todo.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/types/agent.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/types/ai.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/types/dynamic-tools.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/types/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/types/message-persistence.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/types/model-selector.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/types/models.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/types/search.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/__tests__/attempt-id.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/__tests__/config.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/__tests__/gate.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/__tests__/grants.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/__tests__/refund-handler.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/__tests__/response.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/__tests__/time.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/analytics.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/attempt-id.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/config.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/events.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/gate.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/grants.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/refund-handler.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/response.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/time.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/usage-budget/types.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/attachment-limits.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/attachment-tokens.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/citation.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/context-window.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/cookies.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/domain.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/favicon.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/message-mapping.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/model-selection.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/safe-fetch-lookup.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/safe-fetch.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/__tests__/search-query.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/attachment-limits.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/attachment-tokens.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/citation.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/context-window.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/cookies.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/domain.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/favicon.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/index.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/markdown.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/message-mapping.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/message-utils.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/model-selection.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/perf-logging.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/perf-tracking.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/registry.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/retry.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/safe-fetch.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/search-config.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/search-query.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/telemetry.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/url.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/utils/usage-logging.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/version/__tests__/admins.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/version/__tests__/config.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/version/__tests__/install-method.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/version/__tests__/semver.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/version/__tests__/update-check.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/version/admins.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/version/config.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/version/install-method.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/version/semver.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "lib/version/update-check.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "prettier.config.js",
+      "language": "JavaScript"
+    },
+    {
+      "file": "proxy.test.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "proxy.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "scripts/backfill-file-object-keys.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "scripts/chat-cli.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "scripts/generate-model-metadata.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "scripts/test-cache-performance.ts",
+      "language": "TypeScript"
+    },
+    {
+      "file": "vitest.setup.ts",
+      "language": "TypeScript"
+    }
+  ],
+  "edges": [
+    {
+      "source": "app/api/auth/[...all]/__tests__/route.test.ts",
+      "target": "app/api/advanced-search/route.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "app/api/chat/__tests__/route.test.ts",
+      "target": "app/api/advanced-search/route.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "app/api/chats/[id]/__tests__/route.test.ts",
+      "target": "app/api/advanced-search/route.ts",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "app/api/feedback/__tests__/route.test.ts",
+      "target": "app/api/advanced-search/route.ts",
+      "import_type": "import",
+      "line_number": 45
+    },
+    {
+      "source": "app/api/search/__tests__/route.test.ts",
+      "target": "app/api/advanced-search/route.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "app/api/upload/__tests__/route.test.ts",
+      "target": "app/api/advanced-search/route.ts",
+      "import_type": "import",
+      "line_number": 35
+    },
+    {
+      "source": "app/auth/__tests__/sign-up-page.test.ts",
+      "target": "app/auth/sign-up/page.tsx",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "app/relay/[...path]/route.test.ts",
+      "target": "app/api/advanced-search/route.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "app/search/[id]/__tests__/page.test.tsx",
+      "target": "app/auth/admin/page.tsx",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "app/search/loading.tsx",
+      "target": "components/default-skeleton.tsx",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "components/__tests__/app-sidebar.test.tsx",
+      "target": "components/app-sidebar.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "components/__tests__/chat-cache-invalidation.test.tsx",
+      "target": "components/sidebar/chat-menu-item.tsx",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "components/__tests__/chat-cache-invalidation.test.tsx",
+      "target": "components/sidebar/clear-history-action.tsx",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "components/__tests__/chat-cache.test.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 18
+    },
+    {
+      "source": "components/__tests__/chat-cache.test.tsx",
+      "target": "components/chat.tsx",
+      "import_type": "import",
+      "line_number": 27
+    },
+    {
+      "source": "components/__tests__/chat-messages.test.tsx",
+      "target": "components/chat-messages.tsx",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "components/__tests__/chat-panel.test.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "components/__tests__/chat-panel.test.tsx",
+      "target": "components/chat-panel.tsx",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "components/__tests__/chat-panel.test.tsx",
+      "target": "components/sidebar/new-chat-menu-item.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "components/__tests__/draft-panel.test.tsx",
+      "target": "components/draft/draft-panel.tsx",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "components/__tests__/draft-panel.test.tsx",
+      "target": "components/draft/draft-store.ts",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "components/__tests__/message-actions.test.tsx",
+      "target": "components/message-actions.tsx",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "components/__tests__/render-message.test.tsx",
+      "target": "components/render-message.tsx",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "components/__tests__/research-process-section.test.tsx",
+      "target": "components/research-process-section.tsx",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "components/__tests__/search-mode-selector.test.tsx",
+      "target": "components/search-mode-selector.tsx",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "components/account-settings-dialog.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "components/action-buttons.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 18
+    },
+    {
+      "source": "components/answer-section.tsx",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "components/answer-section.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "components/answer-section.tsx",
+      "target": "components/library/library-context.tsx",
+      "import_type": "import",
+      "line_number": 26
+    },
+    {
+      "source": "components/answer-section.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 27
+    },
+    {
+      "source": "components/answer-section.tsx",
+      "target": "components/ui/dialog.tsx",
+      "import_type": "import",
+      "line_number": 28
+    },
+    {
+      "source": "components/answer-section.tsx",
+      "target": "components/collapsible-message.tsx",
+      "import_type": "import",
+      "line_number": 36
+    },
+    {
+      "source": "components/answer-section.tsx",
+      "target": "components/message.tsx",
+      "import_type": "import",
+      "line_number": 37
+    },
+    {
+      "source": "components/answer-section.tsx",
+      "target": "components/message-actions.tsx",
+      "import_type": "import",
+      "line_number": 38
+    },
+    {
+      "source": "components/app-sidebar.tsx",
+      "target": "components/sidebar/chat-history-section.tsx",
+      "import_type": "import",
+      "line_number": 17
+    },
+    {
+      "source": "components/app-sidebar.tsx",
+      "target": "components/sidebar/chat-history-skeleton.tsx",
+      "import_type": "import",
+      "line_number": 18
+    },
+    {
+      "source": "components/app-sidebar.tsx",
+      "target": "components/sidebar/home-link.tsx",
+      "import_type": "import",
+      "line_number": 19
+    },
+    {
+      "source": "components/app-sidebar.tsx",
+      "target": "components/sidebar/library-menu-item.tsx",
+      "import_type": "import",
+      "line_number": 20
+    },
+    {
+      "source": "components/app-sidebar.tsx",
+      "target": "components/sidebar/new-chat-menu-item.tsx",
+      "import_type": "import",
+      "line_number": 21
+    },
+    {
+      "source": "components/app-sidebar.tsx",
+      "target": "components/sidebar/version-footer.tsx",
+      "import_type": "import",
+      "line_number": 22
+    },
+    {
+      "source": "components/app-sidebar.tsx",
+      "target": "components/sidebar/version-footer-skeleton.tsx",
+      "import_type": "import",
+      "line_number": 23
+    },
+    {
+      "source": "components/app-sidebar.tsx",
+      "target": "components/ui/icons.tsx",
+      "import_type": "import",
+      "line_number": 24
+    },
+    {
+      "source": "components/artifact/artifact-content.tsx",
+      "target": "components/draft/draft-panel.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "components/artifact/artifact-content.tsx",
+      "target": "components/artifact/reasoning-content.tsx",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "components/artifact/artifact-content.tsx",
+      "target": "components/artifact/todo-invocation-content.tsx",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "components/artifact/artifact-content.tsx",
+      "target": "components/artifact/tool-invocation-content.tsx",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "components/artifact/artifact-context.tsx",
+      "target": "components/library/library-context.tsx",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "components/artifact/artifact-context.tsx",
+      "target": "components/ui/sidebar.tsx",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "components/artifact/artifact-root.tsx",
+      "target": "components/artifact/artifact-context.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "components/artifact/artifact-root.tsx",
+      "target": "components/artifact/chat-artifact-container.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "components/artifact/chat-artifact-container.tsx",
+      "target": "components/artifact/artifact-context.tsx",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "components/artifact/todo-invocation-content.tsx",
+      "target": "components/todo-list-content.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "components/chat-messages.tsx",
+      "target": "components/ui/animated-logo.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "components/chat-messages.tsx",
+      "target": "components/chat-error.tsx",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "components/chat-messages.tsx",
+      "target": "components/chat-footer-message.tsx",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "components/chat-messages.tsx",
+      "target": "components/render-message.tsx",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 26
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/artifact/artifact-context.tsx",
+      "import_type": "import",
+      "line_number": 51
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/library/library-context.tsx",
+      "import_type": "import",
+      "line_number": 52
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/library/library-picker-dialog.tsx",
+      "import_type": "import",
+      "line_number": 53
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 54
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/ui/dropdown-menu.tsx",
+      "import_type": "import",
+      "line_number": 55
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/ui/icons.tsx",
+      "import_type": "import",
+      "line_number": 61
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/ui/tooltip.tsx",
+      "import_type": "import",
+      "line_number": 62
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/action-buttons.tsx",
+      "import_type": "import",
+      "line_number": 68
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/message-navigation-dots.tsx",
+      "import_type": "import",
+      "line_number": 69
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/model-selector-client.tsx",
+      "import_type": "import",
+      "line_number": 70
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/search-mode-selector.tsx",
+      "import_type": "import",
+      "line_number": 71
+    },
+    {
+      "source": "components/chat-panel.tsx",
+      "target": "components/uploaded-file-list.tsx",
+      "import_type": "import",
+      "line_number": 72
+    },
+    {
+      "source": "components/chat-share.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "components/chat-share.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "components/chat-share.tsx",
+      "target": "components/ui/dialog.tsx",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "components/chat-share.tsx",
+      "target": "components/ui/spinner.tsx",
+      "import_type": "import",
+      "line_number": 22
+    },
+    {
+      "source": "components/chat.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 16
+    },
+    {
+      "source": "components/chat.tsx",
+      "target": "components/draft/draft-store.ts",
+      "import_type": "import",
+      "line_number": 49
+    },
+    {
+      "source": "components/chat.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 50
+    },
+    {
+      "source": "components/chat.tsx",
+      "target": "components/ui/card.tsx",
+      "import_type": "import",
+      "line_number": 51
+    },
+    {
+      "source": "components/chat.tsx",
+      "target": "components/chat-messages.tsx",
+      "import_type": "import",
+      "line_number": 52
+    },
+    {
+      "source": "components/chat.tsx",
+      "target": "components/chat-panel.tsx",
+      "import_type": "import",
+      "line_number": 53
+    },
+    {
+      "source": "components/chat.tsx",
+      "target": "components/default-skeleton.tsx",
+      "import_type": "import",
+      "line_number": 54
+    },
+    {
+      "source": "components/chat.tsx",
+      "target": "components/drag-overlay.tsx",
+      "import_type": "import",
+      "line_number": 55
+    },
+    {
+      "source": "components/chat.tsx",
+      "target": "components/error-modal.tsx",
+      "import_type": "import",
+      "line_number": 56
+    },
+    {
+      "source": "components/chat.tsx",
+      "target": "components/usage-budget-provider.tsx",
+      "import_type": "import",
+      "line_number": 57
+    },
+    {
+      "source": "components/collapsible-message.tsx",
+      "target": "components/ui/collapsible.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "components/collapsible-message.tsx",
+      "target": "components/ui/icons.tsx",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "components/collapsible-message.tsx",
+      "target": "components/ui/separator.tsx",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "components/collapsible-message.tsx",
+      "target": "components/current-user-avatar.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "components/custom-link.tsx",
+      "target": "components/citation-context.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "components/custom-link.tsx",
+      "target": "components/citation-link.tsx",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "components/default-skeleton.tsx",
+      "target": "components/ui/skeleton.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "components/draft/draft-card.tsx",
+      "target": "components/artifact/artifact-context.tsx",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "components/draft/draft-card.tsx",
+      "target": "components/draft/draft-store.ts",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "components/draft/draft-panel.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "components/draft/draft-panel.tsx",
+      "target": "components/artifact/artifact-context.tsx",
+      "import_type": "import",
+      "line_number": 25
+    },
+    {
+      "source": "components/draft/draft-panel.tsx",
+      "target": "components/library/library-context.tsx",
+      "import_type": "import",
+      "line_number": 26
+    },
+    {
+      "source": "components/draft/draft-panel.tsx",
+      "target": "components/library/save-note-auth-dialog.tsx",
+      "import_type": "import",
+      "line_number": 27
+    },
+    {
+      "source": "components/draft/draft-panel.tsx",
+      "target": "components/message.tsx",
+      "import_type": "import",
+      "line_number": 28
+    },
+    {
+      "source": "components/draft/draft-panel.tsx",
+      "target": "components/draft/draft-store.ts",
+      "import_type": "import",
+      "line_number": 30
+    },
+    {
+      "source": "components/feedback-modal.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "components/fetch-section.tsx",
+      "target": "components/process-header.tsx",
+      "import_type": "import",
+      "line_number": 16
+    },
+    {
+      "source": "components/file-upload-button.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "components/file-upload-button.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "components/guest-menu.tsx",
+      "target": "components/external-link-items.tsx",
+      "import_type": "import",
+      "line_number": 24
+    },
+    {
+      "source": "components/guest-menu.tsx",
+      "target": "components/theme-menu-items.tsx",
+      "import_type": "import",
+      "line_number": 25
+    },
+    {
+      "source": "components/header.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "components/header.tsx",
+      "target": "components/feedback-modal.tsx",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "components/header.tsx",
+      "target": "components/guest-menu.tsx",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "components/header.tsx",
+      "target": "components/user-menu.tsx",
+      "import_type": "import",
+      "line_number": 16
+    },
+    {
+      "source": "components/inspector/inspector-drawer.tsx",
+      "target": "components/inspector/inspector-panel.tsx",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "components/keyboard-shortcut-dialog.tsx",
+      "target": "components/ui/dialog.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "components/keyboard-shortcut-handler.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "components/keyboard-shortcut-handler.tsx",
+      "target": "components/ui/sidebar.tsx",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "components/keyboard-shortcut-handler.tsx",
+      "target": "components/keyboard-shortcut-dialog.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "components/keyboard-shortcut-handler.tsx",
+      "target": "components/theme-provider.tsx",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "components/library/__tests__/library-context.test.tsx",
+      "target": "components/library/library-context.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "components/library/library-context.tsx",
+      "target": "components/ui/sidebar.tsx",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "components/library/library-panel.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 22
+    },
+    {
+      "source": "components/library/library-panel.tsx",
+      "target": "components/library/library-context.tsx",
+      "import_type": "import",
+      "line_number": 56
+    },
+    {
+      "source": "components/library/library-picker-dialog.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "components/library/library-picker-dialog.tsx",
+      "target": "components/library/library-context.tsx",
+      "import_type": "import",
+      "line_number": 32
+    },
+    {
+      "source": "components/library/save-note-auth-dialog.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "components/library/save-note-auth-dialog.tsx",
+      "target": "components/ui/dialog.tsx",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "components/login-form.tsx",
+      "target": "components/ui/password-input.tsx",
+      "import_type": "import",
+      "line_number": 24
+    },
+    {
+      "source": "components/message-actions.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "components/message-actions.tsx",
+      "target": "components/library/library-context.tsx",
+      "import_type": "import",
+      "line_number": 23
+    },
+    {
+      "source": "components/message-actions.tsx",
+      "target": "components/library/save-note-auth-dialog.tsx",
+      "import_type": "import",
+      "line_number": 24
+    },
+    {
+      "source": "components/message-actions.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 25
+    },
+    {
+      "source": "components/message-actions.tsx",
+      "target": "components/ui/tooltip.tsx",
+      "import_type": "import",
+      "line_number": 26
+    },
+    {
+      "source": "components/message-actions.tsx",
+      "target": "components/chat-share.tsx",
+      "import_type": "import",
+      "line_number": 32
+    },
+    {
+      "source": "components/message-actions.tsx",
+      "target": "components/retry-button.tsx",
+      "import_type": "import",
+      "line_number": 33
+    },
+    {
+      "source": "components/message-navigation-dots.tsx",
+      "target": "components/ui/tooltip.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "components/message.tsx",
+      "target": "components/citation-context.tsx",
+      "import_type": "import",
+      "line_number": 18
+    },
+    {
+      "source": "components/message.tsx",
+      "target": "components/custom-link.tsx",
+      "import_type": "import",
+      "line_number": 19
+    },
+    {
+      "source": "components/model-selector-client.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 21
+    },
+    {
+      "source": "components/model-selector-client.tsx",
+      "target": "components/ui/command.tsx",
+      "import_type": "import",
+      "line_number": 22
+    },
+    {
+      "source": "components/model-selector-client.tsx",
+      "target": "components/ui/popover.tsx",
+      "import_type": "import",
+      "line_number": 30
+    },
+    {
+      "source": "components/reasoning-section.tsx",
+      "target": "components/collapsible-message.tsx",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "components/reasoning-section.tsx",
+      "target": "components/default-skeleton.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "components/reasoning-section.tsx",
+      "target": "components/message.tsx",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "components/reasoning-section.tsx",
+      "target": "components/process-header.tsx",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "components/render-message.tsx",
+      "target": "components/draft/draft-card.tsx",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "components/render-message.tsx",
+      "target": "components/answer-section.tsx",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "components/render-message.tsx",
+      "target": "components/dynamic-tool-display.tsx",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "components/render-message.tsx",
+      "target": "components/research-process-section.tsx",
+      "import_type": "import",
+      "line_number": 16
+    },
+    {
+      "source": "components/render-message.tsx",
+      "target": "components/user-file-section.tsx",
+      "import_type": "import",
+      "line_number": 17
+    },
+    {
+      "source": "components/render-message.tsx",
+      "target": "components/user-text-section.tsx",
+      "import_type": "import",
+      "line_number": 18
+    },
+    {
+      "source": "components/research-process-section.tsx",
+      "target": "components/ui/collapsible.tsx",
+      "import_type": "import",
+      "line_number": 16
+    },
+    {
+      "source": "components/research-process-section.tsx",
+      "target": "components/reasoning-section.tsx",
+      "import_type": "import",
+      "line_number": 21
+    },
+    {
+      "source": "components/research-process-section.tsx",
+      "target": "components/tool-section.tsx",
+      "import_type": "import",
+      "line_number": 22
+    },
+    {
+      "source": "components/retry-button.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "components/search-mode-selector.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 19
+    },
+    {
+      "source": "components/search-mode-selector.tsx",
+      "target": "components/ui/dropdown-menu.tsx",
+      "import_type": "import",
+      "line_number": 20
+    },
+    {
+      "source": "components/search-mode-selector.tsx",
+      "target": "components/ui/hover-card.tsx",
+      "import_type": "import",
+      "line_number": 26
+    },
+    {
+      "source": "components/search-section.tsx",
+      "target": "components/ui/status-indicator.tsx",
+      "import_type": "import",
+      "line_number": 16
+    },
+    {
+      "source": "components/search-section.tsx",
+      "target": "components/collapsible-message.tsx",
+      "import_type": "import",
+      "line_number": 17
+    },
+    {
+      "source": "components/search-section.tsx",
+      "target": "components/default-skeleton.tsx",
+      "import_type": "import",
+      "line_number": 18
+    },
+    {
+      "source": "components/search-section.tsx",
+      "target": "components/process-header.tsx",
+      "import_type": "import",
+      "line_number": 19
+    },
+    {
+      "source": "components/search-section.tsx",
+      "target": "components/search-results.tsx",
+      "import_type": "import",
+      "line_number": 20
+    },
+    {
+      "source": "components/search-section.tsx",
+      "target": "components/search-results-image.tsx",
+      "import_type": "import",
+      "line_number": 21
+    },
+    {
+      "source": "components/search-section.tsx",
+      "target": "components/section.tsx",
+      "import_type": "import",
+      "line_number": 22
+    },
+    {
+      "source": "components/search-section.tsx",
+      "target": "components/source-favicons.tsx",
+      "import_type": "import",
+      "line_number": 23
+    },
+    {
+      "source": "components/search-section.tsx",
+      "target": "components/video-search-results.tsx",
+      "import_type": "import",
+      "line_number": 24
+    },
+    {
+      "source": "components/section.tsx",
+      "target": "components/ui/badge.tsx",
+      "import_type": "import",
+      "line_number": 19
+    },
+    {
+      "source": "components/section.tsx",
+      "target": "components/ui/separator.tsx",
+      "import_type": "import",
+      "line_number": 20
+    },
+    {
+      "source": "components/section.tsx",
+      "target": "components/ui/status-indicator.tsx",
+      "import_type": "import",
+      "line_number": 21
+    },
+    {
+      "source": "components/section.tsx",
+      "target": "components/tool-badge.tsx",
+      "import_type": "import",
+      "line_number": 22
+    },
+    {
+      "source": "components/sidebar/__tests__/chat-history-client.test.tsx",
+      "target": "components/sidebar/chat-history-client.tsx",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "components/sidebar/__tests__/chat-history-search.test.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "components/sidebar/__tests__/chat-history-search.test.tsx",
+      "target": "components/sidebar/chat-history-search.tsx",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "components/sidebar/__tests__/library-menu-item.test.tsx",
+      "target": "components/sidebar/library-menu-item.tsx",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "components/sidebar/__tests__/version-footer.test.tsx",
+      "target": "components/sidebar/version-footer.tsx",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "components/sidebar/chat-history-client.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "components/sidebar/chat-history-client.tsx",
+      "target": "components/sidebar/chat-history-search.tsx",
+      "import_type": "import",
+      "line_number": 21
+    },
+    {
+      "source": "components/sidebar/chat-history-client.tsx",
+      "target": "components/sidebar/chat-history-skeleton.tsx",
+      "import_type": "import",
+      "line_number": 22
+    },
+    {
+      "source": "components/sidebar/chat-history-client.tsx",
+      "target": "components/sidebar/chat-menu-item.tsx",
+      "import_type": "import",
+      "line_number": 23
+    },
+    {
+      "source": "components/sidebar/chat-history-client.tsx",
+      "target": "components/sidebar/clear-history-action.tsx",
+      "import_type": "import",
+      "line_number": 24
+    },
+    {
+      "source": "components/sidebar/chat-history-search.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "components/sidebar/chat-history-search.tsx",
+      "target": "components/sidebar/chat-history-skeleton.tsx",
+      "import_type": "import",
+      "line_number": 27
+    },
+    {
+      "source": "components/sidebar/chat-history-section.tsx",
+      "target": "components/sidebar/chat-history-client.tsx",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "components/sidebar/chat-menu-item.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "components/sidebar/chat-menu-item.tsx",
+      "target": "components/ui/spinner.tsx",
+      "import_type": "import",
+      "line_number": 39
+    },
+    {
+      "source": "components/sidebar/clear-history-action.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "components/sidebar/home-link.test.tsx",
+      "target": "components/sidebar/home-link.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "components/sidebar/home-link.test.tsx",
+      "target": "components/sidebar/new-chat-menu-item.tsx",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "components/sidebar/new-chat-menu-item.tsx",
+      "target": "components/sidebar/home-link.tsx",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "components/spec-block.tsx",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "components/tool-badge.tsx",
+      "target": "components/ui/badge.tsx",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "components/tool-section.tsx",
+      "target": "components/fetch-section.tsx",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "components/tool-section.tsx",
+      "target": "components/question-confirmation.tsx",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "components/tool-section.tsx",
+      "target": "components/search-section.tsx",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "components/tool-section.tsx",
+      "target": "components/tool-todo-display.tsx",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "components/tool-todo-display.tsx",
+      "target": "components/artifact/artifact-context.tsx",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "components/tool-todo-display.tsx",
+      "target": "components/collapsible-message.tsx",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "components/tool-todo-display.tsx",
+      "target": "components/process-header.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "components/tool-todo-display.tsx",
+      "target": "components/todo-list-content.tsx",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "components/ui/__tests__/sidebar.test.tsx",
+      "target": "components/ui/sidebar.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "components/ui/password-input.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "components/ui/spinner.tsx",
+      "target": "components/ui/icons.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "components/user-file-section.tsx",
+      "target": "components/attachment-preview.tsx",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "components/user-menu.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 36
+    },
+    {
+      "source": "components/user-menu.tsx",
+      "target": "components/external-link-items.tsx",
+      "import_type": "import",
+      "line_number": 37
+    },
+    {
+      "source": "components/user-text-section.tsx",
+      "target": "components/ui/button.tsx",
+      "import_type": "import",
+      "line_number": 17
+    },
+    {
+      "source": "components/user-text-section.tsx",
+      "target": "components/collapsible-message.tsx",
+      "import_type": "import",
+      "line_number": 18
+    },
+    {
+      "source": "components/user-text-section.tsx",
+      "target": "components/pasted-parts.tsx",
+      "import_type": "import",
+      "line_number": 19
+    },
+    {
+      "source": "components/video-result-grid.tsx",
+      "target": "components/video-carousel-dialog.tsx",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "components/video-search-results.tsx",
+      "target": "components/video-result-grid.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "drizzle/relations.ts",
+      "target": "drizzle/schema.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "evals/evaluators/__tests__/related-questions.test.ts",
+      "target": "evals/evaluators/related-questions.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "evals/evaluators/draft-edits.ts",
+      "target": "evals/lib/draft-edits.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "evals/evaluators/related-questions.ts",
+      "target": "evals/lib/dataset.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "evals/evaluators/related-questions.ts",
+      "target": "evals/lib/related-questions.ts",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "evals/evaluators/source-cards.ts",
+      "target": "evals/lib/source-cards.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "evals/lib/__tests__/draft-edits.test.ts",
+      "target": "evals/tasks/draft-turn.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "evals/lib/__tests__/draft-edits.test.ts",
+      "target": "evals/evaluators/draft-edits.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "evals/lib/__tests__/gate.test.ts",
+      "target": "evals/lib/gate.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "evals/lib/__tests__/related-questions.test.ts",
+      "target": "evals/evaluators/related-questions.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "evals/lib/__tests__/source-cards.test.ts",
+      "target": "evals/evaluators/source-cards.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "evals/lib/draft-edits.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "evals/lib/draft-edits.ts",
+      "target": "evals/lib/dataset.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "evals/lib/draft-edits.ts",
+      "target": "evals/evaluators/related-questions.ts",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "evals/lib/otel.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "evals/lib/source-cards.ts",
+      "target": "evals/lib/dataset.ts",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "evals/tasks/adaptive-answer.ts",
+      "target": "evals/tasks/run-answer-task.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "evals/tasks/draft-turn.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "evals/tasks/draft-turn.ts",
+      "target": "evals/lib/draft-edits.ts",
+      "import_type": "import",
+      "line_number": 26
+    },
+    {
+      "source": "evals/tasks/draft-turn.ts",
+      "target": "evals/tasks/fixture-tools.ts",
+      "import_type": "import",
+      "line_number": 32
+    },
+    {
+      "source": "evals/tasks/draft-turn.ts",
+      "target": "evals/tasks/run-answer-task.ts",
+      "import_type": "import",
+      "line_number": 36
+    },
+    {
+      "source": "evals/tasks/fixture-tools.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "evals/tasks/fixture-tools.ts",
+      "target": "evals/lib/dataset.ts",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "evals/tasks/quick-answer.ts",
+      "target": "evals/tasks/run-answer-task.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "evals/tasks/run-answer-task.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "evals/tasks/run-answer-task.ts",
+      "target": "evals/lib/dataset.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "evals/tasks/run-answer-task.ts",
+      "target": "evals/tasks/fixture-tools.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "hooks/use-file-dropzone.ts",
+      "target": "components/ui/sonner.tsx",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "instrumentation.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 22
+    },
+    {
+      "source": "instrumentation.test.ts",
+      "target": "instrumentation.ts",
+      "import_type": "import",
+      "line_number": 24
+    },
+    {
+      "source": "instrumentation.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/__tests__/maintenance.test.ts",
+      "target": "lib/maintenance.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/actions/__tests__/account-better-auth.test.ts",
+      "target": "lib/actions/account.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/actions/__tests__/account.test.ts",
+      "target": "lib/actions/account.ts",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "lib/actions/__tests__/chat.test.ts",
+      "target": "components/chat.tsx",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "lib/actions/__tests__/feedback.test.ts",
+      "target": "lib/actions/feedback.ts",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "lib/actions/__tests__/files.test.ts",
+      "target": "lib/actions/files.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/actions/__tests__/notes.test.ts",
+      "target": "lib/actions/notes.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/agents/__tests__/researcher.test.ts",
+      "target": "lib/agents/researcher.ts",
+      "import_type": "import",
+      "line_number": 52
+    },
+    {
+      "source": "lib/agents/__tests__/title-generator.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/agents/__tests__/title-generator.test.ts",
+      "target": "lib/utils/registry.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/agents/__tests__/title-generator.test.ts",
+      "target": "lib/agents/title-generator.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/agents/__tests__/tool-loop-agent-on-error.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "lib/agents/researcher.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/agents/researcher.ts",
+      "target": "lib/tools/draft.ts",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "lib/agents/researcher.ts",
+      "target": "lib/tools/fetch.ts",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "lib/agents/researcher.ts",
+      "target": "lib/tools/question.ts",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "lib/agents/researcher.ts",
+      "target": "lib/tools/search.ts",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "lib/agents/researcher.ts",
+      "target": "lib/tools/todo.ts",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "lib/agents/researcher.ts",
+      "target": "lib/types/search.ts",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "lib/agents/researcher.ts",
+      "target": "lib/utils/citation.ts",
+      "import_type": "import",
+      "line_number": 16
+    },
+    {
+      "source": "lib/agents/researcher.ts",
+      "target": "lib/utils/registry.ts",
+      "import_type": "import",
+      "line_number": 17
+    },
+    {
+      "source": "lib/agents/researcher.ts",
+      "target": "lib/utils/telemetry.ts",
+      "import_type": "import",
+      "line_number": 18
+    },
+    {
+      "source": "lib/agents/researcher.ts",
+      "target": "lib/agents/prompts/search-mode-prompts.ts",
+      "import_type": "import",
+      "line_number": 20
+    },
+    {
+      "source": "lib/agents/title-generator.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/agents/title-generator.ts",
+      "target": "lib/utils/registry.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/agents/title-generator.ts",
+      "target": "lib/utils/telemetry.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/analytics/__tests__/sanitize.test.ts",
+      "target": "lib/analytics/sanitize.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/analytics/__tests__/utils.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/analytics/dispatch.ts",
+      "target": "lib/analytics/providers/posthog-server.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/analytics/track-account-event.ts",
+      "target": "lib/analytics/dispatch.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/analytics/track-adaptive-limit-event.ts",
+      "target": "lib/analytics/dispatch.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/analytics/track-chat-event.ts",
+      "target": "lib/analytics/dispatch.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/analytics/track-chat-event.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "lib/analytics/track-chat-limit-event.ts",
+      "target": "lib/analytics/dispatch.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/analytics/utils.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/analytics/utils.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/auth/__tests__/oauth-config.test.ts",
+      "target": "lib/auth/oauth-config.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/auth/__tests__/rate-limit.test.ts",
+      "target": "lib/auth/rate-limit.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/auth/better-auth/config.ts",
+      "target": "lib/auth/providers/better-auth.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/auth/better-auth/config.ts",
+      "target": "lib/auth/oauth-config.ts",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "lib/auth/better-auth/config.ts",
+      "target": "lib/auth/better-auth/mailer.ts",
+      "import_type": "import",
+      "line_number": 16
+    },
+    {
+      "source": "lib/auth/better-auth/config.ts",
+      "target": "drizzle/schema.ts",
+      "import_type": "import",
+      "line_number": 17
+    },
+    {
+      "source": "lib/auth/better-auth/invitations.ts",
+      "target": "drizzle/schema.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/auth/better-auth/members.ts",
+      "target": "drizzle/schema.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/auth/get-current-user.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/auth/providers/better-auth.ts",
+      "target": "lib/auth/oauth-config.ts",
+      "import_type": "import",
+      "line_number": 38
+    },
+    {
+      "source": "lib/chat-store/index.test.ts",
+      "target": "components/ui/index.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/chat-store/index.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/config/model-types.ts",
+      "target": "lib/config/load-models-config.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/db/__tests__/attachment-sizes.test.ts",
+      "target": "lib/db/actions.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/db/__tests__/chat-search.test.ts",
+      "target": "lib/db/actions.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/db/__tests__/user-message-ids.test.ts",
+      "target": "lib/db/actions.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/db/actions.ts",
+      "target": "drizzle/schema.ts",
+      "import_type": "import",
+      "line_number": 39
+    },
+    {
+      "source": "lib/db/actions.ts",
+      "target": "lib/db/with-rls.ts",
+      "import_type": "import",
+      "line_number": 48
+    },
+    {
+      "source": "lib/db/index.ts",
+      "target": "drizzle/relations.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/db/index.ts",
+      "target": "drizzle/schema.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/db/relations.ts",
+      "target": "drizzle/schema.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/draft/__tests__/draft.test.ts",
+      "target": "lib/draft/draft.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/errors/public-error.ts",
+      "target": "lib/errors/deterministic-preparation-error.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/errors/public-error.ts",
+      "target": "lib/errors/tool-error.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "lib/errors/tool-error.ts",
+      "target": "lib/errors/public-error.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/firecrawl/client.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/ollama/client.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/render/__tests__/image.test.tsx",
+      "target": "lib/render/components/image.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/render/__tests__/linked-cards-markdown.test.ts",
+      "target": "lib/render/linked-cards-markdown.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/render/__tests__/linked-cards-markdown.test.ts",
+      "target": "lib/render/parse-spec-block.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/render/__tests__/linked-cards-markdown.test.ts",
+      "target": "lib/render/strip-spec-blocks.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/render/__tests__/llm-image-output.e2e.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "lib/render/__tests__/llm-image-output.e2e.test.ts",
+      "target": "lib/render/parse-spec-block.ts",
+      "import_type": "import",
+      "line_number": 21
+    },
+    {
+      "source": "lib/render/__tests__/llm-related-questions.e2e.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "lib/render/__tests__/llm-related-questions.e2e.test.ts",
+      "target": "lib/render/parse-spec-block.ts",
+      "import_type": "import",
+      "line_number": 22
+    },
+    {
+      "source": "lib/render/__tests__/migrations.test.ts",
+      "target": "lib/render/migrations.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/render/__tests__/parse-spec-block.test.ts",
+      "target": "lib/render/parse-spec-block.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/render/__tests__/prompt.test.ts",
+      "target": "lib/draft/prompt.ts",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "lib/render/__tests__/spec-fence.test.ts",
+      "target": "lib/render/spec-fence.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/render/__tests__/strip-source-context-blocks.test.ts",
+      "target": "lib/render/strip-source-context-blocks.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/render/__tests__/strip-spec-blocks.test.ts",
+      "target": "lib/render/strip-spec-blocks.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/render/catalog.ts",
+      "target": "drizzle/schema.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/render/components/badge.tsx",
+      "target": "lib/render/components/shared.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/render/components/button.tsx",
+      "target": "lib/render/components/shared.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/render/components/card.tsx",
+      "target": "lib/render/components/shared.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/render/components/grid.tsx",
+      "target": "lib/render/components/shared.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/render/components/heading.tsx",
+      "target": "lib/render/components/shared.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/render/components/image.tsx",
+      "target": "lib/render/components/shared.ts",
+      "import_type": "import",
+      "line_number": 21
+    },
+    {
+      "source": "lib/render/components/shared.ts",
+      "target": "lib/render/catalog.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/render/components/stack.tsx",
+      "target": "lib/render/components/shared.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/render/components/text.tsx",
+      "target": "lib/render/components/shared.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/render/linked-cards-markdown.ts",
+      "target": "lib/render/parse-spec-block.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/render/parse-spec-block.ts",
+      "target": "lib/render/catalog.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/render/parse-spec-block.ts",
+      "target": "lib/render/migrations.ts",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "lib/render/registry.tsx",
+      "target": "lib/render/components/badge.tsx",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/render/registry.tsx",
+      "target": "lib/render/components/button.tsx",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/render/registry.tsx",
+      "target": "lib/render/components/card.tsx",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/render/registry.tsx",
+      "target": "lib/render/components/grid.tsx",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "lib/render/registry.tsx",
+      "target": "lib/render/components/heading.tsx",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/render/registry.tsx",
+      "target": "lib/render/components/image.tsx",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "lib/render/registry.tsx",
+      "target": "lib/render/components/stack.tsx",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "lib/render/registry.tsx",
+      "target": "lib/render/components/text.tsx",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "lib/render/registry.tsx",
+      "target": "lib/render/catalog.ts",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "lib/render/spec-fence.ts",
+      "target": "lib/render/parse-spec-block.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/render/strip-spec-blocks.ts",
+      "target": "lib/render/linked-cards-markdown.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/schema/fetch.tsx",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/schema/search.tsx",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/storage/__tests__/file-signature.test.ts",
+      "target": "lib/storage/file-signature.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/streaming/__tests__/compact-historical-messages.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "lib/streaming/__tests__/compact-historical-messages.test.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/streaming/__tests__/create-ephemeral-chat-stream-response.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/actions/chat.ts",
+      "import_type": "import",
+      "line_number": 19
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/agents/title-generator.ts",
+      "import_type": "import",
+      "line_number": 20
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/utils/context-window.ts",
+      "import_type": "import",
+      "line_number": 21
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/utils/message-utils.ts",
+      "import_type": "import",
+      "line_number": 26
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/utils/perf-logging.ts",
+      "import_type": "import",
+      "line_number": 27
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/utils/usage-logging.ts",
+      "import_type": "import",
+      "line_number": 28
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/attachment-sizes.ts",
+      "import_type": "import",
+      "line_number": 30
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/attachment-token-estimates.ts",
+      "import_type": "import",
+      "line_number": 31
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/cap-historical-attachments.ts",
+      "import_type": "import",
+      "line_number": 32
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/cap-historical-pasted-content.ts",
+      "import_type": "import",
+      "line_number": 33
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 34
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/convert-data-part.ts",
+      "import_type": "import",
+      "line_number": 35
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/data-part-nonce.ts",
+      "import_type": "import",
+      "line_number": 36
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/dedupe-attachments.ts",
+      "import_type": "import",
+      "line_number": 37
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/describe-turn-input.ts",
+      "import_type": "import",
+      "line_number": 38
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/draft-context.ts",
+      "import_type": "import",
+      "line_number": 39
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/has-answer-after-tool-failure.ts",
+      "import_type": "import",
+      "line_number": 43
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/has-response-content.ts",
+      "import_type": "import",
+      "line_number": 44
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/is-empty-response.ts",
+      "import_type": "import",
+      "line_number": 45
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/log-api-call-error.ts",
+      "import_type": "import",
+      "line_number": 49
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/persist-stream-results.ts",
+      "import_type": "import",
+      "line_number": 50
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/prepare-messages.ts",
+      "import_type": "import",
+      "line_number": 51
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/stream-error-diagnostics.ts",
+      "import_type": "import",
+      "line_number": 52
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/strip-spec-from-messages.ts",
+      "import_type": "import",
+      "line_number": 57
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/summarize-carried-context.ts",
+      "import_type": "import",
+      "line_number": 58
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/trim-cold-start-history.ts",
+      "import_type": "import",
+      "line_number": 59
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/types.ts",
+      "import_type": "import",
+      "line_number": 63
+    },
+    {
+      "source": "lib/streaming/create-chat-stream-response.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 64
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/utils/context-window.ts",
+      "import_type": "import",
+      "line_number": 19
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/utils/message-utils.ts",
+      "import_type": "import",
+      "line_number": 24
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/utils/usage-logging.ts",
+      "import_type": "import",
+      "line_number": 25
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/attachment-token-estimates.ts",
+      "import_type": "import",
+      "line_number": 27
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/cap-historical-attachments.ts",
+      "import_type": "import",
+      "line_number": 28
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/cap-historical-pasted-content.ts",
+      "import_type": "import",
+      "line_number": 29
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 30
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/convert-data-part.ts",
+      "import_type": "import",
+      "line_number": 31
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/data-part-nonce.ts",
+      "import_type": "import",
+      "line_number": 32
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/dedupe-attachments.ts",
+      "import_type": "import",
+      "line_number": 33
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/describe-turn-input.ts",
+      "import_type": "import",
+      "line_number": 34
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/draft-context.ts",
+      "import_type": "import",
+      "line_number": 35
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/is-empty-response.ts",
+      "import_type": "import",
+      "line_number": 39
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/log-api-call-error.ts",
+      "import_type": "import",
+      "line_number": 43
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/stream-error-diagnostics.ts",
+      "import_type": "import",
+      "line_number": 44
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/strip-spec-from-messages.ts",
+      "import_type": "import",
+      "line_number": 49
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/streaming/helpers/summarize-carried-context.ts",
+      "import_type": "import",
+      "line_number": 50
+    },
+    {
+      "source": "lib/streaming/create-ephemeral-chat-stream-response.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 51
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/attachment-sizes.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/attachment-sizes.test.ts",
+      "target": "lib/streaming/helpers/attachment-sizes.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/attachment-token-estimates.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/attachment-token-estimates.test.ts",
+      "target": "lib/streaming/helpers/attachment-token-estimates.ts",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/cap-historical-answer-text.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/cap-historical-answer-text.test.ts",
+      "target": "lib/streaming/helpers/cap-historical-answer-text.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/cap-historical-answer-text.test.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/cap-historical-attachments.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/cap-historical-attachments.test.ts",
+      "target": "lib/streaming/helpers/cap-historical-attachments.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/cap-historical-attachments.test.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/cap-historical-pasted-content.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/cap-historical-pasted-content.test.ts",
+      "target": "lib/streaming/helpers/cap-historical-pasted-content.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/cap-historical-pasted-content.test.ts",
+      "target": "lib/streaming/helpers/trim-cold-start-history.ts",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/compact-historical-messages.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/compact-historical-messages.test.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/data-part-nonce.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/data-part-nonce.test.ts",
+      "target": "lib/streaming/helpers/convert-data-part.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/data-part-nonce.test.ts",
+      "target": "lib/streaming/helpers/data-part-nonce.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/dedupe-attachments.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/dedupe-attachments.test.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/dedupe-attachments.test.ts",
+      "target": "lib/streaming/helpers/dedupe-attachments.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/describe-turn-input.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/draft-context.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/draft-context.test.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/draft-context.test.ts",
+      "target": "lib/streaming/helpers/draft-context.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/has-answer-after-tool-failure.test.ts",
+      "target": "lib/streaming/helpers/has-answer-after-tool-failure.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/has-response-content.test.ts",
+      "target": "lib/streaming/helpers/has-response-content.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/is-empty-response.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/log-api-call-error.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/log-api-call-error.test.ts",
+      "target": "lib/streaming/helpers/log-api-call-error.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/prepare-messages.test.ts",
+      "target": "lib/streaming/helpers/prepare-messages.ts",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/prepare-messages.test.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/stream-error-diagnostics.test.ts",
+      "target": "lib/streaming/helpers/stream-error-diagnostics.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/strip-spec-from-messages.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/strip-spec-from-messages.test.ts",
+      "target": "lib/streaming/helpers/strip-spec-from-messages.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/summarize-carried-context.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/trim-cold-start-history.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/__tests__/trim-cold-start-history.test.ts",
+      "target": "lib/streaming/helpers/trim-cold-start-history.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/attachment-parts.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/attachment-sizes.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/attachment-sizes.ts",
+      "target": "lib/streaming/helpers/attachment-parts.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/streaming/helpers/attachment-token-estimates.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/attachment-token-estimates.ts",
+      "target": "lib/streaming/helpers/attachment-parts.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/streaming/helpers/cap-historical-answer-text.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/cap-historical-answer-text.ts",
+      "target": "lib/streaming/helpers/slice-without-splitting-surrogate-pair.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/streaming/helpers/cap-historical-attachments.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/cap-historical-attachments.ts",
+      "target": "lib/streaming/helpers/attachment-parts.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/streaming/helpers/cap-historical-attachments.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/streaming/helpers/cap-historical-pasted-content.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/cap-historical-pasted-content.ts",
+      "target": "lib/streaming/helpers/cap-historical-attachments.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/streaming/helpers/cap-historical-pasted-content.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/compact-historical-messages.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/compact-historical-messages.ts",
+      "target": "lib/streaming/helpers/cap-historical-answer-text.ts",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "lib/streaming/helpers/compact-historical-messages.ts",
+      "target": "lib/streaming/helpers/slice-without-splitting-surrogate-pair.ts",
+      "import_type": "import",
+      "line_number": 20
+    },
+    {
+      "source": "lib/streaming/helpers/convert-data-part.ts",
+      "target": "lib/streaming/helpers/data-part-nonce.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/data-part-nonce.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/dedupe-attachments.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/dedupe-attachments.ts",
+      "target": "lib/streaming/helpers/attachment-parts.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/streaming/helpers/dedupe-attachments.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "lib/streaming/helpers/describe-turn-input.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/describe-turn-input.ts",
+      "target": "lib/utils/message-utils.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/streaming/helpers/describe-turn-input.ts",
+      "target": "lib/streaming/helpers/attachment-parts.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/streaming/helpers/draft-context.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/draft-context.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/streaming/helpers/is-empty-response.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/log-api-call-error.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/persist-stream-results.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/prepare-messages.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/prepare-messages.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 22
+    },
+    {
+      "source": "lib/streaming/helpers/stream-error-diagnostics.ts",
+      "target": "lib/streaming/helpers/describe-stream-error.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/streaming/helpers/stream-error-diagnostics.ts",
+      "target": "lib/streaming/helpers/log-api-call-error.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/streaming/helpers/strip-spec-from-messages.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/summarize-carried-context.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/summarize-carried-context.ts",
+      "target": "lib/streaming/helpers/attachment-parts.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/streaming/helpers/trim-cold-start-history.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/streaming/helpers/trim-cold-start-history.ts",
+      "target": "lib/streaming/helpers/compact-historical-messages.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/streaming/types.ts",
+      "target": "lib/types/models.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/streaming/types.ts",
+      "target": "lib/types/search.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/supabase/__tests__/middleware.test.ts",
+      "target": "lib/supabase/middleware.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/supabase/__tests__/server.test.ts",
+      "target": "lib/supabase/server.ts",
+      "import_type": "import",
+      "line_number": 16
+    },
+    {
+      "source": "lib/supabase/client.ts",
+      "target": "lib/supabase/keys.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/supabase/middleware.ts",
+      "target": "lib/supabase/keys.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/supabase/server.ts",
+      "target": "lib/supabase/keys.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/tools/draft.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/tools/dynamic.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/tools/fetch.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/tools/question.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/tools/search/providers/__tests__/brave.test.ts",
+      "target": "lib/tools/search/providers/brave.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/tools/search/providers/__tests__/http-error.test.ts",
+      "target": "lib/tools/search/providers/searxng.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/tools/search/providers/__tests__/http-error.test.ts",
+      "target": "lib/tools/search/providers/tavily.ts",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "lib/tools/search/providers/__tests__/recoverable-error.test.ts",
+      "target": "lib/tools/search/providers/recoverable-error.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/tools/search/providers/__tests__/tavily-domains.test.ts",
+      "target": "lib/tools/search/providers/tavily.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/tools/search/providers/__tests__/tavily-projection.test.ts",
+      "target": "lib/tools/search/providers/tavily.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/tools/search/providers/brave.ts",
+      "target": "lib/tools/search/providers/base.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/tools/search/providers/exa.ts",
+      "target": "lib/tools/search/providers/base.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/tools/search/providers/index.ts",
+      "target": "lib/tools/search/providers/base.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/tools/search/providers/index.ts",
+      "target": "lib/tools/search/providers/brave.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "lib/tools/search/providers/index.ts",
+      "target": "lib/tools/search/providers/exa.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/tools/search/providers/index.ts",
+      "target": "lib/tools/search/providers/firecrawl.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/tools/search/providers/index.ts",
+      "target": "lib/tools/search/providers/searxng.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/tools/search/providers/index.ts",
+      "target": "lib/tools/search/providers/tavily.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/tools/search/providers/searxng.ts",
+      "target": "lib/tools/search/providers/base.ts",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "lib/tools/search/providers/tavily.ts",
+      "target": "lib/tools/search/providers/base.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/tools/search.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/tools/search.ts",
+      "target": "lib/tools/search/providers/recoverable-error.ts",
+      "import_type": "import",
+      "line_number": 24
+    },
+    {
+      "source": "lib/tools/todo.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/types/agent.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/types/agent.ts",
+      "target": "lib/tools/draft.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/types/agent.ts",
+      "target": "lib/tools/fetch.ts",
+      "import_type": "import",
+      "line_number": 10
+    },
+    {
+      "source": "lib/types/agent.ts",
+      "target": "lib/tools/question.ts",
+      "import_type": "import",
+      "line_number": 11
+    },
+    {
+      "source": "lib/types/agent.ts",
+      "target": "lib/tools/search.ts",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "lib/types/agent.ts",
+      "target": "lib/tools/todo.ts",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "lib/types/agent.ts",
+      "target": "lib/schema/search.tsx",
+      "import_type": "import",
+      "line_number": 15
+    },
+    {
+      "source": "lib/usage-budget/__tests__/attempt-id.test.ts",
+      "target": "lib/usage-budget/attempt-id.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/usage-budget/__tests__/gate.test.ts",
+      "target": "evals/lib/gate.ts",
+      "import_type": "import",
+      "line_number": 36
+    },
+    {
+      "source": "lib/usage-budget/__tests__/grants.test.ts",
+      "target": "lib/usage-budget/grants.ts",
+      "import_type": "import",
+      "line_number": 47
+    },
+    {
+      "source": "lib/usage-budget/__tests__/refund-handler.test.ts",
+      "target": "lib/usage-budget/refund-handler.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/usage-budget/__tests__/refund-handler.test.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/usage-budget/__tests__/response.test.ts",
+      "target": "lib/usage-budget/response.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/usage-budget/__tests__/time.test.ts",
+      "target": "lib/usage-budget/time.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/usage-budget/analytics.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/usage-budget/events.ts",
+      "target": "lib/usage-budget/analytics.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/usage-budget/events.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/usage-budget/gate.ts",
+      "target": "lib/usage-budget/analytics.ts",
+      "import_type": "import",
+      "line_number": 5
+    },
+    {
+      "source": "lib/usage-budget/gate.ts",
+      "target": "lib/auth/better-auth/config.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/usage-budget/gate.ts",
+      "target": "lib/usage-budget/grants.ts",
+      "import_type": "import",
+      "line_number": 12
+    },
+    {
+      "source": "lib/usage-budget/gate.ts",
+      "target": "lib/usage-budget/time.ts",
+      "import_type": "import",
+      "line_number": 13
+    },
+    {
+      "source": "lib/usage-budget/gate.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 14
+    },
+    {
+      "source": "lib/usage-budget/grants.ts",
+      "target": "lib/usage-budget/analytics.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/usage-budget/grants.ts",
+      "target": "lib/auth/better-auth/config.ts",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "lib/usage-budget/grants.ts",
+      "target": "lib/usage-budget/time.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/usage-budget/refund-handler.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/usage-budget/response.ts",
+      "target": "lib/analytics/types.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/utils/__tests__/attachment-limits.test.ts",
+      "target": "lib/utils/attachment-limits.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/utils/__tests__/attachment-tokens.test.ts",
+      "target": "lib/utils/attachment-tokens.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/utils/__tests__/citation.test.ts",
+      "target": "lib/utils/citation.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/utils/__tests__/context-window.test.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/utils/__tests__/context-window.test.ts",
+      "target": "lib/utils/context-window.ts",
+      "import_type": "import",
+      "line_number": 7
+    },
+    {
+      "source": "lib/utils/__tests__/cookies.test.ts",
+      "target": "lib/utils/cookies.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/utils/__tests__/domain.test.ts",
+      "target": "lib/utils/domain.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/utils/__tests__/favicon.test.ts",
+      "target": "lib/utils/favicon.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/utils/__tests__/message-mapping.test.ts",
+      "target": "lib/utils/message-mapping.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/utils/__tests__/search-query.test.ts",
+      "target": "lib/utils/search-query.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/utils/context-window.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/utils/context-window.ts",
+      "target": "lib/types/models.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/utils/context-window.ts",
+      "target": "lib/utils/attachment-tokens.ts",
+      "import_type": "import",
+      "line_number": 8
+    },
+    {
+      "source": "lib/utils/message-utils.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/utils/registry.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 6
+    },
+    {
+      "source": "lib/utils/usage-logging.ts",
+      "target": "lib/types/ai.ts",
+      "import_type": "import",
+      "line_number": 9
+    },
+    {
+      "source": "lib/version/__tests__/admins.test.ts",
+      "target": "lib/version/admins.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/version/__tests__/config.test.ts",
+      "target": "lib/auth/better-auth/config.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/version/__tests__/install-method.test.ts",
+      "target": "lib/version/install-method.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/version/__tests__/semver.test.ts",
+      "target": "lib/version/semver.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/version/__tests__/update-check.test.ts",
+      "target": "lib/auth/better-auth/config.ts",
+      "import_type": "import",
+      "line_number": 3
+    },
+    {
+      "source": "lib/version/__tests__/update-check.test.ts",
+      "target": "lib/version/update-check.ts",
+      "import_type": "import",
+      "line_number": 4
+    },
+    {
+      "source": "lib/version/update-check.ts",
+      "target": "lib/auth/better-auth/config.ts",
+      "import_type": "import",
+      "line_number": 1
+    },
+    {
+      "source": "lib/version/update-check.ts",
+      "target": "lib/version/semver.ts",
+      "import_type": "import",
+      "line_number": 2
+    },
+    {
+      "source": "proxy.test.ts",
+      "target": "proxy.ts",
+      "import_type": "import",
+      "line_number": 8
+    }
+  ]
+}

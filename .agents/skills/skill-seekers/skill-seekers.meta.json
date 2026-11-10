@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "skill": "skill-seekers",
+  "namespace": "repo",
+  "repo": {
+    "full_name": "yusufkaraaslan/Skill_Seekers",
+    "url": "https://github.com/yusufkaraaslan/Skill_Seekers",
+    "default_branch": "development",
+    "commit_sha": "5b5d8dfca263fa76e6daae9f292890b311ef36aa",
+    "license": "MIT",
+    "note": "commit_sha derived from the GitHub activity API (last push to development before run start, 2026-09-30T18:49:17Z, and 0 commits since), because the C3 fallback left no clone."
+  },
+  "sources": [
+    {
+      "type": "github",
+      "url": "https://github.com/yusufkaraaslan/Skill_Seekers",
+      "discovered_via": "issue",
+      "status": "used",
+      "pages_scraped": null,
+      "note": "C3 fallback (§2): enable_codebase_analysis false, code_analysis_depth surface; the separate C3 pass is disabled to fit the 10-min foreground window; GitHub scraper still runs. Reduced code coverage."
+    },
+    {
+      "type": "documentation",
+      "url": "https://skillseekersweb.com/docs/",
+      "discovered_via": "issue; repo homepage field is https://skillseekersweb.com/; README Website badge",
+      "status": "used",
+      "pages_scraped": 49,
+      "llms_txt": null,
+      "note": "RECOMMENDED with tightened patterns. getting-started/overview returns 200; sitemap-index.xml and sitemap-0.xml return 200 (173 URLs: 83 under /docs/ en, 80 /zh/, 5 /blog/). Partly stale: /docs/cli/github,scrape,unified,pdf return 200 but those subcommands are not in skill-seekers 3.9.1 (exit=2 invalid choice); overview page cites v3.0-v3.1. Exclude /docs/cli/ and /docs/getting-started/."
+    },
+    {
+      "type": "in_repo_docs",
+      "url": "https://github.com/yusufkaraaslan/Skill_Seekers/tree/development/docs",
+      "discovered_via": "git tree on development",
+      "status": "candidate",
+      "pages_scraped": null,
+      "note": "155 .md files under docs/ (zh-CN 34, archive 25, integrations 19, reference 15, features 14, strategy 11, plans 10, guides 9, user-guide 7, getting-started 7); no docs config file (no mkdocs/docusaurus/readthedocs/book.toml/vitepress/astro). Current with repo (README links CLI_REFERENCE, 19 commands). Picked up by code analysis in the github source; no separate source needed."
+    },
+    {
+      "type": "in_repo_docs",
+      "url": "https://github.com/yusufkaraaslan/Skill_Seekers#readme",
+      "discovered_via": "README",
+      "status": "candidate",
+      "pages_scraped": null,
+      "note": "README is read by the GitHub scrape; links Website badge to skillseekersweb.com and docs/ files. No separate source."
+    },
+    {
+      "type": "llms_txt",
+      "url": "https://skillseekersweb.com/llms-full.txt",
+      "discovered_via": "curl -sI",
+      "status": "rejected",
+      "pages_scraped": null,
+      "llms_txt": null,
+      "note": "404"
+    },
+    {
+      "type": "llms_txt",
+      "url": "https://skillseekersweb.com/llms.txt",
+      "discovered_via": "curl -sI",
+      "status": "rejected",
+      "pages_scraped": null,
+      "llms_txt": null,
+      "note": "404"
+    },
+    {
+      "type": "llms_txt",
+      "url": "https://skillseekersweb.com/llms-small.txt",
+      "discovered_via": "curl -sI",
+      "status": "rejected",
+      "pages_scraped": null,
+      "llms_txt": null,
+      "note": "404; also skipped by Skill Seekers when a sitemap exists. Set skip_llms_txt true."
+    },
+    {
+      "type": "community_config",
+      "url": "https://api.skillseekersweb.com/api/configs",
+      "discovered_via": "API list (178 configs)",
+      "status": "rejected",
+      "pages_scraped": null,
+      "note": "No entry matches skill-seekers / Skill_Seekers (name, primary_source, description); nothing downloaded."
+    }
+  ],
+  "scraped_at": "2026-10-12T10:13:16.282921+00:00",
+  "tool": {
+    "name": "skill-seekers",
+    "version": "3.9.1"
+  },
+  "config": {
+    "name": "skill-seekers",
+    "description": "Use when building, configuring or troubleshooting AI skills with Skill Seekers (the skill-seekers CLI). Covers unified configs, documentation/GitHub/PDF sources, the create, enhance, quality and sync-config commands, merge modes, and platform packaging.",
+    "merge_mode": "rule-based",
+    "sources": [
+      {
+        "type": "documentation",
+        "base_url": "https://skillseekersweb.com/docs/",
+        "start_urls": [
+          "https://skillseekersweb.com/docs/about/introduction",
+          "https://skillseekersweb.com/docs/reference/architecture",
+          "https://skillseekersweb.com/docs/reference/config-schema",
+          "https://skillseekersweb.com/docs/guides/troubleshooting",
+          "https://skillseekersweb.com/docs/manual/scraping/unified-scraping"
+        ],
+        "url_patterns": {
+          "include": [
+            "/docs/reference/",
+            "/docs/guides/",
+            "/docs/manual/",
+            "/docs/integrations/",
+            "/docs/about/"
+          ],
+          "exclude": [
+            "/docs/cli/",
+            "/docs/getting-started/",
+            "/docs/community/",
+            "/zh/",
+            "/blog/",
+            "/api-docs",
+            "/configs",
+            "/sponsors",
+            "/search",
+            "/_astro/"
+          ]
+        },
+        "skip_llms_txt": true,
+        "max_pages": 60,
+        "rate_limit": 0.5
+      },
+      {
+        "type": "github",
+        "repo": "yusufkaraaslan/Skill_Seekers",
+        "enable_codebase_analysis": false,
+        "ai_mode": "none",
+        "code_analysis_depth": "surface",
+        "include_issues": true,
+        "max_issues": 50,
+        "include_releases": true,
+        "include_changelog": true,
+        "exclude_dirs_additional": [
+          "e2e",
+          "fixtures",
+          "testdata"
+        ]
+      }
+    ]
+  },
+  "parameters": {
+    "create": "--enhance-level 0",
+    "enhance": "foreground run_stage.py enhance; six provider variables removed; explicit free-model command required",
+    "quality": "--threshold 6"
+  },
+  "pipeline": {
+    "percent": 100,
+    "current_stage": 12,
+    "stages": [
+      {
+        "n": 1,
+        "name": "preflight",
+        "weight": 2,
+        "status": "done",
+        "note": "doctor exit=0 (7 passed, 1 warning: no API keys, LOCAL mode); GITHUB_TOKEN set; rerun after token was provided.",
+        "doctor_exit": 0,
+        "github_token": "set"
+      },
+      {
+        "n": 2,
+        "name": "source-discovery",
+        "weight": 8,
+        "status": "done",
+        "note": "github + site docs candidates recorded; no llms.txt; no community config"
+      },
+      {
+        "n": 3,
+        "name": "config",
+        "weight": 7,
+        "status": "done",
+        "config_sha256": "8c74813b53b9305c0d772b0af6112d7c79f8ab9ec4de511df5508b78ba9b07d7",
+        "note": "dry-run exit=0, both sources listed (documentation, github), no keys removed; sync-config exit=0 (44 new pages, not applied)"
+      },
+      {
+        "n": 4,
+        "name": "estimate",
+        "weight": 3,
+        "status": "done",
+        "note": "estimate exit=0; 54 pages discovered, pending 0, under max_pages 60; excludes held (no /zh/, /blog/, /docs/cli/, /docs/getting-started/ in log; log lists no URLs, so checked via sitemap patterns: 50 matches, all 5 seed pages match); config_sha256 unchanged (1a3a2f6e...e00e4d)"
+      },
+      {
+        "n": 5,
+        "name": "scrape-docs",
+        "weight": 20,
+        "status": "done",
+        "note": "run a26b9d8b367a42d9ab262de2a5ad1d9d: \"✅ Documentation: 49 pages scraped\" (log line 127); 5 page 404s inside the docs source (stale sitemap URLs), source succeeded; docs artifacts mtime after started_at 2026-10-12T10:10:56Z"
+      },
+      {
+        "n": 6,
+        "name": "scrape-github",
+        "weight": 30,
+        "status": "done",
+        "note": "run a26b9d8b367a42d9ab262de2a5ad1d9d: \"✅ GitHub: Repository scraped successfully\" (log line 161); github_data_0_yusufkaraaslan_Skill_Seekers.json written after start; C3 fallback: log shows \"Code extraction: Surface level (file tree only)\", no codebase-analysis pass ran; 46 issues, 35 releases, CHANGELOG found"
+      },
+      {
+        "n": 7,
+        "name": "merge",
+        "weight": 3,
+        "status": "done",
+        "note": "run a26b9d8b367a42d9ab262de2a5ad1d9d: 45 conflicts (all missing_in_code, 0 APIs loaded from code under surface depth); conflicts.json written; \"PHASE 3: Merging sources (rule-based)\" matched at log line 186"
+      },
+      {
+        "n": 8,
+        "name": "build",
+        "weight": 5,
+        "status": "done",
+        "note": "run a26b9d8b367a42d9ab262de2a5ad1d9d: \"Unified scraping complete!\" (log line 214); output/skill-seekers/SKILL.md (5.6K) and references/ (api, documentation, github) exist"
+      },
+      {
+        "n": 9,
+        "name": "enhance",
+        "weight": 12,
+        "status": "done",
+        "note": "run 33677ff32cbf4d97a48a0bf53932c2b0, model opencode/nemotron-3-ultra-free, mode LOCAL, exit 0; sha256 a87735110b8a...->8df21e2c7e27...; SKILL.md 5721->14678 bytes. Earlier failed attempt kept: run 3073bef826434a518518198ec3fb7d4c (exit 1, -f swallowed message arg).",
+        "enh_templates_failed": [
+          "opencode run -m <model> --auto -f {prompt_file} \"Do exactly what the attached file says.\" (FAILED)"
+        ],
+        "enh_template": "opencode run -m opencode/nemotron-3-ultra-free --auto \"Do exactly what the attached file says.\" -f {prompt_file}"
+      },
+      {
+        "n": 10,
+        "name": "quality",
+        "weight": 3,
+        "status": "done",
+        "note": "quality exit=0, score 84.0/100, grade B+ (completeness 80, accuracy 100, coverage 60, health 100), threshold 6; report output/skill-seekers/quality_report.json"
+      },
+      {
+        "n": 11,
+        "name": "place-in-kills",
+        "weight": 4,
+        "status": "done",
+        "note": "branch repo-skill/skill-seekers, 19 files, scan exit 0 after redaction, placement validator OK; 2 placeholder tokens redacted in references (api.md, releases.md) after first scan exit=1; SKILL.md hand-edited after review round 1; see history"
+      },
+      {
+        "n": 12,
+        "name": "pr-merged",
+        "weight": 3,
+        "status": "done",
+        "evidence": "PR https://github.com/gardinermichael/kills/pull/224 merged by the desk at 2026-10-12T11:25:11Z; approved head afe09cf56cbc4be1ec2494e7b020ae4ce4fa94a9 (Vera, round 2, SASH-379); merge commit c63d07e17bc1ef6808bc6a902c81c8d44e7afeb5",
+        "finished_at": "2026-10-12T11:25:11Z"
+      }
+    ]
+  },
+  "results": {},
+  "history": [
+    {
+      "at": "2026-10-12T09:33:37Z",
+      "agent": "Twin A",
+      "issue": "SASH-369",
+      "event": "stage 1 preflight: failed. doctor exit=0, skill-seekers 3.9.1, GITHUB_TOKEN unset (60 req/hour limit); stopped per contract"
+    },
+    {
+      "at": "2026-10-12T09:42:56Z",
+      "agent": "Twin A",
+      "issue": "SASH-369",
+      "event": "stage 1 preflight rerun: done. doctor exit=0, skill-seekers 3.9.1, GITHUB_TOKEN set"
+    },
+    {
+      "at": "2026-10-12T09:47:19Z",
+      "agent": "Twin B",
+      "issue": "SASH-370",
+      "event": "stage 2 source-discovery: done. Recommend github source + tightened docs site (exclude /docs/cli/, stale); no llms.txt, no community config; sitemap present"
+    },
+    {
+      "at": "2026-10-12T09:50:20Z",
+      "agent": "Twin A",
+      "issue": "SASH-371",
+      "event": "stage 3 config: done. dry-run exit=0, both sources listed, no keys removed; sync-config 44 new pages reported, not applied"
+    },
+    {
+      "at": "2026-10-12T09:53:24Z",
+      "agent": "Twin B",
+      "issue": "SASH-372",
+      "event": "stage 4 estimate: done. exit=0, 54 pages discovered (max_pages 60), excludes held, config unchanged"
+    },
+    {
+      "at": "2026-10-12T09:58:33Z",
+      "agent": "Twin A",
+      "issue": "SASH-373",
+      "event": "stage 5-8 gate: ready. sha256 matches, meta config equal, dry-run exit=0 (documentation + github listed), GITHUB_TOKEN set, no provider keys set, nothing running, no prior output, 31Gi free; sizing: repo 26519 KB, tree 3138 blobs, 510 .py, truncated=false"
+    },
+    {
+      "at": "2026-10-12T10:03:13Z",
+      "agent": "Twin B",
+      "issue": "SASH-375",
+      "event": "stage 5-8 config: C3 fallback applied; config sha256 1a3a2f6e...->8c74813b... (8c74813b53b9305c0d772b0af6112d7c79f8ab9ec4de511df5508b78ba9b07d7); dry-run exit=0"
+    },
+    {
+      "at": "2026-10-12T10:20:00Z",
+      "agent": "Twin A",
+      "issue": "SASH-374",
+      "event": "stages 5-8 done: run a26b9d8b367a42d9ab262de2a5ad1d9d, exit 0, 49 docs pages, 45 conflicts, C3 fallback (surface, no deep pass), log confirms C3 codebase-analysis pass skipped"
+    },
+    {
+      "at": "2026-10-12T10:16:21Z",
+      "agent": "Twin B",
+      "issue": "SASH-376",
+      "event": "stage 9 enhance FAILED: run 3073bef826434a518518198ec3fb7d4c, exit 1, model opencode/nemotron-3-ultra-free, template arg-parse error; no rerun; percent stays 78"
+    },
+    {
+      "at": "2026-10-12T10:23:41Z",
+      "agent": "Twin B",
+      "issue": "SASH-376",
+      "event": "stage 9 enhance done: run 33677ff32cbf4d97a48a0bf53932c2b0, exit 0, LOCAL, model opencode/nemotron-3-ultra-free, template A (message before -f); 78->90%"
+    },
+    {
+      "at": "2026-10-12T10:25:49Z",
+      "agent": "Twin A",
+      "issue": "SASH-377",
+      "event": "stage 10 quality done: exit 0, score 84.0 (B+), threshold 6; 90->93%"
+    },
+    {
+      "at": "2026-10-12T10:32:47Z",
+      "agent": "Twin B",
+      "issue": "SASH-378",
+      "event": "stage 11 placed on repo-skill/skill-seekers; commit_sha 5b5d8dfca263fa76e6daae9f292890b311ef36aa from GitHub activity API (last push to development 2026-09-30T18:49:17Z, 0 commits since run start); 93->97%"
+    },
+    {
+      "at": "2026-10-12T10:33:15Z",
+      "agent": "Twin B",
+      "issue": "SASH-378",
+      "event": "stage 11 FAILED: scan_secrets.py exit 1 (2 reference files); no commit, no push, no branch pushed; percent stays 93; commit_sha 5b5d8dfc... re-verified but not recorded"
+    },
+    {
+      "at": "2026-10-12T10:35:00Z",
+      "agent": "Twin B",
+      "issue": "SASH-378",
+      "event": "stage 11 placed on repo-skill/skill-seekers after redacting 2 placeholder tokens; commit_sha 5b5d8dfca263fa76e6daae9f292890b311ef36aa from GitHub activity API (last push to development 2026-09-30T18:49:17Z, 0 commits since run start); 93->97%"
+    },
+    {
+      "at": "2026-10-12T11:19:22Z",
+      "agent": "Twin A",
+      "issue": "SASH-381",
+      "event": "review round 1 (PR #224): hand edits to SKILL.md (CLI 3.9.1 commands, merge modes, coverage note, reference map); removed references/conflicts.md and references/api/merged_api.md (C3-fallback noise); SKILL.md sha256 8df21e2c7e2799345639b6c19f009ed3ff9823c233ef347435fc0a773017bb07 -> c5a09e1dafd3026c08e7d31e8cdb546d2cc5647385790931176a67304372673b"
+    },
+    {
+      "at": "2026-10-12T11:30:00Z",
+      "agent": "desk",
+      "issue": "SASH-271",
+      "event": "stage 12 done: PR https://github.com/gardinermichael/kills/pull/224 merged by the desk at 2026-10-12T11:25:11Z; approved head afe09cf56cbc4be1ec2494e7b020ae4ce4fa94a9 (Vera, round 2, SASH-379); merge commit c63d07e17bc1ef6808bc6a902c81c8d44e7afeb5; percent 97 -> 100 (metadata-only follow-up PR, needs independent approval before merge)"
+    }
+  ]
+}
